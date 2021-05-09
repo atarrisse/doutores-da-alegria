@@ -1,0 +1,143 @@
+@font-face {
+  font-display: swap;
+  font-family: "Dalegria Manual Basic";
+  font-style: normal;
+  font-weight: normal;
+  src: url("DalegriaManual-Basic.woff2") format("woff2"), url("DalegriaManual-Basic.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Dalegria Manual Inline";
+  font-style: normal;
+  font-weight: normal;
+  src: url("DalegriaManual-Inline.woff2") format("woff2"), url("DalegriaManual-Inline.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Dalegria Simples Circo";
+  font-style: normal;
+  font-weight: normal;
+  src: url("DalegriaSimples-Circo.woff2") format("woff2"), url("DalegriaSimples-Circo.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Dalegria Simples Basic S";
+  font-style: normal;
+  font-weight: normal;
+  src: url("DalegriaSimples-BasicS.woff2") format("woff2"), url("DalegriaSimples-BasicS.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Dalegria Manual Sombra";
+  font-style: normal;
+  font-weight: normal;
+  src: url("DalegriaManual-Sombra.woff2") format("woff2"), url("DalegriaManual-Sombra.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Dalegria Manual Circo";
+  font-style: normal;
+  font-weight: normal;
+  src: url("DalegriaManual-Circo.woff2") format("woff2"), url("DalegriaManual-Circo.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Dalegria Simples Basic";
+  font-style: normal;
+  font-weight: normal;
+  src: url("DalegriaSimples-Basic.woff2") format("woff2"), url("DalegriaSimples-Basic.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Dalegria Manual Basic S";
+  font-style: normal;
+  font-weight: normal;
+  src: url("DalegriaManual-BasicS.woff2") format("woff2"), url("DalegriaManual-BasicS.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Dalegria Manual Inline S";
+  font-style: normal;
+  font-weight: normal;
+  src: url("DalegriaManual-InlineS.woff2") format("woff2"), url("DalegriaManual-InlineS.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Dalegria Simples Inline";
+  font-style: normal;
+  font-weight: normal;
+  src: url("DalegriaSimples-Inline.woff2") format("woff2"), url("DalegriaSimples-Inline.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Dalegria Simples Inline S";
+  font-style: normal;
+  font-weight: normal;
+  src: url("DalegriaSimples-InlineS.woff2") format("woff2"), url("DalegriaSimples-InlineS.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Dalegria Simples Sombra";
+  font-style: normal;
+  font-weight: normal;
+  src: url("DalegriaSimples-Sombra.woff2") format("woff2"), url("DalegriaSimples-Sombra.woff") format("woff");
+}
+
+.dalegria-manual-basic {
+  font-family: "Dalegria Manual Basic", Helvetica, Arial, sans-serif;
+}
+
+.dalegria-manual-basic-s {
+  font-family: "Dalegria Manual Basic S", Helvetica, Arial, sans-serif;
+}
+
+.dalegria-manual-circo {
+  font-family: "Dalegria Manual Circo", Helvetica, Arial, sans-serif;
+}
+
+.dalegria-manual-inline {
+  font-family: "Dalegria Manual Inline", Helvetica, Arial, sans-serif;
+}
+
+.dalegria-manual-inline-s {
+  font-family: "Dalegria Manual Inline S", Helvetica, Arial, sans-serif;
+}
+
+.dalegria-manual-sombra {
+  font-family: "Dalegria Manual Sombra", Helvetica, Arial, sans-serif;
+}
+
+.dalegria-simples-basic {
+  font-family: "Dalegria Simples Basic", Helvetica, Arial, sans-serif;
+}
+
+.dalegria-simples-basic-s {
+  font-family: "Dalegria Simples Basic S", Helvetica, Arial, sans-serif;
+}
+
+.dalegria-simples-circo {
+  font-family: "Dalegria Simples Circo", Helvetica, Arial, sans-serif;
+}
+
+.dalegria-simples-inline {
+  font-family: "Dalegria Simples Inline", Helvetica, Arial, sans-serif;
+}
+
+.dalegria-simples-inline-s {
+  font-family: "Dalegria Simples Inline S", Helvetica, Arial, sans-serif;
+}
+
+.dalegria-simples-sombra {
+  font-family: "Dalegria Simples Sombra", Helvetica, Arial, sans-serif;
+}
