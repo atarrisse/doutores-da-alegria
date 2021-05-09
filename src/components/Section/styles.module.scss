@@ -1,7 +1,20 @@
+.article {
+  border: 5px solid var(--themeColor);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
 .title {
   color: var(--themeColor);
   font-family: var(--font-simples-circo);
   font-size: 5rem;
   line-height: calc(43 / 50);
   margin: 0 0 2.4rem;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 3rem;
 }
