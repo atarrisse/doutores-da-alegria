@@ -6,7 +6,7 @@ import { CONTENT_SECTION } from "./components/Section"
 const CONTENT: Array<CONTENT_SECTION> = [
   {
     title: "Oi!",
-    color: "PINK",
+    color: "rosa",
     content: [
       {
         tag: "p",
@@ -24,7 +24,7 @@ const CONTENT: Array<CONTENT_SECTION> = [
   },
   {
     title: "Sobre viver!",
-    color: "RED",
+    color: "vermelho",
     img: "2",
     content: [
       {
@@ -41,7 +41,7 @@ const CONTENT: Array<CONTENT_SECTION> = [
   },
   {
     title: "Spoiler",
-    color: "CYAN",
+    color: "azul",
     img: "3",
     content: [
       {

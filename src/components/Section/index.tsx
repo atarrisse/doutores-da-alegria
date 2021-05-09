@@ -36,7 +36,7 @@ const Section: React.FC<Props> = ({ color, content, img, title }) => {
   const image = getImage(fileName.childImageSharp.gatsbyImageData)
 
   return (
-    <article data-color={kebabCase(color)}>
+    <article data-theme={kebabCase(color)}>
       <h2 className={styles.title}>{title}</h2>
       {content.map(({ text }) => (
         <p key={kebabCase(text)} dangerouslySetInnerHTML={{ __html: text }} />
