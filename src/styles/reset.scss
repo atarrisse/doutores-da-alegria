@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--black);
+  font-family: var(--font-vag-rounded);
+  font-size: 1.7rem;
+  scroll-snap-type: y mandatory;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}

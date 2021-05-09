@@ -2,7 +2,7 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import kebabCase from "lodash-es/kebabCase"
-import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import * as styles from "./styles.module.scss"
 
@@ -21,19 +21,12 @@ export interface CONTENT_SECTION {
 type Props = CONTENT_SECTION
 
 const Section: React.FC<Props> = ({ color, content, img, title }) => {
-  const p: string = "rodape/rodape-1-3x.png"
-  console.log(p)
-
   const { fileName } = useStaticQuery(
     graphql`
       query {
         fileName: file(relativePath: { eq: "rodape/rodape-1-3x.png" }) {
           childImageSharp {
-            gatsbyImageData(
-              width: 200
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
+            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           }
         }
       }
@@ -41,13 +34,12 @@ const Section: React.FC<Props> = ({ color, content, img, title }) => {
   )
 
   const image = getImage(fileName.childImageSharp.gatsbyImageData)
-  console.log(image)
 
   return (
     <article data-color={kebabCase(color)}>
       <h2 className={styles.title}>{title}</h2>
       {content.map(({ text }) => (
-        <p key={kebabCase(text)}>{text}</p>
+        <p key={kebabCase(text)} dangerouslySetInnerHTML={{ __html: text }} />
       ))}
       {image && <GatsbyImage image={image} alt="" aria-hidden />}
     </article>
