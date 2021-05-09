@@ -34,6 +34,7 @@
     "gatsby-plugin-typescript": "^3.4.0",
     "lodash-es": "^4.17.21",
     "prettier": "2.2.1",
+    "react-markdown": "^6.0.2",
     "sass": "^1.32.12",
     "slick-carousel": "^1.8.1"
   },
