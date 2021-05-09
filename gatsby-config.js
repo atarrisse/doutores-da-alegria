@@ -22,11 +22,30 @@ module.exports = {
         name: "Balanço 2020 | Doutores da Alegria",
         short_name: "Balanço 2020",
         start_url: "/",
-        // background_color: "#663399",
-        // theme_color: "#663399",
-        // display: "minimal-ui",
-        icon: "static/favicon.ico", // This path is relative to the root of the site.
+        icons: [
+          {
+            src: `./static/favicon-16x16`,
+            sizes: `16x16`,
+            type: `image/png`,
+          },
+          {
+            src: `./static/favicon-32x32`,
+            sizes: `32x32`,
+            type: `image/png`,
+          },
+          {
+            src: `./static/favicon-144x144`,
+            sizes: `144x144`,
+            type: `image/png`,
+          },
+          {
+            src: `./static/favicon-180x180`,
+            sizes: `180x180`,
+            type: `image/png`,
+          },
+        ],
       },
     },
+    "gatsby-plugin-offline",
   ],
 }
