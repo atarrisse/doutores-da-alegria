@@ -1,12 +1,13 @@
 declare module "*.scss"
 
-declare enum COLORS {
-  PINK,
-  RED,
-  CYAN,
-  GREEN,
-  SALMON,
-  LILAC,
+export enum COLORS {
+  PINK = "rosa",
+  RED = "vermelho",
+  CYAN = "azul",
+  BLUE = "azul-escuro",
+  GREEN = "verde",
+  SALMON = "salmao",
+  PURPLE = "roxo",
 }
 
 export interface CONTENT_TEXT {

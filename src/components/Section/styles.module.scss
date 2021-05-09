@@ -1,8 +1,8 @@
 .article {
-  // border: 5px solid var(--themeColor);
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow: hidden;
   width: 100%;
 }
 
@@ -16,5 +16,9 @@
 
 .content {
   flex-grow: 1;
-  padding: 3rem;
+  padding: 3rem 3rem 0;
+}
+
+.text {
+  flex-grow: 1;
 }
