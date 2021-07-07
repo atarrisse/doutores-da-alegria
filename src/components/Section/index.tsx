@@ -9,19 +9,17 @@ import { CONTENT_SECTION } from "../../types.d.ts"
 
 type Props = CONTENT_SECTION
 
-const Section: React.FC<Props> = ({ color, content, image, title }) => {
+const Section: React.FC<Props> = ({ content, image, title }) => {
   return (
-    <article className={styles.article} data-theme={kebabCase(color)}>
-      <div className={styles.content}>
+    <div className={styles.section}>
         <h2 className={styles.title}>{title}</h2>
         <div className={styles.text}>
           {content.map(contnt => (
-            <ReactMarkdown>{contnt}</ReactMarkdown>
+            <ReactMarkdown key={kebabCase(contnt)}>{contnt}</ReactMarkdown>
           ))}
         </div>
-      </div>
       <GatsbyImage image={getImage(image)} alt="" aria-hidden />
-    </article>
+      </div>
   )
 }
 

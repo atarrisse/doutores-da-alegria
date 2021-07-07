@@ -1,4 +1,5 @@
 declare module "*.scss"
+declare module "*.module.scss"
 
 export enum COLORS {
   PINK = "rosa",

@@ -1,0 +1,22 @@
+.cover {
+  background-image: url("../../images/cover.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--vermelho);
+  font-family: "Dalegria Simples Basic";
+  font-size: 5rem;
+  line-height: 1em;
+  margin: 2.6rem 2.3rem 1rem auto;
+  text-align: right;
+}
+
+.logo {
+  align-self: end;
+}
+
