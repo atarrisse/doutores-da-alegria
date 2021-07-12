@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
@@ -16,7 +18,7 @@ body {
   color: var(--black);
   font-family: var(--font-vag-rounded);
   font-size: 1.7rem;
-  scroll-snap-type: y mandatory;
+  line-height: 1.6;
 }
 
 .main {

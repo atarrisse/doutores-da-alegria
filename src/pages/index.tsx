@@ -16,7 +16,7 @@ const getImages = () => {
     query {
       allFile(
         sort: { fields: name }
-        filter: { relativeDirectory: { eq: "rodape" } }
+        filter: { relativeDirectory: { eq: "slides" } }
       ) {
         edges {
           node {
@@ -56,9 +56,8 @@ const Index: React.FC = () => {
           const img = images[i]
           
           return (
-            <Slide key={kebabCase(item.title)} >
+            <Slide key={kebabCase(item.title)}>
               <Section
-                data-theme={kebabCase(item.color)}
                 image={img?.node?.childImageSharp?.gatsbyImageData}
                 {...item}
               />

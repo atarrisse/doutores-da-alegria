@@ -2,13 +2,15 @@ declare module "*.scss"
 declare module "*.module.scss"
 
 export enum COLORS {
-  PINK = "rosa",
-  RED = "vermelho",
-  CYAN = "azul",
-  BLUE = "azul-escuro",
-  GREEN = "verde",
-  SALMON = "salmao",
-  PURPLE = "roxo",
+  AMARELO = "amarelo",
+  AZUL = "azul",
+  AZUL_ESCURO = "azul-escuro",
+  ROSA = "rosa",
+  ROXO = "roxo",
+  SALMAO = "salmao",
+  VERDE = "verde",
+  VERMELHO = "vermelho",
+  PRETO = "preto",
 }
 
 export interface CONTENT_TEXT {

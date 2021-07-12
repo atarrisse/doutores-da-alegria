@@ -9,9 +9,9 @@ import { CONTENT_SECTION } from "../../types.d.ts"
 
 type Props = CONTENT_SECTION
 
-const Section: React.FC<Props> = ({ content, image, title }) => {
+const Section: React.FC<Props> = ({ content, image, title, color, ...others }) => {
   return (
-    <div className={styles.section}>
+    <div className={styles.section} style={{ "--theme-color": `var(--${kebabCase(color)})`}} {...others}>
         <h2 className={styles.title}>{title}</h2>
         <div className={styles.text}>
           {content.map(contnt => (

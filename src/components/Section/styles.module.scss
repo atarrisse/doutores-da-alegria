@@ -1,22 +1,21 @@
 .section {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template: min-content 1fr auto / 1fr;
 }
 
+.title,
+.text {
+  margin-left: 4.6rem;
+  margin-right: 4.6rem;
+}
 .title {
-  color: var(--themeColor);
+  color: var(--theme-color);
   font-family: var(--font-simples-circo);
-  font-size: 5rem;
-  line-height: calc(43 / 50);
-  margin: 0 0 2.4rem;
-}
-
-.content {
-  flex-grow: 1;
-  padding: 3rem 3rem 0;
+  font-size: 4.3rem;
+  margin-bottom: 2.6rem;
 }
 
 .text {
-  flex-grow: 1;
+  font-weight: 300;
 }

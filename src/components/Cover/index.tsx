@@ -39,8 +39,6 @@ const Cover: React.FC = () => {
           height={96}
         />
         <div className={styles.bg}>
-
-        {/* <Img fluid={image.file.childImageSharp.fluid} alt="Colagem, preto e branca, de fotos dos rostos das pessoas que fazem parte do Doutores da Alegria" /> */}
         </div>
       </div>
   )
