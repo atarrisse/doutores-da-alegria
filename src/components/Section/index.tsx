@@ -6,20 +6,21 @@ import kebabCase from "lodash-es/kebabCase"
 
 import * as styles from "./styles.module.scss"
 import { CONTENT_SECTION } from "../../types.d.ts"
+import { useEffect } from "react"
 
 type Props = CONTENT_SECTION
 
-const Section: React.FC<Props> = ({ content, image, title, color, ...others }) => {
+const Section: React.FC<Props> = ({ content, images, title, color, ...others }) => {
   return (
-    <div className={styles.section} style={{ "--theme-color": `var(--${kebabCase(color)})`}} {...others}>
-        <h2 className={styles.title}>{title}</h2>
-        <div className={styles.text}>
-          {content.map(contnt => (
-            <ReactMarkdown key={kebabCase(contnt)}>{contnt}</ReactMarkdown>
-          ))}
-        </div>
-      <GatsbyImage image={getImage(image)} alt="" aria-hidden />
+    <div className={styles.section} style={{ "--theme-color": `var(--${kebabCase(color)})` }} {...others}>
+      <h2 className={styles.title}>{title}</h2>
+      <div className={styles.text}>
+        {content.map(contnt => (
+          <ReactMarkdown key={kebabCase(contnt)}>{contnt}</ReactMarkdown>
+        ))}
       </div>
+      <GatsbyImage image={getImage(images.bg?.node.childImageSharp.gatsbyImageData)} alt="" aria-hidden />
+    </div>
   )
 }
 

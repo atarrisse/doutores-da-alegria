@@ -11,16 +11,35 @@ import Slide from "../components/Slide"
 import CONTENT from "../content"
 import { CONTENT_SECTION } from "../../types"
 
+
 const getImages = () => {
-  const { allFile } = useStaticQuery(graphql`
-    query {
-      allFile(
+  const images = useStaticQuery(graphql`
+     query {
+      bg: allFile(
         sort: { fields: name }
-        filter: { relativeDirectory: { eq: "slides" } }
-      ) {
+        filter: { relativeDirectory: { eq: "slides/bg" } }
+        ) {
         edges {
           node {
             childImageSharp {
+              original {
+                src
+              }
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            }
+          }
+        }
+      }
+      after: allFile(
+        sort: { fields: name }
+        filter: { relativeDirectory: { eq: "slides/after" } }
+        ) {
+        edges {
+          node {
+            childImageSharp {
+              original {
+                src
+              }
               gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
@@ -28,7 +47,7 @@ const getImages = () => {
       }
     }
   `)
-  return allFile.edges
+  return images
 }
 
 const Index: React.FC = () => {
@@ -53,12 +72,13 @@ const Index: React.FC = () => {
         </Slide>
 
         {SITE_CONTENT.map((item, i) => {
-          const img = images[i]
-          
+          const bg = images.bg.edges[i] || undefined;
+          const after = images.after.edges[i] || undefined;
+
           return (
             <Slide key={kebabCase(item.title)}>
               <Section
-                image={img?.node?.childImageSharp?.gatsbyImageData}
+                images={{ bg, after }}
                 {...item}
               />
             </Slide>
