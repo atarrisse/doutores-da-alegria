@@ -13,6 +13,15 @@ export enum COLORS {
   PRETO = "preto",
 }
 
+export enum TAMANHO_NUM {
+  GDE = "grande",
+  PEQ = "pequeno"
+}
+
+export enum CONTENT_TYPE {
+  NUM = "numbers"
+}
+
 export interface CONTENT_TEXT {
   tag: "a" | "p"
   text: string
