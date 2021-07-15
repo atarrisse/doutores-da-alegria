@@ -76,7 +76,7 @@ const Index: React.FC = () => {
           const after = images.after.edges[i] || undefined;
 
           return (
-            <Slide key={kebabCase(item.title)}>
+            <Slide key={kebabCase(item.title)} id={kebabCase(item.title)}>
               <Section
                 images={{ bg, after }}
                 {...item}
