@@ -17,12 +17,12 @@ html {
 body {
   color: var(--black);
   font-family: var(--font-vag-rounded);
-  font-size: 1.7rem;
-  line-height: 1.6;
+  font-size: 16px;
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+main {
+  // display: flex;
+  // flex-direction: column;
+  // flex-wrap: wrap;
+  font-size: 1.7rem;
 }
