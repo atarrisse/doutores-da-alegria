@@ -30,6 +30,10 @@
   src: url("VAGRoundedStd-Black.woff2") format("woff2"), url("VAGRoundedStd-Black.woff") format("woff");
 }
 
+:root {
+  --font-vag-rounded: "Vag Rounded Std", sans-serif;
+}
+
 .vag-rounded-100 {
   font-family: "Vag Rounded Std";
   font-weight: 100;

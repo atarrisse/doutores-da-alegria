@@ -4,12 +4,13 @@ import kebabCase from "lodash-es/kebabCase"
 import Slider from "react-slick"
 
 import Section from "../components/Section"
-import Cover from "../components/Cover"
+import Cover from "../components/Slides/Cover"
 import Slide from "../components/Slide"
 
 
 import CONTENT from "../content"
 import { CONTENT_SECTION } from "../../types"
+import Parceria from "../components/Slides/Parceria"
 
 
 const getImages = () => {
@@ -67,11 +68,11 @@ const Index: React.FC = () => {
   return (
     <main>
       <Slider {...settings}>
-        <Slide>
+        {/* <Slide>
           <Cover />
-        </Slide>
+        </Slide> */}
 
-        {SITE_CONTENT.map((item, i) => {
+        {/* {SITE_CONTENT.map((item, i) => {
           const bg = images.bg.edges[i] || undefined;
           const after = images.after.edges[i] || undefined;
 
@@ -83,7 +84,13 @@ const Index: React.FC = () => {
               />
             </Slide>
           )
-        })}
+        })} */}
+
+        {
+          <Slide>
+            <Parceria />
+          </Slide>
+        }
       </Slider>
     </main>
   )

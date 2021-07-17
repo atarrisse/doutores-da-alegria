@@ -10,16 +10,24 @@ import { useEffect } from "react"
 
 type Props = CONTENT_SECTION
 
-const Section: React.FC<Props> = ({ content, images, title, color, ...others }) => {
+const Section: React.FC<Props> = ({ children, content, images, title, color, ...others }) => {
   return (
     <div className={styles.section} style={{ "--theme-color": `var(--${kebabCase(color)})` }} {...others}>
-      <h2 className={styles.title}>{title}</h2>
-      <div className={styles.text}>
-        {content.map(contnt => (
-          <ReactMarkdown key={kebabCase(contnt)}>{contnt}</ReactMarkdown>
-        ))}
+      <div className={styles.content}>
+        <h2 className={styles.title}>{title}</h2>
+        {
+          children ? children :
+            <div className={styles.text}>
+              {content.map(contnt => (
+                <ReactMarkdown key={kebabCase(contnt)}>{contnt}</ReactMarkdown>
+              ))}
+            </div>
+        }
       </div>
-      <GatsbyImage image={getImage(images.bg?.node.childImageSharp.gatsbyImageData)} alt="" aria-hidden />
+      {
+        images &&
+        <GatsbyImage image={getImage(images.bg?.node.childImageSharp.gatsbyImageData)} alt="" aria-hidden />
+      }
     </div>
   )
 }
