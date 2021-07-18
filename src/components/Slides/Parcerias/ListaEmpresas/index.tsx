@@ -10,7 +10,6 @@ interface IProps extends IApoio {
 }
 
 const ListaEmpresas: React.FC<IProps> = ({ tipo, destaque, empresas, logos }) => {
-  if (tipo === "texto") console.log(empresas)
   return (
     <ul className={styles.listaEmpresas} >
       {
@@ -25,13 +24,13 @@ const ListaEmpresas: React.FC<IProps> = ({ tipo, destaque, empresas, logos }) =>
         !!logos &&
         tipo === EApoioDisplay.IMG &&
         empresas.map((empresa, i) => (
-          <li data-destaque={destaque} key={kebabCase(empresa.nome)}>
+          <li data-destaque={empresa.destaque || destaque} key={kebabCase(empresa.nome)}>
             {
               empresa.site
                 ? <a className="no-underline" target="_blank" rel="noopener noreferrer" href={empresa.site}>
-                  {logos && logos[i] && <GatsbyImage image={logos[i]} alt={empresa.nome} />}
+                  {logos[i] && <GatsbyImage image={logos[i].childImageSharp.gatsbyImageData} alt={empresa.nome} />}
                 </a>
-                : <>{logos && logos[i] && <GatsbyImage image={logos[i]} alt={empresa.nome} />}</>
+                : <>{logos[i] && <GatsbyImage image={logos[i].childImageSharp.gatsbyImageData} alt={empresa.nome} />}</>
             }
           </li>
         ))

@@ -1,17 +1,13 @@
-import * as React from "react"
+import React, { useEffect, useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import kebabCase from "lodash-es/kebabCase"
 import Slider from "react-slick"
 
-import Section from "../components/Section"
-import Cover from "../components/Slides/Cover"
 import Slide from "../components/Slide"
+import Parcerias from "../components/Slides/Parcerias"
 
 
 import CONTEUDO, { APOIO } from "../content"
 import { IConteudoSecao } from "../../types"
-import Parcerias from "../components/Slides/Parcerias"
-import { useEffect, useState } from "react"
 
 
 const Index: React.FC = () => {
@@ -70,7 +66,7 @@ const Index: React.FC = () => {
         {
           APOIO.map(apoio => (
             <Slide key={JSON.stringify(apoio)}>
-              <Parcerias apoio={apoio} logos={img?.parcerias} />
+              <Parcerias apoio={apoio} logos={img.parcerias} />
             </Slide>
           ))
         }
@@ -80,10 +76,20 @@ const Index: React.FC = () => {
 }
 
 const findImage = (images, path) => {
-  let imgArray = images
-    .find(img => img.edges[0].node.relativePath.includes(path))?.edges
-    .map((({ node: item }) => item))
-  return imgArray
+  const imgArray = images
+    .filter(img => img.edges[0].node.relativePath.includes(path));
+
+  if (imgArray.length === 1) return imgArray[0].edges.map(({ node }) => node)
+
+  const categorized = imgArray.reduce((acc, { edges }) => {
+    const category = edges[0].node.dir.split("/").pop();
+    acc = {
+      [category]: edges.map((({ node }) => node)),
+      ...acc,
+    }
+    return acc
+  }, {})
+  return categorized
 }
 
 const parseImages = rawImgs => {
@@ -108,7 +114,6 @@ const parseImages = rawImgs => {
   imagens.parcerias["parceiros-via-lei-de-incentivo-a-cultura"] = findImage(rawImgs, "parceiros-via-lei-de-incentivo-a-cultura")
   imagens.parcerias["parceiros-via-proac"] = findImage(rawImgs, "parceiros-via-proac")
 
-  console.log(imagens)
   return imagens
 }
 

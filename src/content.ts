@@ -608,7 +608,7 @@ export const APOIO: Array<IApoio> = [
           destaque: false,
           tipo: EApoioDisplay.IMG,
           empresas: [
-            { nome: "EATON", site: "https://www.eaton.com/br/pt-br.html" },
+            { nome: "EATON", site: "https://www.eaton.com/br/pt-br.html", destaque: true },
             { nome: "Premier Pet", site: "https://www.premierpet.com.br/" },
             { nome: "Tirolez", site: "https://www.tirolez.com.br/" },
           ]

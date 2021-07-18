@@ -49,5 +49,5 @@ export interface IApoio {
   titulo: String;
   destaque: boolean;
   tipo: EApoioDisplay;
-  empresas: IEmpresa
+  empresas: IEmpresa;
 }
