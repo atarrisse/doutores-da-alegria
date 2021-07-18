@@ -1,4 +1,4 @@
-a {
+a:not(.no-underline) {
   background: linear-gradient(to bottom, var(--black) 0%, var(--black) 100%);
   background-position: 0 100%;
   background-repeat: repeat-x;

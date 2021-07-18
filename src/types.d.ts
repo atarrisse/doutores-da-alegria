@@ -1,7 +1,7 @@
 declare module "*.scss"
 declare module "*.module.scss"
 
-export enum COLORS {
+export enum EColors {
   AMARELO = "amarelo",
   AZUL = "azul",
   AZUL_ESCURO = "azul-escuro",
@@ -13,23 +13,41 @@ export enum COLORS {
   PRETO = "preto",
 }
 
-export enum TAMANHO_NUM {
+export enum ENumeroTamanho {
   GDE = "grande",
   PEQ = "pequeno"
 }
 
-export enum CONTENT_TYPE {
+export enum ETipoConteudo {
+  TXT = "texto",
   NUM = "numbers"
 }
 
-export interface CONTENT_TEXT {
+export enum EApoioDisplay {
+  IMG = "imagem",
+  TXT = "texto"
+}
+
+export interface IConteudoTexto {
   tag: "a" | "p"
   text: string
 }
 
-export interface CONTENT_SECTION {
+export interface IConteudoSecao {
   title: string
   img?: string
   color: string
-  content: Array<CONTENT_TEXT>
+  content: Array<IConteudoTexto>
+}
+
+interface IEmpresa {
+  nome: String;
+  site?: String;
+}
+
+export interface IApoio {
+  titulo: String;
+  destaque: boolean;
+  tipo: EApoioDisplay;
+  empresas: IEmpresa
 }

@@ -4,7 +4,7 @@ import kebabCase from "lodash-es/kebabCase"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 
-import { COLORS } from "../../types.d.ts"
+import { EColors } from "../../types.d.ts"
 
 import * as styles from "./styles.module.scss"
 import { StaticImage } from "gatsby-plugin-image"
@@ -29,18 +29,18 @@ const Cover: React.FC = () => {
 
   return (
     <div className={styles.cover}>
-        <h1 className={styles.title}>Balanço<br />2020</h1>
-        <StaticImage
-          alt="Logo do Doutores da Alegria"
-          className={styles.logo}
-          layout="fixed"
-          placeholder="blurred"
-          src="../../images/logo.png"
-          height={96}
-        />
-        <div className={styles.bg}>
-        </div>
+      <h1 className={styles.title}>Balanço<br />2020</h1>
+      <StaticImage
+        alt="Logo do Doutores da Alegria"
+        className={styles.logo}
+        layout="fixed"
+        placeholder="blurred"
+        src="../../images/logo.png"
+        height={96}
+      />
+      <div className={styles.bg}>
       </div>
+    </div>
   )
 }
 

@@ -1,0 +1,23 @@
+.listaEmpresas {
+  color: var(--carbon);
+  list-style: none;
+  margin: 0 0 5rem;
+  padding: 0;
+
+  [data-tipo="imagem"] & {
+    display: grid;
+    display: subgrid;
+    grid-auto-flow: row;
+    gap: 3rem 0;
+    grid-template: auto / 1fr 1fr;
+    place-items: center;
+  }
+
+  [data-destaque="false"] {
+    padding: 0 3rem;
+  }
+  [data-destaque="true"] {
+    grid-column: 1 / span 2;
+    padding: 0 2rem;
+  }
+}

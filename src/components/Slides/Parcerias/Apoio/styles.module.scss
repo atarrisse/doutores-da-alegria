@@ -1,0 +1,14 @@
+.section {
+  &[data-tipo="imagem"] {
+    grid-column: 1 / span 2;
+  }
+}
+
+.tituloCategoria {
+  color: var(--theme-color);
+  font-weight: 700;
+  margin: 0 0 1.6rem;
+  text-align: center;
+  font-size: 2.2rem;
+  line-height: 1;
+}

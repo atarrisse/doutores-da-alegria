@@ -5,10 +5,10 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import kebabCase from "lodash-es/kebabCase"
 
 import * as styles from "./styles.module.scss"
-import { CONTENT_SECTION } from "../../types.d.ts"
+import { IConteudoSecao } from "../../types.d.ts"
 import { useEffect } from "react"
 
-type Props = CONTENT_SECTION
+type Props = IConteudoSecao
 
 const Section: React.FC<Props> = ({ children, content, images, title, color, ...others }) => {
   return (
