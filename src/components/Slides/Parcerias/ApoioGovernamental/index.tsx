@@ -1,24 +1,20 @@
-// If you don't want to use TypeScript you can delete this file!
 import * as React from "react"
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
-import * as styles from "./styles.module.scss"
+const getImgData = img => img.childImageSharp.gatsbyImageData
 
 
-const ApoioGovernamental = () => {
-
+const ApoioGovernamental = ({ logos, orgaos }) => {
   return (
     <>
       <ul>
-        <li>
-          <StaticImage
-            alt="Lei de incentivo à cultura"
-            title="Lei de incentivo à cultura"
-            placeholder="blurred"
-            src="../../../../images/patrocinadores/parceiros-governamentais/governamentais-1"
-          // height={96}
-          />
-        </li>
+        {
+          orgaos.map((orgao, i) => (
+            <li>
+              <GatsbyImage image={getImgData(logos[i])} alt={orgao.nome} />
+            </li>
+          ))
+        }
       </ul>
 
     </>

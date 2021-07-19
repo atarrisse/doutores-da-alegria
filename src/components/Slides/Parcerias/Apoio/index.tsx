@@ -10,17 +10,14 @@ import * as styles from "./styles.module.scss"
 const Apoio: React.FC<IApoio> = ({ parceria, governamental, logos }) => {
   const { tipo, categoria } = parceria
   let imgs = []
-  if (!!logos)
-    imgs = Array.isArray(logos) ? logos : logos[kebabCase(categoria)]
+  if (!!logos) {
+    imgs = Array.isArray(logos[1]) ? logos[1] : logos[1][kebabCase(categoria)]
+  }
 
   return (
     <section className={styles.section} data-tipo={tipo} key={JSON.stringify(parceria)}>
       <h4 className={styles.tituloCategoria}>{categoria}</h4>
-      {
-        governamental
-          ? <ApoioGovernamental />
-          : <ListaEmpresas {...parceria} logos={imgs} />
-      }
+      <ListaEmpresas {...parceria} logos={imgs} governamental={governamental} />
     </section>
   )
 }

@@ -9,9 +9,9 @@ interface IProps extends IApoio {
   logos: Array<any>
 }
 
-const ListaEmpresas: React.FC<IProps> = ({ tipo, destaque, empresas, logos }) => {
+const ListaEmpresas: React.FC<IProps> = ({ tipo, destaque, empresas, logos, governamental }) => {
   return (
-    <ul className={styles.listaEmpresas} >
+    <ul className={styles.listaEmpresas} data-governamental={governamental}>
       {
         tipo === EApoioDisplay.TXT &&
         empresas.map(empresa => (
@@ -28,9 +28,9 @@ const ListaEmpresas: React.FC<IProps> = ({ tipo, destaque, empresas, logos }) =>
             {
               empresa.site
                 ? <a className="no-underline" target="_blank" rel="noopener noreferrer" href={empresa.site}>
-                  {logos[i] && <GatsbyImage image={logos[i].childImageSharp.gatsbyImageData} alt={empresa.nome} />}
+                  {logos[i] && <GatsbyImage objectFit="contain" className={styles.img} image={logos[i].childImageSharp.gatsbyImageData} alt={empresa.nome} title={empresa.nome} />}
                 </a>
-                : <>{logos[i] && <GatsbyImage image={logos[i].childImageSharp.gatsbyImageData} alt={empresa.nome} />}</>
+                : <>{logos[i] && <GatsbyImage objectFit="contain" className={styles.img} image={logos[i].childImageSharp.gatsbyImageData} alt={empresa.nome} title={empresa.nome} />}</>
             }
           </li>
         ))

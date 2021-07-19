@@ -30,10 +30,10 @@ const Parcerias: React.FC<IProps> = ({ apoio, logos }) => {
                   parcerias.map((parceria) => {
                     return (
                       <Apoio
-                        governamental={titulo.includes("governamentais")}
+                        governamental={titulo.includes("Governamentais")}
                         key={JSON.stringify(parceria)}
                         parceria={parceria}
-                        logos={imgs && imgs[1]}
+                        logos={imgs}
                       />
                     )
                   })

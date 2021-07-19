@@ -644,58 +644,27 @@ export const APOIO: Array<IApoio> = [
       ]
     },
     {
-      titulo: "Parceiros Governamentais"
-    }
-    // {
-    //   titulo: "Parceiros Governamentais",
-    //   pasta: "governamentais",
-    //   parcerias: [
-    //     {
-    //       tipo: EApoioDisplay.IMG,
-    //       nome: "Prefeitura de Recife"
-    //     },
-    //     {
-    //       tipo: EApoioDisplay.IMG,
-    //       nome: "Secretaria de Cultura do Governo do Estado de Pernambuco"
-    //     },
-    //     {
-    //       tipo: EApoioDisplay.IMG,
-    //       nome: "Prefeitura de Rio de Janeiro"
-    //     },
-    //     {
-    //       tipo: EApoioDisplay.IMG,
-    //       nome: "Secretaria Municipal de Saúde do Rio de Janeiro"
-    //     },
-    //     {
-    //       tipo: EApoioDisplay.IMG,
-    //       nome: "Secretaria de Saúde do Governo do Estado do Rio de Janeiro"
-    //     },
-    //     {
-    //       tipo: EApoioDisplay.IMG,
-    //       nome: "Fundo Municipal dos Direitos da Criança e do Adolescente"
-    //     },
-    //     {
-    //       tipo: EApoioDisplay.IMG,
-    //       nome: "Conselho Municipal dos Direitos da Criança e do Adolescente de São Paulo"
-    //     },
-    //     {
-    //       tipo: EApoioDisplay.IMG,
-    //       nome: "Incentivo à cultura do Estado de São Paulo"
-    //     },
-    //     {
-    //       tipo: EApoioDisplay.IMG,
-    //       nome: "Secretaria Municipal de Direitos Humanos e Cidadania da Prefeitura da Cidade de São Paulo"
-    //     },
-    //     {
-    //       tipo: EApoioDisplay.IMG,
-    //       nome: "Secretaria da Cultura do Governo do Estado de São Paulo"
-    //     },
-    //     {
-    //       tipo: EApoioDisplay.IMG,
-    //       nome: "Secretaria Especial da Cultural do Ministério da Cidadania do Governo Federal"
-    //     },
-    //   ]
-    // }
+      titulo: "Parceiros Governamentais",
+      parcerias: [
+        {
+          tipo: EApoioDisplay.IMG,
+          empresas: [
+            { nome: "Lei de incentivo à Cultura" },
+            { nome: "Prefeitura da Cidade de Recife" },
+            { nome: "Secretaria de cultura do Governo do Estado de Pernambuco" },
+            { nome: "Prefeitura da Cidade do Rio de Janeiro" },
+            { nome: "Secretaria de Saúde da Prefeitura da Cidade do Rio de Janeiro" },
+            { nome: "Secretaria de Saúde do Governo do Estado do Rio de Janeiro" },
+            { nome: "Fundo Municipal dos Direitos da Criança e do Adolescente" },
+            { nome: "Conselho Municipal dos Direitos da Criança e do Adolescente de São Paulo" },
+            { nome: "Incentivo à Cultura do Estado de São Paulo" },
+            { nome: "Secretaria de Direitos Humanos e Cidadania da Prefeitura da Cidade de São Paulo" },
+            { nome: "Secretaria da Cultura do Governo do Estado de São Paulo" },
+            { nome: "Secretaria Especial da Cultura, Ministério da Cidadania, Governo Federal" },
+          ]
+        }
+      ]
+    },
   ],
   [
     {
