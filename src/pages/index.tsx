@@ -4,10 +4,11 @@ import Slider from "react-slick"
 
 import Slide from "../components/Slide"
 import Parcerias from "../components/Slides/Parcerias"
+import Equipe from "../components/Slides/Equipe"
 
 
-import CONTEUDO, { APOIO } from "../content"
-import { IConteudoSecao } from "../../types"
+import CONTEUDO, { APOIO, EQUIPE } from "../content"
+import { IConteudoSecao } from "../../types.d.ts"
 
 
 const Index: React.FC = () => {
@@ -62,6 +63,10 @@ const Index: React.FC = () => {
             </Slide>
           )
         })} */}
+
+        <Slide>
+          <Equipe />
+        </Slide>
 
         {
           APOIO.map(apoio => (
