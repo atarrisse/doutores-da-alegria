@@ -5,8 +5,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import kebabCase from "lodash-es/kebabCase"
 
 import * as styles from "./styles.module.scss"
-import { IConteudoSecao } from "../../types.d.ts"
-import { useEffect } from "react"
+import { IConteudoSecao, ETipoConteudo } from "../../types.d.ts"
+import NumberSection from "./NumberSection"
 
 type Props = IConteudoSecao
 
@@ -18,9 +18,13 @@ const Section: React.FC<Props> = ({ children, content, images, title, color, ...
         {
           children ? children :
             <div className={styles.text}>
-              {content.map(contnt => (
-                <ReactMarkdown key={kebabCase(contnt)}>{contnt}</ReactMarkdown>
-              ))}
+              {content.map(contnt => {
+                if (contnt.type === ETipoConteudo.NUM)
+                  return <NumberSection {...contnt} />
+                return (
+                  <ReactMarkdown key={kebabCase(contnt)}>{contnt}</ReactMarkdown>
+                )
+              })}
             </div>
         }
       </div>

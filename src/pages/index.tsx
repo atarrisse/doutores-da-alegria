@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Slider from "react-slick"
+import kebabCase from "lodash/kebabCase"
 
 import Slide from "../components/Slide"
+import Section from "../components/Section"
 import Parcerias from "../components/Slides/Parcerias"
 import Equipe from "../components/Slides/Equipe"
 
@@ -50,9 +52,9 @@ const Index: React.FC = () => {
           <Cover />
         </Slide> */}
 
-        {/* {SITE_CONTENT.map((item, i) => {
-          const bg = images.bg.edges[i] || undefined;
-          const after = images.after.edges[i] || undefined;
+        {SITE_CONTENT.map((item, i) => {
+          const bg = images?.bg?.edges[i];
+          const after = images?.after?.edges[i];
 
           return (
             <Slide key={kebabCase(item.title)} id={kebabCase(item.title)}>
@@ -62,7 +64,7 @@ const Index: React.FC = () => {
               />
             </Slide>
           )
-        })} */}
+        })}
 
         <Slide>
           <Equipe />
