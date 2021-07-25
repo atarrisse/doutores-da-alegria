@@ -2,6 +2,9 @@ import * as React from "react";
 import Section from "../../../Section";
 import { EColors } from "../../../../types.d.ts"
 import Legenda from "../Legenda";
+import * as styles from "./styles.module.scss"
+import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
+import { getColor } from "../../../../utils"
 
 
 interface IProps { }
@@ -96,8 +99,31 @@ const data = {
 }
 
 const AplicacaoRecursos = () => {
+  const allValues = Object.values(data).map(item => item).flat();
+
   return (
     <Section title="Aplicação dos Recursos" color={EColors.ROSA}>
+      <p>Período de janeiro a dezembro de 2020 </p>
+      <div className={styles.graph}>
+        <ResponsiveContainer>
+          <PieChart>
+            <Pie
+              data={allValues}
+              dataKey="value"
+              nameKey="name"
+              outerRadius={"100%"}
+              innerRadius={"70%"}
+              cx="50%"
+              cy="50%"
+              fill="#6b6a6d">
+              {allValues.map((entry) => (
+                <Cell key={JSON.stringify(entry)} fill={getColor(entry.color)} />
+              ))
+              }}
+            </Pie>
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
       {
         Object.entries(data).map(([key, value]) => {
           return (<React.Fragment key={JSON.stringify(value)}>

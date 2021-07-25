@@ -1,4 +1,5 @@
 import * as React from "react"
+import { getColor } from "../../../../utils"
 
 import * as styles from "./styles.module.scss"
 
@@ -9,8 +10,7 @@ const Legenda = ({ data }) => {
     <ul className={styles.lista}>
       {
         data?.map(item => {
-          const isHexColor = item.color.includes("#");
-          var style = { "--theme-color": isHexColor ? item.color : `var(--${item.color || "carbon"})` } as React.CSSProperties
+          var style = { "--theme-color": getColor(item.color) } as React.CSSProperties
           return (
             <li className={styles.legenda} key={JSON.stringify(item)} style={style}>
               <p className={styles.legendaValor}>{item.value}%</p>

@@ -32,7 +32,7 @@ const Equipe: React.FC<Props> = ({ data = EQUIPE }) => {
                     Object.entries(dpt.pessoas).map(([key, value]) => (
                       <React.Fragment key={JSON.stringify(value)}>
                         {value.map(person => (
-                          <li className={styles.nome}>
+                          <li className={styles.nome} key={JSON.stringify(person)}>
                             {person.nome} <small className={styles.nota}>{person.nota}</small>
                           </li>))}
                         {key && key !== "" && <li className={styles.cargo}>{key}</li>}
