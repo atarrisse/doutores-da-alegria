@@ -14,7 +14,7 @@ const NumberSection: React.FC<IProps> = ({ label, numbers }) => {
       <div className={styles.numberGrid} data-presencial={label.includes("presenciais")}>
         {numbers.map(item => {
           return (
-            <div className={styles.numberElement} data-size={item.size}>
+            <div key={JSON.stringify(item)} className={styles.numberElement} data-size={item.size}>
               <p className={styles.numberLabel}>{item.label}</p>
               <p className={styles.number}>{item.value.toLocaleString("pt-br")}</p>
             </div>

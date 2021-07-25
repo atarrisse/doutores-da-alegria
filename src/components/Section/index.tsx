@@ -16,7 +16,7 @@ const Section: React.FC<Props> = ({ children, content, images, title, color, ...
       <div className={styles.content}>
         <h2 className={styles.title}>{title}</h2>
         {
-          children ? children :
+          children ? children : content &&
             <div className={styles.text}>
               {content.map(contnt => {
                 if (contnt.type === ETipoConteudo.NUM)

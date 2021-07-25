@@ -4,9 +4,11 @@ import Slider from "react-slick"
 import kebabCase from "lodash/kebabCase"
 
 import Slide from "../components/Slide"
-import Section from "../components/Section"
 import Parcerias from "../components/Slides/Parcerias"
 import Equipe from "../components/Slides/Equipe"
+import RecursosArrecadados from "../components/Slides/Graficos/RecursosArrecadados"
+import OrigemRecursos from "../components/Slides/Graficos/OrigemRecursos"
+import AplicacaoRecursos from "../components/Slides/Graficos/AplicacaoRecursos"
 
 
 import CONTEUDO, { APOIO, EQUIPE } from "../content"
@@ -52,19 +54,30 @@ const Index: React.FC = () => {
           <Cover />
         </Slide> */}
 
-        {SITE_CONTENT.map((item, i) => {
+        {/* {SITE_CONTENT.map((item, i) => {
           const bg = images?.bg?.edges[i];
           const after = images?.after?.edges[i];
 
           return (
             <Slide key={kebabCase(item.title)} id={kebabCase(item.title)}>
               <Section
+                key={JSON.stringify(item)}
                 images={{ bg, after }}
                 {...item}
               />
             </Slide>
           )
-        })}
+        })} */}
+
+        <Slide>
+          <RecursosArrecadados />
+        </Slide>
+        <Slide>
+          <OrigemRecursos />
+        </Slide>
+        <Slide>
+          <AplicacaoRecursos />
+        </Slide>
 
         <Slide>
           <Equipe />
