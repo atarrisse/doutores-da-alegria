@@ -2,6 +2,7 @@ import * as React from "react";
 import Section from "../../../Section";
 import { EColors } from "../../../../types.d.ts"
 import { ResponsiveContainer, BarChart, Bar, Cell } from "recharts";
+import Legenda from "../Legenda";
 import * as styles from "./styles.module.scss"
 
 
@@ -85,19 +86,7 @@ const OrigemRecursos = () => {
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <ul className={styles.origens}>
-        {
-          data.map(recurso => {
-            var style = { "--theme-color": `var(--${recurso.color || "carbon"})` } as React.CSSProperties
-            return (
-              <li className={styles.legenda} key={JSON.stringify(recurso)} style={style}>
-                <p className={styles.legendaValor}>{recurso.value}%</p>
-                <p className={styles.legendaOrigem}>{recurso.name}</p>
-              </li>
-            )
-          })
-        }
-      </ul>
+      <Legenda data={data} />
     </Section >
   )
 }

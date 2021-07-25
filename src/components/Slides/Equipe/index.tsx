@@ -17,7 +17,7 @@ const Equipe: React.FC<Props> = ({ data = EQUIPE }) => {
         <p>Doutores da Alegria conta com profissionais de várias formações. Essa multidisciplinaridade promove uma permanente e abrangente reflexão que envolve saúde, cultura e assistência social.</p>
         {
           data.map((dpt) => (
-            <>
+            <React.Fragment key={JSON.stringify(dpt)}>
               <Accordion
                 title={
                   <>
@@ -42,7 +42,7 @@ const Equipe: React.FC<Props> = ({ data = EQUIPE }) => {
                 </ul>
 
               </Accordion>
-            </>
+            </React.Fragment>
           ))
         }
       </>

@@ -1,0 +1,28 @@
+.lista {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.legenda {
+  color: var(--theme-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.legendaValor {
+  align-self: start;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-bottom: 0.5rem solid var(--theme-color);
+  margin: 0;
+}
+
+.legendaNome {
+  color: var(--carbon);
+  font-size: 1.7rem;
+  line-height: 1;
+  margin: 0.5 0 0;
+}
