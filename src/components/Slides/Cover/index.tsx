@@ -35,7 +35,7 @@ const Cover: React.FC = () => {
         className={styles.logo}
         layout="fixed"
         placeholder="blurred"
-        src="../../images/logo.png"
+        src="../../../images/logo.png"
         height={96}
       />
       <div className={styles.bg}>

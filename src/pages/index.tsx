@@ -9,10 +9,13 @@ import Equipe from "../components/Slides/Equipe"
 import RecursosArrecadados from "../components/Slides/Graficos/RecursosArrecadados"
 import OrigemRecursos from "../components/Slides/Graficos/OrigemRecursos"
 import AplicacaoRecursos from "../components/Slides/Graficos/AplicacaoRecursos"
+import Cover from "../components/Slides/Cover"
 
 
-import CONTEUDO, { APOIO, EQUIPE } from "../content"
+import CONTEUDO, { APOIO } from "../content"
 import { IConteudoSecao } from "../../types.d.ts"
+import Section from "../components/Section"
+import { parseImages } from "../utils"
 
 
 const Index: React.FC = () => {
@@ -22,7 +25,7 @@ const Index: React.FC = () => {
     slides: {
       after: [],
       bg: [],
-      links: []
+      people: []
     },
     parcerias: {
       "parceiros-governamentais": [],
@@ -33,6 +36,7 @@ const Index: React.FC = () => {
 
   useEffect(() => {
     if (!images) return;
+    console.log(parseImages(images.group))
     setImg(parseImages(images.group))
   }, [images])
 
@@ -50,24 +54,26 @@ const Index: React.FC = () => {
   return (
     <main>
       <Slider {...config}>
-        {/* <Slide>
+        <Slide>
           <Cover />
-        </Slide> */}
+        </Slide>
 
-        {/* {SITE_CONTENT.map((item, i) => {
-          const bg = images?.bg?.edges[i];
-          const after = images?.after?.edges[i];
+        {SITE_CONTENT.map((item, i) => {
+          const bg = img?.slides?.bg[i];
+          const people = img?.slides?.people.filter(person => {
+            return person.base.includes(`slide_${(i + 1)}_`)
+          });
 
           return (
             <Slide key={kebabCase(item.title)} id={kebabCase(item.title)}>
               <Section
                 key={JSON.stringify(item)}
-                images={{ bg, after }}
+                images={{ bg, people }}
                 {...item}
               />
             </Slide>
           )
-        })} */}
+        })}
 
         <Slide>
           <RecursosArrecadados />
@@ -95,47 +101,7 @@ const Index: React.FC = () => {
   )
 }
 
-const findImage = (images, path) => {
-  const imgArray = images
-    .filter(img => img.edges[0].node.relativePath.includes(path));
 
-  if (imgArray.length === 1) return imgArray[0].edges.map(({ node }) => node)
-
-  const categorized = imgArray.reduce((acc, { edges }) => {
-    const category = edges[0].node.dir.split("/").pop();
-    acc = {
-      [category]: edges.map((({ node }) => node)),
-      ...acc,
-    }
-    return acc
-  }, {})
-  return categorized
-}
-
-const parseImages = rawImgs => {
-  let imagens = {
-    slides: {
-      after: [],
-      bg: [],
-      links: []
-    },
-    parcerias: {
-      "parceiros-governamentais": [],
-      "parceiros-via-lei-de-incentivo-a-cultura": [],
-      "parceiros-via-proac": []
-    }
-  }
-
-  imagens.slides.after = findImage(rawImgs, "after")
-  imagens.slides.bg = findImage(rawImgs, "bg")
-  imagens.slides.links = findImage(rawImgs, "links")
-
-  imagens.parcerias["parceiros-governamentais"] = findImage(rawImgs, "parceiros-governamentais")
-  imagens.parcerias["parceiros-via-lei-de-incentivo-a-cultura"] = findImage(rawImgs, "parceiros-via-lei-de-incentivo-a-cultura")
-  imagens.parcerias["parceiros-via-proac"] = findImage(rawImgs, "parceiros-via-proac")
-
-  return imagens
-}
 
 const queryImagens = () => {
   return useStaticQuery(graphql`

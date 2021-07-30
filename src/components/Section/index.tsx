@@ -11,6 +11,9 @@ import NumberSection from "./NumberSection"
 type Props = IConteudoSecao
 
 const Section: React.FC<Props> = ({ children, content, images, title, color, ...others }) => {
+
+  console.log(images?.people);
+
   return (
     <div className={styles.section} style={{ "--theme-color": `var(--${kebabCase(color)})` }} {...others}>
       <div className={styles.content}>
@@ -20,9 +23,9 @@ const Section: React.FC<Props> = ({ children, content, images, title, color, ...
             <div className={styles.text}>
               {content.map(contnt => {
                 if (contnt.type === ETipoConteudo.NUM)
-                  return <NumberSection {...contnt} />
+                  return <NumberSection key={JSON.stringify(contnt)} {...contnt} />
                 return (
-                  <ReactMarkdown key={kebabCase(contnt)}>{contnt}</ReactMarkdown>
+                  <ReactMarkdown key={JSON.stringify(contnt)}>{contnt}</ReactMarkdown>
                 )
               })}
             </div>
@@ -30,7 +33,17 @@ const Section: React.FC<Props> = ({ children, content, images, title, color, ...
       </div>
       {
         images &&
-        <GatsbyImage image={getImage(images.bg?.node.childImageSharp.gatsbyImageData)} alt="" aria-hidden />
+        <div className={styles.rodape}>
+          <GatsbyImage
+            alt=""
+            aria-hidden
+            className={styles.bg}
+            image={getImage(images.bg?.childImageSharp?.gatsbyImageData)}
+          />
+          {images.people &&
+            images.people.map(person => <GatsbyImage image={getImage(person.childImageSharp?.gatsbyImageData)} alt="" />)
+          }
+        </div>
       }
     </div>
   )

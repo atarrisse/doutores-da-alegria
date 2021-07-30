@@ -54,7 +54,7 @@ const data = [
 const LabelValue = (data) => {
   const { x, y, offset, value } = data
   return <text
-    font-size="1.2rem"
+    fontSize="1.2rem"
     fill={`var(--${data.color || "carbon"})`}
     x={x}
     y={y - offset}
