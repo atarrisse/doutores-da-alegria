@@ -14,7 +14,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     title: "Sobre viver!",
     color: EColors.VERMELHO,
     content: [
-      "Foram 300 dias absolutamente diferentes de tudo o que já vivemos em quase 30 anos. Mais do que contar como a organização se reinventou em 2020, este balanço procura mostrar como Doutores da Alegria sobreviveu em um ano em que o [inimaginável se tornou realidade.]()",
+      "Foram 300 dias absolutamente diferentes de tudo o que já vivemos em quase 30 anos. Mais do que contar como a organização se reinventou em 2020, este balanço procura mostrar como Doutores da Alegria sobreviveu em um ano em que o [inimaginável se tornou realidade.](https://doutoresdaalegria.org.br/blog/o-inimaginavel-para-doutores-da-alegria-se-tornou-realidade/)",
       "Os textos, fotos e vídeos desta edição respondem a uma pergunta: de que maneira uma associação de palhaços que fazem intervenções presenciais dentro de hospitais públicos se mostrou relevante em uma pandemia?",
     ],
   },
@@ -32,89 +32,102 @@ const CONTEUDO: Array<IConteudoSecao> = [
     content: [
       "### Antes do coronavírus",
       "O vírus parecia distante das terras brasileiras em janeiro. Doutores da Alegria dava as boas-vindas ao novo ano com a pretensão de realizar um festival de música e arte. Seria um encontro de famílias com diversas atividades coletivas em um parque paulistano.",
-      "No Recife, o elenco pernambucano apresentou o espetáculo Cenas Curtas ao festival Janeiro de Grandes Espetáculos. [Foram duas sessões]() no Teatro Marco Camarotti, no Sesc Santo Amaro.",
-      "Uma [edição única e gratuita]() do espetáculo Conta Causos tomou o Teatro Eva Herz, em São Paulo, com relatos dos besteirologistas durante as visitas a hospitais.",
+      "No Recife, o elenco pernambucano apresentou o espetáculo Cenas Curtas ao festival Janeiro de Grandes Espetáculos. [Foram duas sessões](https://doutoresdaalegria.org.br/blog/cenas-curtas-e-apresentado-dia-19-em-festival-no-recife/) no Teatro Marco Camarotti, no Sesc Santo Amaro.",
+      "Uma [edição única e gratuita](https://doutoresdaalegria.org.br/blog/conta-causos-em-apresentacao-unica-e-gratuita-em-marco/) do espetáculo Conta Causos tomou o Teatro Eva Herz, em São Paulo, com relatos dos besteirologistas durante as visitas a hospitais.",
     ],
     extra: [
       "#### De onde vêm os narizes?",
-      "[Veja o nascimento deles neste vídeo belíssimo. Linkar o vídeo.]"
+      "[Veja o nascimento deles neste vídeo belíssimo.](https://www.youtube.com/watch?v=-tMLVINFL1Q)"
     ]
   },
   {
     title: "De outros Carnavais",
     color: EColors.AZUL,
     content: [
-      "No palco do samba, Doutores da Alegria [foi homenageada pela Escola de Samba Dragões da Real](). No dia 21 de fevereiro, a agremiação do Grupo Especial levou o enVERMELHOo “A Revolução do Riso: A Arte de Subverter O Mundo Pelo Divino Poder da Alegria” para o Sambódromo do Anhembi, em São Paulo.",
+      "No palco do samba, Doutores da Alegria [foi homenageada pela Escola de Samba Dragões da Real](https://doutoresdaalegria.org.br/blog/escola-de-samba-dragoes-da-real-homenageia-doutores-da-alegria-em-2020/). No dia 21 de fevereiro, a agremiação do Grupo Especial levou o enVERMELHOo “A Revolução do Riso: A Arte de Subverter O Mundo Pelo Divino Poder da Alegria” para o Sambódromo do Anhembi, em São Paulo.",
       "O carro alegórico capitaneado por Wellington Nogueira, nosso fundador, desfilou com parte da equipe e dos artistas cantando a plenos pulmões. Emoção única!",
-      "Também colocamos nossos blocos na avenida. A 17ª edição do Bloco do Miolo Mole arrastou foliões pelo Recife Antigo no dia 20 de fevereiro. E dezenove hospitais públicos de São Paulo, Recife e Rio de Janeiro [receberam bloquinhos]() compostos por palhaços e artistas convidados.",
+      "Também colocamos nossos blocos na avenida. A 17ª edição do Bloco do Miolo Mole arrastou foliões pelo Recife Antigo no dia 20 de fevereiro. E dezenove hospitais públicos de São Paulo, Recife e Rio de Janeiro [receberam bloquinhos](https://doutoresdaalegria.org.br/blog/doutores-da-alegria-leva-blocos-de-carnaval-a-dezenove-hospitais-publicos/) compostos por palhaços e artistas convidados.",
     ],
   },
   {
     title: "Paramos",
     color: EColors.VERMELHO,
     content: [
-      "No palco do samba, Doutores da Alegria [foi homenageada pela Escola de Samba Dragões da Real](). No dia 21 de fevereiro, a agremiação do Grupo Especial levou o enVERMELHOo “A Revolução do Riso: A Arte de Subverter O Mundo Pelo Divino Poder da Alegria” para o Sambódromo do Anhembi, em São Paulo.",
-      "O carro alegórico capitaneado por Wellington Nogueira, nosso fundador, desfilou com parte da equipe e dos artistas cantando a plenos pulmões. Emoção única!",
-      "Também colocamos nossos blocos na avenida. A 17ª edição do Bloco do Miolo Mole arrastou foliões pelo Recife Antigo no dia 20 de fevereiro. E dezenove hospitais públicos de São Paulo, Recife e Rio de Janeiro [receberam bloquinhos]() compostos por palhaços e artistas convidados.",
+      "No dia 11 de março, a Organização Mundial da Saúde (OMS) anunciou que o planeta vivia uma pandemia com o novo coronavírus. No dia 17, Doutores da Alegria [suspendeu parte de suas atividades](https://doutoresdaalegria.org.br/blog/doutores-da-alegria-suspende-parte-de-suas-atividades/).",
+      "Com os palhaços em quarentena, o desafio proposto era: Como entrar sem entrar nos hospitais?",
+      {
+        type: ETipoConteudo.QUOTE,
+        autor: "Anderson Spada, palhaço em São Paulo",
+        text: "Devíamos nos resguardar em casa? Proteger, de um lado, crianças hospitalizadas e profissionais de saúde e, de outro, nossos familiares? Mas se fazemos parte da equipe profissional do hospital, não deveríamos estar juntos neste momento?",
+      },
     ],
   },
   {
     title: "Delivery Besteirológico",
     color: EColors.ROSA,
+    links: ["https://www.youtube.com/watch?v=V8iO1RxMkYM", "https://www.youtube.com/watch?v=EMc5WjnYuWc"],
     content: [
       "Um comitê composto por diversos profissionais da organização, com apoio da diretoria, criou a série de vídeos Delivery Besteirológico. A ideia era aproximar os palhaços, em distanciamento social, das crianças hospitalizadas, profissionais de saúde e público nas VERMELHOes sociais.",
-      "Era dessa maneira que [entraríamos nos hospitais]() enquanto o vírus não desse trégua.",
+      "Era dessa maneira que [entraríamos nos hospitais](https://www.youtube.com/watch?v=V8iO1RxMkYM) enquanto o vírus não desse trégua.",
     ],
     extra: [
       "#### Ué",
-      "Para que arte em tempos de pandemia? A gente explica neste vídeo."
+      "Para que arte em tempos de pandemia? A gente explica [neste vídeo](https://doutoresdaalegria.org.br/blog/para-que-arte-em-tempos-de-pandemia/)."
     ]
   },
   {
     title: "Troca de Guarda",
     color: EColors.SALMAO,
     content: [
-      "Em abril, a associação Doutores da Alegria passou a contar [com uma nova diretoria estatutária para o biênio 2020-2022](). Quatro dos diretores se mantiveram no cargo: Luis Vieira da Rocha como diretor-presidente, Daiane Carina como diretora de Relações Institucionais, Ronaldo Aguiar como diretor Artístico e Simone Pimentel como diretora Financeira. A nova diretora de Formação, Lourdes Atié, substituiu Thaïs Ferrara.",
+      "Em abril, a associação Doutores da Alegria passou a contar [com uma nova diretoria estatutária para o biênio 2020-2022](https://doutoresdaalegria.org.br/blog/associacao-doutores-da-alegria-tem-nova-diretoria-estatutaria-ate-2022/). Quatro dos diretores se mantiveram no cargo: Luis Vieira da Rocha como diretor-presidente, Daiane Carina como diretora de Relações Institucionais, Ronaldo Aguiar como diretor Artístico e Simone Pimentel como diretora Financeira. A nova diretora de Formação, Lourdes Atié, substituiu Thaïs Ferrara.",
     ],
   },
   {
     title: "Tem uma pessoa no hospital que...",
     color: EColors.ROXO,
+    links: ["https://www.youtube.com/watch?v=vYaqGTlhSEA", "https://www.youtube.com/watch?v=vYaqGTlhSEA"],
     content: [
       "... Cuida da música que toca dentro da gente. Que cuida do trânsito, organiza as macas. Que mexe com a gente por dentro. Que faz a gente pegar no sono. Que ajuda a respirar melhor...",
       "Em um dos momentos mais críticos da pandemia, em maio de 2020, Doutores da Alegria dedicou um vídeo aos profissionais de saúde. Prepara o lencinho...",
     ],
     extra: [
       "#### Homenagem",
-      "As super-heroínas usam jaleco e podemos provar. Veja no texto."
+      "[As super-heroínas usam jaleco e podemos provar. Veja no texto.](https://doutoresdaalegria.org.br/blog/as-super-heroinas-usam-jaleco/)"
     ]
   },
   {
     title: "O digital e o novo normal",
     color: EColors.VERMELHO,
+    links: ["https://www.youtube.com/watch?v=KITNK_Yh77M&t=1168s", "https://www.youtube.com/watch?v=ZLzdbl2Uu-o"],
     content: [
       "Utilizando o potencial das VERMELHOes sociais para chegar ao público, a associação inaugurou uma série de conteúdos digitais em junho.",
       "### Consultório Besteirológico",
       "Transmitido ao vivo pelo canal dos Doutores no YouTube e pela página do Facebook, o consultório fictício trouxe um papo ao vivo entre palhaços –quase sempre um de São Paulo e um de Recife– e o público.",
       "A ação exigiu adaptação a ferramentas online, direção artística e ensaios entre as duplas, que muitas vezes nunca tinham atuado juntas.",
     ],
-  },
-  {
-    title: "O digital e o novo normal",
-    color: EColors.VERMELHO,
-    content: [
-      "### Websérie de São João e de Natal",
-      "O cortejo seguido de apresentação que celebra São João todos os anos nos hospitais também se adaptou à pandemia. A websérie “A peleja do noivo que tentou enganar a noiva na festa de São João ou vice e versa” foi ao ar nos canais da organização em cinco capítulos, gravados a distância e com participação de Dudu do Acordeon.",
-      "Em dezembro, o cortejo de Natal seguiu o modelo de sucesso junino. Surgiu a websérie Auto de Natal. [Tem até bastidores.]()",
-    ],
     extra: [
       "#### Ao vivo",
-      "A Pororoca começou a live em um pula-pula, a Svenza passou aspirador de pó na casa e o Cavaco fez com o Gonda uma improvisação musical ao vivo"
+      "[A Pororoca começou a live em um pula-pula, a Svenza passou aspirador de pó na casa e o Cavaco fez com o Gonda uma improvisação musical ao vivo](https://www.youtube.com/watch?v=dI4wh6ZrEck&list=PLbGYBqIX5vabZ0KXMs0YNsUWvcN1emSAN&index=4)"
     ]
   },
   {
     title: "O digital e o novo normal",
     color: EColors.VERMELHO,
+    links: ["https://www.youtube.com/watch?v=TN3o_8WJySA&list=PLbGYBqIX5vabZXqd_6PMZ9Uo-5V74DzyQ", "https://www.youtube.com/watch?v=rExGtym0xyk&list=PLbGYBqIX5vabBTAH3uQG_nW5wyFlO1fS8&index=2"],
+    content: [
+      "### Websérie de São João e de Natal",
+      "O cortejo seguido de apresentação que celebra São João todos os anos nos hospitais também se adaptou à pandemia. A websérie “A peleja do noivo que tentou enganar a noiva na festa de São João ou vice e versa” foi ao ar nos canais da organização em cinco capítulos, gravados a distância e com participação de Dudu do Acordeon.",
+      "Em dezembro, o cortejo de Natal seguiu o modelo de sucesso junino. Surgiu a websérie Auto de Natal. [Tem até bastidores.](https://www.youtube.com/watch?v=DjB9IL_Oakg&)",
+    ],
+    extra: [
+      "#### Ao vivo",
+      "[A Pororoca começou a live em um pula-pula, a Svenza passou aspirador de pó na casa e o Cavaco fez com o Gonda uma improvisação musical ao vivo](https://www.youtube.com/watch?v=rExGtym0xyk&list=PLbGYBqIX5vabBTAH3uQG_nW5wyFlO1fS8&index=2)"
+    ]
+  },
+  {
+    title: "O digital e o novo normal",
+    color: EColors.VERMELHO,
+    links: ["https://www.youtube.com/watch?v=BFDA5CFUtIA&list=PLbGYBqIX5vaZIlh0Rg207ygr3UElbHpb4&index=20", "https://www.youtube.com/watch?v=RkSw8kN5tZ4&list=PLbGYBqIX5vaZIlh0Rg207ygr3UElbHpb4&index=8"],
     content: [
       "### Plateias Hospitalares Delivery",
       "Companhias participantes do projeto no Rio de Janeiro foram convidadas a produzir vídeos com adaptações de seus espetáculos. As apresentações que circulariam pelos hospitais foram veiculadas nas VERMELHOes da organização durante o ano.",
@@ -123,6 +136,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
   {
     title: "O digital e o novo normal",
     color: EColors.VERMELHO,
+    links: ["https://www.youtube.com/watch?v=A2s8FXhFo14&list=PLbGYBqIX5vaZ2A6ykvs2q0FccSuIMqt3n", "https://www.youtube.com/watch?v=bYEek-HbRRk"],
     content: [
       "### Escola em Obras",
       "A reorganização dos programas da Escola Doutores da Alegria para o formato virtual ganhou uma série. Cada um dos cinco episódios trouxe questões debatidas pelos formadores da escola: sua pedagogia, a quem se destinam os cursos e os sistemas de formação.",
@@ -134,18 +148,20 @@ const CONTEUDO: Array<IConteudoSecao> = [
   {
     title: "O digital e o novo normal",
     color: EColors.VERMELHO,
+    links: ["https://www.youtube.com/watch?v=4fvLuLx1zeE&list=PLbGYBqIX5vabke0Aq7Y8st1bzj4q3Gy0H", "https://www.youtube.com/watch?v=4fvLuLx1zeE&list=PLbGYBqIX5vabke0Aq7Y8st1bzj4q3Gy0H"],
     content: [
       "### Doutores em Casa",
       "O boletim quinzenal fez a prestação de contas da associação durante o isolamento social. Apresentado por integrantes da equipe técnica, os oito episódios contaram em primeira mão os projetos desenvolvidos durante o ano.",
     ],
     extra: [
       "#### Au-Au:",
-      "Uma das diretoras precisou ir até a sede gravar. É que ela mora em um sítio e seus cachorros queriam participar com latidos."
+      "[Uma das diretoras precisou ir até a sede gravar. É que ela mora em um sítio e seus cachorros queriam participar com latidos.](https://www.youtube.com/watch?v=4fvLuLx1zeE&list=PLbGYBqIX5vabke0Aq7Y8st1bzj4q3Gy0H)"
     ]
   },
   {
     title: "O digital e o novo normal",
     color: EColors.VERMELHO,
+    links: ["https://www.youtube.com/watch?v=8bBwVCvnL4s", "https://www.youtube.com/watch?v=3R48OMPJ9EM"],
     content: [
       "### Conta Causos",
       "O espetáculo com artistas contando histórias vivenciadas nos hospitais foi apresentado virtualmente pela primeira vez em agosto. Com duração de uma hora, trazia até seis palhaços na tela que, ao final, respondiam perguntas do público.",
@@ -159,9 +175,10 @@ const CONTEUDO: Array<IConteudoSecao> = [
   {
     title: "Festival Miolo Mole",
     color: EColors.AZUL,
+    links: ["https://www.youtube.com/watch?v=6q7WssQx-P4", "https://www.youtube.com/watch?v=6q7WssQx-P4"],
     content: [
       "### A live das lives",
-      "O Festival Miolo Mole, que seria oferecido à cidade de São Paulo em 2020, foi adaptado para o formato digital, em uma live com sete horas de duração e atividades dedicadas a toda a família. Foi ao vivo, no dia 26 de julho, o dia dos avós.",
+      "O Festival Miolo Mole, que seria oferecido à cidade de São Paulo em 2020, foi [adaptado para o formato digital](https://doutoresdaalegria.org.br/blog/festival-miolo-mole-confira-a-programacao-completa/), em uma live com sete horas de duração e atividades dedicadas a toda a família. Foi ao vivo, no dia 26 de julho, o dia dos avós.",
       {
         type: ETipoConteudo.QUOTE,
         autor: "Ronaldo Aguiar, diretor artístico",
@@ -177,7 +194,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     title: "Entrada pelo... Tablet!",
     color: EColors.VERDE,
     content: [
-      "Com cenário incerto ainda no meio do ano, Doutores da Alegria ofereceu a possibilidade de realizar visitas dos palhaços virtualmente nas pediatrias. Em agosto de 2020, o projeto piloto Plantão Besteirológico teve início no Hospital M’boi Mirim (SP) e, algum tempo depois, [foi se ampliando para todos os hospitais parceiros]() da organização em São Paulo e Recife.",
+      "Com cenário incerto ainda no meio do ano, Doutores da Alegria ofereceu a possibilidade de realizar visitas dos palhaços virtualmente nas pediatrias. Em agosto de 2020, o projeto piloto Plantão Besteirológico teve início no Hospital M’boi Mirim (SP) e, algum tempo depois, [foi se ampliando para todos os hospitais parceiros](https://doutoresdaalegria.org.br/blog/doutores-da-alegria-leva-palhacos-a-hospitais-publicos-por-meio-de-tablets/) da organização em São Paulo e Recife.",
       "Foram mais de 4.600 visitas virtuais no ano passado, com uso de tablets e apoio de profissionais de saúde.",
       {
         type: ETipoConteudo.QUOTE,
@@ -189,6 +206,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
   {
     title: "Os nossos 29 anos",
     color: EColors.AZUL,
+    links: ["https://www.youtube.com/watch?v=4CudlN3XKUc", "https://www.youtube.com/watch?v=4CudlN3XKUc"],
     content: [
       "Assim como os aniversários de todos os brasileiros em 2020, a comemoração dos 29 anos da Doutores da Alegria foi a distância. Duas lives celebraram o marco, uma delas ancorada por Wellington Nogueira.",
       "Em um vídeo coletivo, colaboradores, artistas e o fundador Wellington Nogueira contaram pedacinhos de suas histórias com a organização.",
@@ -198,6 +216,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
   {
     title: "Uma nova rede de palhaços",
     color: EColors.ROSA,
+    links: ["https://www.youtube.com/watch?v=p183OuhoH6Q", "https://www.youtube.com/watch?v=p183OuhoH6Q"],
     content: [
       " O Encontro Nacional de Palhaços que Atuam em Hospitais aconteceu em 7 e 8 de novembro. Houve mesas de debate com convidados, oficinas, rodas de conversa e um espetáculo. Tudo gratuito e por transmissão ao vivo, em função da pandemia.",
       "Teve até um simbólico reencontro entre o ator que criou e sistematizou a atividade de palhaço em hospital no mundo — o americano Michael Christensen do The Clown Care Unit — e o ator que trouxe esse trabalho para o Brasil — Wellington Nogueira, fundador da Doutores da Alegria.",
@@ -205,7 +224,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
     extra: [
       "#### O Grande Encontro",
-      "[Bate-papo entre os mestres Wellington Nogueira e Michael Christensen. Assista!]()"
+      "[Bate-papo entre os mestres Wellington Nogueira e Michael Christensen. Assista!](https://www.youtube.com/watch?v=p183OuhoH6Q)"
     ]
   },
   {
@@ -220,7 +239,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     title: "Boca laaaarga",
     color: EColors.VERMELHO,
     content: [
-      "Na última semana no ano [lançamos o quinto volume da série Boca Larga](), em edição virtual e gratuita. O livro compila textos de diversos colaboradores da associação, entre artistas e profissionais multidisciplinares, sobre os impactos do novo coronavírus nos ofícios de cada área.",
+      "Na última semana no ano [lançamos o quinto volume da série Boca Larga](https://doutoresdaalegria.org.br/blog/doutores-da-alegria-lanca-boca-larga-tempos-de-pandemia-em-edicao-virtual/), em edição virtual e gratuita. O livro compila textos de diversos colaboradores da associação, entre artistas e profissionais multidisciplinares, sobre os impactos do novo coronavírus nos ofícios de cada área.",
       {
         type: ETipoConteudo.QUOTE,
         autor: "Lourdes Atié",
@@ -283,6 +302,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
   },
   {
     title: "Impacto Socal",
+    links: ["https://www.youtube.com/watch?v=QEu1pwU_MTE&t=785s", "https://www.youtube.com/watch?v=UlKJsCet284&list=PLbGYBqIX5vaYy6znwWtYPO9F50gF1CCDl&index=10"],
     color: EColors.AZUL,
     content: [
       "A partir de abril, iniciamos uma série de vídeos e lives para diminuir a distância dos palhaços nos hospitais e manter a programação prevista para o ano em todas as áreas.",
@@ -334,8 +354,9 @@ const CONTEUDO: Array<IConteudoSecao> = [
   {
     title: "Impacto Socal",
     color: EColors.AZUL,
+    links: ["https://www.youtube.com/watch?v=TN3o_8WJySA&list=PLbGYBqIX5vabZXqd_6PMZ9Uo-5V74DzyQ", "https://www.youtube.com/watch?v=NBkJs_K3Jbc&list=PLbGYBqIX5vabBTAH3uQG_nW5wyFlO1fS8"],
     content: [
-      "#### Projetos digitais:",
+      "### Projetos digitais:",
       {
         label: "Websérie São João",
         type: ETipoConteudo.NUM,
@@ -404,8 +425,9 @@ const CONTEUDO: Array<IConteudoSecao> = [
   {
     title: "Impacto Socal",
     color: EColors.AZUL,
+    links: ["https://www.youtube.com/watch?v=TxCdS_vhT-A&t=2598s", "https://www.youtube.com/watch?v=dKx6S0S8g2M&t=36s"],
     content: [
-      "#### Projetos digitais:",
+      "### Projetos digitais:",
       {
         label: "Delivery Platéias Hospitalares",
         type: ETipoConteudo.NUM,
@@ -520,6 +542,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
   {
     title: "Prestação de contas e impacto social",
     color: EColors.ROXO,
+    links: ["https://www.youtube.com/watch?v=8SDUI9-46PQ&t=10s", "https://www.youtube.com/watch?v=8SDUI9-46PQ&t=10s"],
     content: [
       "Neste ano, os números de impacto da organização estão bastante relacionados às atividades virtuais. Sem as visitas aos hospitais e as pessoas nas plateias e nos eventos da sede, o público se envolveu com Doutores da Alegria nas telas de celulares e tablets.",
       "### Reputação e credibilidade",
