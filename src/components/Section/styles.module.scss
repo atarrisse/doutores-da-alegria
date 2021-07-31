@@ -32,10 +32,11 @@
 
 .rodape {
   align-self: end;
-  position: relative;
+  display: flex;
+  // position: relative;
 
-  > *:not(.bg) {
-    position: absolute;
-    bottom: 0;
-  }
+  // > *:not(.bg) {
+  //   position: absolute;
+  //   bottom: 0;
+  // }
 }

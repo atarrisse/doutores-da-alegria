@@ -13,9 +13,9 @@ import Cover from "../components/Slides/Cover"
 
 
 import CONTEUDO, { APOIO } from "../content"
-import { IConteudoSecao } from "../../types.d.ts"
 import Section from "../components/Section"
 import { parseImages } from "../utils"
+import { IConteudoSecao } from "../../types.d.ts"
 
 
 const Index: React.FC = () => {
@@ -36,7 +36,7 @@ const Index: React.FC = () => {
 
   useEffect(() => {
     if (!images) return;
-    console.log(parseImages(images.group))
+    // console.log(parseImages(images.group))
     setImg(parseImages(images.group))
   }, [images])
 
@@ -49,6 +49,7 @@ const Index: React.FC = () => {
     slidesToScroll: 1,
     speed: 500,
     swipeToSlide: true,
+    // initialSlide: 17
   }
 
   return (
@@ -68,7 +69,7 @@ const Index: React.FC = () => {
             <Slide key={kebabCase(item.title)} id={kebabCase(item.title)}>
               <Section
                 key={JSON.stringify(item)}
-                images={{ bg, people }}
+                images={{ bg }}
                 {...item}
               />
             </Slide>

@@ -162,8 +162,11 @@ const CONTEUDO: Array<IConteudoSecao> = [
     content: [
       "### A live das lives",
       "O Festival Miolo Mole, que seria oferecido à cidade de São Paulo em 2020, foi adaptado para o formato digital, em uma live com sete horas de duração e atividades dedicadas a toda a família. Foi ao vivo, no dia 26 de julho, o dia dos avós.",
-      "> Realizar um festival em plena pandemia foi um passo ousado, mas também é isso que nos faz uma instituição potente e que abraça os desafios que surgem com muita leveza.",
-      "> > Ronaldo Aguiar, diretor artístico",
+      {
+        type: ETipoConteudo.QUOTE,
+        autor: "Ronaldo Aguiar, diretor artístico",
+        text: "Realizar um festival em plena pandemia foi um passo ousado, mas também é isso que nos faz uma instituição potente e que abraça os desafios que surgem com muita leveza.",
+      },
       "Com intenção de arrecadar doações para a causa, Doutores da Alegria convidou artistas como Toquinho, Beatles para Crianças e Palavra Cantada, que envolveram o público com sua arte. Os artistas palhaços conduziram o festival, que foi veiculado nos canais da associação e na TV Claro.",
       "### Parceiros do Festival",
       "# incluir imagem"
@@ -176,8 +179,11 @@ const CONTEUDO: Array<IConteudoSecao> = [
     content: [
       "Com cenário incerto ainda no meio do ano, Doutores da Alegria ofereceu a possibilidade de realizar visitas dos palhaços virtualmente nas pediatrias. Em agosto de 2020, o projeto piloto Plantão Besteirológico teve início no Hospital M’boi Mirim (SP) e, algum tempo depois, [foi se ampliando para todos os hospitais parceiros]() da organização em São Paulo e Recife.",
       "Foram mais de 4.600 visitas virtuais no ano passado, com uso de tablets e apoio de profissionais de saúde.",
-      "> Em um tempo tão louco, o contato com o outro é essencial para a saúde e a sanidade.",
-      "> > Val Pires"
+      {
+        type: ETipoConteudo.QUOTE,
+        autor: "Val Pires",
+        text: "Em um tempo tão louco, o contato com o outro é essencial para a saúde e a sanidade.",
+      },
     ],
   },
   {
@@ -215,8 +221,11 @@ const CONTEUDO: Array<IConteudoSecao> = [
     color: EColors.VERMELHO,
     content: [
       "Na última semana no ano [lançamos o quinto volume da série Boca Larga](), em edição virtual e gratuita. O livro compila textos de diversos colaboradores da associação, entre artistas e profissionais multidisciplinares, sobre os impactos do novo coronavírus nos ofícios de cada área.",
-      "> A ideia foi abraçada por muitos que, corajosamente, expuseram como se sentem, aprendem e desfrutam, buscando caminhos para viver em tempos tão difíceis",
-      "> > Lourdes Atié",
+      {
+        type: ETipoConteudo.QUOTE,
+        autor: "Lourdes Atié",
+        text: "A ideia foi abraçada por muitos que, corajosamente, expuseram como se sentem, aprendem e desfrutam, buscando caminhos para viver em tempos tão difíceis.",
+      },
     ],
   },
   {

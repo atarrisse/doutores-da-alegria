@@ -7,12 +7,11 @@ import kebabCase from "lodash-es/kebabCase"
 import * as styles from "./styles.module.scss"
 import { IConteudoSecao, ETipoConteudo } from "../../types.d.ts"
 import NumberSection from "./NumberSection"
+import Quote from "../Quote"
 
 type Props = IConteudoSecao
 
 const Section: React.FC<Props> = ({ children, content, images, title, color, ...others }) => {
-
-  console.log(images?.people);
 
   return (
     <div className={styles.section} style={{ "--theme-color": `var(--${kebabCase(color)})` }} {...others}>
@@ -21,11 +20,14 @@ const Section: React.FC<Props> = ({ children, content, images, title, color, ...
         {
           children ? children : content &&
             <div className={styles.text}>
-              {content.map(contnt => {
-                if (contnt.type === ETipoConteudo.NUM)
-                  return <NumberSection key={JSON.stringify(contnt)} {...contnt} />
+              {content.map(ctnt => {
+                if (ctnt.type === ETipoConteudo.NUM)
+                  return <NumberSection key={JSON.stringify(ctnt)} {...ctnt} />
+                if (ctnt.type === ETipoConteudo.QUOTE) {
+                  return <Quote autor={ctnt.autor}>{ctnt.text}</Quote>
+                }
                 return (
-                  <ReactMarkdown key={JSON.stringify(contnt)}>{contnt}</ReactMarkdown>
+                  <ReactMarkdown key={JSON.stringify(ctnt)}>{ctnt}</ReactMarkdown>
                 )
               })}
             </div>
