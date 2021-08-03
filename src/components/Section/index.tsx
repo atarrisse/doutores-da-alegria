@@ -27,7 +27,12 @@ const Section: React.FC<Props> = ({ children, content, images, title, color, ...
                   return <Quote autor={ctnt.autor}>{ctnt.text}</Quote>
                 }
                 return (
-                  <ReactMarkdown key={JSON.stringify(ctnt)}>{ctnt}</ReactMarkdown>
+                  <ReactMarkdown
+                    key={JSON.stringify(ctnt)}
+                    components={{
+                      a: ({ node, ...props }) => <a target="_blank" rel="noopener noreferrer" {...props} />
+                    }}
+                  >{ctnt}</ReactMarkdown>
                 )
               })}
             </div>
