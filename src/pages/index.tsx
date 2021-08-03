@@ -33,7 +33,6 @@ const Index: React.FC = () => {
 
   useEffect(() => {
     if (!images) return;
-    // console.log(parseImages(images.group))
     setImg(parseImages(images.group))
   }, [images])
 

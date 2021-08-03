@@ -564,7 +564,11 @@ const CONTEUDO: Array<IConteudoSecao> = [
         type: ETipoConteudo.REC_ARRECADADOS
       },
       "Nossas contas são auditadas anualmente por auditorias independentes. Em 2020, a Singolare Consultoria e Auditoria realizou este trabalho.",
-      "<small>* Em 2016, o evento Gala Doutores da Alegria mobilizou empresas e pessoas, gerando recursospela venda de convites, cotas de patrocínio e leilão. Os recursos foram utilizados na produção do próprio evento e seu superávit foi integralmente aplicado nos projetos da associação.</small>"
+      {
+        type: ETipoConteudo.HTML,
+        source: "<small>* Em 2016, o evento Gala Doutores da Alegria mobilizou empresas e pessoas, gerando recursospela venda de convites, cotas de patrocínio e leilão. Os recursos foram utilizados na produção do próprio evento e seu superávit foi integralmente aplicado nos projetos da associação.</small>"
+      }
+
     ]
   },
   {
@@ -579,11 +583,21 @@ const CONTEUDO: Array<IConteudoSecao> = [
   },
   {
     title: "Aplicação dos Recursos",
-    color: EColors.AZUL_ESCURO,
+    color: EColors.ROSA,
     content: [
       "Período de janeiro a dezembro de 2020",
       {
-        type: ETipoConteudo.REC_ORIGEM
+        type: ETipoConteudo.REC_APLICACAO
+      },
+    ]
+  },
+  {
+    title: "A Equipe",
+    color: EColors.VERMELHO,
+    content: [
+      "Doutores da Alegria conta com profissionais de várias formações. Essa multidisciplinaridade promove uma permanente e abrangente reflexão que envolve saúde, cultura e assistência social.",
+      {
+        type: ETipoConteudo.EQUIPE
       },
     ]
   }

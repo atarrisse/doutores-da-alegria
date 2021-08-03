@@ -3,7 +3,6 @@ import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "./styles.module.scss";
 
 const GallerySection = (data) => {
-  console.log("GallerySection", data)
   return (
     <div className={styles.wrapper}>
       <ul className={styles.gallery}>

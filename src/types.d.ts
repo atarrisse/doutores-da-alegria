@@ -23,9 +23,11 @@ export enum ETipoConteudo {
   NUM = "numbers",
   QUOTE = "quote",
   GALERIA = "galeria",
+  EQUIPE = "equipe",
   REC_ARRECADADOS = "recursos-arrecadados",
   REC_ORIGEM = "origem-dos-recursos",
-  REC_APLICACAO = "aplicacao-dos-recursos"
+  REC_APLICACAO = "aplicacao-dos-recursos",
+  HTML = "html"
 }
 
 export enum EApoioDisplay {

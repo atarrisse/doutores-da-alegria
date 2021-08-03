@@ -8,9 +8,11 @@ import { IConteudoSecao, ETipoConteudo } from "../../types.d.ts"
 import NumberSection from "./NumberSection"
 import QuoteSection from "./QuoteSection"
 import GallerySection from "./GallerySection"
+import Equipe from "./Equipe"
 import RecursosArrecadados from "./GraphsSection/RecursosArrecadados"
 import OrigemRecursos from "./GraphsSection/OrigemRecursos"
 import AplicacaoRecursos from "./GraphsSection/AplicacaoRecursos"
+
 
 import * as styles from "./styles.module.scss"
 
@@ -30,8 +32,9 @@ const Section: React.FC<Props> = ({ children, content, images, title, color, ...
                 if ((typeof ctnt === 'string' || ctnt instanceof String)) {
                   return <ReactMarkdown
                     key={JSON.stringify(ctnt)}
+
                     components={{
-                      a: ({ node, ...props }) => <a target="_blank" rel="noopener noreferrer" {...props} />
+                      a: ({ node, ...props }) => <a target="_blank" rel="noopener noreferrer" {...props} />,
                     }}
                   >{ctnt}</ReactMarkdown>
                 }
@@ -49,6 +52,10 @@ const Section: React.FC<Props> = ({ children, content, images, title, color, ...
                     return <OrigemRecursos />
                   case ETipoConteudo.REC_APLICACAO:
                     return <AplicacaoRecursos />
+                  case ETipoConteudo.EQUIPE:
+                    return <Equipe />
+                  case ETipoConteudo.HTML:
+                    return <div dangerouslySetInnerHTML={{ "__html": ctnt.source }}></div>
                   default:
                     return <></>
                 }
