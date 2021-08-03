@@ -6,9 +6,6 @@ import kebabCase from "lodash/kebabCase"
 import Slide from "../components/Slide"
 import Parcerias from "../components/Slides/Parcerias"
 import Equipe from "../components/Slides/Equipe"
-import RecursosArrecadados from "../components/Slides/Graficos/RecursosArrecadados"
-import OrigemRecursos from "../components/Slides/Graficos/OrigemRecursos"
-import AplicacaoRecursos from "../components/Slides/Graficos/AplicacaoRecursos"
 import Cover from "../components/Slides/Cover"
 
 
@@ -49,7 +46,7 @@ const Index: React.FC = () => {
     slidesToScroll: 1,
     speed: 500,
     swipeToSlide: true,
-    initialSlide: 16
+    initialSlide: 28
   }
 
   return (
@@ -76,19 +73,6 @@ const Index: React.FC = () => {
           )
         })}
 
-        <Slide>
-          <RecursosArrecadados />
-        </Slide>
-        <Slide>
-          <OrigemRecursos />
-        </Slide>
-        <Slide>
-          <AplicacaoRecursos />
-        </Slide>
-
-        <Slide>
-          <Equipe />
-        </Slide>
 
         {
           APOIO.map(apoio => (

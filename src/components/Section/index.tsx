@@ -8,6 +8,9 @@ import { IConteudoSecao, ETipoConteudo } from "../../types.d.ts"
 import NumberSection from "./NumberSection"
 import QuoteSection from "./QuoteSection"
 import GallerySection from "./GallerySection"
+import RecursosArrecadados from "./GraphsSection/RecursosArrecadados"
+import OrigemRecursos from "./GraphsSection/OrigemRecursos"
+import AplicacaoRecursos from "./GraphsSection/AplicacaoRecursos"
 
 import * as styles from "./styles.module.scss"
 
@@ -40,6 +43,12 @@ const Section: React.FC<Props> = ({ children, content, images, title, color, ...
                     return <QuoteSection autor={ctnt.autor}>{ctnt.text}</QuoteSection>
                   case ETipoConteudo.PARTNERS:
                     return <GallerySection content={ctnt} />
+                  case ETipoConteudo.REC_ARRECADADOS:
+                    return <RecursosArrecadados />
+                  case ETipoConteudo.REC_ORIGEM:
+                    return <OrigemRecursos />
+                  case ETipoConteudo.REC_APLICACAO:
+                    return <AplicacaoRecursos />
                   default:
                     return <></>
                 }

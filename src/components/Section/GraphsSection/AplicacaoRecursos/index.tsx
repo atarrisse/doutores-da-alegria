@@ -1,5 +1,5 @@
 import * as React from "react";
-import Section from "../../../Section";
+import Section from "../..";
 import { EColors } from "../../../../types.d.ts"
 import Legenda from "../Legenda";
 import * as styles from "./styles.module.scss"
@@ -102,8 +102,7 @@ const AplicacaoRecursos = () => {
   const allValues = Object.values(data).map(item => item).flat();
 
   return (
-    <Section title="Aplicação dos Recursos" color={EColors.ROSA}>
-      <p>Período de janeiro a dezembro de 2020 </p>
+    <>
       <div className={styles.graph}>
         <ResponsiveContainer>
           <PieChart>
@@ -132,7 +131,7 @@ const AplicacaoRecursos = () => {
           </React.Fragment>)
         })
       }
-    </Section>
+    </>
   )
 }
 

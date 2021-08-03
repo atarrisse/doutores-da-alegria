@@ -554,6 +554,38 @@ const CONTEUDO: Array<IConteudoSecao> = [
       "#### Reputação e credibilidade",
       "[https://www.youtube.com/watch?v=8SDUI9-46PQ](https://www.youtube.com/watch?v=8SDUI9-46PQ)"
     ]
+  },
+  {
+    title: "Recursos Arrecadados",
+    color: EColors.VERDE,
+    content: [
+      "Em mil reais, inclusive resultados de aplicações financeiras",
+      {
+        type: ETipoConteudo.REC_ARRECADADOS
+      },
+      "Nossas contas são auditadas anualmente por auditorias independentes. Em 2020, a Singolare Consultoria e Auditoria realizou este trabalho.",
+      "<small>* Em 2016, o evento Gala Doutores da Alegria mobilizou empresas e pessoas, gerando recursospela venda de convites, cotas de patrocínio e leilão. Os recursos foram utilizados na produção do próprio evento e seu superávit foi integralmente aplicado nos projetos da associação.</small>"
+    ]
+  },
+  {
+    title: "Origem dos Recursos",
+    color: EColors.AZUL_ESCURO,
+    content: [
+      "Período de janeiro a dezembro de 2020",
+      {
+        type: ETipoConteudo.REC_ORIGEM
+      },
+    ]
+  },
+  {
+    title: "Aplicação dos Recursos",
+    color: EColors.AZUL_ESCURO,
+    content: [
+      "Período de janeiro a dezembro de 2020",
+      {
+        type: ETipoConteudo.REC_ORIGEM
+      },
+    ]
   }
 ]
 

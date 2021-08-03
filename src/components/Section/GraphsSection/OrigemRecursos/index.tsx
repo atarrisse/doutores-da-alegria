@@ -64,8 +64,7 @@ const LabelValue = (data) => {
 }
 const OrigemRecursos = () => {
   return (
-    <Section title="Origem dos Recursos" color={EColors.AZUL_ESCURO}>
-      <p>Período de janeiro a dezembro de 2020</p>
+    <>
       <div className={styles.graph}>
         <ResponsiveContainer>
           <BarChart
@@ -87,7 +86,7 @@ const OrigemRecursos = () => {
         </ResponsiveContainer>
       </div>
       <Legenda data={data} />
-    </Section >
+    </>
   )
 }
 
