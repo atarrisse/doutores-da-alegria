@@ -21,7 +21,8 @@ export enum ENumeroTamanho {
 export enum ETipoConteudo {
   TXT = "texto",
   NUM = "numbers",
-  QUOTE = "quote"
+  QUOTE = "quote",
+  GALERIA = "galeria",
 }
 
 export enum EApoioDisplay {

@@ -186,7 +186,9 @@ const CONTEUDO: Array<IConteudoSecao> = [
       },
       "Com intenção de arrecadar doações para a causa, Doutores da Alegria convidou artistas como Toquinho, Beatles para Crianças e Palavra Cantada, que envolveram o público com sua arte. Os artistas palhaços conduziram o festival, que foi veiculado nos canais da associação e na TV Claro.",
       "### Parceiros do Festival",
-      "# incluir imagem"
+      {
+        type: ETipoConteudo.PARTNERS,
+      }
     ],
     extra: []
   },

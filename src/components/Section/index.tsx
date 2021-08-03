@@ -4,10 +4,12 @@ import ReactMarkdown from "react-markdown"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import kebabCase from "lodash-es/kebabCase"
 
-import * as styles from "./styles.module.scss"
 import { IConteudoSecao, ETipoConteudo } from "../../types.d.ts"
 import NumberSection from "./NumberSection"
-import Quote from "../Quote"
+import QuoteSection from "./QuoteSection"
+import GallerySection from "./GallerySection"
+
+import * as styles from "./styles.module.scss"
 
 type Props = IConteudoSecao
 
@@ -21,19 +23,26 @@ const Section: React.FC<Props> = ({ children, content, images, title, color, ...
           children ? children : content &&
             <div className={styles.text}>
               {content.map(ctnt => {
-                if (ctnt.type === ETipoConteudo.NUM)
-                  return <NumberSection key={JSON.stringify(ctnt)} {...ctnt} />
-                if (ctnt.type === ETipoConteudo.QUOTE) {
-                  return <Quote autor={ctnt.autor}>{ctnt.text}</Quote>
-                }
-                return (
-                  <ReactMarkdown
+
+                if ((typeof ctnt === 'string' || ctnt instanceof String)) {
+                  return <ReactMarkdown
                     key={JSON.stringify(ctnt)}
                     components={{
                       a: ({ node, ...props }) => <a target="_blank" rel="noopener noreferrer" {...props} />
                     }}
                   >{ctnt}</ReactMarkdown>
-                )
+                }
+
+                switch (ctnt.type) {
+                  case ETipoConteudo.NUM:
+                    return <NumberSection key={JSON.stringify(ctnt)} {...ctnt} />
+                  case ETipoConteudo.QUOTE:
+                    return <QuoteSection autor={ctnt.autor}>{ctnt.text}</QuoteSection>
+                  case ETipoConteudo.PARTNERS:
+                    return <GallerySection content={ctnt} />
+                  default:
+                    return <></>
+                }
               })}
             </div>
         }
