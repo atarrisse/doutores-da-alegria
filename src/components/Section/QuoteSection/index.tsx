@@ -2,7 +2,7 @@ import * as React from "react";
 
 import * as styles from "./styles.module.scss";
 
-const Quote = ({ autor, children }) => {
+const QuoteSection = ({ autor, children }) => {
   return (
     <figure className={styles.figure}>
       <blockquote className={styles.blockquote}>
@@ -15,4 +15,4 @@ const Quote = ({ autor, children }) => {
   )
 }
 
-export default Quote;
+export default QuoteSection;
