@@ -1,6 +1,7 @@
 .extra {
   background-color: var(--theme-color);
   border-radius: 3rem;
+  border: 0;
   padding: 3rem;
   width: 75%;
   position: absolute;
@@ -8,7 +9,12 @@
   left: 50%;
   transform: translate(-50%, -60%);
   text-align: center;
+  word-break: break-word;
   z-index: 100;
+
+  & *:global(.gatsby-image-wrapper) {
+    margin-bottom: -3rem;
+  }
 }
 
 .overlay {

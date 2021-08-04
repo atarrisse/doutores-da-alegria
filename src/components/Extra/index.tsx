@@ -1,20 +1,20 @@
 import * as React from "react"
-import { useEffect } from "react"
-import ReactMarkdown from "react-markdown"
 import Content from "../Content"
 import * as styles from "./styles.module.scss"
+import { image as imageClass } from "../Section/ImageSection/styles.module.scss"
 
 type Props = {
+  isActive: boolean;
   content: any[];
   handleClick: () => void;
 }
 
-const Extra: React.FC<Props> = ({ content, handleClick }) => {
+const Extra: React.FC<Props> = ({ isActive, content, handleClick }) => {
   if (!content) return;
 
   return (
     <div className={styles.overlay}>
-      <div className={styles.extra}>
+      <dialog className={styles.extra} open={isActive}>
         <button
           className={styles.button}
           aria-label="Fechar curiosidade"
@@ -22,7 +22,7 @@ const Extra: React.FC<Props> = ({ content, handleClick }) => {
           X
         </button>
         <Content content={content} />
-      </div>
+      </dialog>
     </div>
   )
 }

@@ -29,7 +29,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
     extra: [{
       type: ETipoConteudo.IMG,
-      path: "/slides/extras/02.png"
+      filename: "extras-02.png"
     }]
   },
   {
@@ -158,7 +158,12 @@ const CONTEUDO: Array<IConteudoSecao> = [
       "### Ciclo de Palestras",
       "As lives temáticas propostas pela Escola trouxeram profissionais da associação em debate com convidados. Entre os assuntos abordados, a importância do brincar, saúde mental em tempos de pandemia, arte e acessibilidade e humor na crise.",
     ],
-    extra: []
+    extra: [
+      {
+        type: ETipoConteudo.IMG,
+        filename: "extras-12.png"
+      }
+    ]
   },
   {
     id: "12",
@@ -208,7 +213,10 @@ const CONTEUDO: Array<IConteudoSecao> = [
         type: ETipoConteudo.PARTNERS,
       }
     ],
-    extra: []
+    extra: [{
+      type: ETipoConteudo.IMG,
+      filename: "extras-15.png"
+    }]
   },
   {
     id: "15",
@@ -223,6 +231,12 @@ const CONTEUDO: Array<IConteudoSecao> = [
         text: "Em um tempo tão louco, o contato com o outro é essencial para a saúde e a sanidade.",
       },
     ],
+    extra: [
+      {
+        type: ETipoConteudo.IMG,
+        filename: "extras-16.png"
+      }
+    ]
   },
   {
     id: "16",
