@@ -2,6 +2,12 @@
   min-height: 100vh;
   display: grid;
   grid-template: min-content auto / 100%;
+  position: relative;
+
+  &[data-extra="true"] {
+    overflow: hidden;
+    background: red;
+  }
 }
 
 .title {
@@ -10,19 +16,6 @@
   font-size: 4.3rem;
   line-height: 1;
   margin-bottom: 2.6rem;
-}
-
-.text {
-  font-weight: 300;
-
-  > p {
-    &:first-child {
-      margin-top: 0;
-    }
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
 }
 
 .content {
@@ -34,10 +27,4 @@
   align-self: end;
   display: flex;
   margin-top: 5rem;
-  // position: relative;
-
-  // > *:not(.bg) {
-  //   position: absolute;
-  //   bottom: 0;
-  // }
 }

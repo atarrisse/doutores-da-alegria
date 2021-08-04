@@ -1,7 +1,12 @@
 .article {
   height: 100vh;
   overflow: hidden auto;
+  position: relative;
   width: 100%;
+
+  &[data-extra="true"] {
+    overflow: hidden;
+  }
 }
 
 .content {

@@ -2,6 +2,7 @@ import { ENumeroTamanho, EColors, IConteudoSecao, ETipoConteudo, EApoioDisplay, 
 
 const CONTEUDO: Array<IConteudoSecao> = [
   {
+    id: "00",
     title: "Oi!",
     color: EColors.ROSA,
     content: [
@@ -11,6 +12,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
   },
   {
+    id: "01",
     title: "Sobre viver!",
     color: EColors.VERMELHO,
     content: [
@@ -19,14 +21,19 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
   },
   {
+    id: "02",
     title: "Spoiler",
     color: EColors.AZUL,
     content: [
       "Sem querer estragar a surpresa do que vem pela frente, podemos dizer que, diante dos impactos do coronavírus na sociedade e, principalmente, no sistema público de saúde, Doutores da Alegria criou uma série de ações virtuais para seguir oferecendo arte como antídoto potente para profissionais de saúde e crianças hospitalizadas.",
     ],
-    extra: [""]
+    extra: [{
+      type: ETipoConteudo.IMG,
+      path: "/slides/extras/02.png"
+    }]
   },
   {
+    id: "03",
     title: "A.C",
     color: EColors.VERDE,
     content: [
@@ -37,10 +44,11 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
     extra: [
       "#### De onde vêm os narizes?",
-      "[Veja o nascimento deles neste vídeo belíssimo.](https://www.youtube.com/watch?v=-tMLVINFL1Q)"
+      "[**Veja o nascimento deles neste vídeo belíssimo.**](https://www.youtube.com/watch?v=-tMLVINFL1Q)"
     ]
   },
   {
+    id: "04",
     title: "De outros Carnavais",
     color: EColors.AZUL,
     content: [
@@ -63,6 +71,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
   },
   {
+    id: "05",
     title: "Delivery Besteirológico",
     color: EColors.ROSA,
     links: ["https://www.youtube.com/watch?v=V8iO1RxMkYM", "https://www.youtube.com/watch?v=EMc5WjnYuWc"],
@@ -76,6 +85,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "06",
     title: "Troca de Guarda",
     color: EColors.SALMAO,
     content: [
@@ -83,6 +93,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
   },
   {
+    id: "07",
     title: "Tem uma pessoa no hospital que...",
     color: EColors.ROXO,
     links: ["https://www.youtube.com/watch?v=vYaqGTlhSEA", "https://www.youtube.com/watch?v=vYaqGTlhSEA"],
@@ -96,6 +107,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "08",
     title: "O digital e o novo normal",
     color: EColors.VERMELHO,
     links: ["https://www.youtube.com/watch?v=KITNK_Yh77M&t=1168s", "https://www.youtube.com/watch?v=ZLzdbl2Uu-o"],
@@ -111,6 +123,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "09",
     title: "O digital e o novo normal",
     color: EColors.VERMELHO,
     links: ["https://www.youtube.com/watch?v=TN3o_8WJySA&list=PLbGYBqIX5vabZXqd_6PMZ9Uo-5V74DzyQ", "https://www.youtube.com/watch?v=rExGtym0xyk&list=PLbGYBqIX5vabBTAH3uQG_nW5wyFlO1fS8&index=2"],
@@ -125,6 +138,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "10",
     title: "O digital e o novo normal",
     color: EColors.VERMELHO,
     links: ["https://www.youtube.com/watch?v=BFDA5CFUtIA&list=PLbGYBqIX5vaZIlh0Rg207ygr3UElbHpb4&index=20", "https://www.youtube.com/watch?v=RkSw8kN5tZ4&list=PLbGYBqIX5vaZIlh0Rg207ygr3UElbHpb4&index=8"],
@@ -134,6 +148,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
   },
   {
+    id: "11",
     title: "O digital e o novo normal",
     color: EColors.VERMELHO,
     links: ["https://www.youtube.com/watch?v=A2s8FXhFo14&list=PLbGYBqIX5vaZ2A6ykvs2q0FccSuIMqt3n", "https://www.youtube.com/watch?v=bYEek-HbRRk"],
@@ -146,6 +161,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     extra: []
   },
   {
+    id: "12",
     title: "O digital e o novo normal",
     color: EColors.VERMELHO,
     links: ["https://www.youtube.com/watch?v=4fvLuLx1zeE&list=PLbGYBqIX5vabke0Aq7Y8st1bzj4q3Gy0H", "https://www.youtube.com/watch?v=4fvLuLx1zeE&list=PLbGYBqIX5vabke0Aq7Y8st1bzj4q3Gy0H"],
@@ -159,6 +175,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "13",
     title: "O digital e o novo normal",
     color: EColors.VERMELHO,
     links: ["https://www.youtube.com/watch?v=8bBwVCvnL4s", "https://www.youtube.com/watch?v=3R48OMPJ9EM"],
@@ -173,6 +190,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "14",
     title: "Festival Miolo Mole",
     color: EColors.AZUL,
     links: ["https://www.youtube.com/watch?v=6q7WssQx-P4", "https://www.youtube.com/watch?v=6q7WssQx-P4"],
@@ -193,6 +211,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     extra: []
   },
   {
+    id: "15",
     title: "Entrada pelo... Tablet!",
     color: EColors.VERDE,
     content: [
@@ -206,6 +225,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
   },
   {
+    id: "16",
     title: "Os nossos 29 anos",
     color: EColors.AZUL,
     links: ["https://www.youtube.com/watch?v=4CudlN3XKUc", "https://www.youtube.com/watch?v=4CudlN3XKUc"],
@@ -216,6 +236,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
   },
   {
+    id: "17",
     title: "Uma nova rede de palhaços",
     color: EColors.ROSA,
     links: ["https://www.youtube.com/watch?v=p183OuhoH6Q", "https://www.youtube.com/watch?v=p183OuhoH6Q"],
@@ -230,6 +251,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "18",
     title: "Programa de formação de jovens",
     color: EColors.SALMAO,
     content: [
@@ -238,6 +260,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
   },
   {
+    id: "19",
     title: "Boca laaaarga",
     color: EColors.VERMELHO,
     content: [
@@ -250,6 +273,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
   },
   {
+    id: "20",
     title: "Impacto Socal",
     color: EColors.AZUL,
     content: [
@@ -303,6 +327,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "21",
     title: "Impacto Socal",
     links: ["https://www.youtube.com/watch?v=QEu1pwU_MTE&t=785s", "https://www.youtube.com/watch?v=UlKJsCet284&list=PLbGYBqIX5vaYy6znwWtYPO9F50gF1CCDl&index=10"],
     color: EColors.AZUL,
@@ -354,6 +379,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "22",
     title: "Impacto Socal",
     color: EColors.AZUL,
     links: ["https://www.youtube.com/watch?v=TN3o_8WJySA&list=PLbGYBqIX5vabZXqd_6PMZ9Uo-5V74DzyQ", "https://www.youtube.com/watch?v=NBkJs_K3Jbc&list=PLbGYBqIX5vabBTAH3uQG_nW5wyFlO1fS8"],
@@ -425,6 +451,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "23",
     title: "Impacto Socal",
     color: EColors.AZUL,
     links: ["https://www.youtube.com/watch?v=TxCdS_vhT-A&t=2598s", "https://www.youtube.com/watch?v=dKx6S0S8g2M&t=36s"],
@@ -496,6 +523,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "24",
     title: "Impacto Socal",
     color: EColors.AZUL,
     content: [
@@ -542,6 +570,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "25",
     title: "Prestação de contas e impacto social",
     color: EColors.ROXO,
     links: ["https://www.youtube.com/watch?v=8SDUI9-46PQ&t=10s", "https://www.youtube.com/watch?v=8SDUI9-46PQ&t=10s"],
@@ -556,6 +585,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "26",
     title: "Recursos Arrecadados",
     color: EColors.VERDE,
     content: [
@@ -572,6 +602,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "27",
     title: "Origem dos Recursos",
     color: EColors.AZUL_ESCURO,
     content: [
@@ -582,6 +613,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "28",
     title: "Aplicação dos Recursos",
     color: EColors.ROSA,
     content: [
@@ -592,6 +624,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ]
   },
   {
+    id: "29",
     title: "A Equipe",
     color: EColors.VERMELHO,
     content: [

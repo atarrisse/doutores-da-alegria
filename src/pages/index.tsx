@@ -45,7 +45,7 @@ const Index: React.FC = () => {
     slidesToScroll: 1,
     speed: 500,
     swipeToSlide: true,
-    initialSlide: 28
+    initialSlide: 3
   }
 
   return (
@@ -62,7 +62,12 @@ const Index: React.FC = () => {
           });
 
           return (
-            <Slide key={kebabCase(item.title)} id={kebabCase(item.title)}>
+            <Slide
+              key={kebabCase(item.title)}
+              extra={item.extra}
+              id={kebabCase(item.title)}
+              theme={{ "--theme-color": `var(--${kebabCase(item.color)})` }}
+            >
               <Section
                 key={JSON.stringify(item)}
                 images={{ bg }}
