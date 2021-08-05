@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useState } from "react";
-import Extra from "../Extra";
+import Extra from "../../Extra";
 
 import * as styles from "./styles.module.scss"
 

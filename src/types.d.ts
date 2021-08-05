@@ -27,7 +27,8 @@ export enum ETipoConteudo {
   REC_ARRECADADOS = "recursos-arrecadados",
   REC_ORIGEM = "origem-dos-recursos",
   REC_APLICACAO = "aplicacao-dos-recursos",
-  HTML = "html"
+  HTML = "html",
+  APOIO = "apoio",
 }
 
 export enum EApoioDisplay {

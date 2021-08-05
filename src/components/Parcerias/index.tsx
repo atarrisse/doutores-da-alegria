@@ -1,11 +1,8 @@
-// If you don't want to use TypeScript you can delete this file!
 import React from "react"
 import kebabCase from "lodash-es/kebabCase"
 
 import Apoio from "./Apoio"
-import Section from "../../Section"
-
-import { EColors, IApoio } from "../../../types.d.ts"
+import { IApoio } from "../../types.d.ts"
 
 import * as styles from "./styles.module.scss"
 
@@ -14,14 +11,12 @@ interface IProps {
   logos?: any;
 };
 
-const Parcerias: React.FC<IProps> = ({ apoio, logos }) => {
+const Parcerias: React.FC<IProps> = ({ apoio }) => {
   return (
-    <Section title="Parcerias e apoios" color={EColors.SALMAO}>
+    <>
       {
         apoio.map((ap) => {
           const { titulo, parcerias } = ap;
-          const slug = kebabCase(titulo)
-          let imgs = Object.entries(logos).find(([key, value]) => slug.includes(key))
           return (
             <React.Fragment key={kebabCase(titulo)}>
               {titulo && <h3 className={styles.titulo}>{titulo}</h3>}
@@ -33,7 +28,6 @@ const Parcerias: React.FC<IProps> = ({ apoio, logos }) => {
                         governamental={titulo.includes("Governamentais")}
                         key={JSON.stringify(parceria)}
                         parceria={parceria}
-                        logos={imgs}
                       />
                     )
                   })
@@ -43,7 +37,7 @@ const Parcerias: React.FC<IProps> = ({ apoio, logos }) => {
           )
         })
       }
-    </Section>
+    </>
   )
 }
 

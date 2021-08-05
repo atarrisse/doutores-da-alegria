@@ -1,7 +1,6 @@
 import * as React from "react"
 import Content from "../Content"
 import * as styles from "./styles.module.scss"
-import { image as imageClass } from "../Section/ImageSection/styles.module.scss"
 
 type Props = {
   isActive: boolean;

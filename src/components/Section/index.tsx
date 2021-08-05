@@ -1,4 +1,3 @@
-// If you don't want to use TypeScript you can delete this file!
 import * as React from "react"
 import ReactMarkdown from "react-markdown"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -13,6 +12,7 @@ type Props = IConteudoSecao
 
 const Section: React.FC<Props> = ({ children, content, extra, images, title, color, ...others }) => {
   const img = {
+    parcerias: getImage(images?.bg?.childImageSharp?.gatsbyImageData),
     bg: getImage(images?.bg?.childImageSharp?.gatsbyImageData),
     people: images?.people?.map(person => {
       if (!person) return;
@@ -27,7 +27,7 @@ const Section: React.FC<Props> = ({ children, content, extra, images, title, col
     >
       <div className={styles.content}>
         <h2 className={styles.title}>{title}</h2>
-        {children ? children : content && <Content content={content} />}
+        {children ? children : content && <Content content={content} img={img} />}
       </div>
       {
         images &&

@@ -3,13 +3,11 @@ import { graphql, useStaticQuery } from "gatsby"
 import Slider from "react-slick"
 import kebabCase from "lodash/kebabCase"
 
-import Slide from "../components/Slide"
-import Parcerias from "../components/Slides/Parcerias"
-import Equipe from "../components/Slides/Equipe"
+import Slide from "../components/Slides/Slide"
 import Cover from "../components/Slides/Cover"
 
 
-import CONTEUDO, { APOIO } from "../content"
+import CONTEUDO from "../content"
 import Section from "../components/Section"
 import { parseImages } from "../utils"
 import { IConteudoSecao } from "../../types.d.ts"
@@ -45,7 +43,7 @@ const Index: React.FC = () => {
     slidesToScroll: 1,
     speed: 500,
     swipeToSlide: true,
-    initialSlide: 3
+    initialSlide: 1
   }
 
   return (
@@ -57,9 +55,6 @@ const Index: React.FC = () => {
 
         {SITE_CONTENT.map((item, i) => {
           const bg = img?.slides?.bg[i];
-          const people = img?.slides?.people.filter(person => {
-            return person.base.includes(`slide_${(i + 1)}_`)
-          });
 
           return (
             <Slide
@@ -76,15 +71,6 @@ const Index: React.FC = () => {
             </Slide>
           )
         })}
-
-
-        {
-          APOIO.map(apoio => (
-            <Slide key={JSON.stringify(apoio)}>
-              <Parcerias apoio={apoio} logos={img.parcerias} />
-            </Slide>
-          ))
-        }
       </Slider>
     </main>
   )

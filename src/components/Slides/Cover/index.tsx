@@ -1,31 +1,10 @@
-// If you don't want to use TypeScript you can delete this file!
 import * as React from "react"
-import kebabCase from "lodash-es/kebabCase"
-import Img from "gatsby-image"
-import { graphql, useStaticQuery } from "gatsby"
-
-import { EColors } from "../../types.d.ts"
+import { StaticImage } from "gatsby-plugin-image"
 
 import * as styles from "./styles.module.scss"
-import { StaticImage } from "gatsby-plugin-image"
 
 const Cover: React.FC = () => {
 
-  const image = useStaticQuery(graphql`
-  query {
-    file(relativePath: { eq: "cover.png" }) {
-      childImageSharp {
-        fluid {
-          base64
-          aspectRatio
-          src
-          srcSet
-          sizes
-        }
-      }
-    }
-  }
-`)
 
   return (
     <div className={styles.cover}>
@@ -43,5 +22,7 @@ const Cover: React.FC = () => {
     </div>
   )
 }
+
+
 
 export default Cover
