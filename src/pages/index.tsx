@@ -43,7 +43,7 @@ const Index: React.FC = () => {
     slidesToScroll: 1,
     speed: 500,
     swipeToSlide: true,
-    initialSlide: 1
+    initialSlide: 35
   }
 
   return (

@@ -13,7 +13,9 @@ const Image = ({ filename, alt, ...others }) => {
     <GatsbyImage
       className={styles.image}
       image={image.node.childImageSharp.gatsbyImageData}
-      alt={alt} {...others} />
+      alt={alt ? alt : ""}
+      {...others}
+    />
   );
 }
 

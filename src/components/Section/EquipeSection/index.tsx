@@ -1,20 +1,18 @@
 import * as React from "react"
 
-import { EQUIPE } from "../../../content"
-import Section from "../../Section"
-import * as styles from "./styles.module.scss"
-import { EColors } from "../../../types.d.ts"
 import Accordion from "../../Accordion"
+import * as styles from "./styles.module.scss"
 
 
-type Props = {}
+type Props = {
+  teams: any[]
+}
 
-const Equipe: React.FC<Props> = () => {
-  const data = EQUIPE;
+const EquipeSection: React.FC<Props> = ({ teams }) => {
   return (
     <>
       {
-        data.map((dpt) => (
+        teams.map((dpt) => (
           <React.Fragment key={JSON.stringify(dpt)}>
             <Accordion
               title={
@@ -47,4 +45,4 @@ const Equipe: React.FC<Props> = () => {
   )
 }
 
-export default Equipe
+export default EquipeSection

@@ -47,5 +47,13 @@ module.exports = {
       },
     },
     "gatsby-plugin-offline",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/static/data`,
+      },
+    },
+    `gatsby-transformer-csv`,
   ],
 }

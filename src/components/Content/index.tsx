@@ -5,10 +5,11 @@ import NumberSection from "../Section/NumberSection"
 import QuoteSection from "../Section/QuoteSection"
 import GallerySection from "../Section/GallerySection"
 import Image from "../Image";
-import Equipe from "../Section/Equipe"
+import EquipeSection from "../Section/EquipeSection"
 import RecursosArrecadados from "../Section/GraphsSection/RecursosArrecadados"
 import OrigemRecursos from "../Section/GraphsSection/OrigemRecursos"
 import AplicacaoRecursos from "../Section/GraphsSection/AplicacaoRecursos"
+import SearchSection from "../Section/SearchSection"
 
 import { ETipoConteudo } from "../../types.d.ts";
 
@@ -54,10 +55,12 @@ const Content = ({ content }) => {
             return <AplicacaoRecursos key={JSON.stringify(ctnt)} />
           // EQUIPE
           case ETipoConteudo.EQUIPE:
-            return <Equipe key={JSON.stringify(ctnt)} />
+            return <EquipeSection key={JSON.stringify(ctnt)} {...ctnt} />
           // APOIO
           case ETipoConteudo.APOIO:
             return <Parcerias key={JSON.stringify(ctnt)} {...ctnt} />
+          case ETipoConteudo.BUSCA:
+            return <SearchSection {...ctnt} />
           default:
             return <></>
         }

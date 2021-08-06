@@ -29,6 +29,7 @@ export enum ETipoConteudo {
   REC_APLICACAO = "aplicacao-dos-recursos",
   HTML = "html",
   APOIO = "apoio",
+  BUSCA = "busca",
 }
 
 export enum EApoioDisplay {
