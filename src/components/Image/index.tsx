@@ -6,6 +6,7 @@ import * as styles from "./styles.module.scss";
 
 
 const Image = ({ filename, alt, ...others }) => {
+  console.log(filename);
   const image = queryImage(filename);
   if (!image?.node) return null;
 
