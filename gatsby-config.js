@@ -55,5 +55,13 @@ module.exports = {
       },
     },
     `gatsby-transformer-csv`,
+    {
+    resolve: "gatsby-plugin-react-svg",
+    options: {
+      rule: {
+        include: `${__dirname}/static/icons`
+      }
+    }
+  }
   ],
 }

@@ -7,3 +7,43 @@
 .item {
   margin-bottom: 1rem;
 }
+
+.fieldset {
+  display: block;
+  border: none;
+  padding: 0;
+  position: relative;
+  margin-bottom: 2.3rem;
+}
+
+.label {
+  font-size: 0.8em;
+  position: absolute;
+  line-height: 1em;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+
+  [data-show-label="true"] & {
+    opacity: 1;
+  }
+}
+
+.input {
+  height: 3.4rem;
+  border: 0.2rem solid var(--theme-color);
+  border-radius: 1rem;
+  width: 100%;
+  padding-left: 1rem;
+}
+
+.icon {
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}

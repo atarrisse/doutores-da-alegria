@@ -1,38 +1,17 @@
-import React, { useEffect, useState } from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import React from "react"
 import Slider from "react-slick"
 import kebabCase from "lodash/kebabCase"
 
 import Slide from "../components/Slides/Slide"
 import Cover from "../components/Slides/Cover"
 
-
 import CONTEUDO from "../content"
 import Section from "../components/Section"
-import { parseImages } from "../utils"
 import { IConteudoSecao } from "../../types.d.ts"
 
 
 const Index: React.FC = () => {
   const SITE_CONTENT: Array<IConteudoSecao> = CONTEUDO
-  const { images } = queryImagens()
-  const [img, setImg] = useState({
-    slides: {
-      after: [],
-      bg: [],
-      people: []
-    },
-    parcerias: {
-      "parceiros-governamentais": [],
-      "parceiros-via-lei-de-incentivo-a-cultura": [],
-      "parceiros-via-proac": []
-    }
-  });
-
-  useEffect(() => {
-    if (!images) return;
-    setImg(parseImages(images.group))
-  }, [images])
 
   const config = {
     arrows: false,
@@ -44,7 +23,7 @@ const Index: React.FC = () => {
     speed: 500,
     swipeToSlide: true,
     lazyLoad: "ondemand",
-    initialSlide: 7
+    // initialSlide: 35
   }
 
   return (
@@ -74,35 +53,5 @@ const Index: React.FC = () => {
     </main>
   )
 }
-
-
-
-const queryImagens = () => {
-  return useStaticQuery(graphql`
-     query {
-      images: allFile(
-        sort: { fields: name }
-        filter: { 
-          extension: { regex: "/(jpg)|(jpeg)|(png)/" }
-        }
-        ) {
-        group(field: dir) {
-          edges {
-            node {
-              base
-              dir
-              name
-              relativePath
-              childImageSharp {
-                gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-              }
-            }
-          }
-        }
-      }
-     }
-  `)
-}
-
 
 export default Index
