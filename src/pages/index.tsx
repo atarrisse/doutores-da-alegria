@@ -43,7 +43,8 @@ const Index: React.FC = () => {
     slidesToScroll: 1,
     speed: 500,
     swipeToSlide: true,
-    // initialSlide: 35
+    lazyLoad: "ondemand",
+    initialSlide: 7
   }
 
   return (
@@ -54,8 +55,6 @@ const Index: React.FC = () => {
         </Slide>
 
         {SITE_CONTENT.map((item, i) => {
-          // const bg = img?.slides?.bg[i];
-
           return (
             <Slide
               key={kebabCase(item.title)}
@@ -66,7 +65,6 @@ const Index: React.FC = () => {
               <Section
                 key={JSON.stringify(item)}
                 index={i}
-                // images={{ bg }}
                 {...item}
               />
             </Slide>

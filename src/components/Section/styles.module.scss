@@ -1,7 +1,6 @@
 .section {
-  min-height: 100vh;
-  display: grid;
-  grid-template: min-content auto / 100%;
+  display: flex;
+  flex-direction: column;
   position: relative;
 
   &[data-extra="true"] {

@@ -1,5 +1,4 @@
 .article {
-  height: 100vh;
   overflow: hidden auto;
   position: relative;
   width: 100%;
@@ -12,5 +11,4 @@
 .content {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
 }

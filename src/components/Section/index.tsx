@@ -18,6 +18,7 @@ const Section: React.FC<Props> = ({
   extra,
   images,
   index,
+  links,
   title,
   ...others
 }) => {
@@ -31,7 +32,7 @@ const Section: React.FC<Props> = ({
         <h2 className={styles.title}>{title}</h2>
         {children ? children : content && <Content content={content} />}
       </div>
-      <Rodape index={index} />
+      <Rodape index={index} links={links} />
     </div>
   )
 }

@@ -76,11 +76,11 @@ const CONTEUDO: Array<IConteudoSecao> = [
     color: EColors.ROSA,
     links: [
       {
-        img: "slide_7_1.png",
+        image: "slide_7_1.png",
         url: "https://www.youtube.com/watch?v=V8iO1RxMkYM"
       },
       {
-        img: "slide_7_2.png",
+        image: "slide_7_2.png",
         url: "https://www.youtube.com/watch?v=EMc5WjnYuWc"
       }],
     content: [
@@ -108,10 +108,13 @@ const CONTEUDO: Array<IConteudoSecao> = [
       {
         image: "slide_9_1.png",
         url: "https://www.youtube.com/watch?v=vYaqGTlhSEA",
+        alt: "Assista ao video 'Doutores da Alegria homenageia profissionais dos hospitais' no youtube",
+        front: true,
       },
       {
         image: "slide_9_2.png",
-        url: "https://www.youtube.com/watch?v=vYaqGTlhSEA"
+        url: "https://www.youtube.com/watch?v=vYaqGTlhSEA",
+        alt: "Assista ao video 'Doutores da Alegria homenageia profissionais dos hospitais' no youtube"
       }],
     content: [
       "... Cuida da música que toca dentro da gente. Que cuida do trânsito, organiza as macas. Que mexe com a gente por dentro. Que faz a gente pegar no sono. Que ajuda a respirar melhor...",
@@ -128,12 +131,15 @@ const CONTEUDO: Array<IConteudoSecao> = [
     color: EColors.VERMELHO,
     links: [
       {
+        front: true,
         image: "slide_10_1.png",
         url: "https://www.youtube.com/watch?v=KITNK_Yh77M&t=1168s",
+        alt: "Assista ao video 'Consultório Besteirológico - MonaLisa e Dus'Cuais' no youtube"
       },
       {
         image: "slide_10_2.png",
-        url: "https://www.youtube.com/watch?v=ZLzdbl2Uu-o"
+        url: "https://www.youtube.com/watch?v=ZLzdbl2Uu-o",
+        alt: "Assista ao video 'Consultório Besteirológico - Nina Rosa e Lui' no youtube"
       }
     ],
     content: [
@@ -154,10 +160,13 @@ const CONTEUDO: Array<IConteudoSecao> = [
     links: [
       {
         image: "slide_11_1.png",
+        alt: "Assista ao video 'Websérie de São João - Episódio Um' no youtube",
         url: "https://www.youtube.com/watch?v=TN3o_8WJySA&list=PLbGYBqIX5vabZXqd_6PMZ9Uo-5V74DzyQ",
       },
       {
+        front: true,
         image: "slide_11_2.png",
+        alt: "Assista ao video 'Auto de Natal dos Doutores da Alegria - Episódio 1: O Presépio de Papel' no youtube",
         url: "https://www.youtube.com/watch?v=rExGtym0xyk&list=PLbGYBqIX5vabBTAH3uQG_nW5wyFlO1fS8&index=2"
       }
     ],
@@ -166,27 +175,26 @@ const CONTEUDO: Array<IConteudoSecao> = [
       "O cortejo seguido de apresentação que celebra São João todos os anos nos hospitais também se adaptou à pandemia. A websérie “A peleja do noivo que tentou enganar a noiva na festa de São João ou vice e versa” foi ao ar nos canais da organização em cinco capítulos, gravados a distância e com participação de Dudu do Acordeon.",
       "Em dezembro, o cortejo de Natal seguiu o modelo de sucesso junino. Surgiu a websérie Auto de Natal. [Tem até bastidores.](https://www.youtube.com/watch?v=DjB9IL_Oakg&)",
     ],
-    extra: [
-      "#### Ao vivo",
-      "[A Pororoca começou a live em um pula-pula, a Svenza passou aspirador de pó na casa e o Cavaco fez com o Gonda uma improvisação musical ao vivo](https://www.youtube.com/watch?v=rExGtym0xyk&list=PLbGYBqIX5vabBTAH3uQG_nW5wyFlO1fS8&index=2)"
-    ]
   },
   {
     id: "10",
     title: "O digital e o novo normal",
     color: EColors.VERMELHO,
-    // links: [
-    //   {
-    //     // image: "slide_11_1.png",
-    //     url: "https://www.youtube.com/watch?v=BFDA5CFUtIA&list=PLbGYBqIX5vaZIlh0Rg207ygr3UElbHpb4&index=20",
-    //   },
-    //   {
-    //     // image: "slide_11_2.png",
-    //     url: "https://www.youtube.com/watch?v=RkSw8kN5tZ4&list=PLbGYBqIX5vaZIlh0Rg207ygr3UElbHpb4&index=8"
-    //   }
-    // ],
+    links: [
+      {
+        front: true,
+        image: "slide_12_1.png",
+        alt: "Assista ao video 'A origem do baobá' no youtube",
+        url: "https://www.youtube.com/watch?v=BFDA5CFUtIA&list=PLbGYBqIX5vaZIlh0Rg207ygr3UElbHpb4&index=20",
+      },
+      {
+        image: "slide_12_2.png",
+        alt: "Assista ao video 'Dom Quixote e a incrível batalha contra moinhos de vento' no youtube",
+        url: "https://www.youtube.com/watch?v=RkSw8kN5tZ4&list=PLbGYBqIX5vaZIlh0Rg207ygr3UElbHpb4&index=8"
+      }
+    ],
     content: [
-      "### Plateias Hospitalares Delivery",
+      "### Platéias Hospitalares Delivery",
       "Companhias participantes do projeto no Rio de Janeiro foram convidadas a produzir vídeos com adaptações de seus espetáculos. As apresentações que circulariam pelos hospitais foram veiculadas nas VERMELHOes da organização durante o ano.",
     ],
   },
@@ -194,7 +202,19 @@ const CONTEUDO: Array<IConteudoSecao> = [
     id: "11",
     title: "O digital e o novo normal",
     color: EColors.VERMELHO,
-    // links: ["https://www.youtube.com/watch?v=A2s8FXhFo14&list=PLbGYBqIX5vaZ2A6ykvs2q0FccSuIMqt3n", "https://www.youtube.com/watch?v=bYEek-HbRRk"],
+    links: [
+      {
+        front: true,
+        image: "slide_13_1.png",
+        alt: "Assista ao video 'Escola Doutores da Alegria em Obras #1 - Escola na pandemia' no youtube",
+        url: "https://www.youtube.com/watch?v=A2s8FXhFo14&list=PLbGYBqIX5vaZ2A6ykvs2q0FccSuIMqt3n",
+      },
+      {
+        image: "slide_13_2.png",
+        alt: "Assista ao video 'Bate-papo com Lino de Macedo sobre saúde mental' no youtube",
+        url: "https://www.youtube.com/watch?v=bYEek-HbRRk"
+      }
+    ],
     content: [
       "### Escola em Obras",
       "A reorganização dos programas da Escola Doutores da Alegria para o formato virtual ganhou uma série. Cada um dos cinco episódios trouxe questões debatidas pelos formadores da escola: sua pedagogia, a quem se destinam os cursos e os sistemas de formação.",
@@ -212,7 +232,19 @@ const CONTEUDO: Array<IConteudoSecao> = [
     id: "12",
     title: "O digital e o novo normal",
     color: EColors.VERMELHO,
-    // links: ["https://www.youtube.com/watch?v=4fvLuLx1zeE&list=PLbGYBqIX5vabke0Aq7Y8st1bzj4q3Gy0H", "https://www.youtube.com/watch?v=4fvLuLx1zeE&list=PLbGYBqIX5vabke0Aq7Y8st1bzj4q3Gy0H"],
+    links: [
+      {
+        image: "slide_14_1.png",
+        alt: "Assista ao video 'Doutores em Casa #1 - Estamos em casa' no youtube",
+        url: "https://www.youtube.com/watch?v=4fvLuLx1zeE&list=PLbGYBqIX5vabke0Aq7Y8st1bzj4q3Gy0H",
+      },
+      {
+        front: true,
+        image: "slide_14_2.png",
+        alt: "Assista ao video 'Doutores em Casa #1 - Estamos em casa' no youtube",
+        url: "https://www.youtube.com/watch?v=4fvLuLx1zeE&list=PLbGYBqIX5vabke0Aq7Y8st1bzj4q3Gy0H"
+      }
+    ],
     content: [
       "### Doutores em Casa",
       "O boletim quinzenal fez a prestação de contas da associação durante o isolamento social. Apresentado por integrantes da equipe técnica, os oito episódios contaram em primeira mão os projetos desenvolvidos durante o ano.",
@@ -226,7 +258,19 @@ const CONTEUDO: Array<IConteudoSecao> = [
     id: "13",
     title: "O digital e o novo normal",
     color: EColors.VERMELHO,
-    // links: ["https://www.youtube.com/watch?v=8bBwVCvnL4s", "https://www.youtube.com/watch?v=3R48OMPJ9EM"],
+    links: [
+      {
+        image: "slide_15_1.png",
+        alt: "Assista ao video 'Conta Causos ao Vivo' no youtube",
+        url: "https://www.youtube.com/watch?v=8bBwVCvnL4s",
+      },
+      {
+        front: true,
+        image: "slide_15_2.png",
+        alt: "Assista ao video 'Conta Causos ao Vivo' no youtube",
+        url: "https://www.youtube.com/watch?v=3R48OMPJ9EM"
+      }
+    ],
     content: [
       "### Conta Causos",
       "O espetáculo com artistas contando histórias vivenciadas nos hospitais foi apresentado virtualmente pela primeira vez em agosto. Com duração de uma hora, trazia até seis palhaços na tela que, ao final, respondiam perguntas do público.",
@@ -241,7 +285,19 @@ const CONTEUDO: Array<IConteudoSecao> = [
     id: "14",
     title: "Festival Miolo Mole",
     color: EColors.AZUL,
-    // links: ["https://www.youtube.com/watch?v=6q7WssQx-P4", "https://www.youtube.com/watch?v=6q7WssQx-P4"],
+    links: [
+      {
+        front: true,
+        image: "slide_16_1.png",
+        alt: "Assista ao video 'Festival Miolo Mole' no youtube",
+        url: "https://www.youtube.com/watch?v=6q7WssQx-P4",
+      },
+      {
+        image: "slide_16_2.png",
+        alt: "Assista ao video 'Festival Miolo Mole' no youtube",
+        url: "https://www.youtube.com/watch?v=6q7WssQx-P4"
+      }
+    ],
     content: [
       "### A live das lives",
       "O Festival Miolo Mole, que seria oferecido à cidade de São Paulo em 2020, foi [adaptado para o formato digital](https://doutoresdaalegria.org.br/blog/festival-miolo-mole-confira-a-programacao-completa/), em uma live com sete horas de duração e atividades dedicadas a toda a família. Foi ao vivo, no dia 26 de julho, o dia dos avós.",
@@ -285,7 +341,19 @@ const CONTEUDO: Array<IConteudoSecao> = [
     id: "16",
     title: "Os nossos 29 anos",
     color: EColors.AZUL,
-    // links: ["https://www.youtube.com/watch?v=4CudlN3XKUc", "https://www.youtube.com/watch?v=4CudlN3XKUc"],
+    links: [
+      {
+        front: true,
+        image: "slide_18_1.png",
+        alt: "Assista ao video '29 anos de Doutores da Alegria' no youtube",
+        url: "https://www.youtube.com/watch?v=4CudlN3XKUc",
+      },
+      {
+        image: "slide_18_2.png",
+        alt: "Assista ao video '29 anos de Doutores da Alegria' no youtube",
+        url: "https://www.youtube.com/watch?v=4CudlN3XKUc"
+      }
+    ],
     content: [
       "Assim como os aniversários de todos os brasileiros em 2020, a comemoração dos 29 anos da Doutores da Alegria foi a distância. Duas lives celebraram o marco, uma delas ancorada por Wellington Nogueira.",
       "Em um vídeo coletivo, colaboradores, artistas e o fundador Wellington Nogueira contaram pedacinhos de suas histórias com a organização.",
@@ -296,7 +364,19 @@ const CONTEUDO: Array<IConteudoSecao> = [
     id: "17",
     title: "Uma nova rede de palhaços",
     color: EColors.ROSA,
-    // links: ["https://www.youtube.com/watch?v=p183OuhoH6Q", "https://www.youtube.com/watch?v=p183OuhoH6Q"],
+    links: [
+      {
+        front: true,
+        image: "slide_19_1.png",
+        alt: "Assista ao video 'Papo entre Wellington Nogueira e Michael Christensen [Doutores da Alegria + The Clown Care Unit]' no youtube",
+        url: "https://www.youtube.com/watch?v=p183OuhoH6Q",
+      },
+      {
+        image: "slide_19_2.png",
+        alt: "Assista ao video 'Papo entre Wellington Nogueira e Michael Christensen [Doutores da Alegria + The Clown Care Unit]' no youtube",
+        url: "https://www.youtube.com/watch?v=p183OuhoH6Q"
+      }
+    ],
     content: [
       " O Encontro Nacional de Palhaços que Atuam em Hospitais aconteceu em 7 e 8 de novembro. Houve mesas de debate com convidados, oficinas, rodas de conversa e um espetáculo. Tudo gratuito e por transmissão ao vivo, em função da pandemia.",
       "Teve até um simbólico reencontro entre o ator que criou e sistematizou a atividade de palhaço em hospital no mundo — o americano Michael Christensen do The Clown Care Unit — e o ator que trouxe esse trabalho para o Brasil — Wellington Nogueira, fundador da Doutores da Alegria.",
@@ -386,7 +466,19 @@ const CONTEUDO: Array<IConteudoSecao> = [
   {
     id: "21",
     title: "Impacto Socal",
-    // links: ["https://www.youtube.com/watch?v=QEu1pwU_MTE&t=785s", "https://www.youtube.com/watch?v=UlKJsCet284&list=PLbGYBqIX5vaYy6znwWtYPO9F50gF1CCDl&index=10"],
+    links: [
+      {
+        front: true,
+        image: "slide_23_1.png",
+        alt: "Assista ao video 'Conta Causos - Histórias de palhaços ao vivo' no youtube",
+        url: "https://www.youtube.com/watch?v=QEu1pwU_MTE&t=785s",
+      },
+      {
+        image: "slide_23_2.png",
+        alt: "Assista ao video 'Solte seus dragões' no youtube",
+        url: "https://www.youtube.com/watch?v=UlKJsCet284&list=PLbGYBqIX5vaYy6znwWtYPO9F50gF1CCDl&index=10"
+      }
+    ],
     color: EColors.AZUL,
     content: [
       "A partir de abril, iniciamos uma série de vídeos e lives para diminuir a distância dos palhaços nos hospitais e manter a programação prevista para o ano em todas as áreas.",
@@ -439,7 +531,19 @@ const CONTEUDO: Array<IConteudoSecao> = [
     id: "22",
     title: "Impacto Socal",
     color: EColors.AZUL,
-    // links: ["https://www.youtube.com/watch?v=TN3o_8WJySA&list=PLbGYBqIX5vabZXqd_6PMZ9Uo-5V74DzyQ", "https://www.youtube.com/watch?v=NBkJs_K3Jbc&list=PLbGYBqIX5vabBTAH3uQG_nW5wyFlO1fS8"],
+    links: [
+      {
+        front: true,
+        image: "slide_24_1.png",
+        alt: "Assista ao video 'Websérie de São João - Episódio Um' no youtube",
+        url: "https://www.youtube.com/watch?v=TN3o_8WJySA&list=PLbGYBqIX5vabZXqd_6PMZ9Uo-5V74DzyQ",
+      },
+      {
+        image: "slide_24_2.png",
+        alt: "Assista ao video 'Vem aí a websérie Auto de Natal dos Doutores da Alegria' no youtube",
+        url: "https://www.youtube.com/watch?v=NBkJs_K3Jbc&list=PLbGYBqIX5vabBTAH3uQG_nW5wyFlO1fS8"
+      }
+    ],
     content: [
       "### Projetos digitais:",
       {
@@ -511,7 +615,19 @@ const CONTEUDO: Array<IConteudoSecao> = [
     id: "23",
     title: "Impacto Socal",
     color: EColors.AZUL,
-    // links: ["https://www.youtube.com/watch?v=TxCdS_vhT-A&t=2598s", "https://www.youtube.com/watch?v=dKx6S0S8g2M&t=36s"],
+    links: [
+      {
+        image: "slide_25_1.png",
+        alt: "Assista ao video 'A importância do brincar' no youtube",
+        url: "https://www.youtube.com/watch?v=TxCdS_vhT-A&t=2598s",
+      },
+      {
+        front: true,
+        image: "slide_25_2.png",
+        alt: "Assista ao video 'Escola Doutores da Alegria em Obras #5 - Nosso público' no youtube",
+        url: "https://www.youtube.com/watch?v=dKx6S0S8g2M&t=36s"
+      }
+    ],
     content: [
       "### Projetos digitais:",
       {
@@ -630,7 +746,19 @@ const CONTEUDO: Array<IConteudoSecao> = [
     id: "25",
     title: "Prestação de contas e impacto social",
     color: EColors.ROXO,
-    // links: ["https://www.youtube.com/watch?v=8SDUI9-46PQ&t=10s", "https://www.youtube.com/watch?v=8SDUI9-46PQ&t=10s"],
+    links: [
+      {
+        image: "slide_27_1.png",
+        alt: "Assista ao video 'Doutores em Casa #8 - Reputação e credibilidade' no youtube",
+        url: "https://www.youtube.com/watch?v=8SDUI9-46PQ&t=10s",
+      },
+      {
+        front: true,
+        image: "slide_27_2.png",
+        alt: "Assista ao video 'Doutores em Casa #8 - Reputação e credibilidade' no youtube",
+        url: "https://www.youtube.com/watch?v=8SDUI9-46PQ&t=10s"
+      }
+    ],
     content: [
       "Neste ano, os números de impacto da organização estão bastante relacionados às atividades virtuais. Sem as visitas aos hospitais e as pessoas nas plateias e nos eventos da sede, o público se envolveu com Doutores da Alegria nas telas de celulares e tablets.",
       "### Reputação e credibilidade",

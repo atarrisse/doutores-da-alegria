@@ -2,4 +2,33 @@
   align-self: end;
   display: flex;
   margin-top: 5rem;
+  position: relative;
+}
+
+.people {
+  position: absolute;
+  bottom: 0;
+  max-width: 65%;
+  transform: scale(1);
+  transform-origin: bottom;
+  transition: 0.2s ease-in-out;
+
+
+  &:first-of-type {
+    left: 0;
+  }
+  &:last-of-type {
+    right: 0;
+  }
+  
+  &[data-front="true"] {
+    z-index: 1;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      z-index: 2;
+      transform: scale(1.1);
+    }
+  }
 }
