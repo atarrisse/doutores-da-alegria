@@ -8,14 +8,16 @@ import Cover from "../components/Slides/Cover"
 import CONTEUDO from "../content"
 import Section from "../components/Section"
 import { IConteudoSecao } from "../../types.d.ts"
+import * as styles from "./styles.module.scss";
 
 
 const Index: React.FC = () => {
   const SITE_CONTENT: Array<IConteudoSecao> = CONTEUDO
 
   const config = {
-    arrows: false,
     adaptiveHeight: true,
+    arrows: false,
+    className: styles.slickWrapper,
     dots: false,
     infinite: false,
     slidesToShow: 1,

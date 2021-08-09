@@ -6,7 +6,7 @@ import * as styles from "./styles.module.scss"
 
 type Props = IConteudoSecao
 
-const Rodape: React.FC<Props> = ({ index, links }) => {
+const Rodape: React.FC<Props> = ({ id, index, links }) => {
   if (links) console.log(links)
 
   return (
@@ -18,11 +18,12 @@ const Rodape: React.FC<Props> = ({ index, links }) => {
         filename={`slides/bg/${(index + 1).toString().padStart(2, '0')}.png`}
       />
       {
+        id !== "00" &&
         links &&
         links.map(link => {
           return (
             <a
-              className={styles.people}
+              className={`${styles.people} no-underline`}
               data-front={link.front}
               href={link.url}
               key={link.url}
@@ -31,12 +32,17 @@ const Rodape: React.FC<Props> = ({ index, links }) => {
             >
               <Image
                 alt={link.alt}
+                clasName="no-underline"
                 title={link.alt}
                 filename={`slides/people/${link.image}`}
               />
             </a>
           )
         })
+      }
+      {
+        id === "00" &&
+        <Image className={styles.mosaic} alt="" filename={`slides/people/slide_1.png`} />
       }
     </div>
   )

@@ -27,8 +27,14 @@
 
   @media (hover: hover) {
     &:hover {
-      z-index: 2;
       transform: scale(1.1);
     }
   }
+}
+
+.mosaic {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
 }

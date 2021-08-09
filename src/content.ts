@@ -27,10 +27,12 @@ const CONTEUDO: Array<IConteudoSecao> = [
     content: [
       "Sem querer estragar a surpresa do que vem pela frente, podemos dizer que, diante dos impactos do coronavírus na sociedade e, principalmente, no sistema público de saúde, Doutores da Alegria criou uma série de ações virtuais para seguir oferecendo arte como antídoto potente para profissionais de saúde e crianças hospitalizadas.",
     ],
-    extra: [{
-      type: ETipoConteudo.IMG,
-      filename: "extras-02.png"
-    }]
+    extra: {
+      content: [{
+        type: ETipoConteudo.IMG,
+        filename: "extras-02.png"
+      }]
+    }
   },
   {
     id: "03",
@@ -42,10 +44,12 @@ const CONTEUDO: Array<IConteudoSecao> = [
       "No Recife, o elenco pernambucano apresentou o espetáculo Cenas Curtas ao festival Janeiro de Grandes Espetáculos. [Foram duas sessões](https://doutoresdaalegria.org.br/blog/cenas-curtas-e-apresentado-dia-19-em-festival-no-recife/) no Teatro Marco Camarotti, no Sesc Santo Amaro.",
       "Uma [edição única e gratuita](https://doutoresdaalegria.org.br/blog/conta-causos-em-apresentacao-unica-e-gratuita-em-marco/) do espetáculo Conta Causos tomou o Teatro Eva Herz, em São Paulo, com relatos dos besteirologistas durante as visitas a hospitais.",
     ],
-    extra: [
-      "#### De onde vêm os narizes?",
-      "[**Veja o nascimento deles neste vídeo belíssimo.**](https://www.youtube.com/watch?v=-tMLVINFL1Q)"
-    ]
+    extra: {
+      content: [
+        "#### De onde vêm os narizes?",
+        "[**Veja o nascimento deles neste vídeo belíssimo.**](https://www.youtube.com/watch?v=-tMLVINFL1Q)"
+      ]
+    }
   },
   {
     id: "04",
@@ -76,6 +80,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     color: EColors.ROSA,
     links: [
       {
+        front: true,
         image: "slide_7_1.png",
         url: "https://www.youtube.com/watch?v=V8iO1RxMkYM"
       },
@@ -87,10 +92,13 @@ const CONTEUDO: Array<IConteudoSecao> = [
       "Um comitê composto por diversos profissionais da organização, com apoio da diretoria, criou a série de vídeos Delivery Besteirológico. A ideia era aproximar os palhaços, em distanciamento social, das crianças hospitalizadas, profissionais de saúde e público nas VERMELHOes sociais.",
       "Era dessa maneira que [entraríamos nos hospitais](https://www.youtube.com/watch?v=V8iO1RxMkYM) enquanto o vírus não desse trégua.",
     ],
-    extra: [
-      "#### Ué",
-      "Para que arte em tempos de pandemia? A gente explica [neste vídeo](https://doutoresdaalegria.org.br/blog/para-que-arte-em-tempos-de-pandemia/)."
-    ],
+    extra: {
+      color: "#FFFFFF",
+      content: [
+        "#### Ué",
+        "Para que arte em tempos de pandemia? A gente explica [neste vídeo](https://doutoresdaalegria.org.br/blog/para-que-arte-em-tempos-de-pandemia/)."
+      ]
+    },
   },
   {
     id: "06",
@@ -120,10 +128,13 @@ const CONTEUDO: Array<IConteudoSecao> = [
       "... Cuida da música que toca dentro da gente. Que cuida do trânsito, organiza as macas. Que mexe com a gente por dentro. Que faz a gente pegar no sono. Que ajuda a respirar melhor...",
       "Em um dos momentos mais críticos da pandemia, em maio de 2020, Doutores da Alegria dedicou um vídeo aos profissionais de saúde. Prepara o lencinho...",
     ],
-    extra: [
-      "#### Homenagem",
-      "[As super-heroínas usam jaleco e podemos provar. Veja no texto.](https://doutoresdaalegria.org.br/blog/as-super-heroinas-usam-jaleco/)"
-    ]
+    extra: {
+      color: "#FFFFFF",
+      content: [
+        "#### Homenagem",
+        "[As super-heroínas usam jaleco e podemos provar. Veja no texto.](https://doutoresdaalegria.org.br/blog/as-super-heroinas-usam-jaleco/)"
+      ]
+    }
   },
   {
     id: "08",
@@ -148,10 +159,13 @@ const CONTEUDO: Array<IConteudoSecao> = [
       "Transmitido ao vivo pelo canal dos Doutores no YouTube e pela página do Facebook, o consultório fictício trouxe um papo ao vivo entre palhaços –quase sempre um de São Paulo e um de Recife– e o público.",
       "A ação exigiu adaptação a ferramentas online, direção artística e ensaios entre as duplas, que muitas vezes nunca tinham atuado juntas.",
     ],
-    extra: [
-      "#### Ao vivo",
-      "[A Pororoca começou a live em um pula-pula, a Svenza passou aspirador de pó na casa e o Cavaco fez com o Gonda uma improvisação musical ao vivo](https://www.youtube.com/watch?v=dI4wh6ZrEck&list=PLbGYBqIX5vabZ0KXMs0YNsUWvcN1emSAN&index=4)"
-    ]
+    extra: {
+      color: "#FFFFFF",
+      content: [
+        "#### Ao vivo",
+        "[A Pororoca começou a live em um pula-pula, a Svenza passou aspirador de pó na casa e o Cavaco fez com o Gonda uma improvisação musical ao vivo](https://www.youtube.com/watch?v=dI4wh6ZrEck&list=PLbGYBqIX5vabZ0KXMs0YNsUWvcN1emSAN&index=4)"
+      ]
+    }
   },
   {
     id: "09",
@@ -221,12 +235,15 @@ const CONTEUDO: Array<IConteudoSecao> = [
       "### Ciclo de Palestras",
       "As lives temáticas propostas pela Escola trouxeram profissionais da associação em debate com convidados. Entre os assuntos abordados, a importância do brincar, saúde mental em tempos de pandemia, arte e acessibilidade e humor na crise.",
     ],
-    extra: [
-      {
-        type: ETipoConteudo.IMG,
-        filename: "extras-12.png"
-      }
-    ]
+    extra: {
+      color: "#FFFFFF",
+      content: [
+        {
+          type: ETipoConteudo.IMG,
+          filename: "extras-12.png"
+        }
+      ]
+    }
   },
   {
     id: "12",
@@ -249,10 +266,12 @@ const CONTEUDO: Array<IConteudoSecao> = [
       "### Doutores em Casa",
       "O boletim quinzenal fez a prestação de contas da associação durante o isolamento social. Apresentado por integrantes da equipe técnica, os oito episódios contaram em primeira mão os projetos desenvolvidos durante o ano.",
     ],
-    extra: [
-      "#### Au-Au:",
-      "[Uma das diretoras precisou ir até a sede gravar. É que ela mora em um sítio e seus cachorros queriam participar com latidos.](https://www.youtube.com/watch?v=4fvLuLx1zeE&list=PLbGYBqIX5vabke0Aq7Y8st1bzj4q3Gy0H)"
-    ]
+    extra: {
+      content: [
+        "#### Au-Au:",
+        "[Uma das diretoras precisou ir até a sede gravar. É que ela mora em um sítio e seus cachorros queriam participar com latidos.](https://www.youtube.com/watch?v=4fvLuLx1zeE&list=PLbGYBqIX5vabke0Aq7Y8st1bzj4q3Gy0H)"
+      ]
+    }
   },
   {
     id: "13",
@@ -276,10 +295,13 @@ const CONTEUDO: Array<IConteudoSecao> = [
       "O espetáculo com artistas contando histórias vivenciadas nos hospitais foi apresentado virtualmente pela primeira vez em agosto. Com duração de uma hora, trazia até seis palhaços na tela que, ao final, respondiam perguntas do público.",
       "A equipe de Comunicação ficava nos bastidores alternando as telas, cuidando do áudio e da interação nas VERMELHOes sociais.",
     ],
-    extra: [
-      "Bastidores:",
-      "“Gabi, tá chovendo aqui e pode cair a internet. Consegue ficar de apoio?”, disse Bruno Tavares, que cuidava da transmissão ao vivo enquanto chovia granizo na Bela Vista."
-    ]
+    extra: {
+      color: "#FFFFFF",
+      content: [
+        "#### Bastidores:",
+        "“Gabi, tá chovendo aqui e pode cair a internet. Consegue ficar de apoio?”, disse Bruno Tavares, que cuidava da transmissão ao vivo enquanto chovia granizo na Bela Vista."
+      ]
+    }
   },
   {
     id: "14",
@@ -312,10 +334,13 @@ const CONTEUDO: Array<IConteudoSecao> = [
         type: ETipoConteudo.PARTNERS,
       }
     ],
-    extra: [{
-      type: ETipoConteudo.IMG,
-      filename: "extras-15.png"
-    }]
+    extra: {
+      color: "#FFFFFF",
+      content: [{
+        type: ETipoConteudo.IMG,
+        filename: "extras-15.png"
+      }]
+    }
   },
   {
     id: "15",
@@ -330,12 +355,14 @@ const CONTEUDO: Array<IConteudoSecao> = [
         text: "Em um tempo tão louco, o contato com o outro é essencial para a saúde e a sanidade.",
       },
     ],
-    extra: [
-      {
-        type: ETipoConteudo.IMG,
-        filename: "extras-16.png"
-      }
-    ]
+    extra: {
+      content: [
+        {
+          type: ETipoConteudo.IMG,
+          filename: "extras-16.png"
+        }
+      ]
+    }
   },
   {
     id: "16",
@@ -382,10 +409,13 @@ const CONTEUDO: Array<IConteudoSecao> = [
       "Teve até um simbólico reencontro entre o ator que criou e sistematizou a atividade de palhaço em hospital no mundo — o americano Michael Christensen do The Clown Care Unit — e o ator que trouxe esse trabalho para o Brasil — Wellington Nogueira, fundador da Doutores da Alegria.",
       "A sexta edição do encontro marcou a [descentralização da rede](), que terá autonomia própria e será gerida por um coletivo de organizações.",
     ],
-    extra: [
-      "#### O Grande Encontro",
-      "[Bate-papo entre os mestres Wellington Nogueira e Michael Christensen. Assista!](https://www.youtube.com/watch?v=p183OuhoH6Q)"
-    ]
+    extra: {
+      color: "#FFFFFF",
+      content: [
+        "#### O Grande Encontro",
+        "[Bate-papo entre os mestres Wellington Nogueira e Michael Christensen. Assista!](https://www.youtube.com/watch?v=p183OuhoH6Q)"
+      ]
+    }
   },
   {
     id: "18",
@@ -764,10 +794,13 @@ const CONTEUDO: Array<IConteudoSecao> = [
       "### Reputação e credibilidade",
       "Foi um ano difícil e intenso, mas conseguimos manter a arrecadação em um bom patamar."
     ],
-    extra: [
-      "#### Reputação e credibilidade",
-      "[https://www.youtube.com/watch?v=8SDUI9-46PQ](https://www.youtube.com/watch?v=8SDUI9-46PQ)"
-    ]
+    extra: {
+      color: "#FFFFFF",
+      content: [
+        "#### Reputação e credibilidade",
+        "[https://www.youtube.com/watch?v=8SDUI9-46PQ](https://www.youtube.com/watch?v=8SDUI9-46PQ)"
+      ]
+    }
   },
   {
     id: "26",
@@ -806,7 +839,14 @@ const CONTEUDO: Array<IConteudoSecao> = [
       {
         type: ETipoConteudo.REC_APLICACAO
       },
-    ]
+    ],
+    extra: {
+      color: "#FFFFFF",
+      content: [
+        "#### Quase lá",
+        "Falta pouco pra você chegar na surpresa."
+      ]
+    }
   },
   {
     id: "29",

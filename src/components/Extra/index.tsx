@@ -5,15 +5,16 @@ import * as styles from "./styles.module.scss"
 type Props = {
   isActive: boolean;
   content: any[];
+  color: string;
   handleClick: () => void;
 }
 
-const Extra: React.FC<Props> = ({ isActive, content, handleClick }) => {
+const Extra: React.FC<Props> = ({ isActive, content, color, handleClick }) => {
   if (!content) return;
 
   return (
-    <div className={styles.overlay}>
-      <dialog className={styles.extra} open={isActive}>
+    <div className={styles.overlay} >
+      <dialog className={styles.extra} open={isActive} style={{ color: color }}>
         <button
           className={styles.button}
           aria-label="Fechar curiosidade"

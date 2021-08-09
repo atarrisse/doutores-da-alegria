@@ -19,7 +19,7 @@ const Slide: React.FC = ({ children, style, extra, theme, ...others }) => {
       <div className={styles.content}>
         {children}
       </div>
-      {extra && isExtraOpen && <Extra isActive={isExtraOpen} content={extra} handleClick={handleCloseExtra} />}
+      {extra && isExtraOpen && <Extra isActive={isExtraOpen} {...extra} handleClick={handleCloseExtra} />}
     </article>
   )
 }
