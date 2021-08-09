@@ -17,7 +17,7 @@ const findImage = (images, path) => {
 }
 
 export const parseImages = rawImgs => {
-  let imagens = {
+  const imagens = {
     slides: {
       after: [],
       bg: [],

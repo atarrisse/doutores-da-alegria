@@ -1,15 +1,15 @@
+import kebabCase from "lodash/kebabCase"
 import React from "react"
 import Slider from "react-slick"
-import kebabCase from "lodash/kebabCase"
 
-import Slide from "../components/Slides/Slide"
-import Cover from "../components/Slides/Cover"
-
-import CONTEUDO from "../content"
 import Section from "../components/Section"
-import { IConteudoSecao } from "../../types.d.ts"
-import * as styles from "./styles.module.scss";
+import Cover from "../components/Slides/Cover"
+import Slide from "../components/Slides/Slide"
+import CONTEUDO from "../content"
 
+import * as styles from "./styles.module.scss"
+
+import { IConteudoSecao } from "../../types.d.ts"
 
 const Index: React.FC = () => {
   const SITE_CONTENT: Array<IConteudoSecao> = CONTEUDO
@@ -20,12 +20,11 @@ const Index: React.FC = () => {
     className: styles.slickWrapper,
     dots: false,
     infinite: false,
+    lazyLoad: "ondemand",
     slidesToShow: 1,
     slidesToScroll: 1,
     speed: 500,
     swipeToSlide: true,
-    lazyLoad: "ondemand",
-    // initialSlide: 35
   }
 
   return (
@@ -43,11 +42,7 @@ const Index: React.FC = () => {
               id={kebabCase(item.title)}
               theme={{ "--theme-color": `var(--${kebabCase(item.color)})` }}
             >
-              <Section
-                key={JSON.stringify(item)}
-                index={i}
-                {...item}
-              />
+              <Section key={JSON.stringify(item)} index={i} {...item} />
             </Slide>
           )
         })}

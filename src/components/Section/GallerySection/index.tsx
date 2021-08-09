@@ -1,35 +1,57 @@
-import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image"
-import * as styles from "./styles.module.scss";
+import React from "react"
 
-const GallerySection = (data) => {
+import * as styles from "./styles.module.scss"
+
+const GallerySection = data => {
   return (
     <div className={styles.wrapper}>
       <ul className={styles.gallery}>
         <li>
-          <StaticImage src="../../../images/galerias/miolo-mole/viacom.jpg" alt="Viacom" />
+          <StaticImage
+            src="../../../images/galerias/miolo-mole/viacom.jpg"
+            alt="Viacom"
+          />
         </li>
         <li>
-          <StaticImage src="../../../images/galerias/miolo-mole/sao-paulo-para-criancas.jpg" alt="São Paulo para Crianças" />
+          <StaticImage
+            src="../../../images/galerias/miolo-mole/sao-paulo-para-criancas.jpg"
+            alt="São Paulo para Crianças"
+          />
         </li>
         <li>
-          <StaticImage src="../../../images/galerias/miolo-mole/bto.png" alt="B T O Mais" />
+          <StaticImage
+            src="../../../images/galerias/miolo-mole/bto.png"
+            alt="B T O Mais"
+          />
         </li>
         <li>
-          <StaticImage src="../../../images/galerias/miolo-mole/cbn.png" alt="C B N" />
+          <StaticImage
+            src="../../../images/galerias/miolo-mole/cbn.png"
+            alt="C B N"
+          />
         </li>
         <li>
-          <StaticImage src="../../../images/galerias/miolo-mole/correcta.jpg" alt="Correta" />
+          <StaticImage
+            src="../../../images/galerias/miolo-mole/correcta.jpg"
+            alt="Correta"
+          />
         </li>
         <li>
-          <StaticImage src="../../../images/galerias/miolo-mole/instituto-claro.png" alt="Instituto Claro" />
+          <StaticImage
+            src="../../../images/galerias/miolo-mole/instituto-claro.png"
+            alt="Instituto Claro"
+          />
         </li>
         <li>
-          <StaticImage src="../../../images/galerias/miolo-mole/cartoon-network.png" alt="Cartoon Network" />
+          <StaticImage
+            src="../../../images/galerias/miolo-mole/cartoon-network.png"
+            alt="Cartoon Network"
+          />
         </li>
       </ul>
     </div>
   )
 }
 
-export default GallerySection;
+export default GallerySection

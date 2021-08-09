@@ -1,6 +1,7 @@
-import * as React from "react"
+import React from "react"
 import { useState } from "react"
 import AnimateHeight from "react-animate-height"
+
 import * as styles from "./styles.module.scss"
 
 type Props = {
@@ -8,7 +9,7 @@ type Props = {
 }
 
 const AccordionItem: React.FC<Props> = ({ title, children }) => {
-  const [height, setHeight] = useState<string | number>(0);
+  const [height, setHeight] = useState<string | number>(0)
 
   const handleClick = () => {
     if (height === 0) setHeight("auto")
@@ -19,7 +20,7 @@ const AccordionItem: React.FC<Props> = ({ title, children }) => {
     <div className={styles.accordion}>
       <button
         aria-expanded={height !== 0}
-        aria-controls='panel'
+        aria-controls="panel"
         className={styles.button}
         onClick={handleClick}
       >
@@ -27,7 +28,7 @@ const AccordionItem: React.FC<Props> = ({ title, children }) => {
       </button>
 
       <AnimateHeight
-        id='panel'
+        id="panel"
         duration={500}
         height={height} // see props documentation below
       >

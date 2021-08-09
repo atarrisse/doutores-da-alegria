@@ -1,8 +1,17 @@
-import * as React from "react";
-import { ResponsiveContainer, BarChart, XAxis, YAxis, Bar, LabelList, Cell } from "recharts";
+import React from "react"
+import {
+  ResponsiveContainer,
+  BarChart,
+  XAxis,
+  YAxis,
+  Bar,
+  LabelList,
+  Cell,
+} from "recharts"
+
 import * as styles from "./styles.module.scss"
 
-interface IProps { }
+interface IProps {}
 
 const data = [
   { name: "2013", value: 4072 },
@@ -15,18 +24,26 @@ const data = [
   { name: "2020", value: 7779 },
 ]
 
-const LabelValue = (data) => {
+const LabelValue = data => {
   const { x, y, height, width, offset, value } = data
-  return <text
-    x={x + width + 10}
-    y={y + offset + height / 2}
-    className={styles.label}>
-    {value.toLocaleString("pt-br")}{value === 8855 && "*"}
-  </text>
+  return (
+    <text
+      x={x + width + 10}
+      y={y + offset + height / 2}
+      className={styles.label}
+    >
+      {value.toLocaleString("pt-br")}
+      {value === 8855 && "*"}
+    </text>
+  )
 }
-const LabelYear = (data) => {
+const LabelYear = data => {
   const { y, height, value } = data
-  return <text x={46} y={y + 6 + height / 2} className={styles.label}>{value}</text>
+  return (
+    <text x={46} y={y + 6 + height / 2} className={styles.label}>
+      {value}
+    </text>
+  )
 }
 
 const RecursosArrecadados = () => {
@@ -49,12 +66,18 @@ const RecursosArrecadados = () => {
             radius={[0, 7, 7, 0]}
             label={<LabelValue />}
           >
-            <LabelList dataKey="name" position="insideLeft" offset={48} content={<LabelYear external={external} />} />
-            {
-              data.map((entry, index) => (
-                <Cell key={JSON.stringify(entry)} fill={`rgba(95, 240, 101, ${0.3 + index * 0.1})`} />
-              ))
-            }
+            <LabelList
+              dataKey="name"
+              position="insideLeft"
+              offset={48}
+              content={<LabelYear external={external} />}
+            />
+            {data.map((entry, index) => (
+              <Cell
+                key={JSON.stringify(entry)}
+                fill={`rgba(95, 240, 101, ${0.3 + index * 0.1})`}
+              />
+            ))}
           </Bar>
         </BarChart>
       </ResponsiveContainer>

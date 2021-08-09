@@ -1,10 +1,12 @@
-import * as React from "react";
+import React from "react";
+import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
+
 import Section from "../..";
 import { EColors } from "../../../../types.d.ts"
-import Legenda from "../Legenda";
-import * as styles from "./styles.module.scss"
-import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 import { getColor } from "../../../../utils"
+import Legenda from "../Legenda";
+
+import * as styles from "./styles.module.scss"
 
 
 interface IProps { }
