@@ -1,6 +1,12 @@
+@import "../../../styles/globals/resources.scss";
+
 .figure {
   width: 85%;
   margin: 0 auto;
+
+  @include desktop {
+    width: 50%;
+  }
 }
 
 .blockquote {
@@ -32,4 +38,8 @@
   line-height: 1.25;
   font-weight: 700;
   font-style: normal;
+
+  @include desktop {
+    font-size: 1.8rem;
+  }
 }

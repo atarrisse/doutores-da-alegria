@@ -4,12 +4,12 @@ import Image from "../Image"
 
 import * as styles from "./styles.module.scss"
 
-import { IConteudoSecao, ETipoConteudo } from "../../types.d.ts"
+import { IConteudoSecao } from "../../types.d.ts"
 
 type Props = IConteudoSecao
 
-const Rodape: React.FC<Props> = ({ id, index, links }) => {
-  if (links) console.log(links)
+const Rodape: React.FC<Props> = ({ id, links }) => {
+  const i = parseInt(id, 10) + 2
 
   return (
     <div className={styles.rodape}>
@@ -17,7 +17,7 @@ const Rodape: React.FC<Props> = ({ id, index, links }) => {
         alt=""
         aria-hidden
         className={styles.bg}
-        filename={`slides/bg/${(index + 1).toString().padStart(2, "0")}.png`}
+        filename={`slides/bg/${i.toString().padStart(2, "0")}.png`}
       />
       {id !== "00" &&
         links &&

@@ -9,6 +9,11 @@
   &[data-extra="true"] {
     overflow: hidden;
   }
+
+  @include desktop {
+    width: 70%;
+    max-width: 92rem;
+  }
 }
 
 .title {
@@ -21,12 +26,20 @@
   @include desktop {
     font-size: 10rem;
     line-height: 1em;
-    margin-bottom: 4.4rem;
+    margin: 0 0 4.4rem;
+
+    &[data-hide-desktop="true"] {
+      display: none;
+      visibility: hidden;
+    }
   }
 }
 
 .content {
   flex-grow: 1;
-  padding-left: 4.6rem;
-  padding-right: 4.6rem;
+
+  @include mobile {
+    padding-left: 4.6rem;
+    padding-right: 4.6rem;
+  }
 }

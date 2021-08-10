@@ -24,7 +24,7 @@ export enum ETipoConteudo {
   TXT = "texto",
   NUM = "numbers",
   QUOTE = "quote",
-  GALERIA = "galeria",
+  PARTNER = "parceiros",
   EQUIPE = "equipe",
   REC_ARRECADADOS = "recursos-arrecadados",
   REC_ORIGEM = "origem-dos-recursos",

@@ -2,12 +2,9 @@ import React from "react"
 import { ResponsiveContainer, BarChart, Bar, Cell } from "recharts"
 
 import { EColors } from "../../../../types.d.ts"
-import Section from "../../../Section"
 import Legenda from "../Legenda"
 
 import * as styles from "./styles.module.scss"
-
-interface IProps {}
 
 const data = [
   {

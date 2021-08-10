@@ -16,15 +16,18 @@ const Section: React.FC<Props> = ({
   index,
   links,
   title,
+  hideTitleOnDesktop,
   ...others
 }) => {
   return (
     <div className={styles.section} {...others}>
       <div className={styles.content}>
-        <h2 className={styles.title}>{title}</h2>
+        <h2 className={styles.title} data-hide-desktop={hideTitleOnDesktop}>
+          {title}
+        </h2>
         {children ? children : content && <Content content={content} />}
       </div>
-      {/* <Rodape index={index} links={links} id={id} /> */}
+      <Rodape index={index} links={links} id={id} />
     </div>
   )
 }

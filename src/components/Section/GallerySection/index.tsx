@@ -3,7 +3,8 @@ import React from "react"
 
 import * as styles from "./styles.module.scss"
 
-const GallerySection = data => {
+const GallerySection = () => {
+  console.log("here")
   return (
     <div className={styles.wrapper}>
       <ul className={styles.gallery}>

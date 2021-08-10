@@ -1,10 +1,18 @@
+@import "../../../styles/globals/resources.scss";
+
 .cover {
-  background-image: url("../../../images/cover.png");
+  background-image: url("../../../images/cover_mobile.png");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
+  
+  @include desktop {
+    background-image: unset;
+    height: 100vh;
+    margin-left: -11%;
+  }
 }
 
 .title {
@@ -22,5 +30,9 @@
 }
 
 .bg {
-  flex-grow: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
 }

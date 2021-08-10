@@ -5,7 +5,8 @@ import Extra from "../../Extra"
 
 import * as styles from "./styles.module.scss"
 
-const Slide: React.FC = ({ children, style, extra, theme, ...others }) => {
+const Slide = (data) => {
+  const { children, className, style, extra, theme, ...others } = data;
   const [isExtraOpen, setIsExtraOppen] = useState<boolean | undefined>(
     extra !== undefined
   )
@@ -13,7 +14,7 @@ const Slide: React.FC = ({ children, style, extra, theme, ...others }) => {
 
   return (
     <article
-      className={styles.article}
+      className={`${styles.article} ${className}`}
       data-extra={isExtraOpen}
       style={{ ...style, ...theme }}
       {...others}

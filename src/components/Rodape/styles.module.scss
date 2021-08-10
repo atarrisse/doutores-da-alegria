@@ -1,8 +1,15 @@
+@import "../../styles/globals/resources.scss";
+
 .rodape {
   align-self: end;
   display: flex;
   margin-top: 5rem;
   position: relative;
+
+  @include desktop {
+    display: none;
+    position: absolute;
+  }
 }
 
 .people {

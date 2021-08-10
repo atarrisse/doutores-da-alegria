@@ -3,17 +3,18 @@ import React from "react"
 import * as styles from "./styles.module.scss"
 
 interface IProps {
-  label: string
+  comment?: string;
+  label?: string
   numbers: Array<any>
 }
 
 const NumberSection: React.FC<IProps> = ({ label, numbers }) => {
   return (
     <>
-      <h4 className={styles.label}>{label}</h4>
+      {label && <h4 className={styles.label}>{label}</h4>}
       <div
         className={styles.numberGrid}
-        data-presencial={label.includes("presenciais")}
+        data-presencial={label?.includes("presenciais")}
       >
         {numbers.map(item => {
           return (

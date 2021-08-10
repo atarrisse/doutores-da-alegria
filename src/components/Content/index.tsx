@@ -55,9 +55,8 @@ const Content = ({ content }) => {
                 </QuoteSection>
               )
             case ETipoConteudo.PARTNERS:
-              return (
-                <GallerySection key={JSON.stringify(ctnt)} content={ctnt} />
-              )
+              console.log("case ETipoConteudo.PARTNERS:")
+              return <GallerySection key={JSON.stringify(ctnt)} />
             // RECURSOS
             case ETipoConteudo.REC_ARRECADADOS:
               return <RecursosArrecadados key={JSON.stringify(ctnt)} />
@@ -71,8 +70,9 @@ const Content = ({ content }) => {
             // APOIO
             case ETipoConteudo.APOIO:
               return <Parcerias key={JSON.stringify(ctnt)} {...ctnt} />
+            // ultima página
             case ETipoConteudo.BUSCA:
-              return <SearchSection {...ctnt} />
+              return <SearchSection key={JSON.stringify(ctnt)} {...ctnt} />
             default:
               return <></>
           }
