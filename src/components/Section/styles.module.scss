@@ -1,3 +1,5 @@
+@import "../../styles/globals/resources.scss";
+
 .section {
   display: flex;
   flex-direction: column;
@@ -6,7 +8,6 @@
 
   &[data-extra="true"] {
     overflow: hidden;
-    background: red;
   }
 }
 
@@ -16,6 +17,12 @@
   font-size: 4.3rem;
   line-height: 1;
   margin-bottom: 2.6rem;
+
+  @include desktop {
+    font-size: 10rem;
+    line-height: 1em;
+    margin-bottom: 4.4rem;
+  }
 }
 
 .content {

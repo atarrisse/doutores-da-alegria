@@ -21,6 +21,15 @@ const Index: React.FC = () => {
     dots: false,
     infinite: false,
     lazyLoad: "ondemand",
+    responsive: [
+      {
+        breakpoint: 1024
+      },
+      {
+        breakpoint: 999999999999999, // a unrealistically big number to cover up greatest screen resolution
+        settings: 'unslick'
+      }
+    ],
     slidesToShow: 1,
     slidesToScroll: 1,
     speed: 500,

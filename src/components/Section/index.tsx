@@ -24,7 +24,7 @@ const Section: React.FC<Props> = ({
         <h2 className={styles.title}>{title}</h2>
         {children ? children : content && <Content content={content} />}
       </div>
-      <Rodape index={index} links={links} id={id} />
+      {/* <Rodape index={index} links={links} id={id} /> */}
     </div>
   )
 }

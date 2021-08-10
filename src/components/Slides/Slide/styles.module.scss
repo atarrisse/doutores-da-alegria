@@ -1,11 +1,22 @@
+@import "../../../styles/globals/resources";
+
 .article {
+  border: 1px solid;
   height: 100%;
-  overflow: hidden auto;
   position: relative;
   width: 100%;
+  
+  @include mobile { 
+    overflow: hidden auto;
+    
+    &[data-extra="true"] {
+      overflow: hidden;
+    }
+  }
 
-  &[data-extra="true"] {
-    overflow: hidden;
+  @include desktop {
+    margin: auto;
+    max-width: 120rem;
   }
 }
 
