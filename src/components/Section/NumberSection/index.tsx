@@ -3,7 +3,7 @@ import React from "react"
 import * as styles from "./styles.module.scss"
 
 interface IProps {
-  comment?: string;
+  comment?: string
   label?: string
   numbers: Array<any>
 }

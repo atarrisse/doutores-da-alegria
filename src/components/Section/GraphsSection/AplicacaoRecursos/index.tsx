@@ -1,15 +1,14 @@
 import React from "react";
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 
-import Section from "../..";
-import { EColors } from "../../../../types.d.ts"
-import { getColor } from "../../../../utils"
 import Legenda from "../Legenda";
+
+import { getColor } from "@/utils"
 
 import * as styles from "./styles.module.scss"
 
+import { EColors } from "@/types.d.ts"
 
-interface IProps { }
 
 const data = {
   "Projetos": [
@@ -128,7 +127,7 @@ const AplicacaoRecursos = () => {
       {
         Object.entries(data).map(([key, value]) => {
           return (<React.Fragment key={JSON.stringify(value)}>
-            <h3>{key}</h3>
+            <h3 className={styles.labelTitle}>{key}</h3>
             <Legenda data={value} />
           </React.Fragment>)
         })

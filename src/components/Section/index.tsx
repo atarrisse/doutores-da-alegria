@@ -20,7 +20,7 @@ const Section: React.FC<Props> = ({
   ...others
 }) => {
   return (
-    <div className={styles.section} {...others}>
+    <section className={styles.section} {...others}>
       <div className={styles.content}>
         <h2 className={styles.title} data-hide-desktop={hideTitleOnDesktop}>
           {title}
@@ -28,7 +28,7 @@ const Section: React.FC<Props> = ({
         {children ? children : content && <Content content={content} />}
       </div>
       <Rodape index={index} links={links} id={id} />
-    </div>
+    </section>
   )
 }
 

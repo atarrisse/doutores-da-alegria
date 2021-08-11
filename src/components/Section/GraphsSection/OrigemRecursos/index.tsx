@@ -4,6 +4,8 @@ import { ResponsiveContainer, BarChart, Bar, Cell } from "recharts"
 import { EColors } from "../../../../types.d.ts"
 import Legenda from "../Legenda"
 
+import useWindowDimensions from "@/utils/useWindowDimension"
+
 import * as styles from "./styles.module.scss"
 
 const data = [
@@ -50,42 +52,67 @@ const data = [
 ]
 
 const LabelValue = data => {
-  const { x, y, offset, value } = data
+  const { isMobile } = useWindowDimensions()
+  const { x, y, width, offset, value } = data
+  const posX = x + width / 2
+  const posY = isMobile ? y - offset : y - 2 * offset
   return (
     <text
-      fontSize="1.2rem"
+      fontSize={isMobile ? "1.2rem" : "3rem"}
       fill={`var(--${data.color || "carbon"})`}
-      x={x}
-      y={y - offset}
+      x={posX}
+      y={posY}
       className={styles.label}
+      textAnchor="middle"
     >
       {`${value.toLocaleString("pt-br")}%`}
     </text>
   )
 }
+
+const graficoMobile = () => (
+  <>
+    <div className={styles.graph}>
+      <ResponsiveContainer>
+        <BarChart data={data} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+          <Bar dataKey="value" label={<LabelValue />} radius={[2, 2, 0, 0]}>
+            {data.map(entry => (
+              <Cell
+                key={JSON.stringify(entry)}
+                fill={`var(--${entry.color || "carbon"})`}
+              />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+    <Legenda data={data} />
+  </>
+)
+
+const graficoDesktop = () => (
+  <>
+    <div className={styles.graph}>
+      <ResponsiveContainer>
+        <BarChart data={data} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+          <Bar dataKey="value" label={<LabelValue />} radius={[2, 2, 0, 0]}>
+            {data.map(entry => (
+              <Cell
+                key={JSON.stringify(entry)}
+                fill={`var(--${entry.color || "carbon"})`}
+              />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+    <Legenda data={data} />
+  </>
+)
+
 const OrigemRecursos = () => {
-  return (
-    <>
-      <div className={styles.graph}>
-        <ResponsiveContainer>
-          <BarChart
-            data={data}
-            margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
-          >
-            <Bar dataKey="value" label={<LabelValue />} radius={[2, 2, 0, 0]}>
-              {data.map(entry => (
-                <Cell
-                  key={JSON.stringify(entry)}
-                  fill={`var(--${entry.color || "carbon"})`}
-                />
-              ))}
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
-      <Legenda data={data} />
-    </>
-  )
+  const { isMobile } = useWindowDimensions()
+  return isMobile ? graficoMobile() : graficoDesktop()
 }
 
 export default OrigemRecursos

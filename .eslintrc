@@ -4,7 +4,7 @@
     "node": true,
     "es6": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 8,
@@ -14,8 +14,9 @@
       "jsx": true
     }
   },
-  "plugins": ["prettier", "react", "import"],
+  "plugins": ["react", "import"],
   "rules": {
+    "semi": [2, "always"],
     "no-console": 2,
     "prefer-arrow-callback": 2,
     "prefer-const": 2,
@@ -35,35 +36,23 @@
         "newlines-between": "always",
         "pathGroups": [
           {
-            "pattern": "./styles.module.scss",
-            "group": "object",
-            "position": "before"
-          },
-          // {
-          //   "pattern": "./styles",
-          //   "group": "object",
-          //   "position": "before"
-          // },
-          // {
-          //   "pattern": "@/types/**",
-          //   "group": "type",
-          //   "position": "before"
-          // },
-          {
             "pattern": "@/components/**",
             "group": "internal",
             "position": "before"
           },
           {
-            "pattern": "../../types.d.ts",
+            "pattern": "./styles.module.scss",
+            "group": "object",
+            "position": "after"
+          },
+          {
+            "pattern": "*/types.d.ts",
             "group": "type",
-            "position": "before"
-          }
+            "position": "after"
+          },
         ]
       }
     ],
-
-    "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "react/prop-types": 0,
     "react/react-in-jsx-scope": 0
   },

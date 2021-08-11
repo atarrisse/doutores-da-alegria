@@ -1,17 +1,17 @@
-import kebabCase from "lodash/kebabCase"
-import React from "react"
-import Slider from "react-slick"
+import kebabCase from "lodash/kebabCase";
+import React from "react";
+import Slider from "react-slick";
 
-import Section from "@/components/Section"
-import Cover from "@/components/Slides/Cover"
-import Slide from "@/components/Slides/Slide"
+import Section from "@/components/Section";
+import Cover from "@/components/Slides/Cover";
+import Slide from "@/components/Slides/Slide";
 
-import * as styles from "./styles.module.scss"
+import Conteudo from "@/conteudo/conteudo";
+import Estatisticas from "@/conteudo/estatisticas";
+import ImpactoSocial from "@/conteudo/impactoSocial";
+import Parcerias from "@/conteudo/parcerias";
 
-import Conteudo from "@/conteudo/conteudo"
-import Estatisticas from "@/conteudo/estatisticas"
-import ImpactoSocial from "@/conteudo/impactoSocial"
-import Parcerias from "@/conteudo/parcerias"
+import * as styles from "./styles.module.scss";
 
 const config = {
   adaptiveHeight: true,
@@ -33,10 +33,10 @@ const config = {
   slidesToScroll: 1,
   speed: 500,
   swipeToSlide: true,
-}
+};
 
 const createSlides = data => {
-  const { slides, className } = data
+  const { slides, className } = data;
   return slides.map((item, i) => {
     return (
       <Slide
@@ -48,21 +48,22 @@ const createSlides = data => {
       >
         <Section key={JSON.stringify(item)} index={i} {...item} />
       </Slide>
-    )
-  })
-}
+    );
+  });
+};
 
 const Index: React.FC = () => {
   return (
     <main>
       <Slider {...config}>
-        {/* <Cover /> */}
-        {/* {createSlides({ slides: Conteudo })} */}
-        {/* {createSlides({ slides: ImpactoSocial, className: styles.numberSlide })} */}
+        <Cover />
+        {createSlides({ slides: Conteudo })}
+        {createSlides({ slides: ImpactoSocial, className: styles.numberSlide })}
         {createSlides({ slides: [...Estatisticas, ...Parcerias] })}
+        {createSlides({ slides: Parcerias })}
       </Slider>
     </main>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;

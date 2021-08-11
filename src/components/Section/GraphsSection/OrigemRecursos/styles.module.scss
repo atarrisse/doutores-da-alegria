@@ -1,8 +1,14 @@
+@import "../../../../styles/globals/resources.scss";
+
 .graph {
   height: 20rem;
   font-weight: 700;
   width: 100%;
   margin-bottom: 3rem;
+
+  @include desktop {
+    height: 70vh;
+  }
 }
 
 .origens {
