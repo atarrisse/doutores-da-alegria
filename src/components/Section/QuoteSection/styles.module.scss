@@ -1,11 +1,12 @@
 @import "../../../styles/globals/resources.scss";
 
 .figure {
-  width: 85%;
+  width: 50%;
   margin: 0 auto;
-
+  
   @include desktop {
-    width: 50%;
+    width: 85%;
+    margin: 0 0 0 5.5rem;
   }
 }
 

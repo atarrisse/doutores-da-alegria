@@ -7,10 +7,6 @@
 // NUMBER SLIDES
 
 .numberSlide {
-  &:not(:first-child):not(:last-child) {
-     margin-bottom: 0;
-   }
-
   h4 {
     @include desktop {
       font-size: 4.2rem;
@@ -20,12 +16,22 @@
 }
 
 @include desktop {
+  *:global(#impacto-social-22),
   *:global(#impacto-social-23),
   *:global(#impacto-social-24) {
+    margin-bottom: 0;
+  }
+
+  *:global(#impacto-social-24),
+  *:global(#impacto-social-25) {
     h3 {
       display: none;
     }
   }
+}
+
+*:global(.recharts-surface) {
+  overflow: visible;
 }
 
 //

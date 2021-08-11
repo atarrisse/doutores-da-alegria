@@ -9,7 +9,7 @@ import { IConteudoSecao } from "../../types.d.ts"
 type Props = IConteudoSecao
 
 const Rodape: React.FC<Props> = ({ id, links }) => {
-  const i = parseInt(id, 10) + 2
+  const i = parseInt(id, 10) + 1
 
   return (
     <div className={styles.rodape}>

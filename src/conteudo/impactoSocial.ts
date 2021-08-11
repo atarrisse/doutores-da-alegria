@@ -5,9 +5,9 @@ import {
   ETipoConteudo,
 } from "@/types.d.ts"
 
-const CONTEUDO: Array<IConteudoSecao> = [
+const ImpactoSocial: Array<IConteudoSecao> = [
   {
-    id: "20",
+    id: "21",
     title: "Impacto Social",
     color: EColors.AZUL,
     content: [
@@ -56,7 +56,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
   },
   {
-    id: "21",
+    id: "22",
     title: "Impacto Social",
     hideTitleOnDesktop: true,
     links: [
@@ -117,7 +117,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
   },
   {
-    id: "22",
+    id: "23",
     title: "Impacto Social",
     color: EColors.AZUL,
     hideTitleOnDesktop: true,
@@ -196,7 +196,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
   },
   {
-    id: "23",
+    id: "24",
     title: "Impacto Social",
     color: EColors.AZUL,
     hideTitleOnDesktop: true,
@@ -273,7 +273,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     ],
   },
   {
-    id: "24",
+    id: "25",
     title: "Impacto Social",
     color: EColors.AZUL,
     hideTitleOnDesktop: true,
@@ -316,92 +316,4 @@ const CONTEUDO: Array<IConteudoSecao> = [
   },
 ]
 
-export default CONTEUDO
-
-// import { ENumeroTamanho, EColors, IConteudoSecao, ETipoConteudo, EApoioDisplay, IApoio } from "./types.d.ts"
-
-// const ImpactoSocial = {
-//   "presenciais": {
-//     titulo: "Projetos presenciais",
-//     projetos: [
-//       {
-//         label: "Hospital",
-//         value: 39941,
-//         data: [
-//           {
-//             label: "São Paulo",
-//             value: 20859,
-//           },
-//           {
-//             label: "Recife",
-//             value: 19082,
-//           },
-//         ]
-//       },
-//       {
-//         label: "Carnaval",
-//         value: 6564,
-//         data: [
-//           {
-//             label: "São Paulo",
-//             value: 4064,
-//           },
-//           {
-//             label: "Recife",
-//             value: 2500,
-//           },
-//           {
-//             label: "Rio de Janeiro",
-//             value: 2150,
-//           },
-//         ]
-//       },
-//       {
-//         label: "Conta Causos",
-//         value: 158,
-//         comment: "Crianças, acompanhantes, equipe hospitalar e outros nos atendimentos presenciais que aconteceram até o dia 31/3 2020."
-//       }
-//     ],
-//     "digitais": {
-//       projetos: [
-//         {
-//           label: "Delivery Besteirológico",
-//           data: [
-//             {
-//               label: "Alcance",
-//               value: 12139163,
-//             },
-//             {
-//               label: "Visualizações",
-//               value: 8509401,
-//             },
-//             {
-//               label: "Interações",
-//               value: 459495,
-//             },
-//           ]
-//         },
-//         {
-//           label: "Consultório Besteirológico",
-//           type: ETipoConteudo.NUM,
-//           numbers: [
-//             {
-//               label: "Alcance",
-//               value: 358469,
-//             },
-//             {
-//               label: "Visualizações",
-//               value: 157933,
-//             },
-//             {
-//               label: "Interações",
-//               value: 33179,
-//             },
-//           ]
-//         },
-//       ]
-//     }
-//   }
-// }
-
-// export default ImpactoSocial
+export default ImpactoSocial

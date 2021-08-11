@@ -28,6 +28,6 @@
   height: 100%;
 
   @include desktop {
-    padding-left: 11%;
+    padding-left: var(--desktop-left-padding);
   }
 }

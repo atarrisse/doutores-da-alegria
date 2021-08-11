@@ -11,7 +11,7 @@ import {
 
 import * as styles from "./styles.module.scss"
 
-interface IProps {}
+import useWindowDimensions from "@/utils/useWindowDimension"
 
 const data = [
   { name: "2013", value: 4072 },
@@ -25,13 +25,12 @@ const data = [
 ]
 
 const LabelValue = data => {
+  const { isMobile } = useWindowDimensions()
+
   const { x, y, height, width, offset, value } = data
+  const posX = isMobile ? x + width + 10 : x + width + 50
   return (
-    <text
-      x={x + width + 10}
-      y={y + offset + height / 2}
-      className={styles.label}
-    >
+    <text x={posX} y={y + offset + height / 2} className={styles.label}>
       {value.toLocaleString("pt-br")}
       {value === 8855 && "*"}
     </text>
@@ -46,40 +45,79 @@ const LabelYear = data => {
   )
 }
 
+const graphMobile = () => (
+  <BarChart
+    data={data}
+    barGap={9}
+    barSize={38}
+    maxBarSize={60}
+    layout="vertical"
+    margin={{ top: 0, right: 25, bottom: 0, left: 0 }}
+  >
+    <XAxis hide={true} type="number" />
+    <YAxis hide={true} dataKey="name" type="category" />
+    <Bar
+      layout="vertical"
+      dataKey="value"
+      radius={[0, 7, 7, 0]}
+      label={<LabelValue />}
+    >
+      <LabelList
+        dataKey="name"
+        position="insideLeft"
+        offset={48}
+        content={<LabelYear external={external} />}
+      />
+      {data.map((entry, index) => (
+        <Cell
+          key={JSON.stringify(entry)}
+          fill={`rgba(95, 240, 101, ${0.3 + index * 0.1})`}
+        />
+      ))}
+    </Bar>
+  </BarChart>
+)
+
+const graphDesktop = () => (
+  <BarChart
+    data={data}
+    barGap={25}
+    barSize={109}
+    maxBarSize={860}
+    layout="vertical"
+    margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+  >
+    <XAxis hide={true} type="number" />
+    <YAxis hide={true} dataKey="name" type="category" />
+    <Bar
+      layout="vertical"
+      dataKey="value"
+      radius={[0, 7, 7, 0]}
+      label={<LabelValue />}
+    >
+      <LabelList
+        dataKey="name"
+        position="insideLeft"
+        offset={48}
+        content={<LabelYear />}
+      />
+      {data.map((entry, index) => (
+        <Cell
+          key={JSON.stringify(entry)}
+          fill={`rgba(95, 240, 101, ${0.3 + index * 0.1})`}
+        />
+      ))}
+    </Bar>
+  </BarChart>
+)
+
 const RecursosArrecadados = () => {
+  const { isMobile } = useWindowDimensions()
+
   return (
     <div className={styles.graph}>
       <ResponsiveContainer>
-        <BarChart
-          data={data}
-          barGap={9}
-          barSize={38}
-          maxBarSize={60}
-          layout="vertical"
-          margin={{ top: 0, right: 25, bottom: 0, left: 0 }}
-        >
-          <XAxis hide={true} type="number" />
-          <YAxis hide={true} dataKey="name" type="category" />
-          <Bar
-            layout="vertical"
-            dataKey="value"
-            radius={[0, 7, 7, 0]}
-            label={<LabelValue />}
-          >
-            <LabelList
-              dataKey="name"
-              position="insideLeft"
-              offset={48}
-              content={<LabelYear external={external} />}
-            />
-            {data.map((entry, index) => (
-              <Cell
-                key={JSON.stringify(entry)}
-                fill={`rgba(95, 240, 101, ${0.3 + index * 0.1})`}
-              />
-            ))}
-          </Bar>
-        </BarChart>
+        {isMobile ? graphMobile() : graphDesktop()}
       </ResponsiveContainer>
     </div>
   )

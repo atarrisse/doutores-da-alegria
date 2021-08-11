@@ -1,8 +1,16 @@
+@import "../../../../styles/globals/resources.scss";
+
 .graph {
   height: 50vh;
   margin: 0 -4.6rem;
   font-weight: 700;
   padding-right: 4rem;
+  
+  @include desktop {
+    height: 104.7rem;
+    margin: 0 0 7rem calc(-1 * var(--desktop-left-padding));
+    padding-right: 0;
+  }
 }
 
 .label {
