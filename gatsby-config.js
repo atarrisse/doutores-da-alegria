@@ -11,7 +11,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/static/images`,
       },
     },
     "gatsby-transformer-sharp",
@@ -56,12 +56,12 @@ module.exports = {
     },
     `gatsby-transformer-csv`,
     {
-    resolve: "gatsby-plugin-react-svg",
-    options: {
-      rule: {
-        include: `${__dirname}/static/icons`
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: `${__dirname}/static/icons`
+        }
       }
     }
-  }
   ],
-}
+};
