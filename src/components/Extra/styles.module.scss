@@ -1,3 +1,5 @@
+@import "../../styles/globals/resources.scss";
+
 .extra {
   background-color: var(--theme-color);
   border-radius: 3rem;
@@ -14,6 +16,10 @@
 
   & *:global(.gatsby-image-wrapper) {
     margin-bottom: -3rem;
+  }
+
+  @include desktop {
+    display: none;
   }
 }
 

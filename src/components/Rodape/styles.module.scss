@@ -7,8 +7,9 @@
   position: relative;
 
   @include desktop {
-    display: none;
     position: absolute;
+    left: unset;
+    right: 0;
   }
 }
 

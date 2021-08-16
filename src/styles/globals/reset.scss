@@ -29,28 +29,28 @@ body {
   color: var(--carbon);
   font-family: var(--font-vag-rounded);
   font-size: 16px;
+}
 
-  @include mobile {
-    html,
-    body,
-    #___gatsby,
-    #gatsby-focus-wrapper,
-    main {
-      height: 100%;
-    }
+@include mobile {
+  html,
+  body,
+  #___gatsby,
+  #gatsby-focus-wrapper,
+  main {
+    height: 100%;
+  }
+  
+  .slick-list {
+    height: 100% !important;
+  }
+  .slick-track {
+    height: 100%;
+  }
+  .slick-slide {
+    height: 100%;
     
-    .slick-list {
-      height: 100% !important;
-    }
-    .slick-track {
+    > div {
       height: 100%;
-    }
-    .slick-slide {
-      height: 100%;
-      
-      > div {
-        height: 100%;
-      }
     }
   }
 }

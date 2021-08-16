@@ -1,4 +1,4 @@
-import { EColors, IConteudoSecao, ETipoConteudo } from "@/types.d.ts"
+import { EColors, IConteudoSecao, ETipoConteudo } from "@/types.d.ts";
 
 const Conteudo: Array<IConteudoSecao> = [
   {
@@ -17,7 +17,7 @@ const Conteudo: Array<IConteudoSecao> = [
     color: EColors.VERMELHO,
     content: [
       "Foram 300 dias absolutamente diferentes de tudo o que já vivemos em quase 30 anos. Mais do que contar como a organização se reinventou em 2020, este balanço procura mostrar como Doutores da Alegria sobreviveu em um ano em que o [inimaginável se tornou realidade.](https://doutoresdaalegria.org.br/blog/o-inimaginavel-para-doutores-da-alegria-se-tornou-realidade/)",
-      "Os textos, fotos e vídeos desta edição respondem a uma pergunta: de que maneira uma associação de palhaços que fazem intervenções presenciais dentro de hospitais públicos se mostrou relevante em uma pandemia?",
+      "Os textos, fotos e vídeos desta edição respondem a uma pergunta:  de que maneira uma associação que promove intervenções artísticas em hospitais e que ensina a linguagem do palhaço de maneira presencial pode se mostrar relevante em uma pandemia?",
     ],
   },
   {
@@ -95,19 +95,19 @@ const Conteudo: Array<IConteudoSecao> = [
     ],
     content: [
       "Um comitê composto por diversos profissionais da organização, com apoio da diretoria, criou a série de vídeos Delivery Besteirológico. A ideia era aproximar os palhaços, em distanciamento social, das crianças hospitalizadas, profissionais de saúde e público nas redes sociais.",
-      "Era dessa maneira que [entraríamos nos hospitais](https://www.youtube.com/watch?v=V8iO1RxMkYM) enquanto o vírus não desse trégua.",
+      "Era dessa maneira que [entraríamos nos hospitais](https://www.youtube.com/watch?v=V8iO1RxMkYM) enquanto o vírus não desse régua e ainda com a possibilidade de mostrarmos nosso trabalho para além dos hospitais.",
     ],
     extra: {
       color: "#FFFFFF",
       content: [
         "#### Ué",
-        "Para que arte em tempos de pandemia? A gente explica [neste vídeo](https://doutoresdaalegria.org.br/blog/para-que-arte-em-tempos-de-pandemia/).",
+        "[Para que arte em tempos de pandemia? A gente explica neste vídeo.](https://doutoresdaalegria.org.br/blog/para-que-arte-em-tempos-de-pandemia/).",
       ],
     },
   },
   {
     id: "07",
-    title: "Troca de Guarda",
+    title: "Troca de Gestão",
     color: EColors.SALMAO,
     content: [
       "Em abril, a associação Doutores da Alegria passou a contar [com uma nova diretoria estatutária para o biênio 2020-2022](https://doutoresdaalegria.org.br/blog/associacao-doutores-da-alegria-tem-nova-diretoria-estatutaria-ate-2022/). Quatro dos diretores se mantiveram no cargo: Luis Vieira da Rocha como diretor-presidente, Daiane Carina como diretora de Relações Institucionais, Ronaldo Aguiar como diretor Artístico e Simone Pimentel como diretora Financeira. A nova diretora de Formação, Lourdes Atié, substituiu Thaïs Ferrara.",
@@ -255,7 +255,7 @@ const Conteudo: Array<IConteudoSecao> = [
       "### Escola em Obras",
       "A reorganização dos programas da Escola Doutores da Alegria para o formato virtual ganhou uma série. Cada um dos cinco episódios trouxe questões debatidas pelos formadores da escola: sua pedagogia, a quem se destinam os cursos e os sistemas de formação.",
       "### Ciclo de Palestras",
-      "As lives temáticas propostas pela Escola trouxeram profissionais da associação em debate com convidados. Entre os assuntos abordados, a importância do brincar, saúde mental em tempos de pandemia, arte e acessibilidade e humor na crise.",
+      "As lives temáticas propostas pela Escola trouxeram profissionais da associação em debate com convidados. Entre os assuntos abordados, a importância do brincar, saúde mental em tempos de pandemia, arte e tecnologia, além do humor na crise.",
     ],
     extra: {
       color: "#FFFFFF",
@@ -474,6 +474,6 @@ const Conteudo: Array<IConteudoSecao> = [
       },
     ],
   },
-]
+];
 
-export default Conteudo
+export default Conteudo;

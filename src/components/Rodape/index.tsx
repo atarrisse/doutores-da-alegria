@@ -1,15 +1,15 @@
-import React from "react"
+import React from "react";
 
-import Image from "../Image"
+import { IConteudoSecao } from "../../types.d.ts";
+import Image from "../Image";
 
-import * as styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss";
 
-import { IConteudoSecao } from "../../types.d.ts"
 
 type Props = IConteudoSecao
 
 const Rodape: React.FC<Props> = ({ id, links }) => {
-  const i = parseInt(id, 10) + 1
+  const i = parseInt(id, 10) + 1;
 
   return (
     <div className={styles.rodape}>
@@ -19,7 +19,7 @@ const Rodape: React.FC<Props> = ({ id, links }) => {
         className={styles.bg}
         filename={`slides/bg/${i.toString().padStart(2, "0")}.png`}
       />
-      {id !== "00" &&
+      {id !== "07" &&
         links &&
         links.map(link => {
           return (
@@ -38,9 +38,9 @@ const Rodape: React.FC<Props> = ({ id, links }) => {
                 filename={`slides/people/${link.image}`}
               />
             </a>
-          )
+          );
         })}
-      {id === "00" && (
+      {id === "07" && (
         <Image
           className={styles.mosaic}
           alt=""
@@ -48,7 +48,7 @@ const Rodape: React.FC<Props> = ({ id, links }) => {
         />
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Rodape
+export default Rodape;

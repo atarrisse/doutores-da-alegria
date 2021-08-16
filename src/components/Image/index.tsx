@@ -1,12 +1,12 @@
-import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-import React from "react"
+import { graphql, useStaticQuery } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
+import React from "react";
 
-import * as styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss";
 
 const Image = ({ filename, alt, ...others }) => {
-  const image = queryImage(filename)
-  if (!image?.node) return null
+  const image = queryImage(filename);
+  if (!image?.node) return null;
 
   return (
     <GatsbyImage
@@ -15,8 +15,8 @@ const Image = ({ filename, alt, ...others }) => {
       alt={alt ? alt : ""}
       {...others}
     />
-  )
-}
+  );
+};
 
 const queryImage = filename => {
   const { allFile } = useStaticQuery(graphql`
@@ -37,11 +37,11 @@ const queryImage = filename => {
         }
       }
     }
-  `)
+  `);
   const image = allFile?.edges?.find(edge => {
-    return edge.node.absolutePath.includes(filename)
-  })
-  return image
-}
+    return edge.node.absolutePath.includes(filename);
+  });
+  return image;
+};
 
-export default Image
+export default Image;

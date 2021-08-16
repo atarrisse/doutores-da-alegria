@@ -1,16 +1,16 @@
-import React from "react"
-import { useState } from "react"
+import React from "react";
+import { useState } from "react";
 
-import Extra from "../../Extra"
+import Extra from "../../Extra";
 
-import * as styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss";
 
 const Slide = (data) => {
   const { children, className, style, extra, theme, ...others } = data;
   const [isExtraOpen, setIsExtraOppen] = useState<boolean | undefined>(
     extra !== undefined
-  )
-  const handleCloseExtra = () => setIsExtraOppen(false)
+  );
+  const handleCloseExtra = () => setIsExtraOppen(false);
 
   return (
     <article
@@ -20,15 +20,15 @@ const Slide = (data) => {
       {...others}
     >
       <div className={styles.content}>{children}</div>
-      {/* {extra && isExtraOpen && (
+      {extra && isExtraOpen && (
         <Extra
           isActive={isExtraOpen}
           {...extra}
           handleClick={handleCloseExtra}
         />
-      )} */}
+      )}
     </article>
-  )
-}
+  );
+};
 
-export default Slide
+export default Slide;

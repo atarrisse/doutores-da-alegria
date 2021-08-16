@@ -1,9 +1,11 @@
-import { StaticImage } from "gatsby-plugin-image"
-import React from "react"
-import Ratio from "react-ratio"
-import Slide from "@/components/Slides/Slide"
+import { StaticImage } from "gatsby-plugin-image";
+import React from "react";
+import Ratio from "react-ratio";
 
-import * as styles from "./styles.module.scss"
+import Image from "@/components/Image";
+import Slide from "@/components/Slides/Slide";
+
+import * as styles from "./styles.module.scss";
 
 const Cover: React.FC = () => {
   return (
@@ -14,24 +16,16 @@ const Cover: React.FC = () => {
           <br />
           2020
         </h1>
-        <StaticImage
-          alt="Logo do Doutores da Alegria"
-          className={styles.logo}
-          layout="fixed"
-          placeholder="blurred"
-          src="../../../images/logo.png"
-          height={96}
-        />
+        <Image filename="logo.png" alt="Logo do Doutores da Alegria" className={styles.logo} height={96} />
         <Ratio ratio={4098 / 2115} className={styles.bg}>
-          <StaticImage
+          <Image
             alt="Foto em estilo de colagem mostrando os rostos de diversos colaboradores do Doutores da Alegria"
-            placeholder="blurred"
-            src="../../../images/cover_desktop.png"
-          />
+            filename="cover_desktop.png"
+            className={styles.logo} height={96} />
         </Ratio>
       </div>
     </Slide>
-  )
-}
+  );
+};
 
-export default Cover
+export default Cover;
