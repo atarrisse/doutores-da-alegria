@@ -456,8 +456,8 @@ const Conteudo: Array<IConteudoSecao> = [
     title: "Programa de formação de jovens",
     color: EColors.SALMAO,
     content: [
-      "As aulas presenciais diárias na sede da Doutores se reduziram ao espaço virtual em 2020. Foi a adaptação possível na busca de caminhos para seguir na formação de jovens palhaços e palhaças.",
-      "No final do ano, os alunos apresentaram seus ‘exercícios artísticos’, que corresponderam à formatura do curso, em formato audiovisual. Chegaram ao vídeo ‘Quatro Noites’, com com filmagem e montagem de Nereu Afonso",
+      "As aulas presenciais diárias na sede da Doutores foram para as casas dos alunos por meio das telas até outubro de 2020, quando puderam retornar à sede em pequenos grupos. Foi a adaptação possível na busca de caminhos para seguir na formação de jovens palhaços e palhaças.",
+      "No final do ano, os alunos apresentaram seus ‘exercícios artísticos’, que corresponderam à formatura do curso, em formato audiovisual. Chegaram ao vídeo ‘Quatro Noites’, com filmagem e montagem de Nereu Afonso.",
     ],
   },
   {
@@ -465,10 +465,10 @@ const Conteudo: Array<IConteudoSecao> = [
     title: "Boca laaaarga",
     color: EColors.VERMELHO,
     content: [
-      "Na última semana no ano [lançamos o quinto volume da série Boca Larga](https://doutoresdaalegria.org.br/blog/doutores-da-alegria-lanca-boca-larga-tempos-de-pandemia-em-edicao-virtual/), em edição virtual e gratuita. O livro compila textos de diversos colaboradores da associação, entre artistas e profissionais multidisciplinares, sobre os impactos do novo coronavírus nos ofícios de cada área.",
+      "Na última semana do ano [lançamos o quinto volume da série Boca Larga](https://doutoresdaalegria.org.br/blog/doutores-da-alegria-lanca-boca-larga-tempos-de-pandemia-em-edicao-virtual/), em edição virtual e gratuita. O livro compila textos de diversos colaboradores da associação, entre artistas e profissionais multidisciplinares, sobre os impactos do novo coronavírus nos ofícios de cada área.",
       {
         type: ETipoConteudo.QUOTE,
-        autor: "Lourdes Atié",
+        autor: "Lourdes Atié, diretor de Formação",
         text:
           "A ideia foi abraçada por muitos que, corajosamente, expuseram como se sentem, aprendem e desfrutam, buscando caminhos para viver em tempos tão difíceis.",
       },

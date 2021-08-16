@@ -3,7 +3,7 @@ import {
   EColors,
   IConteudoSecao,
   ETipoConteudo,
-} from "@/types.d.ts"
+} from "@/types.d.ts";
 
 const ImpactoSocial: Array<IConteudoSecao> = [
   {
@@ -11,12 +11,15 @@ const ImpactoSocial: Array<IConteudoSecao> = [
     title: "Impacto Social",
     color: EColors.AZUL,
     content: [
+      "#### Projetos presenciais",
+      "Crianças, acompanhantes, equipe hospitalar e outros beneficiados nos atendimentos presenciais realizados até 31 de março de 2020.",
       {
-        label: "Projetos presenciais",
+        // label: "Projetos presenciais",
         type: ETipoConteudo.NUM,
+        presencial: true,
         numbers: [
           {
-            label: "Hospital",
+            label: "Intervenções artísticas",
             value: 39941,
             size: ENumeroTamanho.GDE,
           },
@@ -48,11 +51,11 @@ const ImpactoSocial: Array<IConteudoSecao> = [
           {
             label: "Conta Causos",
             value: 158,
+            unit: "Espectadores",
             size: ENumeroTamanho.GDE,
           },
         ],
       },
-      "Crianças, acompanhantes, equipe hospitalar e outros beneficiados nos atendimentos presenciais que aconteceram até o dia 31/3/2020.",
     ],
   },
   {
@@ -77,8 +80,8 @@ const ImpactoSocial: Array<IConteudoSecao> = [
     color: EColors.AZUL,
     content: [
       "A partir de abril, iniciamos uma série de vídeos e lives para diminuir a distância dos palhaços nos hospitais e manter a programação prevista para o ano em todas as áreas.",
+      "#### Projetos digitais",
       {
-        section: "Projetos digitais:",
         label: "Delivery Besteirológico",
         type: ETipoConteudo.NUM,
         numbers: [
@@ -138,6 +141,7 @@ const ImpactoSocial: Array<IConteudoSecao> = [
       },
     ],
     content: [
+      "#### Projetos digitais",
       {
         section: "Projetos digitais:",
         label: "Websérie São João",
@@ -194,6 +198,10 @@ const ImpactoSocial: Array<IConteudoSecao> = [
         ],
       },
     ],
+    extra: {
+      color: "#FFFFFF",
+      content: ["#### Virtuall", "Por incrível que pareça, nossas equipes de SP, RJ e PE se aproximaram na pandemia. Trocamos 367 abraços virtuais e 1.862 áudios."]
+    }
   },
   {
     id: "24",
@@ -230,7 +238,7 @@ const ImpactoSocial: Array<IConteudoSecao> = [
           },
           {
             label: "Interações",
-            value: 744,
+            value: 7444,
           },
         ],
       },
@@ -269,7 +277,7 @@ const ImpactoSocial: Array<IConteudoSecao> = [
             value: 1173,
           },
         ],
-      },
+      }
     ],
   },
   {
@@ -312,8 +320,20 @@ const ImpactoSocial: Array<IConteudoSecao> = [
           },
         ],
       },
+      {
+        type: ETipoConteudo.HTML,
+        source: "<small><strong>Alcance: </strong>Número de pessoas alcançadas pela publicação/vídeo.</small>"
+      },
+      {
+        type: ETipoConteudo.HTML,
+        source: "<small><strong>Visualizações: </strong>Número de pessoas que efetivamente visualizaram os vídeos.</small>"
+      },
+      {
+        type: ETipoConteudo.HTML,
+        source: "<small><strong>Interações: </strong>Número de pessoas que curtiram, comentaram ou compartilharam os vídeos.</small>"
+      }
     ],
   },
-]
+];
 
-export default ImpactoSocial
+export default ImpactoSocial;

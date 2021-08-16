@@ -1,38 +1,41 @@
-import React from "react"
+import React from "react";
 
-import * as styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss";
 
 interface IProps {
-  comment?: string
-  label?: string
-  numbers: Array<any>
+  comment?: string;
+  label?: string;
+  numbers: Array<any>;
+  presencial: boolean;
 }
 
-const NumberSection: React.FC<IProps> = ({ label, numbers }) => {
+const NumberSection: React.FC<IProps> = ({ label, numbers, presencial }) => {
   return (
     <>
       {label && <h4 className={styles.label}>{label}</h4>}
       <div
         className={styles.numberGrid}
-        data-presencial={label?.includes("presenciais")}
+        data-presencial={presencial}
       >
         {numbers.map(item => {
+          const { label, unit, size, value } = item;
           return (
             <div
               key={JSON.stringify(item)}
               className={styles.numberElement}
-              data-size={item.size}
+              data-size={size}
             >
-              <p className={styles.numberLabel}>{item.label}</p>
+              <p className={styles.numberLabel}>{label}</p>
               <p className={styles.number}>
-                {item.value.toLocaleString("pt-br")}
+                {value.toLocaleString("pt-br")}
+                <small className={styles.unit}>{unit && unit}</small>
               </p>
             </div>
-          )
+          );
         })}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default NumberSection
+export default NumberSection;
