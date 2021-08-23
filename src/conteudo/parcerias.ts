@@ -3,8 +3,7 @@ import {
   IConteudoSecao,
   ETipoConteudo,
   EApoioDisplay,
-  IApoio,
-} from "@/types.d.ts"
+} from "@/types.d.ts";
 
 const CONTEUDO: Array<IConteudoSecao> = [
   {
@@ -36,6 +35,16 @@ const CONTEUDO: Array<IConteudoSecao> = [
             },
           },
           {
+            departamento: "Conselho Fiscal",
+            pessoas: {
+              "": [
+                { nome: "Alexandre Chiaratti" },
+                { nome: "Carlos Valentim" },
+                { nome: "Iêda Alcântara" },
+              ],
+            },
+          },
+          {
             departamento: "Marketing e Mobilização de Recursos",
             pessoas: {
               Analistas: [
@@ -50,7 +59,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
             departamento: "Comunicação",
             pessoas: {
               Coordenadora: [{ nome: "Cristina Cardoso" }],
-              "Produção de Conteúdo": [{ nome: "Gabriela Caseff" }],
+              "Redação": [{ nome: "Gabriela Caseff" }],
               Analistas: [{ nome: "Bruno Tavares" }, { nome: "Danilo Lima" }],
             },
           },
@@ -75,7 +84,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
             pessoas: {
               "Analista de Planejamento": [{ nome: "Carolina Kinoshita" }],
               Advogada: [
-                { nome: "Fernanta Tessitore", nota: "(até setembro)" },
+                { nome: "Fernanta Tessitore", nota: "(até novembro)" },
               ],
               "Assistente Social": [{ nome: "Olga Lembo" }],
             },
@@ -92,8 +101,8 @@ const CONTEUDO: Array<IConteudoSecao> = [
               ],
               "Artista Formadora – Dra. Sakura": [{ nome: "Roberta Calza" }],
               "Artista Formadora – Dra. Ferrara": [{ nome: "Thais Ferrara" }],
-              "Assistente da Escola": [{ nome: "Milena Barros" }],
-              "Colaboradora da Escola": [{ nome: "Morgana Masetti" }],
+              "Assistente": [{ nome: "Milena Barros" }],
+              "Colaboradora": [{ nome: "Morgana Masetti" }],
             },
             programas: [
               {
@@ -103,7 +112,8 @@ const CONTEUDO: Array<IConteudoSecao> = [
                     grupo: "Formadores",
                     pessoas: {
                       "": [
-                        { nome: "Anelise Mayumi e Douglas Jesus" },
+                        { nome: "Anelise Mayumi" },
+                        { nome: "Douglas Jesus" },
                         { nome: "Célio Colella" },
                         { nome: "Daiane Ratão" },
                         { nome: "Dario França" },
@@ -156,11 +166,32 @@ const CONTEUDO: Array<IConteudoSecao> = [
             ],
           },
           {
+            departamento: "Ciclo de Palestras",
+            pessoas: {
+              "": [
+                { nome: "Celso Frateschi" },
+                { nome: "Lino de Macedo" },
+                { nome: "Marcelo Laham" },
+                { nome: "Nelson Pretto" },
+              ]
+            }
+          },
+          {
+            departamento: "Formação Continuada",
+            pessoas: {
+              "": [
+                { nome: "Ana Olmos" },
+                { nome: "Denise Fraga" },
+                { nome: "Paulo Fochi" },
+              ]
+            }
+          },
+          {
             departamento: "Unidade São Paulo",
             pessoas: {
               "Coordenador Artístico – Dr. Dadúvida": [{ nome: "David Tayiu" }],
               "Coordenadora de Produção": [{ nome: "Marcella Castilho" }],
-              Recepcionista: [{ nome: "Juliana Bonatte" }],
+              "Recepcionista": [{ nome: "Juliana Bonatte" }],
               "Assistente de Produção": [{ nome: "Renato de Abreu" }],
               "Serviços Gerais": [
                 { nome: "Elza Maria de Jesus" },
@@ -174,7 +205,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
                     grupo: "Artistas",
                     pessoas: {
                       "": [
-                        { nome: "Allan Benatti - Dr.Chabilson" },
+                        { nome: "Allan Benatti - Dr. Chabilson" },
                         { nome: "Anderson Machado -	Dr. Cavaco" },
                         { nome: "Anderson Spada -	Dr. De Dérson" },
                         { nome: "Angelo Brandini -	Dr. Zorinho" },
@@ -182,10 +213,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
                         { nome: "Dênis Goyos -	Dr. Fritz" },
                         { nome: "Duico Vasconcelos -	Dr. Pistolinha" },
                         { nome: "Henrique Rímoli -	Dr. Dus'Cuais" },
-                        {
-                          nome:
-                            "Juliana Gontijo - in memorian -	Dra. Juca Pinduca",
-                        },
+                        { nome: "Juliana Gontijo - Dra. Dona Juca Pinduca (in memorian)" },
                         { nome: "Filipe Bregantim -	Dr. Mendonça" },
                         { nome: "Gabi Zanola -	Dra. Pamplona" },
                         { nome: "Igor Canova -	Dr. Trillo" },
@@ -197,7 +225,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
                         { nome: "Nilson Domingues - Dr. Chicô Batavô" },
                         { nome: "Paola Musatti - Dra. Manela" },
                         { nome: "Raíssa Guimarães -	Dra. Faísca" },
-                        { nome: "Roger Avanzi – in memorian -	Dr. Picolino" },
+                        { nome: "Roger Avanzi - in memorian -	Dr. Picolino" },
                         { nome: "Sandro Fontes -	Dr. Sandoval" },
                         { nome: "Sueli Andrade -	Dra. Greta Garboreta" },
                         { nome: "Suzana Aragão -	Dra. Bolot’s" },
@@ -252,6 +280,38 @@ const CONTEUDO: Array<IConteudoSecao> = [
               Coordenadora: [{ nome: "Silvia Contar" }],
               "Assistente de Produção": [{ nome: "Wallace Martins" }],
             },
+            programas: [
+              {
+                organizacao: [
+                  {
+                    grupo: "Companhias",
+                    pessoas: {
+                      "": [
+                        { nome: "Adorável Companhia" },
+                        { nome: "Banda Bagunço" },
+                        { nome: "Cia de Teatro Íntimo" },
+                        { nome: "Cia Sapato Velho" },
+                        { nome: "Cia Teatro Porão" },
+                        { nome: "Circo Dux" },
+                        { nome: "Circo no Ato" },
+                        { nome: "Circo Storani" },
+                        { nome: "Conexão do Bem" },
+                        { nome: "Flavia Lopes" },
+                        { nome: "Guga Morales" },
+                        { nome: "Ilana Pogrebinschi" },
+                        { nome: "Inepta Cia" },
+                        { nome: "Juliana Correia" },
+                        { nome: "Magnífica Trupe de Variedades" },
+                        { nome: "Os Siderais" },
+                        { nome: "Os Tapetes Contadores de Histórias" },
+                        { nome: "Ricardo Gadelha" },
+                        { nome: "Tambor de Cumba" },
+                      ],
+                    },
+                  },
+                ],
+              },
+            ],
           },
           {
             departamento: "Convidados Lives Entrevista Besteirológica - 2020",
@@ -268,35 +328,51 @@ const CONTEUDO: Array<IConteudoSecao> = [
           },
           {
             departamento: "Assessorias",
-            pessoas: {
-              "Gestão de pessoas": [{ nome: "Regina Leite" }],
-              "": [
-                { nome: "Editor: Edson Paes de Melo Filho e Lúcio Nunes (SP)" },
-                { nome: "Edna Nunes e Pollyanna Diniz (Recife)" },
-              ],
-              Imprensa: [
-                {
-                  nome:
-                    "Movimento Essencial: Pamina S. Milewski e Marcelle Braga (RJ)",
-                },
-              ],
-              "Pesquisa e escola": [{ nome: "Morgana Masetti" }],
-              "Tecnologia da informação": [
-                {
-                  nome:
-                    "Knet – Carlos Sadao Eto, Jonathan Ribeiro Alves e Walter Karl Meyer",
-                },
-                { nome: "Kasi – Adriano Leite e Leandro Metropolo" },
-                {
-                  nome: "QS do Brasil – Cayo Souza, Marcio Dias, Vitor Lopes ",
-                },
-                { nome: "Focus Net – Fernando Luis Rodrigues" },
-                {
-                  nome:
-                    "Interhome – Marcos Campos, Marcelo Campos, Nelson Lopes, Danilo Campos",
-                },
-              ],
-            },
+            programas: [
+              {
+                organizacao: [
+                  {
+                    grupo: "Gestão de pessoas",
+                    pessoas: {
+                      "": [
+                        { nome: "Regina Leite" },
+                      ],
+                    },
+                  },
+                  {
+                    grupo: "Imprensa",
+                    pessoas: {
+                      "": [
+                        { nome: "Editor: Edson Paes de Melo Filho e Lúcio Nunes (SP)" },
+                        { nome: "Poema Comunicação: Edna Nunes e Pollyanna Diniz (Recife)" },
+                        { nome: "Movimento Essencial: Pamina S. Milewski e Marcelle Braga (RJ)" },
+                      ],
+                    },
+                  },
+                  {
+                    grupo: "Tecnologia da informação",
+                    pessoas: {
+                      "": [
+                        { nome: "Knet: Carlos Sadao Eto, Jonathan Ribeiro Alves e Walter Karl Meyer" },
+                        { nome: "Poema Comunicação: Edna Nunes e Pollyanna Diniz (Recife)" },
+                        { nome: "QS do Brasil: Cayo Souza, Marcio Dias, Vitor Lopes " },
+                        { nome: "Focus Net: Fernando Luis Rodrigues" },
+                        { nome: "Interhome: Marcos Campos, Marcelo Campos, Nelson Lopes, Danilo Campos" },
+                      ],
+                    },
+                  },
+                  {
+                    grupo: "Contabilidade",
+                    pessoas: {
+                      "": [
+                        { nome: "Raquel Melo" },
+                        { nome: "Regiane Bueno Teixeira" },
+                      ],
+                    },
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
@@ -469,7 +545,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
                 empresas: [{ nome: "Intermed" }],
               },
               {
-                categoria: "Narigada",
+                categoria: "Gentileza",
                 tipo: EApoioDisplay.TXT,
                 empresas: [
                   { nome: "Bufalo" },
@@ -667,6 +743,6 @@ const CONTEUDO: Array<IConteudoSecao> = [
       },
     ],
   },
-]
+];
 
-export default CONTEUDO
+export default CONTEUDO;
