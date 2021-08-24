@@ -3,11 +3,11 @@ import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 
 import Legenda from "../Legenda";
 
-import { getColor } from "@/utils"
+import { getColor } from "@/utils";
 
-import * as styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss";
 
-import { EColors } from "@/types.d.ts"
+import { EColors } from "@/types.d.ts";
 
 
 const data = {
@@ -25,12 +25,12 @@ const data = {
     },
     {
       name: "Escola",
-      value: 4.9,
+      value: 5.8,
       color: "#771717",
     },
     {
       name: "Festival Miolo Mole",
-      value: 5.8,
+      value: 5.1,
       color: "#75C675",
     },
     {
@@ -97,7 +97,7 @@ const data = {
       color: "#FFB024",
     },
   ],
-}
+};
 
 const AplicacaoRecursos = () => {
   const allValues = Object.values(data).map(item => item).flat();
@@ -129,11 +129,11 @@ const AplicacaoRecursos = () => {
           return (<React.Fragment key={JSON.stringify(value)}>
             <h3 className={styles.labelTitle}>{key}</h3>
             <Legenda data={value} />
-          </React.Fragment>)
+          </React.Fragment>);
         })
       }
     </>
-  )
-}
+  );
+};
 
-export default AplicacaoRecursos
+export default AplicacaoRecursos;

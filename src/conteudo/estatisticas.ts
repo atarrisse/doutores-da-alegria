@@ -1,38 +1,38 @@
-import { EColors, IConteudoSecao, ETipoConteudo } from "@/types.d.ts"
+import { EColors, IConteudoSecao, ETipoConteudo } from "@/types.d.ts";
 
 const Estatisticas: Array<IConteudoSecao> = [
-  // {
-  //   id: "26",
-  //   title: "Prestação de contas e impacto social",
-  //   color: EColors.ROXO,
-  //   links: [
-  //     {
-  //       image: "slide_27_1.png",
-  //       alt:
-  //         "Assista ao video 'Doutores em Casa #8 - Reputação e credibilidade' no youtube",
-  //       url: "https://www.youtube.com/watch?v=8SDUI9-46PQ&t=10s",
-  //     },
-  //     {
-  //       front: true,
-  //       image: "slide_27_2.png",
-  //       alt:
-  //         "Assista ao video 'Doutores em Casa #8 - Reputação e credibilidade' no youtube",
-  //       url: "https://www.youtube.com/watch?v=8SDUI9-46PQ&t=10s",
-  //     },
-  //   ],
-  //   content: [
-  //     "Neste ano, os números de impacto da organização estão bastante relacionados às atividades virtuais. Sem as visitas aos hospitais e as pessoas nas plateias e nos eventos da sede, o público se envolveu com Doutores da Alegria nas telas de celulares e tablets.",
-  //     "### Reputação e credibilidade",
-  //     "Foi um ano difícil e intenso, mas conseguimos manter a arrecadação em um bom patamar.",
-  //   ],
-  //   extra: {
-  //     color: "#FFFFFF",
-  //     content: [
-  //       "#### Reputação e credibilidade",
-  //       "[https://www.youtube.com/watch?v=8SDUI9-46PQ](https://www.youtube.com/watch?v=8SDUI9-46PQ)",
-  //     ],
-  //   },
-  // },
+  {
+    id: "26",
+    title: "Prestação de contas e impacto social",
+    color: EColors.ROXO,
+    links: [
+      {
+        image: "slide_27_1.png",
+        alt:
+          "Assista ao video 'Doutores em Casa #8 - Reputação e credibilidade' no youtube",
+        url: "https://www.youtube.com/watch?v=8SDUI9-46PQ&t=10s",
+      },
+      {
+        front: true,
+        image: "slide_27_2.png",
+        alt:
+          "Assista ao video 'Doutores em Casa #8 - Reputação e credibilidade' no youtube",
+        url: "https://www.youtube.com/watch?v=8SDUI9-46PQ&t=10s",
+      },
+    ],
+    content: [
+      "Neste ano, os números de impacto da organização estão bastante relacionados às atividades virtuais. Sem as visitas aos hospitais e as pessoas nas plateias e nos eventos da sede, o público se envolveu com Doutores da Alegria nas telas de celulares e tablets.",
+      "### Reputação e credibilidade",
+      "Foi um ano difícil e intenso, mas conseguimos manter a arrecadação em um bom patamar.",
+    ],
+    extra: {
+      color: "#FFFFFF",
+      content: [
+        "#### Reputação e credibilidade",
+        "[https://www.youtube.com/watch?v=8SDUI9-46PQ](https://www.youtube.com/watch?v=8SDUI9-46PQ)",
+      ],
+    },
+  },
   {
     id: "27",
     title: "Recursos Arrecadados",
@@ -76,6 +76,6 @@ const Estatisticas: Array<IConteudoSecao> = [
       content: ["#### Quase lá", "Falta pouco pra você chegar na surpresa."],
     },
   },
-]
+];
 
-export default Estatisticas
+export default Estatisticas;

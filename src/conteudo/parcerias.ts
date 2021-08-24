@@ -572,11 +572,21 @@ const CONTEUDO: Array<IConteudoSecao> = [
                 empresas: [
                   {
                     nome: "Lei de incentivo à Cultura",
-                    filename: "gov-lei-de-incentivo-a-cultura.png",
+                    filename: "gov-lei-de-incentivo-cultura.png",
                   },
                   {
                     nome: "Prefeitura da Cidade de Recife",
                     filename: "gov-prefeitura-recife.png",
+                  },
+                  {
+                    nome:
+                      "Fundo Pernambucano de incentivo a cultura",
+                    filename: "gov-funcultura.jpeg",
+                  },
+                  {
+                    nome:
+                      "Fundação do patrimônio histórico e artístico de Pernambuco",
+                    filename: "gov-fundarpe.png",
                   },
                   {
                     nome:
@@ -589,13 +599,13 @@ const CONTEUDO: Array<IConteudoSecao> = [
                   },
                   {
                     nome:
-                      "Secretaria de Saúde da Prefeitura da Cidade do Rio de Janeiro",
-                    filename: "gov-estado-rio.png",
+                      "Secretaria de Saúde do Governo do Estado do Rio de Janeiro",
+                    filename: "gov-saude-prefeitura-rio.png",
                   },
                   {
                     nome:
-                      "Secretaria de Saúde do Governo do Estado do Rio de Janeiro",
-                    filename: "gov-saude-prefeitura-rio.png",
+                      "Secretaria de Saúde da Prefeitura da Cidade do Rio de Janeiro",
+                    filename: "gov-estado-rio.png",
                   },
                   {
                     nome:

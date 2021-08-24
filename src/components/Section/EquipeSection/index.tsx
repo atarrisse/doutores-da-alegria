@@ -9,6 +9,18 @@ interface Props {
   title: string
 }
 
+const Equipe = ({ person, cargo }) => {
+  return (
+    <React.Fragment key={JSON.stringify(person)}>
+      <li className={styles.nome}>
+        {person.nome}{" "}
+        {person.nota && <small className={styles.nota}>{person.nota}</small>}
+      </li>
+      {cargo && cargo !== "" && <li className={styles.cargo}>{cargo}</li>}
+    </React.Fragment>
+  )
+}
+
 const EquipeSection: React.FC<Props> = ({ teams }) => {
   return (
     <div className={styles.equipe}>
@@ -24,21 +36,41 @@ const EquipeSection: React.FC<Props> = ({ teams }) => {
           }
         >
           <ul className={styles.list}>
-            {Object.entries(dpt.pessoas).map(([key, value]) => (
+            {dpt.pessoas && Object.entries(dpt.pessoas).map(([key, value]) => (
               <React.Fragment key={JSON.stringify(value)}>
-                {value.map(person => (
-                  <li className={styles.nome} key={JSON.stringify(person)}>
-                    {person.nome}{" "}
-                    <small className={styles.nota}>{person.nota}</small>
-                  </li>
-                ))}
-                {key && key !== "" && <li className={styles.cargo}>{key}</li>}
+                {value.map(person => (<Equipe cargo={key} person={person} />))}
               </React.Fragment>
             ))}
           </ul>
+
+          {dpt.hasOwnProperty("programas") && dpt.programas.map(programa => {
+            console.log(programa)
+            return (
+              <>
+                {programa.nome && <h5 className={styles.programa}>{programa.nome}</h5>}
+                {
+                  programa.organizacao.map(org => (
+                    <>
+                      <h6 className={styles.grupo}>{org.grupo}</h6>
+                      <ul className={styles.list}>
+                        {
+                          org.pessoas && Object.entries(org.pessoas).map(([key, value]) => (
+                            <React.Fragment key={JSON.stringify(value)}>
+                              {value.map(person => (<Equipe cargo={key} person={person} />))}
+                            </React.Fragment>
+                          ))
+                        }
+                      </ul>
+                    </>
+                  ))
+                }
+              </>
+            )
+          })}
         </Accordion>
-      ))}
-    </div>
+      ))
+      }
+    </div >
   )
 }
 

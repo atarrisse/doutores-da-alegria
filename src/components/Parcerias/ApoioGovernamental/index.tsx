@@ -1,17 +1,17 @@
-import React from "react"
+import React from "react";
 
-import Image from "../../Image"
+import Image from "../../Image";
 
 const ApoioGovernamental = ({ orgaos }) => {
   return (
     <ul>
       {orgaos.map(orgao => (
-        <li>
+        <li key={JSON.stringify(orgao)}>
           <Image filename={orgao.filename} alt={orgao.nome} />
         </li>
       ))}
     </ul>
-  )
-}
+  );
+};
 
-export default ApoioGovernamental
+export default ApoioGovernamental;

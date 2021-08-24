@@ -1,10 +1,10 @@
-import kebabCase from "lodash-es/kebabCase"
-import React from "react"
+import kebabCase from "lodash-es/kebabCase";
+import React from "react";
 
-import { EApoioDisplay } from "../../../../types.d.ts"
-import Image from "../../../Image"
+import { EApoioDisplay } from "../../../../types.d.ts";
+import Image from "../../../Image";
 
-import * as styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss";
 
 const ListaEmpresas = ({ tipo, destaque, empresas, governamental }) => {
   return (
@@ -27,16 +27,16 @@ const ListaEmpresas = ({ tipo, destaque, empresas, governamental }) => {
                   rel="noopener noreferrer"
                   href={empresa.site}
                 >
-                  <Image filename={empresa.filename} alt={empresa.nome} />
+                  <Image className={styles.logo} filename={empresa.filename} alt={empresa.nome} />
                 </a>
               ) : (
-                <Image filename={empresa.filename} alt={empresa.nome} />
+                <Image className={styles.logo} filename={empresa.filename} alt={empresa.nome} />
               )}
             </li>
-          )
+          );
         })}
     </ul>
-  )
-}
+  );
+};
 
-export default ListaEmpresas
+export default ListaEmpresas;

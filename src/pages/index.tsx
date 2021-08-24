@@ -33,7 +33,7 @@ const config = {
   slidesToScroll: 1,
   speed: 500,
   swipeToSlide: true,
-  initialSlide: 16
+  // initialSlide: 16
 };
 
 const createSlides = data => {
@@ -61,7 +61,7 @@ const Index: React.FC = () => {
         {createSlides({ slides: Conteudo })}
         {createSlides({ slides: ImpactoSocial, className: styles.numberSlide })}
         {createSlides({ slides: [...Estatisticas, ...Parcerias] })}
-        {createSlides({ slides: Parcerias })}
+        {/* {createSlides({ slides: Parcerias })} */}
       </Slider>
     </main>
   );
