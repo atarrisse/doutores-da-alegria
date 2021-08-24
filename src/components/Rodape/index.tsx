@@ -47,6 +47,12 @@ const Rodape: React.FC<Props> = ({ id, links }) => {
           filename={`slides/people/slide_1.png`}
         />
       )}
+      <Image
+        alt=""
+        aria-hidden
+        className={styles.overlay}
+        filename={`slides/overlay/${i.toString().padStart(2, "0")}.png`}
+      />
     </div>
   );
 };

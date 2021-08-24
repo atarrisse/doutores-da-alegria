@@ -67,6 +67,7 @@ main {
 
 p {
   font-family: var(--font-vag-rounded);
+  line-height: 160%;
 }
 
 h3 {
@@ -80,6 +81,9 @@ h3 {
 
     }
   }
+}
+h5 {
+  margin: 0;
 }
 
 small {

@@ -6,11 +6,8 @@ a:not(.no-underline) {
   background-repeat: repeat-x;
   background-size: 2px 2px;
   color: inherit;
+  font-weight: 700;
   text-decoration: none;
-
-  @include desktop {
-    font-weight: 700;
-  }
 
   &:visited {
     color: inherit;
