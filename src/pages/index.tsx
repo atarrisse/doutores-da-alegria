@@ -42,7 +42,7 @@ const createSlides = data => {
     return (
       <Slide
         className={className}
-        key={kebabCase(item.title)}
+        key={`${kebabCase(item.title)}-${item.id}`}
         extra={item.extra}
         id={`${kebabCase(item.title)}-${item.id}`}
         theme={{ "--theme-color": `var(--${kebabCase(item.color)})` }}
