@@ -1,12 +1,11 @@
-import React from "react"
+import React from "react";
 
-import Accordion from "@/components/Accordion"
+import Accordion from "@/components/Accordion";
 
-import * as styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss";
 
 interface Props {
   teams: any[]
-  title: string
 }
 
 const Equipe = ({ person, cargo }) => {
@@ -18,8 +17,8 @@ const Equipe = ({ person, cargo }) => {
       </li>
       {cargo && cargo !== "" && <li className={styles.cargo}>{cargo}</li>}
     </React.Fragment>
-  )
-}
+  );
+};
 
 const EquipeSection: React.FC<Props> = ({ teams }) => {
   return (
@@ -27,7 +26,7 @@ const EquipeSection: React.FC<Props> = ({ teams }) => {
       {teams.map(dpt => (
         <Accordion
           className={styles.dpt}
-          key={JSON.stringify(dpt)}
+          key={`${dpt.departamento}-${JSON.stringify(dpt.pessoas)}`}
           title={
             <>
               <h3 className={styles.label}>{dpt.departamento}</h3>
@@ -36,15 +35,14 @@ const EquipeSection: React.FC<Props> = ({ teams }) => {
           }
         >
           <ul className={styles.list}>
-            {dpt.pessoas && Object.entries(dpt.pessoas).map(([key, value]) => (
+            {dpt.pessoas && Object.entries(dpt.pessoas).map(([key, value]: [string, any]) => (
               <React.Fragment key={JSON.stringify(value)}>
-                {value.map(person => (<Equipe cargo={key} person={person} />))}
+                {value.map(person => (<Equipe key={JSON.stringify(value)} cargo={key} person={person} />))}
               </React.Fragment>
             ))}
           </ul>
 
-          {dpt.hasOwnProperty("programas") && dpt.programas.map(programa => {
-            console.log(programa)
+          {dpt.programas && dpt.programas.map(programa => {
             return (
               <>
                 {programa.nome && <h5 className={styles.programa}>{programa.nome}</h5>}
@@ -54,9 +52,9 @@ const EquipeSection: React.FC<Props> = ({ teams }) => {
                       <h6 className={styles.grupo}>{org.grupo}</h6>
                       <ul className={styles.list}>
                         {
-                          org.pessoas && Object.entries(org.pessoas).map(([key, value]) => (
+                          org.pessoas && Object.entries(org.pessoas).map(([key, value]: [string, any]) => (
                             <React.Fragment key={JSON.stringify(value)}>
-                              {value.map(person => (<Equipe cargo={key} person={person} />))}
+                              {value.map((person) => (<Equipe key={JSON.stringify(value)} cargo={key} person={person} />))}
                             </React.Fragment>
                           ))
                         }
@@ -65,13 +63,13 @@ const EquipeSection: React.FC<Props> = ({ teams }) => {
                   ))
                 }
               </>
-            )
+            );
           })}
         </Accordion>
       ))
       }
     </div >
-  )
-}
+  );
+};
 
-export default EquipeSection
+export default EquipeSection;

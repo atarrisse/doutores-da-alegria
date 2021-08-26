@@ -1,11 +1,11 @@
-import React from "react"
+import React from "react";
 
-import Content from "../Content"
-import Rodape from "../Rodape"
+import { IConteudoSecao } from "../../types.d.ts";
+import Content from "../Content";
+import Rodape from "../Rodape";
 
-import * as styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss";
 
-import { IConteudoSecao } from "../../types.d.ts"
 
 type Props = IConteudoSecao
 
@@ -29,7 +29,7 @@ const Section: React.FC<Props> = ({
       </div>
       <Rodape index={index} links={links} id={id} />
     </section>
-  )
-}
+  );
+};
 
-export default Section
+export default Section;

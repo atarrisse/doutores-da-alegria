@@ -1,21 +1,21 @@
-import React from "react"
-import { useState } from "react"
-import AnimateHeight from "react-animate-height"
+import React from "react";
+import { useState } from "react";
+import AnimateHeight from "react-animate-height";
 
-import * as styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss";
 
 interface Props {
   className?: string;
-  title: string;
+  title: string | React.ReactNode;
 }
 
 const AccordionItem: React.FC<Props> = ({ className, children, title }) => {
   const [height, setHeight] = useState<string | number>(0);
 
   const handleClick = () => {
-    if (height === 0) setHeight("auto")
-    else setHeight(0)
-  }
+    if (height === 0) setHeight("auto");
+    else setHeight(0);
+  };
 
   return (
     <div className={`${styles.accordion} ${className}`}>
@@ -36,7 +36,7 @@ const AccordionItem: React.FC<Props> = ({ className, children, title }) => {
         {children}
       </AnimateHeight>
     </div>
-  )
-}
+  );
+};
 
-export default AccordionItem
+export default AccordionItem;
