@@ -17,7 +17,7 @@
   "plugins": ["react", "import"],
   "rules": {
     "semi": [2, "always"],
-    "no-console": 2,
+    "no-console":"warn",
     "prefer-arrow-callback": 2,
     "prefer-const": 2,
     "prefer-promise-reject-errors": 2,
