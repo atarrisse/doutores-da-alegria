@@ -1,11 +1,9 @@
-import { getImage, IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
 
 import Image from "../Image";
 
-import ArtDirectionImage from "@/components/ArtDirectionImage";
 
-import { queryImage } from "@/utils/images";
+import useWindowSize from "@/utils/useWindowSize";
 
 import * as styles from "./styles.module.scss";
 
@@ -17,32 +15,17 @@ type Props = IConteudoSecao
 const Rodape: React.FC<Props> = ({ id, links }) => {
   const i = parseInt(id, 10) + 1;
   const filename = `${i.toString().padStart(2, "0")}.png`;
-  const defaultImg: IGatsbyImageData | undefined =
-    getImage(queryImage(`slides/bg/mobile/${filename}`).node);
-  const breakpoints = [
-    {
-      media: "(min-width: 1024px)",
-      image: getImage(queryImage(`slides/bg/desktop/${filename}`)?.node) as IGatsbyImageData
-    }
-  ];
+  const { isMobile } = useWindowSize();
 
-  console.log(defaultImg, breakpoints)
 
   return (
     <div className={styles.rodape}>
-      <ArtDirectionImage
-        alt=""
-        defaultImage={`slides/bg/mobile/${filename}`}
-        images={{
-          "(min-width: 1024px)": `slides/bg/desktop/${filename}`,
-        }}
-      />
-      <Image
-        alt=""
-        aria-hidden
-        className={styles.bg}
-        filename={`slides/bg/${filename}}.png`}
-      />
+      {
+        isMobile
+          ? <Image alt="" filename={`slides/bg/mobile/${filename}`} />
+          : <Image alt="" filename={`slides/bg/desktop/${filename}`} />
+      }
+      {/* people */}
       {id !== "07" &&
         links &&
         links.map(link => {
@@ -71,6 +54,7 @@ const Rodape: React.FC<Props> = ({ id, links }) => {
           filename={`slides/people/slide_1.png`}
         />
       )}
+      {/* elemento na frente  */}
       <Image
         alt=""
         aria-hidden

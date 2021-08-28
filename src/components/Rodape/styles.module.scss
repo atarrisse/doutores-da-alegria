@@ -3,13 +3,17 @@
 .rodape {
   align-self: end;
   display: flex;
-  margin-top: 5rem;
   position: relative;
+  
+  @include mobile {
+    margin-top: 5rem;
+  }
 
   @include desktop {
     position: absolute;
     left: unset;
     right: 0;
+    width: 30%;
   }
 }
 
@@ -38,6 +42,11 @@
       transform: scale(1.1);
     }
   }
+
+  // TODO: re-incluir
+  @include desktop {
+    display: none;
+  }
 }
 
 .mosaic {
@@ -54,4 +63,9 @@
   position: absolute;
   width: 100%;
   z-index: 2;
+  
+  // TODO: re-incluir
+  @include desktop {
+    display: none;
+  }
 }
