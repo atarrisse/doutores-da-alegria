@@ -1,39 +1,39 @@
-import { graphql, useStaticQuery } from "gatsby"
-import React from "react"
-import { useEffect, useState } from "react"
+import { graphql, useStaticQuery } from "gatsby";
+import React from "react";
+import { useEffect, useState } from "react";
 
-import SearchIcon from "../../../../static/icons/search.svg"
+import SearchIcon from "../../../../static/icons/search.svg";
 
-import * as styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss";
 
 const SearchSection = () => {
-  const donors = queryDonors()
-  const [focus, setFocus] = useState(false)
-  const [empty, setEmpty] = useState(true)
-  const [query, setQuery] = useState("")
-  const [list, setList] = useState(donors)
+  const donors = queryDonors();
+  const [focus, setFocus] = useState(false);
+  const [empty, setEmpty] = useState(true);
+  const [query, setQuery] = useState("");
+  const [list, setList] = useState(donors);
 
   const handleChange = e => {
-    const val = e.target.value
-    if (!val || val === "") setEmpty(true)
-    else setEmpty(false)
-    setQuery(val.toLowerCase())
-  }
+    const val = e.target.value;
+    if (!val || val === "") setEmpty(true);
+    else setEmpty(false);
+    setQuery(val.toLowerCase());
+  };
 
   useEffect(() => {
     if (!query || query === "") {
-      setList(donors)
-      return
+      setList(donors);
+      return;
     }
 
     const filtered = donors.filter(({ node: donor }) => {
-      const name = donor["Doador"]
+      const name = donor["Doador"];
       if (name.toLowerCase().includes(query)) {
-        return donor
+        return donor;
       }
-    })
-    setList(filtered)
-  }, [query])
+    });
+    setList(filtered);
+  }, [query]);
 
   return (
     <>
@@ -53,17 +53,17 @@ const SearchSection = () => {
       </fieldset>
       <ul className={styles.list}>
         {list.map(({ node: donor }) => {
-          const name = donor["Doador"]
+          const name = donor["Doador"];
           return (
             <li key={donor.id} className={styles.item}>
               {name}
             </li>
-          )
+          );
         })}
       </ul>
     </>
-  )
-}
+  );
+};
 
 const queryDonors = () => {
   const { allDoadoresCsv } = useStaticQuery(graphql`
@@ -77,8 +77,8 @@ const queryDonors = () => {
         }
       }
     }
-  `)
-  return allDoadoresCsv.edges
-}
+  `);
+  return allDoadoresCsv.edges;
+};
 
-export default SearchSection
+export default SearchSection;

@@ -580,8 +580,8 @@ const CONTEUDO: Array<IConteudoSecao> = [
                   },
                   {
                     nome:
-                      "Fundo Pernambucano de incentivo a cultura",
-                    filename: "gov-funcultura.jpeg",
+                      "Fundo Pernambuco de Incentivo à Cultura",
+                    filename: "gov-funcultura.png",
                   },
                   {
                     nome:
@@ -610,7 +610,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
                   {
                     nome:
                       "Fundo Municipal dos Direitos da Criança e do Adolescente",
-                    filename: "gov-funcad.png",
+                    filename: "gov-fumcad.png",
                   },
                   {
                     nome:

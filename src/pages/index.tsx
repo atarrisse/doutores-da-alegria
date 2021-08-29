@@ -8,6 +8,7 @@ import Slide from "@/components/Slides/Slide";
 
 import Conteudo from "@/conteudo/conteudo";
 import Estatisticas from "@/conteudo/estatisticas";
+import Expediente from "@/conteudo/expediente";
 import ImpactoSocial from "@/conteudo/impactoSocial";
 import Parcerias from "@/conteudo/parcerias";
 
@@ -58,10 +59,10 @@ const Index: React.FC = () => {
     <main>
       <Slider {...config}>
         <Cover />
+        {createSlides({ slides: Expediente })}
         {createSlides({ slides: Conteudo })}
         {createSlides({ slides: ImpactoSocial, className: styles.numberSlide })}
         {createSlides({ slides: [...Estatisticas, ...Parcerias] })}
-        {/* {createSlides({ slides: Parcerias })} */}
       </Slider>
     </main>
   );

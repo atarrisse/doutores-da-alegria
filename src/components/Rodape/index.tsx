@@ -39,7 +39,7 @@ const Rodape: React.FC<Props> = ({ id, links }) => {
             >
               <Image
                 alt={link.alt}
-                clasName="no-underline"
+                className="no-underline"
                 title={link.alt}
                 filename={`slides/people/${link.image}`}
               />

@@ -5,6 +5,7 @@ import { ETipoConteudo } from "../../types.d.ts";
 import Image from "../Image";
 import Parcerias from "../Parcerias";
 import EquipeSection from "../Section/EquipeSection";
+import ExpedienteSection from "../Section/ExpedienteSection";
 import AplicacaoRecursos from "../Section/GraphsSection/AplicacaoRecursos";
 import OrigemRecursos from "../Section/GraphsSection/OrigemRecursos";
 import RecursosArrecadados from "../Section/GraphsSection/RecursosArrecadados";
@@ -72,6 +73,8 @@ const Content = ({ content }) => {
             // ultima página
             case ETipoConteudo.BUSCA:
               return <SearchSection key={JSON.stringify(ctnt)} {...ctnt} />;
+            case ETipoConteudo.EXPEDIENTE:
+              return <ExpedienteSection key={JSON.stringify(ctnt)} {...ctnt} />;
             default:
               return <></>;
           }

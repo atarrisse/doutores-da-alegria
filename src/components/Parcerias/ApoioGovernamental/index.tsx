@@ -7,7 +7,7 @@ const ApoioGovernamental = ({ orgaos }) => {
     <ul>
       {orgaos.map(orgao => (
         <li key={JSON.stringify(orgao)}>
-          <Image filename={orgao.filename} alt={orgao.nome} />
+          <Image filename={orgao.filename} alt={orgao.nome} objectFit="contain" />
         </li>
       ))}
     </ul>

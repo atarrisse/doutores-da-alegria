@@ -4,9 +4,12 @@ import React from "react";
 import { EApoioDisplay } from "../../../../types.d.ts";
 import Image from "../../../Image";
 
+import useWindowSize from "@/utils/useWindowSize";
+
 import * as styles from "./styles.module.scss";
 
 const ListaEmpresas = ({ tipo, destaque, empresas, governamental }) => {
+  // const { isMobile } = useWindowSize();
   return (
     <ul className={styles.listaEmpresas} data-governamental={governamental}>
       {tipo === EApoioDisplay.TXT &&
@@ -22,12 +25,12 @@ const ListaEmpresas = ({ tipo, destaque, empresas, governamental }) => {
             >
               {empresa.site ? (
                 <a
-                  className="no-underline"
+                  className={`no-underline ${styles.link}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   href={empresa.site}
                 >
-                  <Image className={styles.logo} filename={empresa.filename} alt={empresa.nome} />
+                  <Image className={styles.logo} filename={empresa.filename} alt={empresa.nome} objectFit="contain" />
                 </a>
               ) : (
                 <Image className={styles.logo} filename={empresa.filename} alt={empresa.nome} />

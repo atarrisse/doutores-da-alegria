@@ -7,6 +7,10 @@
     @include desktop {
       grid-column-start: unset;
       grid-column-end: span 1;
+      
+      *:global(#parcerias-e-apoios-31) & {
+        grid-column-end: span 2;
+      }   
     }
   }
 }
@@ -18,4 +22,17 @@
   text-align: center;
   font-size: 2.2rem;
   line-height: 1;
+
+  @include desktop {
+    font-size: 4.3rem;
+    margin-bottom: 3rem;
+
+    [data-tipo="texto"] & {
+      text-align: left;
+    }
+
+    *:global(#parcerias-e-apoios-32) & {
+      width: 60%;
+    }
+  }
 }

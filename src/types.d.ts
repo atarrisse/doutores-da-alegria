@@ -32,6 +32,7 @@ export enum ETipoConteudo {
   HTML = "html",
   APOIO = "apoio",
   BUSCA = "busca",
+  EXPEDIENTE = "expediente",
 }
 
 export enum EApoioDisplay {
