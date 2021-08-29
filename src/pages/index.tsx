@@ -59,10 +59,10 @@ const Index: React.FC = () => {
     <main>
       <Slider {...config}>
         <Cover />
-        {createSlides({ slides: Expediente })}
         {createSlides({ slides: Conteudo })}
         {createSlides({ slides: ImpactoSocial, className: styles.numberSlide })}
         {createSlides({ slides: [...Estatisticas, ...Parcerias] })}
+        {createSlides({ slides: Expediente })}
       </Slider>
     </main>
   );

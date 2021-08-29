@@ -1,15 +1,5 @@
 @import "../../../styles/globals/resources.scss";
 
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.item {
-  margin-bottom: 1rem;
-}
-
 .fieldset {
   border: 0.2rem solid var(--theme-color);
   border-radius: 1rem;
@@ -28,6 +18,29 @@
   }
 }
 
+.icon {
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input {
+  background: transparent;
+  border: 0;
+  color: var(--carbon);
+  font-size: inherit;
+  height: 100%;
+  padding-left: 1rem;
+  width: 100%;
+}
+
+.item {
+  margin-bottom: 1rem;
+}
+
 .label {
   font-size: 0.8em;
   position: absolute;
@@ -43,21 +56,17 @@
   }
 }
 
-.input {
-  background: transparent;
-  border: 0;
-  color: var(--carbon);
-  font-size: inherit;
-  height: 100%;
-  padding-left: 1rem;
-  width: 100%;
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 50%;
 }
 
-.icon {
-  height: 2rem;
-  width: 2rem;
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
+.names {
+  display: flex;
+  flex-direction: row;
 }
+
+
+

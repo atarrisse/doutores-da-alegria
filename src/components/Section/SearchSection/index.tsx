@@ -8,10 +8,19 @@ import * as styles from "./styles.module.scss";
 
 const SearchSection = () => {
   const donors = queryDonors();
+  const half = Math.ceil(donors.length / 2);
+
   const [focus, setFocus] = useState(false);
   const [empty, setEmpty] = useState(true);
   const [query, setQuery] = useState("");
   const [list, setList] = useState(donors);
+  const [firstHalf, setFirstHalf] = useState(null);
+  const [lastHalf, setLastHalf] = useState(null);
+
+  useEffect(() => {
+    setFirstHalf(list.slice(0, half));
+    setLastHalf(list.slice(-half));
+  }, [list]);
 
   const handleChange = e => {
     const val = e.target.value;
@@ -25,14 +34,26 @@ const SearchSection = () => {
       setList(donors);
       return;
     }
+    if (firstHalf) {
+      const firstHalfFiltered = firstHalf.filter(({ node: donor }) => {
+        const name = donor["Doador"];
+        if (name.toLowerCase().includes(query)) {
+          return donor;
+        }
+      });
+      setFirstHalf(firstHalfFiltered);
+    }
 
-    const filtered = donors.filter(({ node: donor }) => {
-      const name = donor["Doador"];
-      if (name.toLowerCase().includes(query)) {
-        return donor;
-      }
-    });
-    setList(filtered);
+    if (lastHalf) {
+      const lastHalfFiltered = lastHalf.filter(({ node: donor }) => {
+        const name = donor["Doador"];
+        if (name.toLowerCase().includes(query)) {
+          return donor;
+        }
+      });
+      setLastHalf(lastHalfFiltered);
+    }
+
   }, [query]);
 
   return (
@@ -51,16 +72,30 @@ const SearchSection = () => {
         />
         <SearchIcon className={styles.icon} />
       </fieldset>
-      <ul className={styles.list}>
-        {list.map(({ node: donor }) => {
-          const name = donor["Doador"];
-          return (
-            <li key={donor.id} className={styles.item}>
-              {name}
-            </li>
-          );
-        })}
-      </ul>
+      <div className={styles.names}>
+        {<ul className={styles.list}>
+          {firstHalf && firstHalf.map(({ node: donor }) => {
+            const name = donor["Doador"];
+            return (
+              <li key={donor.id} className={styles.item}>
+                {name}
+              </li>
+            );
+          })}
+        </ul>}
+        {<ul className={styles.list}>
+          {lastHalf && lastHalf.map(({ node: donor }) => {
+            const name = donor["Doador"];
+            return (
+              <li key={donor.id} className={styles.item}>
+                {name}
+              </li>
+            );
+          })}
+        </ul>}
+
+
+      </div>
     </>
   );
 };
