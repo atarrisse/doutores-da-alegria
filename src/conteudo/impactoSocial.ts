@@ -320,18 +320,18 @@ const ImpactoSocial: Array<IConteudoSecao> = [
           },
         ],
       },
-      {
-        type: ETipoConteudo.HTML,
-        source: "<small><strong>Alcance: </strong>Número de pessoas alcançadas pela publicação/vídeo.</small>"
-      },
-      {
-        type: ETipoConteudo.HTML,
-        source: "<small><strong>Visualizações: </strong>Número de pessoas que efetivamente visualizaram os vídeos.</small>"
-      },
-      {
-        type: ETipoConteudo.HTML,
-        source: "<small><strong>Interações: </strong>Número de pessoas que curtiram, comentaram ou compartilharam os vídeos.</small>"
-      }
+      // {
+      //   type: ETipoConteudo.HTML,
+      //   source: "<small><strong>Alcance: </strong>Número de pessoas alcançadas pela publicação/vídeo.</small>"
+      // },
+      // {
+      //   type: ETipoConteudo.HTML,
+      //   source: "<small><strong>Visualizações: </strong>Número de pessoas que efetivamente visualizaram os vídeos.</small>"
+      // },
+      // {
+      //   type: ETipoConteudo.HTML,
+      //   source: "<small><strong>Interações: </strong>Número de pessoas que curtiram, comentaram ou compartilharam os vídeos.</small>"
+      // }
     ],
   },
 ];

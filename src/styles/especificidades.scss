@@ -1,23 +1,27 @@
-*:global(.recharts-surface) {
+.recharts-surface {
   overflow: visible;
 }
 
-*:global(#festival-miolo-mole-15) {
+#festival-miolo-mole-15 {
   h3:not(:first-child) {
     margin-bottom: 7rem;
   }
 }
 
-*:global(#impacto-social-22),
-*:global(#impacto-social-23),
-*:global(#impacto-social-24) {
+#impacto-social-21 h4 + p {
+  display: none;
+}
+
+#impacto-social-22,
+#impacto-social-23,
+#impacto-social-24 {
   @include desktop {
-    margin-bottom: 0;
+  margin-bottom: 0;
   }
 }
 
-*:global(#impacto-social-24),
-*:global(#impacto-social-25) {
+#impacto-social-24,
+#impacto-social-25 {
   @include desktop {
     h3 {
       display: none;
@@ -25,7 +29,19 @@
   }
 }
 
-*:global(#origem-dos-recursos-28) {
+#impacto-social-25 {
+  @include desktop {
+    margin-bottom: 37rem;
+  }
+}
+
+#recursos-arrecadados-27 {
+  small {
+    font-size: 3rem;
+  }
+}
+
+#origem-dos-recursos-28 {
   & > div > section {
     max-width: 120rem;
     width: 100%;

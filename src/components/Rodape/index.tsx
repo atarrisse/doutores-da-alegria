@@ -2,7 +2,6 @@ import React from "react";
 
 import Image from "../Image";
 
-
 import useWindowSize from "@/utils/useWindowSize";
 
 import * as styles from "./styles.module.scss";

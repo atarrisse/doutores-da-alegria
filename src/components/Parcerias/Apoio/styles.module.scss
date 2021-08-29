@@ -1,6 +1,13 @@
+@import "../../../styles/globals/resources.scss";
+
 .section {
   &[data-tipo="imagem"] {
     grid-column: 1 / span 2;
+
+    @include desktop {
+      grid-column-start: unset;
+      grid-column-end: span 1;
+    }
   }
 }
 
