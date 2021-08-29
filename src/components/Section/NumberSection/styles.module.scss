@@ -28,6 +28,10 @@
     align-items: end;
     justify-content: center;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     + label {
       margin-top: 5.5rem;
     }
@@ -56,12 +60,18 @@
     &[data-size="grande"] {
       grid-column-start: 1;
     }
+
+    &:nth-child(n+8):nth-child(-n+9) {
+      align-self: start;
+      border-bottom: 0;
+    }
   }
 
 }
 
 .numberLabel {
   font-weight: 700;
+  line-height: 1.25em;
   margin: 0;
 
   [data-size="grande"] & {
@@ -70,9 +80,11 @@
 
   @include desktop {
     font-size: 3.2rem;
+    white-space: nowrap;
     
     [data-size="grande"] & {
       font-size: 4.2rem;
+      white-space: unset;
     }
   }
 }
@@ -89,6 +101,7 @@
   
   @include desktop {
     font-size: 6rem;
+    line-height: 1em;
     margin: 2.4rem 0 0;
 
     [data-size="grande"] & {
@@ -103,23 +116,33 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin-left: 1ch;
+
+  &:empty {
+    display: none;
+  }
 }
 
 [data-presencial="true"] {
   @include desktop {
-    grid-template: auto / 1fr repeat(3, max-content);
+    grid-template: auto / 30rem repeat(3, minmax(auto, max-content));
     gap: 3rem 0;
 
     .numberElement {
-      &:last-child {
-        grid-column-end: span 2;
-      }
-      &:not([data-size="grande"]) {
+      &:not([data-size="grande"]):not(.comment) {
         padding-left: 3rem;
       }
       &[data-size="grande"]:last-child {
         border-bottom: 0;
       }
+    }
+  }
+
+  .comment {
+    grid-column: 2 / span 3;
+    > p { margin: 0; }
+
+    @include mobile {
+      display: none;
     }
   }
 

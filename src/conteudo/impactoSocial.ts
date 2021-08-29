@@ -51,8 +51,8 @@ const ImpactoSocial: Array<IConteudoSecao> = [
           {
             label: "Conta Causos",
             value: 158,
-            unit: "Espectadores",
             size: ENumeroTamanho.GDE,
+            comment: "Crianças, acompanhantes, equipe hospitalar e outros beneficiados nos atendimentos presenciais realizados até 31 de março de 2020."
           },
         ],
       },

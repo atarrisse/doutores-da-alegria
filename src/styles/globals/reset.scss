@@ -75,10 +75,14 @@ h3 {
 
   @include desktop {
     font-size: 4.2rem;
+    margin-bottom: 0;
 
-    p + & {
-      margin-top: 11rem;
+    & + p {
+      margin-top: 0;
+    }
 
+    &:first-child {
+      margin-top: 0;
     }
   }
 }

@@ -54,6 +54,10 @@
   left: 0;
   position: absolute;
   width: 100%;
+
+  @include desktop {
+    display: none;
+  }
 }
 
 .overlay {

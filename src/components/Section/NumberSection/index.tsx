@@ -20,17 +20,25 @@ const NumberSection: React.FC<IProps> = ({ label, numbers, presencial }) => {
         {numbers.map(item => {
           const { label, unit, size, value } = item;
           return (
-            <div
-              key={JSON.stringify(item)}
-              className={styles.numberElement}
-              data-size={size}
-            >
-              <p className={styles.numberLabel}>{label}</p>
-              <p className={styles.number}>
-                {value.toLocaleString("pt-br")}
-                <small className={styles.unit}>{unit && unit}</small>
-              </p>
-            </div>
+            <>
+              <div
+                key={JSON.stringify(item)}
+                className={styles.numberElement}
+                data-size={size}
+              >
+                <p className={styles.numberLabel}>{label}</p>
+                <p className={styles.number}>
+                  {value.toLocaleString("pt-br")}
+                  <small className={styles.unit}>{unit && unit}</small>
+                </p>
+              </div>
+              {
+                item.comment &&
+                <div className={`${styles.numberElement} ${styles.comment}`}>
+                  <p>{item.comment}</p>
+                </div>
+              }
+            </>
           );
         })}
       </div>

@@ -1,0 +1,33 @@
+*:global(.recharts-surface) {
+  overflow: visible;
+}
+
+*:global(#festival-miolo-mole-15) {
+  h3:not(:first-child) {
+    margin-bottom: 7rem;
+  }
+}
+
+*:global(#impacto-social-22),
+*:global(#impacto-social-23),
+*:global(#impacto-social-24) {
+  @include desktop {
+    margin-bottom: 0;
+  }
+}
+
+*:global(#impacto-social-24),
+*:global(#impacto-social-25) {
+  @include desktop {
+    h3 {
+      display: none;
+    }
+  }
+}
+
+*:global(#origem-dos-recursos-28) {
+  & > div > section {
+    max-width: 120rem;
+    width: 100%;
+  }
+}

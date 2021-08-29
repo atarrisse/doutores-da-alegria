@@ -11,33 +11,19 @@
     @include desktop {
       font-size: 4.2rem;
       margin: 5.5rem 0 2rem;
+
+    
     }
   }
-}
 
-@include desktop {
-  *:global(#impacto-social-22),
-  *:global(#impacto-social-23),
-  *:global(#impacto-social-24) {
-    margin-bottom: 0;
-  }
-
-  *:global(#impacto-social-24),
-  *:global(#impacto-social-25) {
-    h3 {
+  &:global(#impacto-social-23) {
+    h4:first-child {
       display: none;
     }
   }
 }
 
+
+
 // GRAPHS
 
-*:global(.recharts-surface) {
-  overflow: visible;
-}
-*:global(#origem-dos-recursos-28) {
-  & > div > section {
-    max-width: 120rem;
-    width: 100%;
-  }
-}
