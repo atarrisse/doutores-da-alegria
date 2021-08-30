@@ -14,13 +14,12 @@ type Props = IConteudoSecao
 const Rodape: React.FC<Props> = ({ id, links }) => {
   const i = parseInt(id, 10) + 1;
   const filename = `${i.toString().padStart(2, "0")}.png`;
-  const { isMobile } = useWindowSize();
-
+  const { width } = useWindowSize();
 
   return (
     <div className={styles.rodape}>
       {
-        isMobile
+        width && width < 1024
           ? <Image alt="" className={styles.bg} filename={`slides/bg/mobile/${filename}`} />
           : <Image alt="" className={styles.bg} filename={`slides/bg/desktop/${filename}`} />
       }
