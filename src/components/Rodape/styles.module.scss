@@ -5,6 +5,10 @@
   display: flex;
   position: relative;
 
+  &:empty {
+    display: none;
+  }
+
   @include mobile {
     margin-top: 3vh;
 
@@ -24,6 +28,117 @@
     left: unset;
     right: 0;
     width: 30%;
+
+    max-width: 46rem;
+
+    *:global(#oi-00) & {
+      top: 4rem;
+    }
+    *:global(#sobre-br-viver-01) & {
+      top: 32rem;
+    }
+    *:global(#spoiler-02) & {
+      top: 17.4rem;
+    }
+    *:global(#a-c-03) & {
+      top: 25.6rem;
+    }
+    *:global(#de-outros-carnavais-04) & {
+      top: 34.9rem;
+    }
+    *:global(#paramos-05) & {
+      top: 26.2rem;
+    }
+    *:global(#delivery-besteirologico-06) & {
+      top: 20.3rem;
+    }
+    *:global(#troca-de-gestao-07) & {
+      top: 13.5rem;
+    }
+    *:global(#tem-uma-pessoa-no-hospital-que-08) & {
+      top: 24.8rem;
+    }
+    *:global(#o-digital-e-o-novo-normal-09) & {
+      top: 10.2rem;
+    }
+    *:global(#o-digital-e-o-novo-normal-10) & {
+      top: 15.9rem;
+    }
+    *:global(#o-digital-e-o-novo-normal-11) & {
+      top: 11rem;
+    }
+    *:global(#o-digital-e-o-novo-normal-12) & {
+      top: 14.8rem;
+    }
+    *:global(#o-digital-e-o-novo-normal-13) & {
+      top: 7.7rem;
+    }
+    *:global(#o-digital-e-o-novo-normal-14) & {
+      top: 2rem;
+    }
+    *:global(#festival-miolo-mole-15) & {
+      top: 32.2rem;
+    }
+    *:global(#entrada-pelo-tablet-16) & {
+      top: 27.8rem;
+    }
+    *:global(#os-nossos-29-anos-17) & {
+      top: 24.2rem;
+    }
+    *:global(#uma-nova-rede-de-palhacos-18) & {
+      top: 21.8rem;
+    }
+    *:global(#programa-de-formacao-de-jovens-19) & {
+      top: 17.8rem;
+    }
+    *:global(#boca-laaaarga-20) & {
+      top: 15.2rem;
+    }
+    *:global(#impacto-br-social-21) & {
+      top: 28.2rem;
+    }
+    *:global(#impacto-br-social-22) & {
+      top: 16.7rem;
+    }
+    *:global(#impacto-br-social-23) & {
+      top: 11.3rem;
+    }
+    *:global(#impacto-br-social-24) & {
+      top: 10rem;
+    }
+    *:global(#impacto-br-social-25) & {
+      top: 17.9rem;
+    }
+    *:global(#prestacao-de-contas-e-impacto-br-social-26) & {
+      top: 7.3rem;
+    }
+    *:global(#recursos-arrecadados-27) & {
+      top: 52.5rem;
+    }
+    // *:global(#origem-dos-recursos-28) & {
+    //   top: 0rem;
+    // }
+    // *:global(#aplicacao-dos-recursos-29) & {
+    //   top: 0rem;
+    // }
+    *:global(#a-equipe-30) & {
+      top: 5rem;
+    }
+    // *:global(#parcerias-e-apoios-31) & {
+    //   top: 0rem;
+    // }
+    // *:global(#parcerias-e-apoios-32) & {
+    //   top: 0rem;
+    // }
+    // *:global(#parcerias-e-apoios-33) & {
+    //   top: 0rem;
+    // }
+    // *:global(#parcerias-e-apoios-34) & {
+    //   top: 0rem;
+    // }
+    *:global(#expediente-34) & {
+      top: 12.7rem;
+    }
   }
 }
 
@@ -153,17 +268,6 @@
     &:hover {
       transform: scale(1.1);
     }
-  }
-}
-
-.mosaic {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
-
-  @include desktop {
-    display: none;
   }
 }
 

@@ -1,4 +1,4 @@
-@import  "../../../../styles/globals/resources.scss";
+@import "../../../../styles/globals/resources.scss";
 
 .graph {
   height: 50vh;
@@ -8,12 +8,17 @@
 
   @include desktop {
     height: 75vh;
+
+    *:global(#aplicacao-dos-recursos-29) & {
+      margin: 0 auto;
+      transform: unset;
+    }
   }
 }
 
 .labelTitle {
   @include desktop {
     font-size: 3.2rem;
-    margin: 0 0 3.5rem 0;
+    margin: 0 0 4.3rem 0;
   }
 }

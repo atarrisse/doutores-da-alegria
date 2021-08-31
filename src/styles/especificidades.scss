@@ -2,34 +2,64 @@
   overflow: visible;
 }
 
+#troca-de-gestao-07 {
+  @include desktop {
+    margin-bottom: 20rem;
+  }
+}
+
+#o-digital-e-o-novo-normal-10 {
+  @include desktop {
+    margin-bottom: 33rem;
+  }
+}
+
+#o-digital-e-o-novo-normal-11 {
+  @include desktop {
+    margin-bottom: 26.3rem;
+  }
+}
+
+#o-digital-e-o-novo-normal-12 {
+  @include desktop {
+    h3:not(:first-child) {
+      margin-top: 11rem;
+    }
+  }
+}
+
+#o-digital-e-o-novo-normal-13 {
+  @include desktop {
+    margin-bottom: 24.8rem;
+  }
+}
+
 #festival-miolo-mole-15 {
   h3:not(:first-child) {
     margin-bottom: 7rem;
   }
 }
 
-#impacto-social-21 {
-  h4 + p {
-    background-color: red;
-  }
-  h4 {
-    p {
+#impacto-br-social-21 {
+  @include desktop {
+    margin-bottom: 7rem;
+    h4 + p {
       display: none;
     }
   }
 }
 
-#impacto-social-22 {
+#impacto-br-social-22 {
   @include desktop {
     margin-bottom: 0;
   }
 }
-#impacto-social-23 {
+#impacto-br-social-23 {
   @include desktop {
     margin-bottom: 0;
   }
 }
-#impacto-social-24 {
+#impacto-br-social-24 {
   @include desktop {
     h3 {
       display: none;
@@ -38,11 +68,22 @@
   }
 }
 
-#impacto-social-25 {
+#impacto-br-social-25 {
   @include desktop {
-    margin-bottom: 37rem;
+    margin-bottom: 15.5rem;
+
     h3 {
       display: none;
+    }
+
+    div:not(.html) + .html {
+      margin-top: 4.5rem;
+    }
+
+    small {
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 1.2em;
     }
   }
 }
@@ -54,12 +95,18 @@
     @include mobile {
       font-size: 1.2rem;
     }
+
+    @include desktop {
+      line-height: 156%;
+    }
   }
 }
 
-#origem-dos-recursos-28 {
-  & > div > section {
-    max-width: 120rem;
+#origem-dos-recursos-28,
+#aplicacao-dos-recursos-29 {
+  & section > div:first-child {
+    max-width: unset;
+    padding-right: var(--desktop-left-padding);
     width: 100%;
   }
 }

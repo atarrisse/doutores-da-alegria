@@ -12,7 +12,7 @@
   flex-grow: 1;
   flex-direction: column;
   overflow: hidden;
-  
+
   @include desktop {
     background-image: unset;
     height: 100vh;

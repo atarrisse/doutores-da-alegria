@@ -44,7 +44,7 @@ const Content = ({ content }) => {
               return <Image key={JSON.stringify(ctnt)} {...ctnt} />;
             case ETipoConteudo.HTML:
               return (
-                <div
+                <div className="html"
                   key={JSON.stringify(ctnt)}
                   dangerouslySetInnerHTML={{ __html: ctnt.source }}
                 ></div>

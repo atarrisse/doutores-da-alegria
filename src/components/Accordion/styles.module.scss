@@ -1,12 +1,21 @@
+@import "../../styles/globals/resources.scss";
+
 .accordion {
   margin-bottom: 2.6rem;
+
+  @include desktop {
+    margin-bottom: 7rem;
+  }
 }
 
 .button {
+  align-items: baseline;
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  display: grid;
   font-family: var(--font-vag-rounded);
+  grid-template: auto / auto min-content;
   text-align: left;
   padding: 0;
 }

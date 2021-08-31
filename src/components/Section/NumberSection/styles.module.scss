@@ -123,6 +123,10 @@
   &:empty {
     display: none;
   }
+
+  @include mobile {
+    display: inline;
+  }
 }
 
 [data-presencial="true"] {
