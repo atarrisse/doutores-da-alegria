@@ -28,6 +28,9 @@
 }
 
 .people {
+  @include desktop {
+    display: none;
+  }
   display: block;
   position: absolute;
   max-width: 65%;
@@ -175,6 +178,6 @@
 
   // TODO: re-incluir
   @include desktop {
-    display: none;
+    display: none !important;
   }
 }
