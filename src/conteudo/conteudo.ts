@@ -473,7 +473,7 @@ const Conteudo: Array<IConteudoSecao> = [
   },
   {
     id: "20",
-    title: "Boca laaaarga",
+    title: "Boca<br/>laaaarga",
     color: EColors.VERMELHO,
     content: [
       "Na última semana do ano [lançamos o quinto volume da série Boca Larga](https://doutoresdaalegria.org.br/blog/doutores-da-alegria-lanca-boca-larga-tempos-de-pandemia-em-edicao-virtual/), em edição virtual e gratuita. O livro compila textos de diversos colaboradores da associação, entre artistas e profissionais multidisciplinares, sobre os impactos do novo coronavírus nos ofícios de cada área.",
