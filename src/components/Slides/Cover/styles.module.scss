@@ -1,12 +1,17 @@
 @import "../../../styles/globals/resources.scss";
 
+#cover {
+  overflow-y: hidden;
+}
+
 .cover {
-  background-image: url("../../../../static/images/cover_mobile.png");
+  background-image: url("../../../../static/images/cover.png");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
+  overflow: hidden;
   
   @include desktop {
     background-image: unset;
@@ -21,7 +26,7 @@
   font-family: "Dalegria Simples Basic";
   font-size: 5rem;
   line-height: 1em;
-  margin: 2.6rem 2.3rem 1rem auto;
+  margin: 1.8rem 2.3rem 1rem auto;
   text-align: right;
 }
 

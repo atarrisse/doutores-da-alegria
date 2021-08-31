@@ -4,9 +4,12 @@ import { useEffect, useState } from "react";
 
 import SearchIcon from "../../../../static/icons/search.svg";
 
+import useWindowSize from "@/utils/useWindowSize";
+
 import * as styles from "./styles.module.scss";
 
 const SearchSection = () => {
+  const { width } = useWindowSize();
   const donors = queryDonors();
   const half = Math.ceil(donors.length / 2);
 
@@ -34,6 +37,17 @@ const SearchSection = () => {
       setList(donors);
       return;
     }
+
+    if (list) {
+      const listFiltered = list.filter(({ node: donor }) => {
+        const name = donor["Doador"];
+        if (name.toLowerCase().includes(query)) {
+          return donor;
+        }
+      });
+      setList(listFiltered);
+    }
+
     if (firstHalf) {
       const firstHalfFiltered = firstHalf.filter(({ node: donor }) => {
         const name = donor["Doador"];
@@ -72,30 +86,45 @@ const SearchSection = () => {
         />
         <SearchIcon className={styles.icon} />
       </fieldset>
-      <div className={styles.names}>
-        {<ul className={styles.list}>
-          {firstHalf && firstHalf.map(({ node: donor }) => {
-            const name = donor["Doador"];
-            return (
-              <li key={donor.id} className={styles.item}>
-                {name}
-              </li>
-            );
-          })}
-        </ul>}
-        {<ul className={styles.list}>
-          {lastHalf && lastHalf.map(({ node: donor }) => {
-            const name = donor["Doador"];
-            return (
-              <li key={donor.id} className={styles.item}>
-                {name}
-              </li>
-            );
-          })}
-        </ul>}
-
-
-      </div>
+      {width === undefined || width < 1024 && (
+        <>
+          {<ul className={styles.list}>
+            {list && list.map(({ node: donor }) => {
+              const name = donor["Doador"];
+              return (
+                <li key={donor.id} className={styles.item}>
+                  {name}
+                </li>
+              );
+            })}
+          </ul>}
+        </>
+      )
+      }
+      {width === undefined || width > 1024 &&
+        <div className={styles.names}>
+          {<ul className={styles.list}>
+            {firstHalf && firstHalf.map(({ node: donor }) => {
+              const name = donor["Doador"];
+              return (
+                <li key={donor.id} className={styles.item}>
+                  {name}
+                </li>
+              );
+            })}
+          </ul>}
+          {<ul className={styles.list}>
+            {lastHalf && lastHalf.map(({ node: donor }) => {
+              const name = donor["Doador"];
+              return (
+                <li key={donor.id} className={styles.item}>
+                  {name}
+                </li>
+              );
+            })}
+          </ul>}
+        </div>
+      }
     </>
   );
 };

@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  
+
   @include mobile {
     overflow-y: hidden;
   }
@@ -39,7 +39,7 @@ body {
   main {
     height: 100%;
   }
-  
+
   .slick-list {
     height: 100% !important;
   }
@@ -48,13 +48,12 @@ body {
   }
   .slick-slide {
     height: 100%;
-    
+
     > div {
       height: 100%;
     }
   }
 }
-
 
 main {
   font-size: 1.7rem;
@@ -96,7 +95,10 @@ small {
   }
 }
 
-
 address {
   font-style: normal;
+}
+
+.gatsby-image-wrapper {
+  display: block;
 }

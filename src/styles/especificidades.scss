@@ -8,36 +8,52 @@
   }
 }
 
-#impacto-social-21 h4 + p {
-  display: none;
-}
-
-#impacto-social-22,
-#impacto-social-23,
-#impacto-social-24 {
-  @include desktop {
-  margin-bottom: 0;
+#impacto-social-21 {
+  h4 + p {
+    background-color: red;
+  }
+  h4 {
+    p {
+      display: none;
+    }
   }
 }
 
-#impacto-social-24,
-#impacto-social-25 {
+#impacto-social-22 {
+  @include desktop {
+    margin-bottom: 0;
+  }
+}
+#impacto-social-23 {
+  @include desktop {
+    margin-bottom: 0;
+  }
+}
+#impacto-social-24 {
   @include desktop {
     h3 {
       display: none;
     }
+    margin-bottom: 0;
   }
 }
 
 #impacto-social-25 {
   @include desktop {
     margin-bottom: 37rem;
+    h3 {
+      display: none;
+    }
   }
 }
 
 #recursos-arrecadados-27 {
   small {
     font-size: 3rem;
+
+    @include mobile {
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -58,20 +74,25 @@
 }
 
 #parcerias-e-apoios-31 {
-  h2 {
-    display: none;
+  @include desktop {
+    h2 {
+      display: none;
+    }
   }
 }
 
 #parcerias-e-apoios-32 {
-  margin-bottom: 7rem;
-
-  h2 {
-    display: none;
-  }
   h3 {
     margin-bottom: 4rem;
     width: 70%;
+  }
+
+  @include desktop {
+    margin-bottom: 7rem;
+
+    h2 {
+      display: none;
+    }
   }
   h4 {
     margin-bottom: 3rem;
@@ -79,7 +100,9 @@
 }
 
 #parcerias-e-apoios-33 {
-  h2 {
-    display: none;
+  @include desktop {
+    h2 {
+      display: none;
+    }
   }
 }

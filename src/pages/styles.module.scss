@@ -7,21 +7,34 @@
 // NUMBER SLIDES
 
 .numberSlide {
-  h4 {
+  section h4 {
+    @include mobile {
+      font-size: 2.2rem;
+      margin: 2.9rem 0 1rem;
+
+      &:first-child {
+        margin: 0 0 1.1rem;
+      }
+    }
     @include desktop {
       font-size: 4.2rem;
       margin: 5.5rem 0 2rem;
     }
   }
 
-  &:global(#impacto-social-23) {
-    h4:first-child {
-      display: none;
+  p {
+    @include mobile {
+      margin: 0;
+    }
+  }
+
+  @include desktop {
+    &:global(#impacto-social-23) {
+      h4:first-child {
+        display: none;
+      }
     }
   }
 }
 
-
-
 // GRAPHS
-

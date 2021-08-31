@@ -20,8 +20,8 @@
   grid-auto-flow: row;
   grid-template: auto / repeat(2, 1fr);
   gap: 2rem;
-  margin-bottom: 3rem;
-  
+  margin: 1rem 0 3rem;
+
   @include desktop {
     grid-template: auto / repeat(3, 1fr);
     gap: 7rem 0;
@@ -46,7 +46,7 @@
   @include mobile {
     &[data-size="grande"] {
       grid-column-end: span 2;
-  
+
       &:not(:first-child) {
         margin-top: 2rem;
       }
@@ -61,12 +61,11 @@
       grid-column-start: 1;
     }
 
-    &:nth-child(n+8):nth-child(-n+9) {
+    &:nth-child(n + 8):nth-child(-n + 9) {
       align-self: start;
       border-bottom: 0;
     }
   }
-
 }
 
 .numberLabel {
@@ -81,7 +80,7 @@
   @include desktop {
     font-size: 3.2rem;
     white-space: nowrap;
-    
+
     [data-size="grande"] & {
       font-size: 4.2rem;
       white-space: unset;
@@ -94,11 +93,15 @@
   font-family: var(--font-simples-basic);
   font-size: 3.2rem;
   margin: 0.4rem 0 0;
-  
+
   [data-size="grande"] & {
     font-size: 5rem;
   }
-  
+
+  @include mobile {
+    line-height: 0.9em;
+  }
+
   @include desktop {
     font-size: 6rem;
     line-height: 1em;
@@ -139,7 +142,9 @@
 
   .comment {
     grid-column: 2 / span 3;
-    > p { margin: 0; }
+    > p {
+      margin: 0;
+    }
 
     @include mobile {
       display: none;
@@ -147,8 +152,13 @@
   }
 
   .number {
-    font-family: var(--font-simples-inline);
     color: var(--carbon);
+    font-family: var(--font-simples-inline);
+    line-height: 1em;
+
+    small {
+      font-size: 1.5rem;
+    }
   }
 
   [data-size="grande"] .number {

@@ -13,8 +13,12 @@ const Conteudo: Array<IConteudoSecao> = [
   },
   {
     id: "01",
-    title: "Sobre viver!",
+    title: "Sobre<br/>viver!",
     color: EColors.VERMELHO,
+    links: [{
+      image: "slide_2_1.png",
+      url: "https://doutoresdaalegria.org.br/blog/o-inimaginavel-para-doutores-da-alegria-se-tornou-realidade/",
+    }],
     content: [
       "Foram 300 dias absolutamente diferentes de tudo o que já vivemos em quase 30 anos. Mais do que contar como a organização se reinventou em 2020, este balanço procura mostrar como Doutores da Alegria sobreviveu em um ano em que o [inimaginável se tornou realidade.](https://doutoresdaalegria.org.br/blog/o-inimaginavel-para-doutores-da-alegria-se-tornou-realidade/)",
       "Os textos, fotos e vídeos desta edição respondem a uma pergunta:  de que maneira uma associação que promove intervenções artísticas em hospitais e que ensina a linguagem do palhaço de maneira presencial pode se mostrar relevante em uma pandemia?",
@@ -109,6 +113,12 @@ const Conteudo: Array<IConteudoSecao> = [
     id: "07",
     title: "Troca de Gestão",
     color: EColors.SALMAO,
+    links: [
+      {
+        image: "slide_1.png",
+        url: "https://doutoresdaalegria.org.br/blog/associacao-doutores-da-alegria-tem-nova-diretoria-estatutaria-ate-2022/"
+      }
+    ],
     content: [
       "Em abril, a associação Doutores da Alegria passou a contar [com uma nova diretoria estatutária para o biênio 2020-2022](https://doutoresdaalegria.org.br/blog/associacao-doutores-da-alegria-tem-nova-diretoria-estatutaria-ate-2022/). Quatro dos diretores se mantiveram no cargo: Luis Vieira da Rocha como diretor-presidente, Daiane Carina como diretora de Relações Institucionais, Ronaldo Aguiar como diretor Artístico e Simone Pimentel como diretora Financeira. A nova diretora de Formação, Lourdes Atié, substituiu Thaïs Ferrara.",
     ],
@@ -294,6 +304,7 @@ const Conteudo: Array<IConteudoSecao> = [
       "O boletim quinzenal fez a prestação de contas da associação durante o isolamento social. Apresentado por integrantes da equipe técnica, os oito episódios contaram em primeira mão os projetos desenvolvidos durante o ano.",
     ],
     extra: {
+      color: "#FFFFFF",
       content: [
         "#### Au-Au:",
         "[Uma das diretoras precisou ir até a sede gravar. É que ela mora em um sítio e seus cachorros queriam participar com latidos.](https://www.youtube.com/watch?v=4fvLuLx1zeE&list=PLbGYBqIX5vabke0Aq7Y8st1bzj4q3Gy0H)",

@@ -29,7 +29,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   overflow: hidden;
   opacity: 1;
@@ -60,9 +60,9 @@
   h4 {
     font-family: var(--font-simples-basic-s);
     font-size: 3.2rem;
-    margin: 0;
+    margin: 0 0 1.5rem;
   }
-  
+
   p {
     color: inherit;
     font-family: var(--font-vag-rounded);

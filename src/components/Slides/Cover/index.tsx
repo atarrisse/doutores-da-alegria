@@ -8,7 +8,7 @@ import * as styles from "./styles.module.scss";
 
 const Cover: React.FC = () => {
   return (
-    <Slide>
+    <Slide id="cover">
       <div className={styles.cover}>
         <h1 className={styles.title}>
           Balanço

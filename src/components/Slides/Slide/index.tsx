@@ -14,7 +14,7 @@ const Slide = (data) => {
 
   return (
     <article
-      className={`${styles.article} ${className}`}
+      className={`${styles.article} ${className && className}`}
       data-extra={isExtraOpen}
       style={{ ...style, ...theme }}
       {...others}

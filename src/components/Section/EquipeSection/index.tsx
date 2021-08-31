@@ -12,10 +12,11 @@ interface Props {
 
 
 const EquipeSection: React.FC<Props> = ({ teams }) => {
-  const { isMobile } = useWindowSize();
+  const { width } = useWindowSize();
+  const isMobile = width ? width < 1024 : true;
 
-  const left = teams.filter((item, i) => i % 2 === 0);
-  const right = teams.filter((item, i) => i % 2 !== 0);
+  const left = teams.filter((_item, i) => i % 2 === 0);
+  const right = teams.filter((_item, i) => i % 2 !== 0);
 
   return (
     <>

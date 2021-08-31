@@ -14,9 +14,8 @@ type Props = {
 const Extra: React.FC<Props> = ({ isActive, content, color, handleClick }) => {
   if (!content) return;
 
-
   return (
-    <div className={styles.overlay} >
+    <div className={styles.overlay} onClick={handleClick}>
       <dialog className={styles.extra} open={isActive} style={{ color: color }}>
         <button
           className={styles.button}

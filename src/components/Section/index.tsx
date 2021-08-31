@@ -19,12 +19,23 @@ const Section: React.FC<Props> = ({
   hideTitleOnDesktop,
   ...others
 }) => {
+  const hasLineBreak = title.includes("<br/>");
+
   return (
     <section className={styles.section} {...others}>
       <div className={styles.content}>
-        <h2 className={styles.title} data-hide-desktop={hideTitleOnDesktop}>
-          {title}
-        </h2>
+        {
+          hasLineBreak ?
+            <h2
+              className={styles.title}
+              data-hide-desktop={hideTitleOnDesktop}
+              dangerouslySetInnerHTML={{ __html: title }}>
+            </h2>
+            : <h2 className={styles.title} data-hide-desktop={hideTitleOnDesktop}>
+              {title}
+            </h2>
+        }
+
         {children ? children : content && <Content content={content} />}
       </div>
       <Rodape index={index} links={links} id={id} />

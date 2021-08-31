@@ -17,19 +17,19 @@ const Rodape: React.FC<Props> = ({ id, links }) => {
   const { width } = useWindowSize();
 
   return (
-    <div className={styles.rodape}>
+    <div className={styles.rodape} >
       {
         width && width < 1024
           ? <Image alt="" className={styles.bg} filename={`slides/bg/mobile/${filename}`} />
           : <Image alt="" className={styles.bg} filename={`slides/bg/desktop/${filename}`} />
       }
       {/* people */}
-      {id !== "07" &&
-        links &&
+      {links &&
         links.map(link => {
           return (
             <a
               className={`${styles.people} no-underline`}
+              data-unique={links?.length === 1}
               data-front={link.front}
               href={link.url}
               key={link.image}
@@ -39,19 +39,13 @@ const Rodape: React.FC<Props> = ({ id, links }) => {
               <Image
                 alt={link.alt}
                 className="no-underline"
-                title={link.alt}
                 filename={`slides/people/${link.image}`}
+                objectFit="contain"
+                title={link.alt}
               />
             </a>
           );
         })}
-      {id === "07" && (
-        <Image
-          className={styles.mosaic}
-          alt=""
-          filename={`slides/people/slide_1.png`}
-        />
-      )}
       {/* elemento na frente  */}
       <Image
         alt=""

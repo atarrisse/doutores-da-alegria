@@ -1,13 +1,20 @@
+@import "../../../styles/globals/resources.scss";
+
 .wrapper {
   overflow-x: auto;
   overflow-y: hidden;
   width: 100%;
+
+  @include mobile {
+    margin-bottom: 3rem;
+    margin-left: 3rem;
+  }
 }
 
 .scrollWrap {
   display: flex;
   overflow: auto hidden;
-  gap: 7rem
+  gap: 7rem;
 }
 
 .categoria {
@@ -19,8 +26,8 @@
 .gallery {
   align-items: center;
   display: grid;
-  gap: 2rem;
-  grid-auto-columns: minmax(12rem, auto);
+  gap: 4rem;
+  grid-auto-columns: minmax(15rem, auto);
   grid-auto-flow: column;
   height: 100%;
   list-style: none;

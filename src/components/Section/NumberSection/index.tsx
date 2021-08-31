@@ -29,7 +29,7 @@ const NumberSection: React.FC<IProps> = ({ label, numbers, presencial }) => {
                 <p className={styles.numberLabel}>{label}</p>
                 <p className={styles.number}>
                   {value.toLocaleString("pt-br")}
-                  <small className={styles.unit}>{unit && unit}</small>
+                  {unit && <small className={styles.unit}>{unit}</small>}
                 </p>
               </div>
               {

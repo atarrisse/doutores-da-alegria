@@ -8,7 +8,7 @@ import {
 const ImpactoSocial: Array<IConteudoSecao> = [
   {
     id: "21",
-    title: "Impacto Social",
+    title: "Impacto<br/>Social",
     color: EColors.AZUL,
     content: [
       "#### Projetos presenciais",
@@ -51,6 +51,7 @@ const ImpactoSocial: Array<IConteudoSecao> = [
           {
             label: "Conta Causos",
             value: 158,
+            unit: "Espectadores",
             size: ENumeroTamanho.GDE,
             comment: "Crianças, acompanhantes, equipe hospitalar e outros beneficiados nos atendimentos presenciais realizados até 31 de março de 2020."
           },
@@ -60,7 +61,7 @@ const ImpactoSocial: Array<IConteudoSecao> = [
   },
   {
     id: "22",
-    title: "Impacto Social",
+    title: "Impacto<br/>Social",
     hideTitleOnDesktop: true,
     links: [
       {
@@ -121,7 +122,7 @@ const ImpactoSocial: Array<IConteudoSecao> = [
   },
   {
     id: "23",
-    title: "Impacto Social",
+    title: "Impacto<br/>Social",
     color: EColors.AZUL,
     hideTitleOnDesktop: true,
     links: [
@@ -205,7 +206,7 @@ const ImpactoSocial: Array<IConteudoSecao> = [
   },
   {
     id: "24",
-    title: "Impacto Social",
+    title: "Impacto<br/>Social",
     color: EColors.AZUL,
     hideTitleOnDesktop: true,
     links: [
@@ -282,7 +283,7 @@ const ImpactoSocial: Array<IConteudoSecao> = [
   },
   {
     id: "25",
-    title: "Impacto Social",
+    title: "Impacto<br/>Social",
     color: EColors.AZUL,
     hideTitleOnDesktop: true,
     content: [
@@ -320,18 +321,18 @@ const ImpactoSocial: Array<IConteudoSecao> = [
           },
         ],
       },
-      // {
-      //   type: ETipoConteudo.HTML,
-      //   source: "<small><strong>Alcance: </strong>Número de pessoas alcançadas pela publicação/vídeo.</small>"
-      // },
-      // {
-      //   type: ETipoConteudo.HTML,
-      //   source: "<small><strong>Visualizações: </strong>Número de pessoas que efetivamente visualizaram os vídeos.</small>"
-      // },
-      // {
-      //   type: ETipoConteudo.HTML,
-      //   source: "<small><strong>Interações: </strong>Número de pessoas que curtiram, comentaram ou compartilharam os vídeos.</small>"
-      // }
+      {
+        type: ETipoConteudo.HTML,
+        source: "<small><strong>Alcance: </strong>Número de pessoas alcançadas pela publicação/vídeo.</small>"
+      },
+      {
+        type: ETipoConteudo.HTML,
+        source: "<small><strong>Visualizações: </strong>Número de pessoas que efetivamente visualizaram os vídeos.</small>"
+      },
+      {
+        type: ETipoConteudo.HTML,
+        source: "<small><strong>Interações: </strong>Número de pessoas que curtiram, comentaram ou compartilharam os vídeos.</small>"
+      }
     ],
   },
 ];
