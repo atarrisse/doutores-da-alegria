@@ -49,10 +49,12 @@
   top: 50%;
   transform: translateY(-50%);
   transition: 0.3s ease-in-out;
-  opacity: 0;
+  opacity: 1;
 
-  [data-show-label="true"] & {
-    opacity: 1;
+  &[data-focus="true"],
+  &[data-empty="false"] {
+    opacity: 0;
+    pointer-events: none;
   }
 }
 
@@ -67,6 +69,3 @@
   display: flex;
   flex-direction: row;
 }
-
-
-

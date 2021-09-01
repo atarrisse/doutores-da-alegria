@@ -1,3 +1,3 @@
-<svg viewBox="0 0 23 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 23 19" fill="var(--theme-color)" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.5 19L0.674684 0.249998L22.3253 0.25L11.5 19Z" />
 </svg>
