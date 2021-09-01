@@ -2,6 +2,7 @@ import kebabCase from "lodash/kebabCase";
 import React from "react";
 import Slider from "react-slick";
 
+import Image from "@/components/Image";
 import Section from "@/components/Section";
 import Cover from "@/components/Slides/Cover";
 import Slide from "@/components/Slides/Slide";
@@ -64,6 +65,15 @@ const Index: React.FC = () => {
         {createSlides({ slides: [...Estatisticas, ...Parcerias] })}
         {createSlides({ slides: Expediente })}
       </Slider>
+
+      <a href="https://doutoresdaalegria.org.br/">
+        <Image
+          alt="Logo do Doutores da Alegria"
+          className={styles.logo}
+          filename="logo_rodape.png"
+          height={220}
+          objectFit="contain" />
+      </a>
     </main>
   );
 };

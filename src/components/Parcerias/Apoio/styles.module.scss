@@ -2,14 +2,19 @@
 
 .section {
   &[data-tipo="imagem"] {
-    grid-column: 1 / span 2;
+    @include mobile {
+      grid-column: 1 / span 2;
+    }
 
     @include desktop {
-      grid-column-start: unset;
+      // grid-column-start: unset;
       grid-column-end: span 1;
 
       *:global(#parcerias-e-apoios-31) & {
         grid-column-end: span 2;
+        @include desktop {
+          grid-column-end: span 1;
+        }
       }
     }
   }

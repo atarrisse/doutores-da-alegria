@@ -1,6 +1,7 @@
 @import "../../styles/globals/resources.scss";
 
 .rodape {
+  border: 1px solid rgba(0, 0, 0, 0.1);
   align-self: end;
   display: flex;
   position: relative;
@@ -143,12 +144,8 @@
 }
 
 .people {
-  @include desktop {
-    display: none;
-  }
   display: block;
   position: absolute;
-  max-width: 65%;
   transform: scale(1);
   transform-origin: bottom;
   transition: 0.2s ease-in-out;
@@ -158,15 +155,15 @@
     max-width: unset;
   }
 
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
   @include mobile {
     bottom: 0;
-
-    *:global(#sobre-br-viver-01) & {
-      &[data-unique="true"] {
-        width: 100%;
-        max-width: unset;
-      }
-    }
+    max-width: 65%;
 
     &:first-of-type {
       left: 0;
@@ -174,6 +171,13 @@
 
     &:last-of-type {
       right: 0;
+    }
+
+    *:global(#sobre-br-viver-01) & {
+      &[data-unique="true"] {
+        width: 100%;
+        max-width: unset;
+      }
     }
 
     *:global(#tem-uma-pessoa-no-hospital-que-08) & {
@@ -243,31 +247,184 @@
     }
   }
 
+  // pessoas desktop
   @include desktop {
     right: 0;
 
-    &:first-of-type {
-      bottom: 50%;
-    }
-    &:last-of-type {
-      top: 50%;
+    *:global(#sobre-br-viver-01) & {
+      width: 34.5rem;
+      right: 0;
+      top: 4rem;
     }
 
     *:global(#delivery-besteirologico-06) & {
-      &:first-child {
-        transform: rotate(-45deg);
+      &:first-of-type {
+        top: -15rem;
+        width: 28.3rem;
       }
+      &:last-of-type {
+        top: 12rem;
+        width: 35rem;
+        z-index: 1;
+      }
+    }
+    *:global(#tem-uma-pessoa-no-hospital-que-08) & {
+      &:first-of-type {
+        top: -12rem;
+        width: 31rem;
+      }
+      &:last-of-type {
+        width: 37.6rem;
+        top: 10rem;
+        z-index: 1;
+      }
+    }
+    *:global(#o-digital-e-o-novo-normal-09) & {
+      &:first-of-type {
+        top: 7rem;
+        width: 22.2rem;
+      }
+      &:last-of-type {
+        width: 33.8rem;
+        top: 26rem;
+        z-index: 1;
+      }
+    }
+    *:global(#o-digital-e-o-novo-normal-10) & {
+      &:first-of-type {
+        top: 0;
+        height: 34rem;
+      }
+      &:last-of-type {
+        width: 35rem;
+        bottom: 0;
+        z-index: 1;
+      }
+    }
+    *:global(#o-digital-e-o-novo-normal-11) & {
+      &:first-of-type {
+        right: 13rem;
+        top: 5rem;
+        width: 36rem;
+        z-index: 1;
+      }
+      &:last-of-type {
+        top: 0;
+        left: 0;
+        width: 24.1rem;
+      }
+    }
+    *:global(#o-digital-e-o-novo-normal-12) & {
+      &:first-of-type {
+        top: 0;
+        width: 30rem;
+        z-index: 1;
+      }
+      &:last-of-type {
+        bottom: 18.2rem;
+        left: 6rem;
+        width: 24.1rem;
+        z-index: 1;
+      }
+    }
+    *:global(#o-digital-e-o-novo-normal-13) & {
+      &:first-of-type {
+        width: 32.4rem;
+        top: -5rem;
+      }
+      &:last-of-type {
+        left: 0;
+        top: 8.5rem;
+        width: 29.4rem;
+        z-index: 1;
+      }
+    }
+  }
+  *:global(#festival-miolo-mole-15) & {
+    &:first-of-type {
+      top: 13.4rem;
+      width: 28.7rem;
+    }
+    &:last-of-type {
+      top: 40rem;
+      width: 32.7rem;
+      z-index: 1;
+    }
+  }
+  *:global(#os-nossos-29-anos-17) & {
+    &:first-of-type {
+      top: -2rem;
+      width: 29.7rem;
+    }
+    &:last-of-type {
+      top: 23.8rem;
+      width: 31.2rem;
+      z-index: 1;
+    }
+  }
+
+  *:global(#uma-nova-rede-de-palhacos-18) & {
+    &:first-of-type {
+      top: 2rem;
+      width: 31rem;
+    }
+    &:last-of-type {
+      top: 23rem;
+      width: 33rem;
+      z-index: 1;
+    }
+  }
+
+  *:global(#impacto-br-social-22) & {
+    &:first-of-type {
+      top: 2.8rem;
+      width: 28rem;
+    }
+    &:last-of-type {
+      top: 24.5rem;
+      width: 31.5rem;
+      z-index: 1;
+    }
+  }
+
+  *:global(#impacto-br-social-23) & {
+    &:first-of-type {
+      // background-color: rgba(0, 0, 255, 0.5);
+      top: 0;
+      width: 24.5rem;
+    }
+    &:last-of-type {
+      // background-color: rgba(0, 255, 0, 0.5);
+      top: 24rem;
+      width: 23.4rem;
+      z-index: 1;
+    }
+  }
+
+  *:global(#impacto-br-social-24) & {
+    &:first-of-type {
+      top: 6rem;
+      width: 30rem;
+    }
+    &:last-of-type {
+      top: 31rem;
+      width: 29rem;
+    }
+  }
+
+  *:global(#prestacao-de-contas-e-impacto-social-26) & {
+    &:first-of-type {
+      top: 3.6rem;
+      width: 31.9rem;
+    }
+    &:last-of-type {
+      top: 25.8rem;
+      width: 36rem;
     }
   }
 
   &[data-front="true"] {
     z-index: 1;
-  }
-
-  @media (hover: hover) {
-    &:hover {
-      transform: scale(1.1);
-    }
   }
 }
 
