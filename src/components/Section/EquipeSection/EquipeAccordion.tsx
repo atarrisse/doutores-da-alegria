@@ -15,7 +15,6 @@ interface Props {
 const EquipeSection: React.FC<Props> = ({ dpt }) => {
   return (
     <Accordion
-      className={styles.dpt}
       title={
         <div className={styles.title}>
           <h3 className={styles.label}>

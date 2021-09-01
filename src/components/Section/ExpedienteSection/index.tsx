@@ -16,7 +16,7 @@ const ExpedienteSection: React.FC<Props> = ({
   return (
     <div className={styles.wrapper}>
       <div className={styles.coluna}>
-        <ul className={`${styles.list} ${styles.time}`}>
+        <ul className={styles.list}>
           {
             time.map((person, index) => (
               <li className={styles.element} key={`${index}-${JSON.stringify(person)}`}>

@@ -20,8 +20,8 @@ const Rodape: React.FC<Props> = ({ id, links }) => {
     <div className={styles.rodape} >
       {
         width && width < 1024
-          ? <Image alt="" className={styles.bg} filename={`slides/bg/mobile/${filename}`} />
-          : <Image alt="" className={styles.bg} filename={`slides/bg/desktop/${filename}`} />
+          ? <Image alt="" filename={`slides/bg/mobile/${filename}`} />
+          : <Image alt="" filename={`slides/bg/desktop/${filename}`} />
       }
       {/* people */}
       {links &&

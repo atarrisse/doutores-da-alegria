@@ -1,12 +1,12 @@
-import React from "react"
-import { ResponsiveContainer, BarChart, Bar, Cell } from "recharts"
+import React from "react";
+import { ResponsiveContainer, BarChart, Bar, Cell } from "recharts";
 
-import { EColors } from "../../../../types.d.ts"
-import Legenda from "../Legenda"
+import { EColors } from "../../../../types.d.ts";
+import Legenda from "../Legenda";
 
-import useWindowDimensions from "@/utils/useWindowDimension"
+import useWindowDimensions from "@/utils/useWindowDimension";
 
-import * as styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss";
 
 const data = [
   {
@@ -49,26 +49,25 @@ const data = [
     name: "Doações de empresas sem leis de incentivo (investimento social)",
     value: 1,
   },
-]
+];
 
 const LabelValue = data => {
-  const { isMobile } = useWindowDimensions()
-  const { x, y, width, offset, value } = data
-  const posX = x + width / 2
-  const posY = isMobile ? y - offset : y - 2 * offset
+  const { isMobile } = useWindowDimensions();
+  const { x, y, width, offset, value } = data;
+  const posX = x + width / 2;
+  const posY = isMobile ? y - offset : y - 2 * offset;
   return (
     <text
       fontSize={isMobile ? "1.2rem" : "3rem"}
       fill={`var(--${data.color || "carbon"})`}
       x={posX}
       y={posY}
-      className={styles.label}
       textAnchor="middle"
     >
       {`${value.toLocaleString("pt-br")}%`}
     </text>
-  )
-}
+  );
+};
 
 const graficoMobile = () => (
   <>
@@ -88,7 +87,7 @@ const graficoMobile = () => (
     </div>
     <Legenda data={data} />
   </>
-)
+);
 
 const graficoDesktop = () => (
   <>
@@ -108,11 +107,11 @@ const graficoDesktop = () => (
     </div>
     <Legenda data={data} />
   </>
-)
+);
 
 const OrigemRecursos = () => {
-  const { isMobile } = useWindowDimensions()
-  return isMobile ? graficoMobile() : graficoDesktop()
-}
+  const { isMobile } = useWindowDimensions();
+  return isMobile ? graficoMobile() : graficoDesktop();
+};
 
-export default OrigemRecursos
+export default OrigemRecursos;
