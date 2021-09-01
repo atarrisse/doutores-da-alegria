@@ -1,5 +1,6 @@
 import React from "react";
 
+import ArrowDown from "../../../../static/icons/ArrowDown.svg";
 import Equipe from "./Equipe";
 
 import Accordion from "@/components/Accordion";
@@ -19,12 +20,14 @@ const EquipeSection: React.FC<Props> = ({ dpt }) => {
         <div className={styles.title}>
           <h3 className={styles.label}>
             {dpt.departamento}
+            <span className={styles.icon}>
+              <ArrowDown />
+            </span>
           </h3>
           {dpt.gestao && <h4 className={styles.gestao}>{dpt.gestao}</h4>}
         </div>
       }
     >
-      {/* idx */}
       {
         dpt.pessoas &&
         <ul className={styles.list}>

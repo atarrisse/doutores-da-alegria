@@ -12,7 +12,7 @@ $colors: (
 @each $name, $hex in $colors {
   [data-theme="#{$name}"] {
     --themeColor: var(--#{$name});
-    a {
+    a:not(.no-underline) {
       @media (hover: hover) {
         &:hover {
           // background-size: 3rem 3rem;

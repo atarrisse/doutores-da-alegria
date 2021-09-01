@@ -133,6 +133,9 @@
     margin-bottom: 4rem;
     width: 70%;
   }
+  h4 {
+    margin-bottom: 3rem;
+  }
 
   @include desktop {
     margin-bottom: 7rem;
@@ -140,9 +143,21 @@
     h2 {
       display: none;
     }
-  }
-  h4 {
-    margin-bottom: 3rem;
+
+    [data-tipo="imagem"] {
+      grid-column-end: span 2;
+
+      h4 {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      ul[data-governamental="false"] {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+    }
   }
 }
 
@@ -150,6 +165,10 @@
   @include desktop {
     h2 {
       display: none;
+    }
+    h3 {
+      margin-bottom: 4.2rem;
+      width: 50%;
     }
   }
 }

@@ -21,7 +21,8 @@
     font-weight: 700;
   }
 
-  *:global(#parcerias-e-apoios-31) & {
+  *:global(#parcerias-e-apoios-31) &,
+  *:global(#parcerias-e-apoios-32) & {
     @include desktop {
       h3:first-child {
         margin-bottom: 7rem;

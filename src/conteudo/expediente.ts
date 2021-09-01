@@ -2,7 +2,7 @@ import { EColors, IConteudoSecao, ETipoConteudo } from "@/types.d.ts";
 
 const Estatisticas: Array<IConteudoSecao> = [
   {
-    id: "34",
+    id: "35",
     title: "Expediente",
     color: EColors.AZUL,
     content: [
