@@ -21,7 +21,7 @@ const EquipeSection: React.FC<Props> = ({ dpt }) => {
           <h3 className={styles.label}>
             {dpt.departamento}
             <span className={styles.icon}>
-              <ArrowDown />
+              <ArrowDown className={styles.arrow} />
             </span>
           </h3>
           {dpt.gestao && <h4 className={styles.gestao}>{dpt.gestao}</h4>}

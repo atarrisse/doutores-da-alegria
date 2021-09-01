@@ -256,7 +256,6 @@
       right: 0;
       top: 4rem;
     }
-
     *:global(#delivery-besteirologico-06) & {
       &:first-of-type {
         top: -15rem;
@@ -309,8 +308,8 @@
         z-index: 1;
       }
       &:last-of-type {
-        top: 0;
-        left: 0;
+        top: -5rem;
+        right: 0;
         width: 24.1rem;
       }
     }
@@ -321,7 +320,7 @@
         z-index: 1;
       }
       &:last-of-type {
-        bottom: 18.2rem;
+        bottom: 2rem;
         left: 6rem;
         width: 24.1rem;
         z-index: 1;
@@ -351,85 +350,80 @@
         z-index: 1;
       }
     }
-  }
-  *:global(#festival-miolo-mole-15) & {
-    &:first-of-type {
-      top: 13.4rem;
-      width: 28.7rem;
+    *:global(#festival-miolo-mole-15) & {
+      &:first-of-type {
+        top: 13.4rem;
+        width: 28.7rem;
+      }
+      &:last-of-type {
+        top: 40rem;
+        width: 32.7rem;
+        z-index: 1;
+      }
     }
-    &:last-of-type {
-      top: 40rem;
-      width: 32.7rem;
-      z-index: 1;
+    *:global(#os-nossos-29-anos-17) & {
+      &:first-of-type {
+        top: -2rem;
+        width: 29.7rem;
+      }
+      &:last-of-type {
+        top: 23.8rem;
+        width: 31.2rem;
+        z-index: 1;
+      }
     }
-  }
-  *:global(#os-nossos-29-anos-17) & {
-    &:first-of-type {
-      top: -2rem;
-      width: 29.7rem;
+    *:global(#uma-nova-rede-de-palhacos-18) & {
+      &:first-of-type {
+        top: 2rem;
+        width: 31rem;
+      }
+      &:last-of-type {
+        top: 23rem;
+        width: 33rem;
+        z-index: 1;
+      }
     }
-    &:last-of-type {
-      top: 23.8rem;
-      width: 31.2rem;
-      z-index: 1;
+    *:global(#impacto-br-social-22) & {
+      &:first-of-type {
+        top: 2.8rem;
+        width: 28rem;
+      }
+      &:last-of-type {
+        top: 24.5rem;
+        width: 31.5rem;
+        z-index: 1;
+      }
     }
-  }
-
-  *:global(#uma-nova-rede-de-palhacos-18) & {
-    &:first-of-type {
-      top: 2rem;
-      width: 31rem;
+    *:global(#impacto-br-social-23) & {
+      &:first-of-type {
+        top: 0;
+        width: 24.5rem;
+      }
+      &:last-of-type {
+        top: 24rem;
+        width: 23.4rem;
+        z-index: 1;
+      }
     }
-    &:last-of-type {
-      top: 23rem;
-      width: 33rem;
-      z-index: 1;
+    *:global(#impacto-br-social-24) & {
+      &:first-of-type {
+        top: 6rem;
+        width: 30rem;
+      }
+      &:last-of-type {
+        top: 31rem;
+        width: 29rem;
+      }
     }
-  }
-
-  *:global(#impacto-br-social-22) & {
-    &:first-of-type {
-      top: 2.8rem;
-      width: 28rem;
-    }
-    &:last-of-type {
-      top: 24.5rem;
-      width: 31.5rem;
-      z-index: 1;
-    }
-  }
-
-  *:global(#impacto-br-social-23) & {
-    &:first-of-type {
-      top: 0;
-      width: 24.5rem;
-    }
-    &:last-of-type {
-      top: 24rem;
-      width: 23.4rem;
-      z-index: 1;
-    }
-  }
-
-  *:global(#impacto-br-social-24) & {
-    &:first-of-type {
-      top: 6rem;
-      width: 30rem;
-    }
-    &:last-of-type {
-      top: 31rem;
-      width: 29rem;
-    }
-  }
-
-  *:global(#prestacao-de-contas-e-impacto-social-26) & {
-    &:first-of-type {
-      top: 3.6rem;
-      width: 31.9rem;
-    }
-    &:last-of-type {
-      top: 25.8rem;
-      width: 36rem;
+    *:global(#prestacao-de-contas-e-impacto-social-26) & {
+      &:first-of-type {
+        top: 3.6rem;
+        width: 31.9rem;
+      }
+      &:last-of-type {
+        top: 25.8rem;
+        width: 36rem;
+      }
     }
   }
 
@@ -447,7 +441,6 @@
     bottom: 0;
     left: 0;
     pointer-events: none;
-    height: 40rem;
     width: 100%;
   }
 
