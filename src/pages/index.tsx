@@ -43,6 +43,7 @@ const createSlides = data => {
   return slides.map((item, i) => {
     return (
       <Slide
+        data-theme={item.color}
         className={className}
         key={`${kebabCase(item.title)}-${item.id}`}
         extra={item.extra}

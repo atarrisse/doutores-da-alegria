@@ -17,12 +17,12 @@ const NumberSection: React.FC<IProps> = ({ label, numbers, presencial }) => {
         className={styles.numberGrid}
         data-presencial={presencial}
       >
-        {numbers.map(item => {
+        {numbers.map((item, index) => {
           const { label, unit, size, value } = item;
           return (
-            <>
+            <React.Fragment key={JSON.stringify(item)}>
               <div
-                key={JSON.stringify(item)}
+                key={JSON.stringify({ item, index })}
                 className={styles.numberElement}
                 data-size={size}
               >
@@ -38,7 +38,7 @@ const NumberSection: React.FC<IProps> = ({ label, numbers, presencial }) => {
                   <p>{item.comment}</p>
                 </div>
               }
-            </>
+            </React.Fragment>
           );
         })}
       </div>

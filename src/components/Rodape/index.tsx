@@ -48,19 +48,12 @@ const Rodape: React.FC<Props> = ({ id, links }) => {
         })}
       {/* elemento na frente  */}
       {
-        width && width < 1024
-          ? <Image
-            alt=""
-            aria-hidden
-            className={styles.overlay}
-            filename={`slides/overlay/mobile/${filename}`}
-          />
-          : <Image
-            alt=""
-            aria-hidden
-            className={styles.overlay}
-            filename={`slides/overlay/desktop/${filename}`}
-          />
+        <Image
+          alt=""
+          aria-hidden
+          className={styles.overlay}
+          filename={`slides/overlay/${width < 1024 ? "mobile" : "desktop"}/${filename}`}
+        />
       }
     </div>
   );

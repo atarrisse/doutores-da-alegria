@@ -1,7 +1,7 @@
 @import "../../styles/globals/resources.scss";
 
 .rodape {
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  // border: 1px solid rgba(0, 0, 0, 0.1);
   align-self: end;
   display: flex;
   position: relative;
@@ -336,6 +336,18 @@
         left: 0;
         top: 8.5rem;
         width: 29.4rem;
+        z-index: 1;
+      }
+    }
+    *:global(#o-digital-e-o-novo-normal-14) & {
+      &:first-of-type {
+        top: -5rem;
+        width: 27.4rem;
+      }
+      &:last-of-type {
+        left: 0;
+        top: 7.6rem;
+        width: 35rem;
         z-index: 1;
       }
     }
