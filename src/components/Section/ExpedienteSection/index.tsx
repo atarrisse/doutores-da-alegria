@@ -1,25 +1,21 @@
 import React from "react";
 
-import EquipeAccordion from "./EquipeAccordion";
-
-import useWindowSize from "@/utils/useWindowSize";
-
 import * as styles from "./styles.module.scss";
 
 interface Props {
-  teams: any[]
+  escritorios: any[];
+  time: any[];
+  fechamento: "string";
 }
 
-
-const ExpedienteSection: React.FC<Props> = ({ escritorios, fechamento, time }) => {
-  // console.log(data);
-
-
-
+const ExpedienteSection: React.FC<Props> = ({
+  escritorios,
+  fechamento,
+  time
+}) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.coluna}>
-
         <ul className={`${styles.list} ${styles.time}`}>
           {
             time.map((person, index) => (
