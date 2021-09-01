@@ -293,7 +293,7 @@
     *:global(#o-digital-e-o-novo-normal-10) & {
       &:first-of-type {
         top: 0;
-        height: 34rem;
+        width: 38.6rem;
       }
       &:last-of-type {
         width: 35rem;
@@ -389,12 +389,10 @@
 
   *:global(#impacto-br-social-23) & {
     &:first-of-type {
-      // background-color: rgba(0, 0, 255, 0.5);
       top: 0;
       width: 24.5rem;
     }
     &:last-of-type {
-      // background-color: rgba(0, 255, 0, 0.5);
       top: 24rem;
       width: 23.4rem;
       z-index: 1;
@@ -429,16 +427,83 @@
 }
 
 .overlay {
-  bottom: 0;
-  left: 0;
   mix-blend-mode: multiply;
-  pointer-events: none;
   position: absolute;
-  width: 100%;
   z-index: 2;
 
-  // TODO: re-incluir
+  @include mobile {
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    height: 40rem;
+    width: 100%;
+  }
+
+  *:global(#sobre-br-viver-01) & {
+    top: 21rem;
+  }
+
   @include desktop {
-    display: none !important;
+    right: 0;
+
+    *:global(#delivery-besteirologico-06) & {
+      width: 22rem;
+    }
+    *:global(#tem-uma-pessoa-no-hospital-que-08) & {
+      bottom: 7rem;
+      width: 19.3rem;
+    }
+    *:global(#o-digital-e-o-novo-normal-09) & {
+      bottom: 10rem;
+      width: 27.4rem;
+    }
+    *:global(#o-digital-e-o-novo-normal-10) & {
+      bottom: 0rem;
+      width: 41.8rem;
+    }
+    *:global(#o-digital-e-o-novo-normal-11) & {
+      top: 23rem;
+      width: 20.7rem;
+    }
+    *:global(#o-digital-e-o-novo-normal-12) & {
+      top: 21rem;
+      width: 28.2rem;
+    }
+    *:global(#o-digital-e-o-novo-normal-13) & {
+      top: 26.6rem;
+      width: 30.8rem;
+    }
+    *:global(#o-digital-e-o-novo-normal-14) & {
+      top: 18.1rem;
+      width: 28.8rem;
+    }
+    *:global(#festival-miolo-mole-15) & {
+      top: 60rem;
+      width: 37.8rem;
+    }
+    *:global(#os-nossos-29-anos-17) & {
+      top: 30rem;
+      width: 37.8rem;
+    }
+    *:global(#uma-nova-rede-de-palhacos-18) & {
+      top: 45rem;
+      width: 37.5rem;
+    }
+    *:global(#impacto-br-social-22) & {
+      top: 15rem;
+      width: 34.6rem;
+    }
+    *:global(#impacto-br-social-23) & {
+      top: 30.8rem;
+      width: 30.8rem;
+    }
+    *:global(#impacto-br-social-24) & {
+      top: 27.6rem;
+      width: 23rem;
+    }
+    *:global(#prestacao-de-contas-e-impacto-social-26) & {
+      top: 35rem;
+      width: 35.3rem;
+    }
   }
 }
