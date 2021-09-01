@@ -7,7 +7,20 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
-    // 'gatsby-plugin-svgr',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/static/data`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "icons",
+        path: `${__dirname}/static/icons`,
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -48,13 +61,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-offline",
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/static/data`,
-      },
-    },
     `gatsby-transformer-csv`,
     {
       resolve: "gatsby-plugin-react-svg",
