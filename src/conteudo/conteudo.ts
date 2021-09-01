@@ -115,7 +115,7 @@ const Conteudo: Array<IConteudoSecao> = [
     color: EColors.SALMAO,
     links: [
       {
-        image: "slide_1.png",
+        image: "slide_8_1.png",
         url: "https://doutoresdaalegria.org.br/blog/associacao-doutores-da-alegria-tem-nova-diretoria-estatutaria-ate-2022/"
       }
     ],

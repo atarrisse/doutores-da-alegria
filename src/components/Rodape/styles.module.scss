@@ -1,17 +1,28 @@
 @import "../../styles/globals/resources.scss";
 
 .rodape {
-  // border: 1px solid rgba(0, 0, 0, 0.1);
-  align-self: end;
-  display: flex;
-  position: relative;
+  width: 100%;
 
   &:empty {
     display: none;
   }
 
+  @include desktop {
+    > *:last-child {
+      position: absolute;
+    }
+  }
+
   @include mobile {
+    align-items: center;
+    display: grid;
+    grid-template: max-content / 100%;
     margin-top: 3vh;
+
+    > * {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
 
     *:global(#sobre-br-viver-01) & {
       margin-top: 2rem;
@@ -144,8 +155,6 @@
 }
 
 .people {
-  display: block;
-  position: absolute;
   transform: scale(1);
   transform-origin: bottom;
   transition: 0.2s ease-in-out;
@@ -162,15 +171,15 @@
   }
 
   @include mobile {
-    bottom: 0;
+    align-self: end;
     max-width: 65%;
 
     &:first-of-type {
-      left: 0;
+      justify-self: start;
     }
 
     &:last-of-type {
-      right: 0;
+      justify-self: end;
     }
 
     *:global(#sobre-br-viver-01) & {
@@ -191,7 +200,7 @@
 
     *:global(#o-digital-e-o-novo-normal-09) & {
       &:first-of-type {
-        left: 2.1rem;
+        margin-left: 2.1rem;
         height: 24.7rem;
         width: 15.4rem;
       }
@@ -249,6 +258,8 @@
 
   // pessoas desktop
   @include desktop {
+    // display: flex;
+    position: absolute;
     right: 0;
 
     *:global(#sobre-br-viver-01) & {
@@ -265,6 +276,12 @@
         top: 12rem;
         width: 35rem;
         z-index: 1;
+      }
+    }
+    *:global(#troca-de-gestao-07) & {
+      &:first-of-type {
+        top: 0;
+        width: 40rem;
       }
     }
     *:global(#tem-uma-pessoa-no-hospital-que-08) & {
@@ -433,26 +450,31 @@
 }
 
 .overlay {
-  mix-blend-mode: multiply;
   position: absolute;
+  mix-blend-mode: multiply;
   z-index: 2;
-
-  @include mobile {
-    bottom: 0;
-    left: 0;
-    pointer-events: none;
-    width: 100%;
-  }
 
   *:global(#sobre-br-viver-01) & {
     top: 21rem;
   }
 
+  @include mobile {
+    align-self: end;
+    pointer-events: none;
+    width: 100%;
+  }
+
   @include desktop {
+    position: absolute !important;
     right: 0;
 
     *:global(#delivery-besteirologico-06) & {
+      top: -6rem;
       width: 22rem;
+    }
+    *:global(#troca-de-gestao-07) & {
+      bottom: 10rem;
+      width: 43.6rem;
     }
     *:global(#tem-uma-pessoa-no-hospital-que-08) & {
       bottom: 7rem;
