@@ -19,14 +19,14 @@ const Slide = (data) => {
       style={{ ...style, ...theme }}
       {...others}
     >
-      <div className={styles.content}>{children}</div>
-      {extra && isExtraOpen && (
+      {extra && (
         <Extra
           isActive={isExtraOpen}
           {...extra}
           handleClick={handleCloseExtra}
         />
       )}
+      <div className={styles.content}>{children}</div>
     </article>
   );
 };

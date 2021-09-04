@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useEffect } from "react";
+import CountUp from 'react-countup';
+
+import useOnScreen from "@/utils/useOnScreen";
 
 import * as styles from "./styles.module.scss";
 
@@ -10,12 +14,18 @@ interface IProps {
 }
 
 const NumberSection: React.FC<IProps> = ({ label, numbers, presencial }) => {
+  const isReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const ref = useRef<any>();
+  const onScreen = useOnScreen(ref);
+
+
   return (
     <>
       {label && <h4 className={styles.label}>{label}</h4>}
       <div
         className={styles.numberGrid}
         data-presencial={presencial}
+        ref={ref}
       >
         {numbers.map((item, index) => {
           const { label, unit, size, value } = item;
@@ -28,7 +38,15 @@ const NumberSection: React.FC<IProps> = ({ label, numbers, presencial }) => {
               >
                 <p className={styles.numberLabel}>{label}</p>
                 <p className={styles.number}>
-                  {value.toLocaleString("pt-br")}
+                  {
+                    isReducedMotion.matches ?
+                      value.toLocaleString("pt-br") :
+                      <CountUp
+                        end={value}
+                        duration={1.5}
+                        separator="."
+                      />
+                  }
                   {unit && <small className={styles.unit}>{unit}</small>}
                 </p>
               </div>

@@ -4,10 +4,10 @@
   height: 100%;
   position: relative;
   width: 100%;
-  
-  @include mobile { 
+
+  @include mobile {
     overflow: hidden auto;
-    
+
     &[data-extra="true"] {
       overflow: hidden;
     }

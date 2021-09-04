@@ -14,7 +14,7 @@
   }
 
   @include mobile {
-    align-items: center;
+    align-items: end;
     display: grid;
     grid-template: max-content / 100%;
     margin-top: 3vh;

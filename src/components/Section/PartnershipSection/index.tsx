@@ -1,4 +1,7 @@
 import React from "react";
+import { useRef } from "react";
+import { useEffect } from "react";
+import Slider from 'react-animated-slider';
 
 import Image from "@/components/Image";
 
@@ -26,9 +29,12 @@ const Partners = {
   ]
 };
 
+
 const PartnershipSection = () => {
+  const ref = useRef();
+
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} ref={ref}>
       <div className={styles.scrollWrap}>
         {
           Object.entries(Partners).map(([key, value]) => (

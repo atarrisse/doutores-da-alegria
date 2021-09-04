@@ -35,7 +35,7 @@ const config = {
   slidesToScroll: 1,
   speed: 500,
   swipeToSlide: true,
-  // initialSlide: 16
+  // initialSlide: 2
 };
 
 const createSlides = data => {

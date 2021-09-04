@@ -1,19 +1,67 @@
 @import "../../styles/globals/resources.scss";
 
+.overlay {
+  background-color: rgba(255, 255, 255, 0.95);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100vw;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in;
+  z-index: 99;
+
+  @include desktop {
+    display: none;
+  }
+
+  &[data-init="true"] {
+    opacity: 1;
+    &[data-close="true"] {
+      opacity: 0;
+    }
+  }
+
+  &[data-close="true"] {
+    animation-name: animation1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+}
+
 .extra {
   background-color: var(--theme-color);
   border-radius: 3rem;
   border: 0;
+  color: var(--carbon);
   font-weight: 700;
   left: 50%;
   padding: 3rem;
   position: absolute;
-  transform: translate(-50%, -60%);
   text-align: center;
   top: 50%;
+  // hidden under the screen
+  transform: translate(-50%, 150vh);
+  transition-delay: 0.6s;
+  transition-duration: 0.5s;
+  transition-property: transform;
+  transition-timing-function: ease-in;
   width: 75%;
   word-break: break-word;
   z-index: 100;
+
+  // moves up
+  [data-init="true"] & {
+    transform: translate(-50%, -60%);
+  }
+
+  // goes away on close
+  [data-close="true"] & {
+    transition-delay: 0s;
+    transition-timing-function: ease-out;
+    transform: translate(-50%, -150vh);
+  }
 
   & *:global(.gatsby-image-wrapper) {
     margin-bottom: -3rem;
@@ -24,19 +72,17 @@
   }
 }
 
-.overlay {
-  background-color: rgba(255, 255, 255, 0.95);
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100vw;
-  overflow: hidden;
-  opacity: 1;
-  z-index: 99;
+.extra {
+  h4 {
+    font-family: var(--font-simples-basic-s);
+    font-size: 3.2rem;
+    margin: 0 0 1.5rem;
+  }
 
-  @include desktop {
-    display: none;
+  p {
+    color: inherit;
+    font-family: var(--font-vag-rounded);
+    line-height: 158%;
   }
 }
 
@@ -52,20 +98,20 @@
   top: 0;
   transform: translate(0, -100%);
   padding: 1rem 2rem;
+
+  [data-close="true"] & {
+    display: none;
+  }
 }
 
-.extra {
-  color: var(--carbon);
-
-  h4 {
-    font-family: var(--font-simples-basic-s);
-    font-size: 3.2rem;
-    margin: 0 0 1.5rem;
+@keyframes animation1 {
+  0% {
+    opacity: 1;
   }
-
-  p {
-    color: inherit;
-    font-family: var(--font-vag-rounded);
-    line-height: 158%;
+  95% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
   }
 }

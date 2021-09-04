@@ -4078,6 +4078,11 @@ cosmiconfig@^7.0.0:
     path-type "^4.0.0"
     yaml "^1.10.0"
 
+countup.js@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/countup.js/-/countup.js-2.0.8.tgz#eca0c31c9db3f7769cba494d9315cd52dbaaf1b9"
+  integrity sha512-pW3xwwD+hB+xmtI16xFcuLS0D5hSQqPQWkZOdgpKQyzxCquDNo2VCFPkRw12vmvdpnicXVTcjmYiakG6biwINg==
+
 create-gatsby@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/create-gatsby/-/create-gatsby-1.4.0.tgz#e5a303e18c39d631a36e08b45dffe46c140584a1"
@@ -11158,6 +11163,18 @@ react-animate-height@^2.0.23:
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.1"
+
+react-animated-slider@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-animated-slider/-/react-animated-slider-2.0.0.tgz#121729ba4c76c0aa4f5166ca78d0eda0ec77dd54"
+  integrity sha512-JOvLvqAfdNrYjPJWnCZbtS7d/DxSowDTFeIbaS5xUDEVJe3whgxUD6rDZ6+VI0Rhp9N03ogdpuNKlFJIoPhIyg==
+
+react-countup@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/react-countup/-/react-countup-5.2.0.tgz#58be5d97acebf767d5c61df5c3a3417b95c45a16"
+  integrity sha512-R6+FIrW8ypwoAe0Q0CZ16OhrgAntnnnch7HrnRAy9miXFKk8jQzVADjNtGSoNUuJeq/ZFiiXCGJCJIAmRJ5fLg==
+  dependencies:
+    countup.js "^2.0.8"
 
 react-dev-utils@^11.0.3:
   version "11.0.4"
