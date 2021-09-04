@@ -1,15 +1,12 @@
-import kebabCase from "lodash-es/kebabCase";
+import kebabCase from "lodash/kebabCase";
 import React from "react";
 
 import { EApoioDisplay } from "../../../../types.d.ts";
 import Image from "../../../Image";
 
-import useWindowSize from "@/utils/useWindowSize";
-
 import * as styles from "./styles.module.scss";
 
 const ListaEmpresas = ({ tipo, destaque, empresas, governamental }) => {
-  // const { isMobile } = useWindowSize();
   return (
     <ul className={styles.listaEmpresas} data-governamental={governamental}>
       {tipo === EApoioDisplay.TXT &&

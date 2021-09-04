@@ -1,7 +1,6 @@
+import debounce from "lodash/debounce";
 import React from "react";
-import { useRef } from "react";
-import { useEffect } from "react";
-import Slider from 'react-animated-slider';
+import { useState } from "react";
 
 import Image from "@/components/Image";
 
@@ -31,27 +30,34 @@ const Partners = {
 
 
 const PartnershipSection = () => {
-  const ref = useRef();
+  const [isAtBeginning, setIsAtBeginning] = useState(true);
 
+  const handleScroll = (e) => {
+    setIsAtBeginning(e.target.scrollLeft === 0);
+  };
   return (
-    <div className={styles.wrapper} ref={ref}>
-      <div className={styles.scrollWrap}>
-        {
-          Object.entries(Partners).map(([key, value]) => (
-            <div key={key}>
-              <p className={styles.categoria}>{key}</p>
-              <ul className={styles.gallery}>
-                {
-                  value.map(item => (
-                    <li key={JSON.stringify(item)}>
-                      <Image {...item} />
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-          ))
-        }
+    <div className={styles.wrapper}>
+      <div className={styles.gradient} data-begin={isAtBeginning}>
+        <div className={styles.scroll} onScroll={debounce(handleScroll, 10)}>
+          <div className={styles.content}>
+            {
+              Object.entries(Partners).map(([key, value]) => (
+                <div key={key}>
+                  <p className={styles.categoria}>{key}</p>
+                  <ul className={styles.gallery}>
+                    {
+                      value.map(item => (
+                        <li key={JSON.stringify(item)}>
+                          <Image {...item} />
+                        </li>
+                      ))
+                    }
+                  </ul>
+                </div>
+              ))
+            }
+          </div>
+        </div>
       </div>
     </div>
   );

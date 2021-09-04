@@ -1,4 +1,4 @@
-import kebabCase from "lodash-es/kebabCase";
+import kebabCase from "lodash/kebabCase";
 import React from "react";
 
 import { IApoio } from "../../types.d.ts";

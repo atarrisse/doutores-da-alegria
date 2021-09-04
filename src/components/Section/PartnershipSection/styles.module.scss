@@ -1,8 +1,49 @@
 @import "../../../styles/globals/resources.scss";
 
 .wrapper {
+  height: 17.5rem;
+  position: relative;
+}
+
+.gradient {
+  height: 17.5rem;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &:after,
+  &:before {
+    height: 17.5rem;
+    position: absolute;
+    top: 0;
+    width: 1rem;
+    z-index: 1;
+  }
+
+  &:before {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    left: 0;
+  }
+
+  &:after {
+    content: "";
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    right: 0;
+  }
+
+  &[data-begin="false"] {
+    &:before {
+      content: "";
+    }
+  }
+}
+
+.scroll {
   overflow-x: auto;
   overflow-y: hidden;
+  position: relative;
+  height: 17.5rem;
   width: 100%;
 
   @include mobile {
@@ -12,10 +53,15 @@
   }
 }
 
-.scrollWrap {
+.content {
   display: flex;
-  overflow: auto hidden;
   gap: 7rem;
+  position: relative;
+  overflow: auto hidden;
+
+  @include mobile {
+    position: absolute;
+  }
 }
 
 .categoria {

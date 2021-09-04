@@ -1,6 +1,8 @@
 @import "../../styles/globals/resources.scss";
 
 .text {
+  position: relative;
+
   > p {
     &:first-child {
       margin-top: 0;
