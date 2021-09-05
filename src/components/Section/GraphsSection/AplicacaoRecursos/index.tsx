@@ -115,11 +115,13 @@ const AplicacaoRecursos = () => {
               innerRadius={"70%"}
               cx="50%"
               cy="50%"
-              fill="#6b6a6d">
+              fill="#6b6a6d"
+              animationBegin={1500}
+            >
               {allValues.map((entry) => (
                 <Cell key={JSON.stringify(entry)} fill={getColor(entry.color)} />
               ))
-              }}
+              }
             </Pie>
           </PieChart>
         </ResponsiveContainer>

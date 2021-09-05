@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useMemo } from "react";
 
 import Content from "../Content";
+
+import useWindowScroll from "@/utils/useWindowScroll";
+import useWindowSize from "@/utils/useWindowSize";
 
 import * as styles from "./styles.module.scss";
 
@@ -17,34 +21,125 @@ type Props = {
 
 const Extra: React.FC<Props & TExtra> = ({ isActive, content, color, handleClick }) => {
   if (!content) return;
+
+  const windowHeight = window.innerHeight;
+  const overlayRef = useRef<HTMLDivElement>();
+  const { top } = useWindowScroll();
+  const { isMobile } = useWindowSize();
   const [init, setInit] = useState(false);
+  const [delta, setDelta] = useState<number | null>(0);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [midScreen, setMidScreen] = useState<number | null>(0);
+  const [aboveMidScreen, setAboveMidScreen] = useState(false);
+  const rect = useMemo(() => {
+    return overlayRef?.current?.getBoundingClientRect();
+  }, [overlayRef.current]);
 
   useEffect(() => {
     setInit(true);
   }, []);
 
+  useEffect(() => {
+    if (!delta) return;
+    if (delta < 0) setIsVisible(true);
+    else setIsVisible(false);
+  }, [delta]);
+
+  useEffect(() => {
+    const top = window.scrollY;
+    const screenSize = window.innerHeight;
+    setMidScreen((top + screenSize / 2) - 300);
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (isMobile || !rect) return;
+
+    const windowBottom = top + windowHeight;
+    const delta = rect.top - windowBottom;
+    setDelta(delta);
+
+    if (delta > 0) return;
+
+    if (rect.top >= midScreen) {
+      setAboveMidScreen(true);
+    }
+
+  }, [top]);
+
+  useEffect(() => {
+    if (!aboveMidScreen || !isActive) return;
+    const r = overlayRef.current.getBoundingClientRect();
+    const pieceTop = Math.abs(Math.round(r?.top));
+    const pieceBottom = Math.abs(Math.round(window.innerHeight - r?.bottom));
+    const difference = Math.abs(pieceTop - pieceBottom);
+    if (difference < 100) {
+      document.querySelector("html").style.overflow = "hidden";
+    }
+  }, [top, aboveMidScreen]);
+
+  useEffect(() => {
+    if (!isActive)
+      document.querySelector("html").style.overflow = "auto";
+  }, [isActive]);
+
   return (
-    <div
-      className={styles.overlay}
-      data-init={init}
-      data-close={isActive === false}
-      onClick={handleClick}
-    >
-      <dialog
-        className={styles.extra}
-        open={true}
-        style={{ color: color }}
-      >
-        <button
-          className={styles.button}
-          aria-label="Fechar curiosidade"
-          onClick={handleClick}
-        >
-          X
-        </button>
-        <Content content={content} />
-      </dialog>
-    </div>
+    <>
+      {
+        isMobile
+          ? <div
+            className={styles.overlay}
+            data-init={init}
+            data-close={isActive === false}
+            ref={overlayRef}
+            onClick={handleClick}
+          >
+            <dialog
+              className={styles.extra}
+              open={true}
+              style={{ color: color }}
+            >
+              <button
+                className={styles.button}
+                aria-label="Fechar curiosidade"
+                onClick={handleClick}
+              >
+                X
+              </button>
+              <Content content={content} />
+            </dialog>
+          </div>
+          :
+          <div className={styles.wrapper}>
+            <dialog
+              className={styles.extra}
+              data-init={aboveMidScreen}
+              data-close={isActive === false}
+              open={true}
+              ref={overlayRef}
+              style={{ color: color }}
+            >
+              <button
+                className={styles.button}
+                aria-label="Fechar curiosidade"
+                onClick={handleClick}
+              >
+                X
+              </button>
+              <Content content={content} />
+            </dialog>
+            <div
+              className={styles.overlayDesktop}
+              data-visible={isVisible}
+              data-close={isActive === false}
+              aria-hidden
+              style={{
+                // height: (rect?.height || 0) - 10,
+                // width: (rect?.width || 0) - 10,
+              }}
+            />
+          </div>
+      }
+    </>
   );
 };
 

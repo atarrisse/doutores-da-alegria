@@ -10,7 +10,9 @@ const Slide = (data) => {
   const [isExtraOpen, setIsExtraOppen] = useState<boolean | undefined>(
     extra !== undefined
   );
-  const handleCloseExtra = () => setIsExtraOppen(false);
+  const handleCloseExtra = () => {
+    setIsExtraOppen(false);
+  };
 
   return (
     <article
@@ -24,6 +26,7 @@ const Slide = (data) => {
           isActive={isExtraOpen}
           {...extra}
           handleClick={handleCloseExtra}
+          {...others}
         />
       )}
       <div className={styles.content}>{children}</div>

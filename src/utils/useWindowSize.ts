@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 
-interface Size {
-  width: number | undefined;
-  height: number | undefined;
+interface Props {
+  width?: number;
+  height?: number;
+  isMobile?: boolean;
 }
 
-const useWindowSize: () => Size = () => {
+const useWindowSize: () => Props = () => {
   // Initialize state with undefined width/height so server and client renders match
   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-  const [windowSize, setWindowSize] = useState<Size>({
+  const [windowSize, setWindowSize] = useState<Props>({
     width: undefined,
     height: undefined,
+    isMobile: undefined
   });
 
   useEffect(() => {
@@ -20,6 +22,7 @@ const useWindowSize: () => Size = () => {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
+        isMobile: window.innerWidth < 1024
       });
     }
 

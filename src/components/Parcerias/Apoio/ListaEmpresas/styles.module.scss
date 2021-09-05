@@ -8,6 +8,10 @@
 
   @include mobile {
     margin: 0 0 5rem;
+
+    *:global(#parcerias-e-apoios-33) & {
+      margin: 0;
+    }
   }
 
   [data-tipo="imagem"] & {
@@ -59,65 +63,145 @@
     gap: 6rem 2rem;
   }
 
+  // incentivo a cultura
   li:first-child {
     grid-column: 1 / span 6;
-    img {
-      height: 10rem;
+    @include mobile {
+      img {
+        height: 5rem;
+      }
+    }
+    @include desktop {
+      img {
+        height: 10rem;
+      }
     }
   }
+
   // pref recife
   li:nth-child(2) {
     grid-column: 1 / span 6;
-    img {
-      height: 7rem;
+
+    @include mobile {
+      img {
+        height: 3.5rem;
+      }
+    }
+    @include desktop {
+      img {
+        height: 7rem;
+      }
     }
   }
   // funcultura
   li:nth-child(3) {
-    grid-column: 1 / span 2;
     grid-row: 3 / span 1;
-    img {
-      height: 3rem;
+
+    @include mobile {
+      grid-column: 1 / span 1;
+      img {
+        height: 1.5rem;
+      }
+    }
+
+    @include desktop {
+      grid-column: 1 / span 2;
+      img {
+        height: 3rem;
+      }
     }
   }
   // fundarpe
   li:nth-child(4) {
-    grid-column: 2 / span 2;
     grid-row: 3 / span 1;
-    margin-left: 5rem;
-    img {
-      height: 3rem;
+    grid-column: 2 / span 2;
+
+    @include mobile {
+      img {
+        height: 1.5rem;
+      }
+    }
+
+    @include desktop {
+      margin-left: 5rem;
+      img {
+        height: 3rem;
+      }
     }
   }
   // secretaria saude pernambuco
   li:nth-child(5) {
-    grid-column-start: 4;
-    grid-column-end: span 3;
-    img {
-      height: 8rem;
+    grid-row: 3 / span 1;
+
+    @include mobile {
+      grid-column: 4 / span 3;
+      img {
+        height: 3.7rem;
+        object-fit: contain !important;
+      }
+    }
+    @include desktop {
+      grid-column: 4 / span 3;
+      img {
+        height: 8rem;
+      }
     }
   }
   // prefeitura rio
   li:nth-child(6) {
-    grid-column-end: span 2;
+    grid-row: 4 / span 1;
     justify-self: end;
-    img {
-      height: 8rem;
+
+    @include mobile {
+      justify-self: start;
+      grid-column: 1 / span 6;
+      img {
+        height: 4rem;
+      }
+    }
+    @include desktop {
+      grid-column-end: span 2;
+      img {
+        height: 8rem;
+      }
     }
   }
   // saúde rio
   li:nth-child(7) {
-    grid-column-end: span 2;
-    img {
-      height: 9rem;
+    grid-row: 4 / span 1;
+
+    @include mobile {
+      justify-self: start;
+      grid-column: 1 / span 6;
+      margin-left: 35%;
+      img {
+        height: 4rem;
+      }
+    }
+    @include desktop {
+      grid-column-end: span 2;
+      img {
+        height: 9rem;
+      }
     }
   }
   // saúde rio
   li:nth-child(8) {
-    justify-self: start;
-    grid-column-end: span 2;
-    img {
-      height: 8rem;
+    // justify-self: start;
+    grid-row: 4 / span 1;
+
+    @include mobile {
+      justify-self: end;
+      grid-column: 1 / span 6;
+      img {
+        height: 4rem;
+      }
+    }
+    @include desktop {
+      grid-column-end: span 2;
+      img {
+        height: 8rem;
+      }
     }
   }
   // fumcad
@@ -125,8 +209,16 @@
     grid-column-end: span 3;
     justify-self: flex-end;
     margin-right: 5rem;
-    img {
-      height: 11rem;
+
+    @include mobile {
+      img {
+        height: 6rem;
+      }
+    }
+    @include desktop {
+      img {
+        height: 11rem;
+      }
     }
   }
   // cmdca
@@ -134,29 +226,66 @@
     grid-column-end: span 3;
     justify-self: flex-start;
     margin-left: 5rem;
-    img {
-      height: 11rem;
+
+    @include mobile {
+      img {
+        height: 6rem;
+      }
+    }
+    @include desktop {
+      img {
+        height: 11rem;
+      }
     }
   }
-  // PROAC e Pref SP
-  li:nth-child(n + 11):nth-child(-n + 12) {
+  // PROAC
+  li:nth-child(11) {
     grid-column-end: span 3;
+
+    @include mobile {
+      img {
+        height: 3.5rem;
+      }
+    }
+  }
+  // Prefeitura SP
+  li:nth-child(12) {
+    grid-column-end: span 3;
+
+    @include mobile {
+      img {
+        height: 5.5rem;
+      }
+    }
   }
   // Estado de SP
   li:nth-child(13) {
-    // background-color: red;
     grid-column-end: span 6;
     text-align: center;
-    // width: 100%;
-    img {
-      height: 10.5rem;
-      margin: auto;
+
+    @include mobile {
+      img {
+        height: 5.5rem;
+      }
+    }
+    @include desktop {
+      img {
+        height: 10.5rem;
+        margin: auto;
+      }
     }
   }
   li:last-child {
     grid-column-end: span 6;
-    img {
-      height: 5.7rem;
+    @include mobile {
+      img {
+        height: 3rem;
+      }
+    }
+    @include desktop {
+      img {
+        height: 5.7rem;
+      }
     }
   }
 }

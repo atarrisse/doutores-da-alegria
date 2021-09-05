@@ -1,32 +1,37 @@
 @import "../../styles/globals/resources.scss";
 
+.wrapper {
+  z-index: 3;
+}
 .overlay {
-  background-color: rgba(255, 255, 255, 0.95);
+  --overlay-duration: 0.3s;
+
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100vw;
   overflow: hidden;
-  opacity: 0;
-  transition: all 0.5s ease-in;
+  transition: all var(--overlay-duration) ease-in;
   z-index: 99;
+  animation: pads 1s ease-in-out forwards;
 
-  @include desktop {
-    display: none;
-  }
+  @include mobile {
+    background-color: rgba(255, 255, 255, 0.95);
+    height: 100vh;
+    left: 0;
+    opacity: 0.5;
+    top: 0;
+    width: 100vw;
 
-  &[data-init="true"] {
-    opacity: 1;
-    &[data-close="true"] {
-      opacity: 0;
+    &[data-init="true"] {
+      opacity: 1;
+      &[data-close="true"] {
+        opacity: 0;
+      }
     }
-  }
 
-  &[data-close="true"] {
-    animation-name: animation1;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+    &[data-close="true"] {
+      animation-name: overlayOut;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
   }
 }
 
@@ -37,38 +42,56 @@
   color: var(--carbon);
   font-weight: 700;
   left: 50%;
-  padding: 3rem;
   position: absolute;
   text-align: center;
   top: 50%;
-  // hidden under the screen
-  transform: translate(-50%, 150vh);
-  transition-delay: 0.6s;
   transition-duration: 0.5s;
   transition-property: transform;
   transition-timing-function: ease-in;
-  width: 75%;
   word-break: break-word;
   z-index: 100;
 
-  // moves up
-  [data-init="true"] & {
-    transform: translate(-50%, -60%);
+  @include mobile {
+    padding: 3rem;
+    transform: translate(-50%, 150vh);
+    transition-delay: var(--overlay-duration);
+    width: 75%;
+    // moves up
+    [data-init="true"] & {
+      transform: translate(-50%, -60%);
+    }
+
+    // goes away on close
+    [data-close="true"] & {
+      transition-delay: 0s;
+      transition-timing-function: ease-out;
+      transform: translate(-50%, -150vh);
+    }
   }
 
-  // goes away on close
-  [data-close="true"] & {
-    transition-delay: 0s;
-    transition-timing-function: ease-out;
-    transform: translate(-50%, -150vh);
+  @include desktop {
+    box-sizing: content-box;
+    height: auto;
+    margin: 0;
+    padding: 2rem;
+    transform: translate(100vw, -50%) rotate(0deg);
+    width: 28.3rem;
+
+    &[data-init="true"] {
+      transform: translate(-50%, -50%) rotate(0deg);
+      // &:before {
+      //   animation: abc 1s ease-in forwards;
+      // }
+    }
+    &[data-close="true"] {
+      transition-timing-function: ease-out;
+      transform: translate(100vw, -50%) rotate(360deg);
+      transition-delay: 0;
+    }
   }
 
   & *:global(.gatsby-image-wrapper) {
     margin-bottom: -3rem;
-  }
-
-  @include desktop {
-    display: none;
   }
 }
 
@@ -77,12 +100,23 @@
     font-family: var(--font-simples-basic-s);
     font-size: 3.2rem;
     margin: 0 0 1.5rem;
+
+    @include desktop {
+      font-size: 4rem;
+      line-height: 3.8rem;
+      margin: 0 0 2.2rem;
+    }
   }
 
   p {
     color: inherit;
     font-family: var(--font-vag-rounded);
     line-height: 158%;
+
+    @include desktop {
+      font-size: 1.7rem;
+      line-height: 2.7rem;
+    }
   }
 }
 
@@ -92,19 +126,44 @@
   color: var(--theme-color);
   font-size: 4rem;
   font-weight: 100;
-  z-index: 100;
+  padding: 1rem 2rem;
   position: absolute;
   right: 0;
   top: 0;
   transform: translate(0, -100%);
-  padding: 1rem 2rem;
+  z-index: 100;
 
   [data-close="true"] & {
     display: none;
   }
+
+  @include desktop {
+    transform: translate(2rem, -100%);
+  }
 }
 
-@keyframes animation1 {
+.overlayDesktop {
+  background-color: #fff;
+  border-radius: 3rem;
+  box-sizing: content-box;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-out;
+  transition-delay: 2s;
+  transform-origin: center;
+  position: absolute;
+  z-index: 4;
+
+  &[data-visible="true"] {
+    animation: animOverlay 1s forwards 0.7s;
+    &[data-close="true"] {
+      animation: animOverlayOut 1s forwards;
+    }
+  }
+}
+
+@keyframes overlayOut {
   0% {
     opacity: 1;
   }
@@ -113,5 +172,39 @@
   }
   100% {
     display: none;
+  }
+}
+
+@keyframes animBorder {
+  0% {
+    border-width: 0;
+  }
+  100% {
+    border-width: 5rem;
+  }
+}
+
+@keyframes animOverlay {
+  0% {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 0.95;
+    height: 120vh;
+    width: 110vw;
+  }
+}
+@keyframes animOverlayOut {
+  0% {
+    opacity: 0.95;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
   }
 }

@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import { useEffect, useState } from "react";
+import AnimateHeight from "react-animate-height";
 
 import SearchIcon from "../../../../static/icons/Search.svg";
 
@@ -10,7 +11,7 @@ import useWindowSize from "@/utils/useWindowSize";
 import * as styles from "./styles.module.scss";
 
 const SearchSection = () => {
-  const { width } = useWindowSize();
+  const { isMobile } = useWindowSize();
   const donors = queryDonors().map(donor => donor.node["Doador"]);
   const half = Math.ceil(donors.length / 2);
 
@@ -18,8 +19,10 @@ const SearchSection = () => {
   const [empty, setEmpty] = useState(true);
   const [query, setQuery] = useState("");
   const [list, setList] = useState(donors);
+  const [showAll, setShowAll] = useState(false);
   const [firstHalf, setFirstHalf] = useState(donors.slice(0, half));
   const [lastHalf, setLastHalf] = useState(donors.slice(-half));
+  const [height, setHeight] = useState<string | number>(200);
 
 
   const handleChange = e => {
@@ -28,6 +31,14 @@ const SearchSection = () => {
     else setEmpty(false);
     setQuery(val.toLowerCase());
   };
+
+  const toggleNames = () => {
+    setShowAll(!showAll);
+  };
+
+  useEffect(() => {
+    setHeight(showAll ? "auto" : 200);
+  }, [showAll]);
 
   useEffect(() => {
     if (!query || query === "") {
@@ -62,20 +73,40 @@ const SearchSection = () => {
         />
         <SearchIcon className={styles.icon} />
       </fieldset>
-      {width < 1024 && (
+      {isMobile && (
         <ul className={styles.list}>
           {list && list.map((donor) => <li key={donor} className={styles.item}>{donor}</li>)}
         </ul>
       )}
-      {width > 1024 &&
-        <div className={styles.names}>
-          <ul className={styles.list}>
-            {firstHalf.map((donor) => <li key={donor} className={styles.item}>{donor}</li>)}
-          </ul>
-          <ul className={styles.list}>
-            {lastHalf.map((donor) => <li key={donor} className={styles.item}>{donor}</li>)}
-          </ul>
-        </div>
+      {!isMobile &&
+        <>
+          <AnimateHeight
+            className={styles.panel}
+            id="names-columns"
+            duration={500}
+            height={height} // see props documentation below
+          >
+            <div className={styles.names} data-show-all={showAll}>
+              <ul className={styles.list}>
+                {firstHalf.map((donor) => <li key={donor} className={styles.item}>{donor}</li>)}
+              </ul>
+              <ul className={styles.list} data-show-all={showAll}>
+                {lastHalf.map((donor) => <li key={donor} className={styles.item}>{donor}</li>)}
+              </ul>
+            </div>
+          </AnimateHeight>
+          <button
+            aria-expanded={height !== 0}
+            aria-controls="names-columns"
+            className={styles.button}
+            onClick={toggleNames}
+          >
+            {
+              showAll ? "Esconder nomes" : "Veja todos os nomes"
+            }
+
+          </button>
+        </>
       }
     </>
   );

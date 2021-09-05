@@ -99,6 +99,8 @@
   }
 
   @include mobile {
+    align-items: end;
+    display: flex;
     line-height: 0.9em;
   }
 
@@ -118,6 +120,7 @@
   font-family: var(--font-vag-rounded);
   font-size: 1.5rem;
   font-weight: 700;
+  margin-bottom: 0 !important;
   margin-left: 1ch;
 
   &:empty {
@@ -126,6 +129,10 @@
 
   @include mobile {
     display: inline;
+  }
+
+  @include desktop {
+    display: none !important;
   }
 }
 

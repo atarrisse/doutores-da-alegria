@@ -1,8 +1,5 @@
-import React, { useRef } from "react";
-import { useEffect } from "react";
+import React from "react";
 import CountUp from 'react-countup';
-
-import useOnScreen from "@/utils/useOnScreen";
 
 import * as styles from "./styles.module.scss";
 
@@ -15,8 +12,6 @@ interface IProps {
 
 const NumberSection: React.FC<IProps> = ({ label, numbers, presencial }) => {
   const isReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const ref = useRef<any>();
-  const onScreen = useOnScreen(ref);
 
 
   return (
@@ -25,7 +20,6 @@ const NumberSection: React.FC<IProps> = ({ label, numbers, presencial }) => {
       <div
         className={styles.numberGrid}
         data-presencial={presencial}
-        ref={ref}
       >
         {numbers.map((item, index) => {
           const { label, unit, size, value } = item;
