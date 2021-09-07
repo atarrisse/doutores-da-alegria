@@ -5,6 +5,7 @@ import { useMemo } from "react";
 
 import Content from "../Content";
 
+import useExtra from "@/utils/useExtra";
 import useWindowScroll from "@/utils/useWindowScroll";
 import useWindowSize from "@/utils/useWindowSize";
 
@@ -19,13 +20,14 @@ type Props = {
   handleClick: () => void
 }
 
-const Extra: React.FC<Props & TExtra> = ({ isActive, content, color, handleClick }) => {
+const Extra: React.FC<Props & TExtra> = ({ isActive, content, color, handleClick: onClick }) => {
   if (!content) return;
 
   const windowHeight = window.innerHeight;
   const overlayRef = useRef<HTMLDivElement>();
   const { top } = useWindowScroll();
   const { isMobile } = useWindowSize();
+  const { isExtraOpen, setIsExtraOpen } = useExtra();
   const [init, setInit] = useState(false);
   const [delta, setDelta] = useState<number | null>(0);
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -34,6 +36,11 @@ const Extra: React.FC<Props & TExtra> = ({ isActive, content, color, handleClick
   const rect = useMemo(() => {
     return overlayRef?.current?.getBoundingClientRect();
   }, [overlayRef.current]);
+
+  const handleClick = () => {
+    setIsExtraOpen(false);
+    onClick?.();
+  };
 
   useEffect(() => {
     setInit(true);
@@ -66,21 +73,26 @@ const Extra: React.FC<Props & TExtra> = ({ isActive, content, color, handleClick
 
   }, [top]);
 
+  // triggers entrance
   useEffect(() => {
     if (!aboveMidScreen || !isActive) return;
     const r = overlayRef.current.getBoundingClientRect();
     const pieceTop = Math.abs(Math.round(r?.top));
     const pieceBottom = Math.abs(Math.round(window.innerHeight - r?.bottom));
     const difference = Math.abs(pieceTop - pieceBottom);
-    if (difference < 100) {
+    if (difference < 100 && !isExtraOpen) {
+      setIsExtraOpen(true);
       document.querySelector("html").style.overflow = "hidden";
     }
-  }, [top, aboveMidScreen]);
+  }, [top, aboveMidScreen, isExtraOpen]);
 
+  //overflow back
   useEffect(() => {
     if (!isActive)
       document.querySelector("html").style.overflow = "auto";
   }, [isActive]);
+
+  // if (isExtraOpen) return <></>;
 
   return (
     <>
@@ -132,10 +144,6 @@ const Extra: React.FC<Props & TExtra> = ({ isActive, content, color, handleClick
               data-visible={isVisible}
               data-close={isActive === false}
               aria-hidden
-              style={{
-                // height: (rect?.height || 0) - 10,
-                // width: (rect?.width || 0) - 10,
-              }}
             />
           </div>
       }
