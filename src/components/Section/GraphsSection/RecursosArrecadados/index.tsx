@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useRef, useState } from "react";
 import {
   ResponsiveContainer,
   BarChart,
@@ -7,11 +7,13 @@ import {
   Bar,
   LabelList,
   Cell,
-} from "recharts"
+} from "recharts";
 
-import * as styles from "./styles.module.scss"
+import useOnScreen from "@/utils/useOnScreen";
+import useWindowDimensions from "@/utils/useWindowDimension";
 
-import useWindowDimensions from "@/utils/useWindowDimension"
+import * as styles from "./styles.module.scss";
+
 
 const data = [
   { name: "2013", value: 4072 },
@@ -22,28 +24,28 @@ const data = [
   { name: "2018", value: 8894 },
   { name: "2019", value: 8483 },
   { name: "2020", value: 7779 },
-]
+];
 
 const LabelValue = data => {
-  const { isMobile } = useWindowDimensions()
+  const { isMobile } = useWindowDimensions();
 
-  const { x, y, height, width, offset, value } = data
-  const posX = isMobile ? x + width + 10 : x + width + 50
+  const { x, y, height, width, offset, value } = data;
+  const posX = isMobile ? x + width + 10 : x + width + 50;
   return (
     <text x={posX} y={y + offset + height / 2} className={styles.label}>
       {value.toLocaleString("pt-br")}
       {value === 8855 && "*"}
     </text>
-  )
-}
+  );
+};
 const LabelYear = data => {
-  const { y, height, value } = data
+  const { y, height, value } = data;
   return (
     <text x={46} y={y + 6 + height / 2} className={styles.label}>
       {value}
     </text>
-  )
-}
+  );
+};
 
 const graphMobile = () => (
   <BarChart
@@ -76,9 +78,9 @@ const graphMobile = () => (
       ))}
     </Bar>
   </BarChart>
-)
+);
 
-const graphDesktop = () => (
+const graphDesktop = (isVisible) => (
   <BarChart
     data={data}
     barGap={25}
@@ -89,38 +91,49 @@ const graphDesktop = () => (
   >
     <XAxis hide={true} type="number" />
     <YAxis hide={true} dataKey="name" type="category" />
-    <Bar
-      layout="vertical"
-      dataKey="value"
-      radius={[0, 7, 7, 0]}
-      label={<LabelValue />}
-    >
-      <LabelList
-        dataKey="name"
-        position="insideLeft"
-        offset={48}
-        content={<LabelYear />}
-      />
-      {data.map((entry, index) => (
-        <Cell
-          key={JSON.stringify(entry)}
-          fill={`rgba(95, 240, 101, ${0.3 + index * 0.1})`}
+    {
+      isVisible &&
+      <Bar
+        layout="vertical"
+        dataKey="value"
+        radius={[0, 7, 7, 0]}
+        label={<LabelValue />}
+      >
+        <LabelList
+          dataKey="name"
+          position="insideLeft"
+          offset={48}
+          content={<LabelYear />}
         />
-      ))}
-    </Bar>
+        {data.map((entry, index) => (
+          <Cell
+            key={JSON.stringify(entry)}
+            fill={`rgba(95, 240, 101, ${0.3 + index * 0.1})`}
+          />
+        ))}
+      </Bar>
+    }
   </BarChart>
-)
+);
 
 const RecursosArrecadados = () => {
-  const { isMobile } = useWindowDimensions()
+  const ref = useRef();
+  const isVisible = useOnScreen(ref);
+  const { isMobile } = useWindowDimensions();
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    if (init) return;
+    setInit(isVisible === true);
+  }, [isVisible]);
 
   return (
-    <div className={styles.graph}>
+    <div className={styles.graph} ref={ref}>
       <ResponsiveContainer>
-        {isMobile ? graphMobile() : graphDesktop()}
+        {isMobile ? graphMobile() : graphDesktop(!init ? isVisible : true)}
       </ResponsiveContainer>
     </div>
-  )
-}
+  );
+};
 
-export default RecursosArrecadados
+export default RecursosArrecadados;

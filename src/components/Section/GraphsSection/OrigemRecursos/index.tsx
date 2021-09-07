@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ResponsiveContainer, BarChart, Bar, Cell } from "recharts";
 
 import { EColors } from "../../../../types.d.ts";
 import Legenda from "../Legenda";
 
+import useOnScreen from "@/utils/useOnScreen";
 import useWindowDimensions from "@/utils/useWindowDimension";
 
 import * as styles from "./styles.module.scss";
@@ -89,19 +90,22 @@ const graficoMobile = () => (
   </>
 );
 
-const graficoDesktop = () => (
+const graficoDesktop = (isVisible) => (
   <>
     <div className={styles.graph}>
       <ResponsiveContainer>
         <BarChart data={data} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
-          <Bar dataKey="value" label={<LabelValue />} radius={[2, 2, 0, 0]}>
-            {data.map(entry => (
-              <Cell
-                key={JSON.stringify(entry)}
-                fill={`var(--${entry.color || "carbon"})`}
-              />
-            ))}
-          </Bar>
+          {
+            isVisible &&
+            <Bar dataKey="value" label={<LabelValue />} radius={[2, 2, 0, 0]}>
+              {data.map(entry => (
+                <Cell
+                  key={JSON.stringify(entry)}
+                  fill={`var(--${entry.color || "carbon"})`}
+                />
+              ))}
+            </Bar>
+          }
         </BarChart>
       </ResponsiveContainer>
     </div>
@@ -110,8 +114,19 @@ const graficoDesktop = () => (
 );
 
 const OrigemRecursos = () => {
+  const ref = useRef();
+  const isVisible = useOnScreen(ref, "500px");
   const { isMobile } = useWindowDimensions();
-  return isMobile ? graficoMobile() : graficoDesktop();
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    if (init) return;
+    setInit(isVisible === true);
+  }, [isVisible]);
+
+  return <div ref={ref}>
+    {isMobile ? graficoMobile() : graficoDesktop(!init ? isVisible : true)}
+  </div>;
 };
 
 export default OrigemRecursos;

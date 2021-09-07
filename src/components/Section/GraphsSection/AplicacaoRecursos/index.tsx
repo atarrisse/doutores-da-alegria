@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 
 import Legenda from "../Legenda";
 
 import { getColor } from "@/utils";
+import useOnScreen from "@/utils/useOnScreen";
+import useWindowDimensions from "@/utils/useWindowDimension";
 
 import * as styles from "./styles.module.scss";
 
@@ -100,31 +102,64 @@ const data = {
 };
 
 const AplicacaoRecursos = () => {
+  const ref = useRef();
+  const isVisible = useOnScreen(ref);
+  const { isMobile } = useWindowDimensions();
+  const [init, setInit] = useState(false);
+
   const allValues = Object.values(data).map(item => item).flat();
+
+  useEffect(() => {
+    if (init) return;
+    setInit(isVisible === true);
+  }, [isVisible]);
+
 
   return (
     <>
-      <div className={styles.graph}>
-        <ResponsiveContainer>
-          <PieChart>
-            <Pie
-              data={allValues}
-              dataKey="value"
-              nameKey="name"
-              outerRadius={"100%"}
-              innerRadius={"70%"}
-              cx="50%"
-              cy="50%"
-              fill="#6b6a6d"
-              animationBegin={1500}
-            >
-              {allValues.map((entry) => (
-                <Cell key={JSON.stringify(entry)} fill={getColor(entry.color)} />
-              ))
-              }
-            </Pie>
-          </PieChart>
-        </ResponsiveContainer>
+      <div className={styles.graph} ref={ref}>
+        {isMobile
+          ? <ResponsiveContainer>
+            <PieChart>
+              <Pie
+                data={allValues}
+                dataKey="value"
+                nameKey="name"
+                outerRadius={"100%"}
+                innerRadius={"70%"}
+                cx="50%"
+                cy="50%"
+                fill="#6b6a6d"
+                animationBegin={1500}
+              >
+                {allValues.map((entry) => (
+                  <Cell key={JSON.stringify(entry)} fill={getColor(entry.color)} />
+                ))
+                }
+              </Pie>
+            </PieChart>
+          </ResponsiveContainer>
+          : isVisible && <ResponsiveContainer>
+            <PieChart>
+              <Pie
+                data={allValues}
+                dataKey="value"
+                nameKey="name"
+                outerRadius={"100%"}
+                innerRadius={"70%"}
+                cx="50%"
+                cy="50%"
+                fill="#6b6a6d"
+                animationBegin={1500}
+              >
+                {allValues.map((entry) => (
+                  <Cell key={JSON.stringify(entry)} fill={getColor(entry.color)} />
+                ))
+                }
+              </Pie>
+            </PieChart>
+          </ResponsiveContainer>
+        }
       </div>
       {
         Object.entries(data).map(([key, value]) => {
