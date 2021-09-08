@@ -5,12 +5,7 @@
 }
 
 .cover {
-  background-image: url("../../../../static/images/cover.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
+  height: 100%;
   overflow: hidden;
 
   @include desktop {
@@ -32,13 +27,64 @@
 
 .logo {
   align-self: end;
+  height: 9.6rem;
   margin-left: auto;
+  overflow: visible;
+  width: 9.6rem;
 }
 
-.bg {
-  position: absolute;
+.wrapper {
+  --height: 95vh;
+
   bottom: 0;
+  height: var(--height);
   left: 0;
+  position: absolute;
   width: 100%;
-  z-index: -1;
+}
+
+.gradient {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &:after,
+  &:before {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 2rem;
+    z-index: 1;
+  }
+
+  &:before {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    left: 0;
+  }
+
+  &:after {
+    content: "";
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    right: 0;
+  }
+
+  &[data-begin="false"] {
+    &:before {
+      content: "";
+    }
+  }
+}
+
+.scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  height: var(--height);
+  width: calc(1.923 * var(--height));
 }
