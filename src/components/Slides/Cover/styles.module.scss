@@ -87,4 +87,20 @@
   display: flex;
   height: var(--height);
   width: calc(1.923 * var(--height));
+  animation-name: Snudge;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes Snudge {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
