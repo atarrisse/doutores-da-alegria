@@ -104,3 +104,11 @@
     transform: translateX(0);
   }
 }
+
+.image {
+  @include desktop {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
+}

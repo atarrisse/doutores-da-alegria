@@ -31,3 +31,9 @@
     padding-left: var(--desktop-left-padding);
   }
 }
+
+*:global(#cover) .content {
+  @include desktop {
+    padding-left: 0;
+  }
+}
