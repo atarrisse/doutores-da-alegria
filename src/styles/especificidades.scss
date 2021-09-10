@@ -153,9 +153,26 @@
       }
 
       ul[data-governamental="false"] {
-        align-items: center;
-        display: flex;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        li {
+          grid-column: unset;
+          &:nth-child(2) {
+            img {
+              height: 12rem;
+            }
+          }
+          &:last-of-type {
+            img {
+              height: 10rem;
+            }
+          }
+        }
+      }
+
+      img {
+        height: 8rem;
       }
     }
   }
