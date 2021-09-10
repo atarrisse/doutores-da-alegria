@@ -484,7 +484,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
                 ],
               },
               {
-                categoria: "Narigada",
+                categoria: "Gentileza",
                 tipo: EApoioDisplay.TXT,
                 empresas: [
                   { nome: "Becton Dickson" },
