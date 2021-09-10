@@ -1,16 +1,16 @@
 @import "../../styles/globals/resources.scss";
 
 .wrapper {
+  --overlay-duration: 0.5s;
+  --overlay-delay: 0.75;
+  --extra-duration: 1s;
   z-index: 3;
 }
 .overlay {
-  --overlay-duration: 0.3s;
-
   position: absolute;
   overflow: hidden;
   transition: all var(--overlay-duration) ease-in;
   z-index: 99;
-  animation: pads 1s ease-in-out forwards;
 
   @include mobile {
     background-color: rgba(255, 255, 255, 0.95);
@@ -46,7 +46,7 @@
   position: absolute;
   text-align: center;
   top: 50%;
-  transition-duration: 0.5s;
+  transition-duration: var(--extra-duration);
   transition-property: transform;
   transition-timing-function: ease-in;
   word-break: break-word;
@@ -79,15 +79,12 @@
     width: 28.3rem;
 
     &[data-init="true"] {
-      transform: translate(-50%, -50%) rotate(0deg);
-      // &:before {
-      //   animation: abc 1s ease-in forwards;
-      // }
+      transition-timing-function: ease-in;
+      transform: translate(-50%, -50%) rotate(720deg);
     }
     &[data-close="true"] {
       transition-timing-function: ease-out;
-      transform: translate(100vw, -50%) rotate(360deg);
-      transition-delay: 0;
+      transform: translate(100vw, -50%) rotate(0deg);
     }
   }
 
@@ -157,9 +154,13 @@
   z-index: 4;
 
   &[data-visible="true"] {
-    animation: animOverlay 1s forwards 0.7s;
+    animation-name: animOverlay;
+    animation-duration: var(--overlay-duration);
+    animation-fill-mode: forwards;
+    animation-delay: 0.7s;
     &[data-close="true"] {
-      animation: animOverlayOut 1s forwards;
+      animation-name: animOverlayOut;
+      animation-delay: 0;
     }
   }
 }
@@ -173,15 +174,6 @@
   }
   100% {
     display: none;
-  }
-}
-
-@keyframes animBorder {
-  0% {
-    border-width: 0;
-  }
-  100% {
-    border-width: 5rem;
   }
 }
 
