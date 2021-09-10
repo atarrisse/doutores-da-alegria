@@ -10,7 +10,7 @@
 
   @include desktop {
     background-image: unset;
-    height: 100vh;
+    height: 100%;
     margin-left: -11%;
     margin-top: 23rem;
   }
@@ -106,6 +106,9 @@
 }
 
 .image {
+  @include mobile {
+    display: none;
+  }
   @include desktop {
     bottom: 0;
     position: absolute;

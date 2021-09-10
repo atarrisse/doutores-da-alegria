@@ -17,7 +17,7 @@ const Parcerias: React.FC<IProps> = ({ apoio }) => {
         const { titulo, parcerias } = ap;
         return (
           <React.Fragment key={kebabCase(titulo)}>
-            {titulo && <h3 className={styles.titulo}>{titulo}</h3>}
+            {titulo && <h3>{titulo}</h3>}
             <div className={styles.grid}>
               {parcerias &&
                 parcerias.map(parceria => {
