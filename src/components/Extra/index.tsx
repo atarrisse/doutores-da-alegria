@@ -82,17 +82,9 @@ const Extra: React.FC<Props & TExtra> = ({ isActive, content, color, handleClick
     const difference = Math.abs(pieceTop - pieceBottom);
     if (difference < 100 && !isExtraOpen) {
       setIsExtraOpen(true);
-      document.querySelector("html").style.overflow = "hidden";
     }
   }, [top, aboveMidScreen, isExtraOpen]);
 
-  //overflow back
-  useEffect(() => {
-    if (!isActive)
-      document.querySelector("html").style.overflow = "auto";
-  }, [isActive]);
-
-  // if (isExtraOpen) return <></>;
 
   return (
     <>
