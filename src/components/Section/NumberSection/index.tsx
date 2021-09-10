@@ -1,4 +1,6 @@
-import React from "react";
+import useOnScreen from "@/utils/useOnScreen";
+import useWindowSize from "@/utils/useWindowSize";
+import React, { useEffect, useRef, useState } from "react";
 import CountUp from 'react-countup';
 
 import * as styles from "./styles.module.scss";
@@ -12,6 +14,16 @@ interface IProps {
 
 const NumberSection: React.FC<IProps> = ({ label, numbers, presencial }) => {
   const isReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const slideRef = useRef();
+  const [init, setInit] = useState(false);
+  const isOnScreen = useOnScreen(slideRef);
+  const { isMobile } = useWindowSize()
+
+  useEffect(() => {
+    if (init) return;
+    if (!init && isOnScreen)
+      setInit(isOnScreen);
+  }, [isOnScreen])
 
 
   return (
@@ -20,6 +32,7 @@ const NumberSection: React.FC<IProps> = ({ label, numbers, presencial }) => {
       <div
         className={styles.numberGrid}
         data-presencial={presencial}
+        ref={slideRef}
       >
         {numbers.map((item, index) => {
           const { label, unit, size, value } = item;
@@ -35,11 +48,26 @@ const NumberSection: React.FC<IProps> = ({ label, numbers, presencial }) => {
                   {
                     isReducedMotion.matches ?
                       value.toLocaleString("pt-br") :
-                      <CountUp
-                        end={value}
-                        duration={1.5}
-                        separator="."
-                      />
+                      <>
+                        {
+                          isMobile
+                            ? <CountUp
+                              end={value}
+                              duration={1.5}
+                              separator="."
+                            />
+                            : <>
+                              {
+                                isOnScreen &&
+                                <CountUp
+                                  end={value}
+                                  duration={1.5}
+                                  separator="."
+                                />
+                              }
+                            </>
+                        }
+                      </>
                   }
                   {unit && <small className={styles.unit}>{unit}</small>}
                 </p>
