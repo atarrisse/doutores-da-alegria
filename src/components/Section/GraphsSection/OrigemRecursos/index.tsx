@@ -115,7 +115,7 @@ const graficoDesktop = (isVisible) => (
 
 const OrigemRecursos = () => {
   const ref = useRef();
-  const isVisible = useOnScreen(ref, "500px");
+  const isVisible = useOnScreen(ref, "-300px");
   const { isMobile } = useWindowDimensions();
   const [init, setInit] = useState(false);
 
