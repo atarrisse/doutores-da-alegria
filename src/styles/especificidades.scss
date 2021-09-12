@@ -140,6 +140,17 @@
     margin-bottom: 3rem;
   }
 
+  @include mobile {
+    ul[data-governamental="false"] {
+      li:first-child {
+        img {
+          margin: auto;
+          width: 50%;
+        }
+      }
+    }
+  }
+
   @include desktop {
     margin-bottom: 7rem;
 
