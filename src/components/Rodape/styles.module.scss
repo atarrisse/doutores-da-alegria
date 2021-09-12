@@ -127,27 +127,9 @@
     *:global(#recursos-arrecadados-27) & {
       top: 52.5rem;
     }
-    // *:global(#origem-dos-recursos-28) & {
-    //   top: 0rem;
-    // }
-    // *:global(#aplicacao-dos-recursos-29) & {
-    //   top: 0rem;
-    // }
     *:global(#a-equipe-30) & {
       top: 5rem;
     }
-    // *:global(#parcerias-e-apoios-31) & {
-    //   top: 0rem;
-    // }
-    // *:global(#parcerias-e-apoios-32) & {
-    //   top: 0rem;
-    // }
-    // *:global(#parcerias-e-apoios-33) & {
-    //   top: 0rem;
-    // }
-    // *:global(#parcerias-e-apoios-34) & {
-    //   top: 0rem;
-    // }
     *:global(#expediente-34) & {
       top: 14.4rem;
     }
@@ -155,6 +137,7 @@
 }
 
 .people {
+  display: flex;
   transform: scale(1);
   transform-origin: bottom;
   transition: 0.2s ease-in-out;
