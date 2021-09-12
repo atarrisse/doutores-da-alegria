@@ -106,8 +106,11 @@
 #aplicacao-dos-recursos-29 {
   & section > div:first-child {
     max-width: unset;
-    padding-right: var(--desktop-left-padding);
     width: 100%;
+
+    @include desktop {
+      padding-right: var(--desktop-left-padding);
+    }
   }
 }
 

@@ -101,6 +101,58 @@ const data = {
   ],
 };
 
+const legenda = (data) => {
+  return Object.entries(data).map(([key, value]) => {
+    return (<React.Fragment key={JSON.stringify(value)}>
+      <h3 className={styles.labelTitle}>{key}</h3>
+      <Legenda data={value} />
+    </React.Fragment>);
+  })
+}
+
+const graficoMobile = (allValues) => {
+  return (<ResponsiveContainer>
+    <PieChart>
+      <Pie
+        data={allValues}
+        dataKey="value"
+        nameKey="name"
+        outerRadius={"100%"}
+        innerRadius={"70%"}
+        cx="50%"
+        cy="50%"
+        fill="#6b6a6d"
+      >
+        {allValues.map((entry) => (
+          <Cell key={JSON.stringify(entry)} fill={getColor(entry.color)} />
+        ))
+        }
+      </Pie>
+    </PieChart>
+  </ResponsiveContainer>)
+}
+const graficoDesktop = (allValues) => {
+  return (<ResponsiveContainer>
+    <PieChart>
+      <Pie
+        data={allValues}
+        dataKey="value"
+        nameKey="name"
+        outerRadius={"100%"}
+        innerRadius={"70%"}
+        cx="50%"
+        cy="50%"
+        fill="#6b6a6d"
+        animationBegin={1500}
+      >
+        {allValues.map((entry) => (
+          <Cell key={JSON.stringify(entry)} fill={getColor(entry.color)} />
+        ))
+        }
+      </Pie>
+    </PieChart>
+  </ResponsiveContainer>)
+}
 const AplicacaoRecursos = () => {
   const ref = useRef();
   const isVisible = useOnScreen(ref);
@@ -110,7 +162,20 @@ const AplicacaoRecursos = () => {
   const allValues = Object.values(data).map(item => item).flat();
 
   useEffect(() => {
-    if (init) return;
+    if (window.innerWidth < 1024) {
+      const timer = setTimeout(() => {
+        setInit(true);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  });
+
+  useEffect(() => {
+    console.log("init", init);
+  }, [init])
+
+  useEffect(() => {
+    if (window.innerWidth < 1024 || init) return;
     setInit(isVisible === true);
   }, [isVisible]);
 
@@ -118,57 +183,9 @@ const AplicacaoRecursos = () => {
   return (
     <>
       <div className={styles.graph} ref={ref}>
-        {isMobile
-          ? <ResponsiveContainer>
-            <PieChart>
-              <Pie
-                data={allValues}
-                dataKey="value"
-                nameKey="name"
-                outerRadius={"100%"}
-                innerRadius={"70%"}
-                cx="50%"
-                cy="50%"
-                fill="#6b6a6d"
-                animationBegin={1500}
-              >
-                {allValues.map((entry) => (
-                  <Cell key={JSON.stringify(entry)} fill={getColor(entry.color)} />
-                ))
-                }
-              </Pie>
-            </PieChart>
-          </ResponsiveContainer>
-          : isVisible && <ResponsiveContainer>
-            <PieChart>
-              <Pie
-                data={allValues}
-                dataKey="value"
-                nameKey="name"
-                outerRadius={"100%"}
-                innerRadius={"70%"}
-                cx="50%"
-                cy="50%"
-                fill="#6b6a6d"
-                animationBegin={1500}
-              >
-                {allValues.map((entry) => (
-                  <Cell key={JSON.stringify(entry)} fill={getColor(entry.color)} />
-                ))
-                }
-              </Pie>
-            </PieChart>
-          </ResponsiveContainer>
-        }
+        {isMobile ? init && graficoMobile(allValues) : graficoDesktop(allValues)}
       </div>
-      {
-        Object.entries(data).map(([key, value]) => {
-          return (<React.Fragment key={JSON.stringify(value)}>
-            <h3 className={styles.labelTitle}>{key}</h3>
-            <Legenda data={value} />
-          </React.Fragment>);
-        })
-      }
+      {legenda(data)}
     </>
   );
 };
