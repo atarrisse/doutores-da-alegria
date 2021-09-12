@@ -43,7 +43,11 @@ const Extra: React.FC<Props & TExtra> = ({ isActive, content, color, handleClick
   };
 
   useEffect(() => {
-    setInit(true);
+    const delay = window.innerWidth < 1024 ? 750 : 0;
+    const timer = setTimeout(() => {
+      setInit(true);
+    }, delay);
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -87,14 +91,13 @@ const Extra: React.FC<Props & TExtra> = ({ isActive, content, color, handleClick
 
 
   return (
-    <>
+    <div className={styles.wrapper}>
       {
         isMobile
           ? <div
             className={styles.overlay}
             data-init={init}
             data-close={isActive === false}
-            ref={overlayRef}
             onClick={handleClick}
           >
             <dialog
@@ -113,7 +116,7 @@ const Extra: React.FC<Props & TExtra> = ({ isActive, content, color, handleClick
             </dialog>
           </div>
           :
-          <div className={styles.wrapper}>
+          <>
             <dialog
               className={styles.extra}
               data-init={aboveMidScreen}
@@ -137,9 +140,9 @@ const Extra: React.FC<Props & TExtra> = ({ isActive, content, color, handleClick
               data-close={isActive === false}
               aria-hidden
             />
-          </div>
+          </>
       }
-    </>
+    </div>
   );
 };
 

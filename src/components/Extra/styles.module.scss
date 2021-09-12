@@ -16,7 +16,7 @@
     background-color: rgba(255, 255, 255, 0.95);
     height: 100vh;
     left: 0;
-    opacity: 0.5;
+    opacity: 0;
     top: 0;
     width: 100vw;
 
@@ -54,19 +54,19 @@
 
   @include mobile {
     padding: 3rem;
-    transform: translate(-50%, 150vh);
+    transform: translate(-50%, 150vh) rotate(0deg);
     transition-delay: var(--overlay-duration);
     width: 75%;
     // moves up
     [data-init="true"] & {
-      transform: translate(-50%, -60%);
+      transform: translate(-50%, -60%) rotate(720deg);
     }
 
     // goes away on close
     [data-close="true"] & {
       transition-delay: 0s;
       transition-timing-function: ease-out;
-      transform: translate(-50%, -150vh);
+      transform: translate(-50%, -150vh) rotate(0deg);
     }
   }
 
@@ -137,6 +137,16 @@
 
   @include desktop {
     transform: translate(2rem, -100%);
+  }
+
+  @include mobile {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    transition-delay: 1.5s;
+
+    [data-init="true"] & {
+      opacity: 1;
+    }
   }
 }
 
