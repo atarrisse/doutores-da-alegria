@@ -7,14 +7,12 @@ import Slide from "@/components/Slides/Slide";
 import useWindowSize from "@/utils/useWindowSize";
 
 import * as styles from "./styles.module.scss";
+import ImageMobile from "./ImageMobile";
+import ImageDesktop from "./ImageDesktop";
 
 const Cover: React.FC = () => {
   const { isMobile } = useWindowSize();
-  const [isAtBeginning, setIsAtBeginning] = useState(true);
 
-  const handleScroll = (e) => {
-    setIsAtBeginning(e.target.scrollLeft === 0);
-  };
 
   return (
     <Slide id="cover">
@@ -25,28 +23,11 @@ const Cover: React.FC = () => {
           2020
         </h1>
         <Image filename="logo.png" alt="Logo do Doutores da Alegria" className={styles.logo} height={96} />
-      </div>
-      {!isMobile && <Image
-        alt="Foto em estilo de colagem mostrando os rostos de diversos colaboradores do Doutores da Alegria"
-        className={styles.image}
-        filename="cover_desktop.png"
-      />}
-      {isMobile &&
-        <div>
-          <div className={styles.wrapper}>
-            <div className={styles.gradient} data-begin={isAtBeginning}>
-              <div className={styles.scroll} onScroll={debounce(handleScroll, 10)}>
-                <div className={styles.content}>
-                  <Image
-                    alt="Foto em estilo de colagem mostrando os rostos de diversos colaboradores do Doutores da Alegria"
-                    filename="cover_desktop.png"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className={styles.hero}>
+          {!isMobile && <ImageDesktop />}
+          {isMobile && <ImageMobile />}
         </div>
-      }
+      </div>
     </Slide>
   );
 };
