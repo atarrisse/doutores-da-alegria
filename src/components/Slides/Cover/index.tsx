@@ -9,6 +9,7 @@ import useWindowSize from "@/utils/useWindowSize";
 import * as styles from "./styles.module.scss";
 import ImageMobile from "./ImageMobile";
 import ImageDesktop from "./ImageDesktop";
+import Menu from "@/components/Menu";
 
 const Cover: React.FC = () => {
   const { isMobile } = useWindowSize();
@@ -17,16 +18,17 @@ const Cover: React.FC = () => {
   return (
     <Slide id="cover">
       <div className={styles.cover}>
+        <Menu className={styles.menu} />
         <h1 className={styles.title}>
           Balanço
           <br />
           2020
         </h1>
         <Image filename="logo.png" alt="Logo do Doutores da Alegria" className={styles.logo} height={96} />
-        <div className={styles.hero}>
+        {/* <div className={styles.hero}>
           {!isMobile && <ImageDesktop />}
           {isMobile && <ImageMobile />}
-        </div>
+        </div> */}
       </div>
     </Slide>
   );

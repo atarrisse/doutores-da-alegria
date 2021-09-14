@@ -9,7 +9,7 @@
   overflow: hidden;
 
   @include desktop {
-    margin-top: 23rem;
+    margin-top: 8rem;
     display: grid;
     grid-template-columns: var(--desktop-left-padding) 6.8rem 1fr var(--desktop-left-padding);
     grid-template-rows: 3.1rem auto auto 1fr;
@@ -18,6 +18,11 @@
       ". . titulo"
       ". . logo";
   }
+}
+
+.menu {
+  grid-area: menu;
+  width: 100%;
 }
 
 .hero {
@@ -33,7 +38,7 @@
   font-family: "Dalegria Simples Basic";
   font-size: 5rem;
   line-height: 1em;
-  margin: 1.8rem 2.3rem 1rem auto;
+  margin-top: 14rem;
   text-align: right;
 
   @include desktop {

@@ -14,6 +14,7 @@ import ImpactoSocial from "@/conteudo/impactoSocial";
 import Parcerias from "@/conteudo/parcerias";
 
 import * as styles from "./styles.module.scss";
+import Menu from "@/components/Menu";
 
 const config = {
   adaptiveHeight: true,
