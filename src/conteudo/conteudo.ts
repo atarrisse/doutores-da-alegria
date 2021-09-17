@@ -5,6 +5,21 @@ const Conteudo: Array<IConteudoSecao> = [
     id: "00",
     title: "Oi!",
     color: EColors.ROSA,
+    desktopContent: [
+      "Esta é a primeira edição online do Balanço dos Doutores da Alegria, publicação que há 12 anos cumpre o papel de prestar contas das atividades anuais da associação. Para navegar por ela, siga os passos:",
+      "Para navegar por ela, siga os passos:",
+      {
+        type: ETipoConteudo.LIST,
+        items: [
+          "role a tela para baixo para ver outros capítulos",
+          "clique nos links para ver vídeos e matérias relacionados",
+          "durante a navegação, algumas brincadeiras no formato pop - up aparecerão e você pode interagir clicando nelas"
+        ]
+      },
+      "Escondemos uma surpresinha em uma das páginas.",
+      "Você consegue descobrir?",
+
+    ],
     content: [
       "Esta é a primeira edição online do Balanço dos Doutores da Alegria, publicação que há 12 anos cumpre o papel de prestar contas das atividades anuais da associação. Para navegar por ela, siga os passos:",
       "Para navegar por ela, siga os passos:",

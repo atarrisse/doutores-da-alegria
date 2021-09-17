@@ -14,6 +14,7 @@ type Props = IConteudoSecao
 const Section: React.FC<Props> = ({
   children,
   content,
+  desktopContent,
   id,
   index,
   links,
@@ -23,6 +24,7 @@ const Section: React.FC<Props> = ({
 }) => {
   const { isMobile } = useWindowSize();
   const hasLineBreak = title.includes("<br/>");
+  const hasDesktopContent = desktopContent?.length > 0;
 
   return (
     <section className={styles.section} {...others}>
@@ -43,8 +45,15 @@ const Section: React.FC<Props> = ({
             {isMobile && <MenuButton />}
           </div>
         }
+        {
+          hasDesktopContent
+            ? isMobile
+              ? <>{children ? children : content && <Content content={content} />}</>
+              : <>{children ? children : desktopContent && <Content content={desktopContent} />}</>
+            : <>{children ? children : content && <Content content={content} />}</>
+        }
 
-        {children ? children : content && <Content content={content} />}
+
       </div>
       <Rodape index={index} links={links} id={id} />
     </section>
