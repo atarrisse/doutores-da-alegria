@@ -1,8 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: "Balanço 2020 | Doutores da Alegria",
-    description: "Lorem Ipsum",
+    title: "Eu vi isso no balanço dos Doutores da Alegria",
+    description: "Veja a prestação de contas digital de 2020",
+    url: "https://balanco.doutoresdaalegria.org.br",
     author: "Doutores da Alegria",
+    image: "/images/ogimage.png",
+    twitterUsername: "@doutores",
   },
   plugins: [
     "gatsby-plugin-sass",

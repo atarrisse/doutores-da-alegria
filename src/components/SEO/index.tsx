@@ -16,9 +16,11 @@ function Seo({ description, lang, meta, title }) {
       query {
         site {
           siteMetadata {
-            title
-            description
-            author
+            defaultTitle: title
+            defaultDescription: description
+            siteUrl: url
+            defaultImage: image
+            twitterUsername
           }
         }
       }
