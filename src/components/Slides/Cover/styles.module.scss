@@ -2,11 +2,12 @@
 
 .slide {
   --theme-color: var(--vermelho);
+  padding: 0;
 }
 
 .button {
   position: fixed;
-  left: var(--desktop-left-padding);
+  // left: var(--desktop-left-padding);
   top: 8.4rem;
   z-index: 100;
 }

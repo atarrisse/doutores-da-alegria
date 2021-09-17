@@ -14,7 +14,7 @@ const Cover: React.FC = () => {
   const { isMobile } = useWindowSize();
 
   return (
-    <Slide className={styles.slide}>
+    <Slide className={styles.slide} id="cover">
       {!isMobile && <MenuButton className={styles.button} />}
 
       <div className={styles.cover}>
