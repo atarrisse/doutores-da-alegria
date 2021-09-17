@@ -12,9 +12,11 @@ import Estatisticas from "@/conteudo/estatisticas";
 import Expediente from "@/conteudo/expediente";
 import ImpactoSocial from "@/conteudo/impactoSocial";
 import Parcerias from "@/conteudo/parcerias";
+import Menu from "@/components/Menu";
+
+import { ContextProvider } from "@/utils/context";
 
 import * as styles from "./styles.module.scss";
-import Menu from "@/components/Menu";
 
 const config = {
   adaptiveHeight: true,
@@ -58,25 +60,28 @@ const createSlides = data => {
 
 const Index: React.FC = () => {
   return (
-    <main>
-      <Slider {...config}>
-        <Cover />
-        {createSlides({ slides: Conteudo })}
-        {createSlides({ slides: ImpactoSocial, className: styles.numberSlide })}
-        {createSlides({ slides: Estatisticas })}
-        {createSlides({ slides: Parcerias })}
-        {createSlides({ slides: Expediente })}
-      </Slider>
+    <ContextProvider>
+      <Menu />
+      <main>
+        <Slider {...config}>
+          <Cover />
+          {createSlides({ slides: Conteudo })}
+          {createSlides({ slides: ImpactoSocial, className: styles.numberSlide })}
+          {createSlides({ slides: Estatisticas })}
+          {createSlides({ slides: Parcerias })}
+          {createSlides({ slides: Expediente })}
+        </Slider>
 
-      <a href="https://doutoresdaalegria.org.br/">
-        <Image
-          alt="Logo do Doutores da Alegria"
-          className={styles.logo}
-          filename="logo_rodape.png"
-          height={220}
-          objectFit="contain" />
-      </a>
-    </main>
+        <a href="https://doutoresdaalegria.org.br/">
+          <Image
+            alt="Logo do Doutores da Alegria"
+            className={styles.logo}
+            filename="logo_rodape.png"
+            height={220}
+            objectFit="contain" />
+        </a>
+      </main>
+    </ContextProvider>
   );
 };
 

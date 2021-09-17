@@ -1,34 +1,59 @@
+@import "../../styles//globals/resources.scss";
+
 .container {
-  display: inline-block;
+  display: inline-flex;
   cursor: pointer;
+  flex-direction: column;
+  
+  @include desktop {
+    gap: 0.4rem;
+  }
+  @include desktop {
+    gap: 0.8rem;
+  }
 }
 
 .bar1,
 .bar2,
-.bar3 {
-  width: 6.8rem;
+.bar3,
+.bar4 {
   height: 0.2rem;
-  background-color: var(--vermelho);
-  margin: 9px 0;
+  background-color: var(--theme-color);
   transition: 0.4s;
+  
+  @include mobile {
+    width: 3.3rem;
+  }
+  @include desktop {
+    width: 6.8rem;
+  }
 }
 
 .bar1 {
   [data-open="true"] & {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-9px, 6px);
+    @include mobile {
+      transform: rotate(-45deg) translate(-1.8rem, 0.9rem);
+    }
+    @include desktop {
+      transform: rotate(-45deg) translate(-0.8rem, 00.2rem);
+    }
   }
 }
 
-.bar2 {
+.bar2,
+.bar3 {
   [data-open="true"] & {
     opacity: 0;
   }
 }
 
-.bar3 {
+.bar4 {
   [data-open="true"] & {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-8px, -8px);
+    @include mobile {
+      transform: rotate(45deg) translate(-1.1rem, -0.5rem);
+    }
+    @include desktop {
+      transform: rotate(45deg) translate(-1.6rem, -1.2rem);
+    }
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect } from "react";
 import kebabCase from "lodash/kebabCase";
 
 import Conteudo from "@/conteudo/conteudo";
@@ -7,40 +7,59 @@ import Expediente from "@/conteudo/expediente";
 import ImpactoSocial from "@/conteudo/impactoSocial";
 import Parcerias from "@/conteudo/parcerias";
 
-import MenuButton from "@/components/MenuButton";
-
 import * as styles from "./styles.module.scss";
+import { Context } from "@/utils/context";
 
-const Menu = ({ className }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Menu = () => {
+  const { isMenuOpen } = useContext(Context);
+
+  useEffect(() => {
+    console.log("Menu", isMenuOpen);
+  }, [isMenuOpen])
+
   const slides = [...Conteudo, ...Estatisticas, ...Expediente, ...ImpactoSocial, ...Parcerias].reduce((acc, curr) => {
     if (curr.title !== acc[acc.length - 1]?.title)
       acc.push(curr);
     return acc
   }, [])
 
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  }
-
   return (
-    <div className={className}>
-      <MenuButton isOpen={isOpen} onClick={handleClick} />
-      <nav className={styles.nav}>
-        <ul className={styles.list}>
-          {slides.map(item => (
+    <nav className={styles.nav} data-open={isMenuOpen}>
+      <ul className={styles.list}>
+        {slides.map(item => {
+          const id = `${kebabCase(item.title)}-${item.id}`;
+          return (
             <li
               className={styles.item}
+              key={id}
               style={{ "--theme-color": `var(--${kebabCase(item.color)})` }}
             >
-              <a className={`no-underline ${styles.link}`} href={`#${kebabCase(item.title)}-${item.id}`}>
-                {item.title.replace("<br />", " ")}
+              <a className={`no-underline ${styles.link}`} href={`#${id}`}>
+                {item.title.replace("<br/>", " ")}
               </a>
             </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
+          )
+        })}
+        <li
+          className={styles.item}
+          key={50}
+          style={{ "--theme-color": `var(--carvao)` }}
+        >
+          <a className={`no-underline ${styles.link}`} href={"https://doutoresdaalegria.org.br"}>
+            Doutores da Alegria
+          </a>
+        </li>
+        <li
+          className={styles.item}
+          key={50}
+          style={{ "--theme-color": `var(--vermelho)` }}
+        >
+          <a className={`no-underline ${styles.link}`} href={"https://doutoresdaalegria.org.br/abrace-a-causa/"}>
+            Doe para doutores
+          </a>
+        </li>
+      </ul>
+    </nav>
   )
 }
 

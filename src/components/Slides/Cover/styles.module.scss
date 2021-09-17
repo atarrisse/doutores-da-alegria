@@ -1,7 +1,14 @@
 @import "../../../styles/globals/resources.scss";
 
-#cover {
-  overflow-y: hidden;
+.slide {
+  --theme-color: var(--vermelho);
+}
+
+.button {
+  position: fixed;
+  left: var(--desktop-left-padding);
+  top: 8.4rem;
+  z-index: 100;
 }
 
 .cover {

@@ -1,5 +1,4 @@
-import debounce from "lodash/debounce";
-import React, { useState } from "react";
+import React from "react";
 
 import Image from "@/components/Image";
 import Slide from "@/components/Slides/Slide";
@@ -9,26 +8,26 @@ import useWindowSize from "@/utils/useWindowSize";
 import * as styles from "./styles.module.scss";
 import ImageMobile from "./ImageMobile";
 import ImageDesktop from "./ImageDesktop";
-import Menu from "@/components/Menu";
+import MenuButton from "@/components/MenuButton";
 
 const Cover: React.FC = () => {
   const { isMobile } = useWindowSize();
 
-
   return (
-    <Slide id="cover">
+    <Slide className={styles.slide}>
+      {!isMobile && <MenuButton className={styles.button} />}
+
       <div className={styles.cover}>
-        <Menu className={styles.menu} />
         <h1 className={styles.title}>
           Balanço
           <br />
           2020
         </h1>
         <Image filename="logo.png" alt="Logo do Doutores da Alegria" className={styles.logo} height={96} />
-        {/* <div className={styles.hero}>
+        <div className={styles.hero}>
           {!isMobile && <ImageDesktop />}
           {isMobile && <ImageMobile />}
-        </div> */}
+        </div>
       </div>
     </Slide>
   );

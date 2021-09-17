@@ -7,6 +7,7 @@ $colors: (
   "salmao": "ff8e66",
   "verde": "5ff065",
   "vermelho": "ff3732",
+  "carvao": "505050",
 );
 
 @each $name, $hex in $colors {

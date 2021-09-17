@@ -1,33 +1,82 @@
+@import "../../styles/globals/resources.scss";
+
 .nav {
+  background: #fff;
   display: block;
   overflow-x: hidden;
-  width: 100vw;
+  position: fixed;
+  right: 0;
+  transform: translateX(100%);    
+  transition: transform 0.3s ease;
+  top: 0;
   z-index: 100;
+  
+  &[data-open="true"] {
+    transform: translateX(0);
+  }
+  
+  @include mobile {
+    height: 100%;
+    overflow-y: auto;
+    width: 100vw;
+  }
+
+  @include desktop {
+    height: 100%;
+  }
+}
+
+.button {
+  @include mobile {
+    display: none;
+  }
+  @include desktop {
+    position: fixed;
+    left: var(--desktop-left-padding);
+    z-index: 100;
+  }
 }
 
 .list {
+  border-left: 0.1rem solid #d2d2d2;
+  border-right: 0.1rem solid #d2d2d2;
   list-style: none;
   padding: 0;
   margin: 0;
+
+  @include desktop {
+    height: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: max-content;
+    grid-auto-rows: 1fr;
+  }
 }
 
 .item {
+  border-bottom: 0.1rem solid #d2d2d2;
   color: var(--theme-color);
   font-size: 1.7rem;
   line-height: 2em;
-
+  padding: 0 1rem;
+  width: 100%;
+  
   @media (hover: hover) {
-    background-color: var(--theme-color);
-    color: #fff;
+    &:hover {
+      background-color: var(--theme-color);
+      color: #fff;
+    }
+  }
+
+  @include desktop {
+    // padding-left: 1rem;
   }
 }
 
 .link {
   display: block;
-  border-bottom: 0.1rem solid #d2d2d2;
   color: inherit;
   font-weight: 700;
-  padding-right: 1rem;
   text-align: right;
   text-decoration: none;
   width: 100%;
