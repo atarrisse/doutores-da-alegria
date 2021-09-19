@@ -162,13 +162,11 @@ const AplicacaoRecursos = () => {
   const allValues = Object.values(data).map(item => item).flat();
 
   useEffect(() => {
-    if (window.innerWidth < 1024) {
-      const timer = setTimeout(() => {
-        setInit(true);
-      }, 100);
-      return () => clearTimeout(timer);
-    }
-  });
+    const timer = setTimeout(() => {
+      setInit(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     if (window.innerWidth < 1024 || init) return;
@@ -178,7 +176,7 @@ const AplicacaoRecursos = () => {
   return (
     <>
       <div className={styles.graph} ref={ref}>
-        {isMobile ? init && graficoMobile(allValues) : graficoDesktop(allValues)}
+        {isMobile ? init && graficoMobile(allValues) : isVisible && graficoDesktop(allValues)}
       </div>
       {legenda(data)}
     </>
