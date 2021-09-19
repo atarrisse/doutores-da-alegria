@@ -38,7 +38,7 @@ const Menu = () => {
         })}
         <li
           className={styles.item}
-          key={50}
+          key={slides.length + 1}
           style={{ "--theme-color": `var(--carvao)` }}
         >
           <a className={`no-underline ${styles.link}`} href={"https://doutoresdaalegria.org.br"}>
@@ -47,7 +47,7 @@ const Menu = () => {
         </li>
         <li
           className={styles.item}
-          key={50}
+          key={slides.length + 2}
           style={{ "--theme-color": `var(--vermelho)` }}
         >
           <a className={`no-underline ${styles.link}`} href={"https://doutoresdaalegria.org.br/abrace-a-causa/"}>

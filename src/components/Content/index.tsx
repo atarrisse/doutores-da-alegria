@@ -50,22 +50,24 @@ const Content = ({ content }) => {
                 ></div>
               );
             case ETipoConteudo.LIST:
-              return (<ul className={styles.list}>
-                {ctnt.items.map((item, index) => (
-                  <li key={index}>
-                    <ReactMarkdown
-                      components={{
-                        a: ({ node, ...props }) => (
-                          <a target="_blank" rel="noopener noreferrer" {...props} />
-                        ),
-                      }}
-                    >
-                      {item}
-                    </ReactMarkdown>
-                  </li>
-                ))
-                }
-              </ul>)
+              return (
+                <ul key={JSON.stringify(ctnt)} className={styles.list}>
+                  {ctnt.items.map((item, index) => (
+                    <li key={index}>
+                      <ReactMarkdown
+                        components={{
+                          a: ({ node, ...props }) => (
+                            <a target="_blank" rel="noopener noreferrer" {...props} />
+                          ),
+                        }}
+                      >
+                        {item}
+                      </ReactMarkdown>
+                    </li>
+                  ))
+                  }
+                </ul>
+              );
             case ETipoConteudo.QUOTE:
               return (
                 <QuoteSection key={JSON.stringify(ctnt)} autor={ctnt.autor}>
