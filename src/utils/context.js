@@ -1,15 +1,37 @@
 
-import * as React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Context = React.createContext({
   isMenuOpen: false,
   setIsMenuOpen: (value) => { },
+  isPlayerOpen: false,
+  setIsPlayerOpen: (value) => { },
+  videoId: null,
+  setVideoId: (value) => { }
 });
 
 const ContextProvider = ({ children }) => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPlayerOpen, setIsPlayerOpen] = useState(false);
+  const [videoId, setVideoId] = useState(null);
 
-  const value = { isMenuOpen, setIsMenuOpen };
+  useEffect(() => {
+    console.log("isPlayerOpen", isPlayerOpen);
+  }, [isPlayerOpen])
+
+  useEffect(() => {
+    console.log("videoId", videoId)
+    setIsPlayerOpen(videoId !== null)
+  }, [videoId])
+
+  const value = {
+    isMenuOpen,
+    setIsMenuOpen,
+    isPlayerOpen,
+    setIsPlayerOpen,
+    videoId,
+    setVideoId
+  };
 
   return <Context.Provider value={value}>{children}</Context.Provider>
 

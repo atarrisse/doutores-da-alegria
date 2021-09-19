@@ -13,6 +13,7 @@ import Expediente from "@/conteudo/expediente";
 import ImpactoSocial from "@/conteudo/impactoSocial";
 import Parcerias from "@/conteudo/parcerias";
 import Menu from "@/components/Menu";
+import Player from "@/components/Player";
 
 import { ContextProvider } from "@/utils/context";
 
@@ -62,6 +63,7 @@ const Index: React.FC = () => {
   return (
     <ContextProvider>
       <Menu />
+      <Player />
       <main>
         <Slider {...config}>
           <Cover />
@@ -71,7 +73,8 @@ const Index: React.FC = () => {
           {createSlides({ slides: Parcerias })}
           {createSlides({ slides: Expediente })}
         </Slider>
-
+      </main>
+      <footer>
         <a href="https://doutoresdaalegria.org.br/">
           <Image
             alt="Logo do Doutores da Alegria"
@@ -80,7 +83,7 @@ const Index: React.FC = () => {
             height={220}
             objectFit="contain" />
         </a>
-      </main>
+      </footer>
     </ContextProvider>
   );
 };

@@ -34,6 +34,7 @@
     "react-helmet": "^6.1.0",
     "react-ratio": "^0.1.5",
     "react-slick": "^0.28.1",
+    "react-youtube": "^7.13.1",
     "recharts": "^2.0.10"
   },
   "devDependencies": {
