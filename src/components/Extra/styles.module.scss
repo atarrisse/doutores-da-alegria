@@ -2,8 +2,8 @@
 
 .wrapper {
   --overlay-duration: 0.5s;
-  --overlay-delay: 0.75;
   --extra-duration: 1s;
+  --extra-delay: 3s;
   z-index: 3;
 }
 .overlay {
@@ -32,6 +32,29 @@
       animation-name: overlayOut;
       animation-duration: 1s;
       animation-fill-mode: forwards;
+    }
+  }
+}
+
+.overlayDesktop {
+  background-color: #fff;
+  border-radius: 3rem;
+  box-sizing: content-box;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 4;
+  
+  &[data-visible="true"] {
+    animation-name: animOverlay;
+    animation-duration: var(--overlay-duration);
+    animation-fill-mode: forwards;
+    animation-delay: 4s;
+    
+    &[data-close="true"] {
+      animation-name: animOverlayOut;
+      animation-delay: 0s;
     }
   }
 }
@@ -79,10 +102,12 @@
     width: 28.3rem;
 
     &[data-init="true"] {
+      transition-delay: var(--extra-delay);
       transition-timing-function: ease-in;
       transform: translate(-50%, -50%) rotate(720deg);
     }
     &[data-close="true"] {
+      transition-delay: 0s;
       transition-timing-function: ease-out;
       transform: translate(100vw, -50%) rotate(0deg);
     }
@@ -154,30 +179,6 @@
   }
 }
 
-.overlayDesktop {
-  background-color: #fff;
-  border-radius: 3rem;
-  box-sizing: content-box;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 0.3s ease-out;
-  transition-delay: 2s;
-  transform-origin: center;
-  position: absolute;
-  z-index: 4;
-
-  &[data-visible="true"] {
-    animation-name: animOverlay;
-    animation-duration: var(--overlay-duration);
-    animation-fill-mode: forwards;
-    animation-delay: 0.7s;
-    &[data-close="true"] {
-      animation-name: animOverlayOut;
-      animation-delay: 0;
-    }
-  }
-}
 
 @keyframes overlayOut {
   0% {
@@ -193,14 +194,16 @@
 
 @keyframes animOverlay {
   0% {
+    box-shadow: 5px 5px 5px rgba(0,0,0,0);
     opacity: 0;
     height: 0;
     width: 0;
   }
   100% {
+    box-shadow: 5px 5px 5px rgba(0,0,0,5%);
     opacity: 0.95;
-    height: 120vh;
-    width: 110vw;
+    height: 45rem;
+    width: 45rem;
   }
 }
 @keyframes animOverlayOut {

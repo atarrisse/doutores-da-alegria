@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import kebabCase from "lodash/kebabCase";
 
 import Conteudo from "@/conteudo/conteudo";
@@ -12,10 +12,6 @@ import { Context } from "@/utils/context";
 
 const Menu = () => {
   const { isMenuOpen } = useContext(Context);
-
-  useEffect(() => {
-    console.log("Menu", isMenuOpen);
-  }, [isMenuOpen])
 
   const slides = [...Conteudo, ...Estatisticas, ...Expediente, ...ImpactoSocial, ...Parcerias].reduce((acc, curr) => {
     if (curr.title !== acc[acc.length - 1]?.title)

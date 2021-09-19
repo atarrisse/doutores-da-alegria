@@ -21,7 +21,7 @@ type Props = {
 }
 
 const Extra: React.FC<Props & TExtra> = ({ isActive, content, color, handleClick: onClick }) => {
-  if (!content) return;
+  if (!content) <></>;
 
   const windowHeight = window.innerHeight;
   const overlayRef = useRef<HTMLDivElement>();
