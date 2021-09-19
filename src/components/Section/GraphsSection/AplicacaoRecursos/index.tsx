@@ -171,14 +171,9 @@ const AplicacaoRecursos = () => {
   });
 
   useEffect(() => {
-    console.log("init", init);
-  }, [init])
-
-  useEffect(() => {
     if (window.innerWidth < 1024 || init) return;
     setInit(isVisible === true);
   }, [isVisible]);
-
 
   return (
     <>

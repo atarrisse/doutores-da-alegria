@@ -16,11 +16,6 @@ const ContextProvider = ({ children }) => {
   const [videoId, setVideoId] = useState(null);
 
   useEffect(() => {
-    console.log("isPlayerOpen", isPlayerOpen);
-  }, [isPlayerOpen])
-
-  useEffect(() => {
-    console.log("videoId", videoId)
     setIsPlayerOpen(videoId !== null)
   }, [videoId])
 

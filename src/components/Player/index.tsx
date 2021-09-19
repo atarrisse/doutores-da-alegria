@@ -1,8 +1,11 @@
 import React, { useContext, useEffect, useMemo, useState } from "react";
-import { Context } from "@/utils/context";
-import * as styles from "./styles.module.scss";
+import ReactLoading from "react-loading";
 import YouTube from "react-youtube";
+
+import { Context } from "@/utils/context";
 import useWindowDimensions from "@/utils/useWindowDimension";
+
+import * as styles from "./styles.module.scss";
 
 type TPlayer = React.HTMLAttributes<HTMLDivElement>;
 
@@ -11,14 +14,14 @@ type Props = {
 }
 
 const Player: React.FC<Props & TPlayer> = () => {
+  const [isLoading, setIsLoading] = useState<boolean | null>(true);
   const [isInit, setIsInit] = useState<boolean | null>();
   const { isPlayerOpen, videoId, setVideoId } = useContext(Context);
   const { width } = useWindowDimensions();
   const videoDimension = useMemo(() => {
     const aspectRatio = 36 / 64;
-    const w = Math.round(0.8 * width);
+    const w = Math.round(0.6 * width);
     const h = aspectRatio * w;
-    console.log(w, h);
 
     return {
       height: h.toString(),
@@ -35,7 +38,16 @@ const Player: React.FC<Props & TPlayer> = () => {
     setVideoId(link.href.split("v=")[1].split("&")[0])
   }
 
+  const handleReady = () => {
+    setIsLoading(false);
+  }
+
+  const handleClose = () => {
+    setVideoId(null);
+  }
+
   useEffect(() => {
+    setIsLoading(true)
     setIsInit(true);
   }, [])
 
@@ -49,25 +61,37 @@ const Player: React.FC<Props & TPlayer> = () => {
       })
   }, [isInit])
 
-  const handleClose = () => {
-    setVideoId(null);
-  }
+  useEffect(() => {
+    if (videoId === null) setIsLoading(true)
+  }, [videoId])
 
   return (
     <div
       aria-live="assertive"
       className={styles.player}
       data-open={isPlayerOpen}
+      data-ready={!isLoading}
       onClick={handleClose}
     >
-      <div className={styles.content}>
-        {
-          videoId &&
+      <div
+        className={styles.content}
+        style={{ ...videoDimension }}
+      >
+        {isLoading &&
+          <ReactLoading
+            className={styles.loading}
+            type="spinningBubbles"
+            color="#fff"
+            height={100}
+            width={100}
+          />}
+        {videoId &&
           <YouTube
+            className={styles.youtube}
             videoId={videoId}
             opts={opts}
-          />
-        }
+            onReady={handleReady}
+          />}
         <button
           aria-label="Close video player"
           className={styles.button}

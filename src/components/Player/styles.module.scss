@@ -55,3 +55,18 @@
     transform: translate(-50%, -50%) rotate(-45deg);
   }
 }
+
+.youtube {
+  opacity: 0;
+
+  [data-ready="true"] & {
+    opacity: 1;
+  }
+}
+
+.loading {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
