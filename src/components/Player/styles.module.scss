@@ -1,3 +1,4 @@
+@import "../../styles/globals/resources.scss";
 
 .player {
   align-items: center;
@@ -27,13 +28,24 @@
   background: transparent;
   border: 0;
   cursor: pointer;
-  height: 10rem;
-  left: 0;
   padding: 0;
-  position: absolute;
-  transform: translateY(-100%);
-  top: 0;
-  width: 10rem;
+  
+  @include mobile {
+    height: 5rem;
+    left: 2rem;
+    top: 2rem;
+    width: 5rem;
+    position: fixed;
+  }
+  
+  @include desktop {
+    height: 10rem;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateY(-100%);
+    width: 10rem;
+  }
 
   &:before,
   &:after {
