@@ -17,8 +17,11 @@ const Player: React.FC<Props & TPlayer> = () => {
   const [isLoading, setIsLoading] = useState<boolean | null>(true);
   const [isInit, setIsInit] = useState<boolean | null>();
   const { isPlayerOpen, videoId, setVideoId } = useContext(Context);
-  const { isMobile, width } = useWindowDimensions();
+  const win = useWindowDimensions();
   const videoDimension = useMemo(() => {
+    if (!win) return;
+
+    const { isMobile, width } = win;
     const aspectRatio = 36 / 64;
     const w = isMobile ? width : Math.round(0.6 * width);
     const h = aspectRatio * w;
@@ -27,15 +30,14 @@ const Player: React.FC<Props & TPlayer> = () => {
       height: h.toString(),
       width: w.toString(),
     }
-  }, [width]);
+  }, [win]);
+
   const opts = {
     ...videoDimension
   };
 
   const youtubeListener = (e) => {
     e.preventDefault();
-    console.log(e);
-
     const link = e.target.closest("a") || e.target;
     setVideoId(link.href.split("v=")[1].split("&")[0])
   }

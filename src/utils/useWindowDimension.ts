@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
 
-const getWindowDimensions = () => {
-  const { innerWidth: width, innerHeight: height } = window
+const getWindowDimensions = (w) => {
+  if (!w) return {}
+  const { innerWidth: width, innerHeight: height } = w
   const isMobile = width < 1024
 
   return {
@@ -12,15 +13,15 @@ const getWindowDimensions = () => {
 }
 
 const useWindowDimensions = () => {
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  )
+  const [windowDimensions, setWindowDimensions] = useState<any>()
+
+  const handleResize = () => {
+    if (window !== undefined)
+      setWindowDimensions(getWindowDimensions(window))
+  }
 
   useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions())
-    }
-
+    setWindowDimensions(getWindowDimensions(window))
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])

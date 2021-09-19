@@ -27,10 +27,9 @@ const data = [
 ];
 
 const LabelValue = data => {
-  const { isMobile } = useWindowDimensions();
-
   const { x, y, height, width, offset, value } = data;
-  const posX = isMobile ? x + width + 10 : x + width + 50;
+  const win = useWindowDimensions();
+  const posX = win?.isMobile ? x + width + 10 : x + width + 50;
   return (
     <text x={posX} y={y + offset + height / 2} className={styles.label}>
       {value.toLocaleString("pt-br")}
@@ -119,7 +118,7 @@ const graphDesktop = (isVisible) => (
 const RecursosArrecadados = () => {
   const ref = useRef();
   const isVisible = useOnScreen(ref);
-  const { isMobile } = useWindowDimensions();
+  const win = useWindowDimensions();
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -130,7 +129,7 @@ const RecursosArrecadados = () => {
   return (
     <div className={styles.graph} ref={ref}>
       <ResponsiveContainer>
-        {isMobile ? graphMobile() : graphDesktop(!init ? isVisible : true)}
+        {win?.isMobile ? graphMobile() : graphDesktop(!init ? isVisible : true)}
       </ResponsiveContainer>
     </div>
   );

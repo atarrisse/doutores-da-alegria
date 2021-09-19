@@ -11,7 +11,7 @@ import * as styles from "./styles.module.scss";
 import { Context } from "@/utils/context";
 
 const Menu = () => {
-  const { isMenuOpen } = useContext(Context);
+  const { isMenuOpen, setIsMenuOpen } = useContext(Context);
 
   const slides = [...Conteudo, ...Estatisticas, ...Expediente, ...ImpactoSocial, ...Parcerias].reduce((acc, curr) => {
     if (curr.title !== acc[acc.length - 1]?.title)
@@ -19,9 +19,19 @@ const Menu = () => {
     return acc
   }, [])
 
+  const handleClick = () => {
+    setIsMenuOpen(false);
+  }
+
   return (
     <nav className={styles.nav} data-open={isMenuOpen}>
       <ul className={styles.list}>
+        <li className={styles.item}>
+          <button
+            aria-label="Fechar menu"
+            className={styles.closeButton}
+            onClick={handleClick}></button>
+        </li>
         {slides.map(item => {
           const id = `${kebabCase(item.title)}-${item.id}`;
           return (

@@ -156,7 +156,7 @@ const graficoDesktop = (allValues) => {
 const AplicacaoRecursos = () => {
   const ref = useRef();
   const isVisible = useOnScreen(ref);
-  const { isMobile } = useWindowDimensions();
+  const win = useWindowDimensions();
   const [init, setInit] = useState(false);
 
   const allValues = Object.values(data).map(item => item).flat();
@@ -176,7 +176,7 @@ const AplicacaoRecursos = () => {
   return (
     <>
       <div className={styles.graph} ref={ref}>
-        {isMobile ? init && graficoMobile(allValues) : isVisible && graficoDesktop(allValues)}
+        {win?.isMobile ? init && graficoMobile(allValues) : isVisible && graficoDesktop(allValues)}
       </div>
       {legenda(data)}
     </>

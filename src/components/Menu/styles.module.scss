@@ -33,8 +33,43 @@
   @include desktop {
     position: fixed;
     left: var(--desktop-left-padding);
-    // left: 0;
     z-index: 100;
+  }
+}
+
+.closeButton {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  height: 5rem;
+  margin: 1rem 0 1rem auto;
+  padding: 0;
+  position: relative;
+  width: 5rem;
+
+  @include desktop {
+    display: none;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    background: var(--carbon);
+    display: block;
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    left: 50%;
+    transform-origin: center;
+    width: 0.2rem;
+  }
+
+  &:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 }
 

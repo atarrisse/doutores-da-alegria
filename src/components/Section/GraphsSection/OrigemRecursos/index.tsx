@@ -53,13 +53,13 @@ const data = [
 ];
 
 const LabelValue = data => {
-  const { isMobile } = useWindowDimensions();
+  const win = useWindowDimensions();
   const { x, y, width, offset, value } = data;
   const posX = x + width / 2;
-  const posY = isMobile ? y - offset : y - 2 * offset;
+  const posY = win?.isMobile ? y - offset : y - 2 * offset;
   return (
     <text
-      fontSize={isMobile ? "1.2rem" : "3rem"}
+      fontSize={win?.isMobile ? "1.2rem" : "3rem"}
       fill={`var(--${data.color || "carbon"})`}
       x={posX}
       y={posY}
@@ -116,7 +116,7 @@ const graficoDesktop = (isVisible) => (
 const OrigemRecursos = () => {
   const ref = useRef();
   const isVisible = useOnScreen(ref, "-300px");
-  const { isMobile } = useWindowDimensions();
+  const win = useWindowDimensions();
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -125,7 +125,7 @@ const OrigemRecursos = () => {
   }, [isVisible]);
 
   return <div ref={ref}>
-    {isMobile ? graficoMobile() : graficoDesktop(!init ? isVisible : true)}
+    {win?.isMobile ? graficoMobile() : graficoDesktop(!init ? isVisible : true)}
   </div>;
 };
 
