@@ -28,6 +28,8 @@
         animation-duration: 1s;
         animation-name: overlayOut;
         animation-fill-mode: forwards;
+        pointer-events: none;
+
       }
     }
 
@@ -180,14 +182,16 @@
 
 @keyframes overlayOut {
   0% {
+    display: block;
     opacity: 1;
   }
   95% {
+    display: block;
     opacity: 0;
   }
   100% {
-    opacity: 0;
     display: none;
+    opacity: 0;
   }
 }
 
@@ -207,13 +211,18 @@
 }
 @keyframes animOverlayOut {
   0% {
+    display: block;
     opacity: 0.95;
+    pointer-events: none;
   }
   95% {
+    display: block;
     opacity: 0;
+    pointer-events: none;
   }
   100% {
     display: none;
     opacity: 0;
+    pointer-events: none;
   }
 }

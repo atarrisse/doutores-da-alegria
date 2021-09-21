@@ -7,7 +7,6 @@
 
 .button {
   position: fixed;
-  // left: var(--desktop-left-padding);
   top: 8.4rem;
   z-index: 100;
 }
@@ -15,6 +14,10 @@
 .cover {
   height: 100vh;
   overflow: hidden;
+
+  @include mobile {
+    z-index: 100;
+  }
 
   @include desktop {
     margin-top: 8rem;
@@ -46,10 +49,17 @@
   font-family: "Dalegria Simples Basic";
   font-size: 5rem;
   line-height: 1em;
-  margin-top: 14rem;
   text-align: right;
 
+  @include mobile {
+    margin-bottom: 0;
+    margin-right: 2.4rem;
+    margin-top: 2.6rem;
+    z-index: 100;
+  }
+  
   @include desktop {
+    margin-top: 14rem;
     grid-area: titulo;
   }
 }
@@ -71,7 +81,7 @@
 }
 
 .wrapper {
-  --height: 95vh;
+  --height: 90vh;
 
   bottom: 0;
   height: var(--height);
