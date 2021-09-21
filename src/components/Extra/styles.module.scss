@@ -22,17 +22,15 @@
 
     &[data-init="true"] {
       opacity: 1;
+      transition-delay: 4s;
+      
       &[data-close="true"] {
-        opacity: 0;
-        pointer-events: none;
+        animation-duration: 1s;
+        animation-name: overlayOut;
+        animation-fill-mode: forwards;
       }
     }
 
-    &[data-close="true"] {
-      animation-name: overlayOut;
-      animation-duration: 1s;
-      animation-fill-mode: forwards;
-    }
   }
 }
 
@@ -188,6 +186,7 @@
     opacity: 0;
   }
   100% {
+    opacity: 0;
     display: none;
   }
 }
