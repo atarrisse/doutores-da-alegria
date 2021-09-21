@@ -9,8 +9,10 @@ import Parcerias from "@/conteudo/parcerias";
 
 import * as styles from "./styles.module.scss";
 import { Context } from "@/utils/context";
+import useWindowDimensions from "@/utils/useWindowDimension";
 
-const Menu = () => {
+const Menu = ({ slider }) => {
+  const win = useWindowDimensions();
   const { isMenuOpen, setIsMenuOpen } = useContext(Context);
 
   const slides = [...Conteudo, ...Estatisticas, ...Expediente, ...ImpactoSocial, ...Parcerias].reduce((acc, curr) => {
@@ -22,6 +24,13 @@ const Menu = () => {
   const handleClick = () => {
     setIsMenuOpen(false);
   }
+  const handleLinkClick = (e, index) => {
+    if (win?.isMobile) {
+      e.preventDefault();
+      slider.current.slickGoTo(index);
+      setIsMenuOpen(false)
+    }
+  }
 
   return (
     <nav className={styles.nav} data-open={isMenuOpen}>
@@ -32,7 +41,7 @@ const Menu = () => {
             className={styles.closeButton}
             onClick={handleClick}></button>
         </li>
-        {slides.map(item => {
+        {slides.map((item) => {
           const id = `${kebabCase(item.title)}-${item.id}`;
           return (
             <li
@@ -40,7 +49,11 @@ const Menu = () => {
               key={id}
               style={{ "--theme-color": `var(--${kebabCase(item.color)})` }}
             >
-              <a className={`no-underline ${styles.link}`} href={`#${id}`}>
+              <a
+                className={`no-underline ${styles.link}`}
+                href={`#${id}`}
+                onClick={(e) => handleLinkClick(e, Number(item.id) + 1)}
+              >
                 {item.title.replace("<br/>", " ")}
               </a>
             </li>

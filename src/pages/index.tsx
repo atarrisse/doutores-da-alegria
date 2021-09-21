@@ -1,5 +1,5 @@
 import kebabCase from "lodash/kebabCase";
-import React from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 
 import Image from "@/components/Image";
@@ -39,6 +39,7 @@ const config = {
   slidesToScroll: 1,
   speed: 500,
   swipeToSlide: true,
+  initialSlide: 7
 };
 
 const createSlides = data => {
@@ -60,12 +61,13 @@ const createSlides = data => {
 };
 
 const Index: React.FC = () => {
+  const sliderRef = useRef();
   return (
     <ContextProvider>
-      <Menu />
+      <Menu slider={sliderRef} />
       <Player />
       <main>
-        <Slider {...config}>
+        <Slider {...config} ref={sliderRef}>
           <Cover />
           {createSlides({ slides: Conteudo })}
           {createSlides({ slides: ImpactoSocial, className: styles.numberSlide })}
