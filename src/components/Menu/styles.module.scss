@@ -96,6 +96,7 @@
   line-height: 2em;
   padding: 0 1rem;
   width: 100%;
+
   
   @media (hover: hover) {
     &:hover {
@@ -103,9 +104,11 @@
       color: #fff;
     }
   }
-
+  
   @include desktop {
-    // padding-left: 1rem;
+    &:first-child {
+      display: none;
+    }
   }
 }
 

@@ -15,7 +15,7 @@ const Menu = ({ slider }) => {
   const win = useWindowDimensions();
   const { isMenuOpen, setIsMenuOpen } = useContext(Context);
 
-  const slides = [...Conteudo, ...Estatisticas, ...Expediente, ...ImpactoSocial, ...Parcerias].reduce((acc, curr) => {
+  const slides = [...Conteudo, ...Estatisticas, ...ImpactoSocial, ...Parcerias, ...Expediente].reduce((acc, curr) => {
     if (curr.title !== acc[acc.length - 1]?.title)
       acc.push(curr);
     return acc
@@ -64,7 +64,12 @@ const Menu = ({ slider }) => {
           key={slides.length + 1}
           style={{ "--theme-color": `var(--carbon)` }}
         >
-          <a className={`no-underline ${styles.link}`} href={"https://doutoresdaalegria.org.br"}>
+          <a
+            className={`no-underline ${styles.link}`}
+            href={"https://doutoresdaalegria.org.br"}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             Doutores da Alegria
           </a>
         </li>
@@ -73,7 +78,12 @@ const Menu = ({ slider }) => {
           key={slides.length + 2}
           style={{ "--theme-color": `var(--vermelho)` }}
         >
-          <a className={`no-underline ${styles.link}`} href={"https://doutoresdaalegria.org.br/abrace-a-causa/"}>
+          <a
+            className={`no-underline ${styles.link}`}
+            href={"https://doutoresdaalegria.org.br/abrace-a-causa/"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Doe para doutores
           </a>
         </li>

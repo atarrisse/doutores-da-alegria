@@ -1,4 +1,5 @@
-import React from "react";
+import { Context } from "@/utils/context";
+import React, { useContext } from "react";
 import ReactMarkdown from "react-markdown";
 
 import { ETipoConteudo } from "../../types.d.ts";
@@ -18,6 +19,13 @@ import * as styles from "./styles.module.scss";
 
 
 const Content = ({ content }) => {
+  const { setVideoId } = useContext(Context);
+
+  const handleYoutubeClick = (e) => {
+    console.log("content / handleYoutubeClick");
+    console.log(e);
+  };
+
   return (
     <>
       <div className={styles.text}>
@@ -27,9 +35,11 @@ const Content = ({ content }) => {
               <ReactMarkdown
                 key={JSON.stringify(ctnt)}
                 components={{
-                  a: ({ node, ...props }) => (
-                    <a target="_blank" rel="noopener noreferrer" {...props} />
-                  ),
+                  a: ({ node, ...props }) => {
+                    return (
+                      <a target="_blank" rel="noopener noreferrer" {...props} />
+                    )
+                  },
                 }}
               >
                 {ctnt}
