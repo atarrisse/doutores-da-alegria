@@ -62,7 +62,7 @@ const Menu = ({ slider }) => {
         <li
           className={styles.item}
           key={slides.length + 1}
-          style={{ "--theme-color": `var(--carvao)` }}
+          style={{ "--theme-color": `var(--carbon)` }}
         >
           <a className={`no-underline ${styles.link}`} href={"https://doutoresdaalegria.org.br"}>
             Doutores da Alegria

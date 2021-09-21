@@ -27,7 +27,7 @@ const Extra: React.FC<Props & TExtra> = ({ isActive, content, color, handleClick
   const overlayRef = useRef<HTMLDivElement>();
   const { top } = useWindowScroll();
   const { isMobile } = useWindowSize();
-  const { isExtraOpen, setIsExtraOpen } = useExtra();
+  const { setIsExtraOpen } = useExtra();
   const [init, setInit] = useState(false);
   const [delta, setDelta] = useState<number | null>(0);
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -43,7 +43,7 @@ const Extra: React.FC<Props & TExtra> = ({ isActive, content, color, handleClick
   };
 
   useEffect(() => {
-    const delay = window.innerWidth < 1024 ? 750 : 0;
+    const delay = 4000;
     const timer = setTimeout(() => {
       setInit(true);
     }, delay);
@@ -84,10 +84,10 @@ const Extra: React.FC<Props & TExtra> = ({ isActive, content, color, handleClick
     const pieceTop = Math.abs(Math.round(r?.top));
     const pieceBottom = Math.abs(Math.round(window.innerHeight - r?.bottom));
     const difference = Math.abs(pieceTop - pieceBottom);
-    if (difference < 100 && !isExtraOpen) {
+    if (difference < 100) {
       setIsExtraOpen(true);
     }
-  }, [top, aboveMidScreen, isExtraOpen]);
+  }, [top, aboveMidScreen]);
 
 
   return (
