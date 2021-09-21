@@ -21,11 +21,6 @@ import * as styles from "./styles.module.scss";
 const Content = ({ content }) => {
   const { setVideoId } = useContext(Context);
 
-  const handleYoutubeClick = (e) => {
-    console.log("content / handleYoutubeClick");
-    console.log(e);
-  };
-
   return (
     <>
       <div className={styles.text}>

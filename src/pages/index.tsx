@@ -19,27 +19,7 @@ import { ContextProvider } from "@/utils/context";
 
 import * as styles from "./styles.module.scss";
 
-const config = {
-  adaptiveHeight: true,
-  arrows: false,
-  className: styles.slickWrapper,
-  dots: false,
-  infinite: false,
-  lazyLoad: "ondemand",
-  responsive: [
-    {
-      breakpoint: 1024,
-    },
-    {
-      breakpoint: 999999999999999, // a unrealistically big number to cover up greatest screen resolution
-      settings: "unslick",
-    },
-  ],
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  speed: 500,
-  swipeToSlide: true,
-};
+
 
 const createSlides = data => {
   const { slides, className } = data;
@@ -61,6 +41,29 @@ const createSlides = data => {
 
 const Index: React.FC = () => {
   const sliderRef = useRef();
+
+  const config = {
+    adaptiveHeight: true,
+    arrows: false,
+    className: styles.slickWrapper,
+    dots: false,
+    infinite: false,
+    lazyLoad: "ondemand",
+    responsive: [
+      {
+        breakpoint: 1024,
+      },
+      {
+        breakpoint: 999999999999999, // a unrealistically big number to cover up greatest screen resolution
+        settings: "unslick",
+      },
+    ],
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    speed: 500,
+    swipeToSlide: true,
+  };
+
   return (
     <ContextProvider>
       <Menu slider={sliderRef} />
