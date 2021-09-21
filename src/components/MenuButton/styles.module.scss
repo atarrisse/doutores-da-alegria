@@ -11,17 +11,17 @@
   @include desktop {
     align-items: center;
     background: #fff;
-    // border-radius: 100%;
+    border-radius: 0 1rem 1rem 0;
     box-shadow: 0 0 1px rgba(0,0,0,0.2);
-    height: 12.8rem;
+    box-sizing: content-box;
+    height: 6.4rem;
     gap: 0.8rem;
     justify-content: center;
-    width: 12.8rem;
-    
-    border-radius: 0 3rem 3rem 0;
-    box-sizing: content-box;
     padding-left: var(--desktop-left-padding);
-    padding-right: 8.5rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 6.4rem;
   }
 }
 
@@ -37,7 +37,7 @@
     width: 3.3rem;
   }
   @include desktop {
-    width: 6.8rem;
+    width: 3.4rem;
   }
 }
 
