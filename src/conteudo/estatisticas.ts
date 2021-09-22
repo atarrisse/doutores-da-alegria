@@ -28,8 +28,7 @@ const Estatisticas: Array<IConteudoSecao> = [
     extra: {
       color: "#FFFFFF",
       content: [
-        "#### Reputação e credibilidade",
-        "[https://www.youtube.com/watch?v=8SDUI9-46PQ](https://www.youtube.com/watch?v=8SDUI9-46PQ)",
+        "#### [#Reputação e credibilidade](https://www.youtube.com/watch?v=8SDUI9-46PQ)",
       ],
     },
   },
