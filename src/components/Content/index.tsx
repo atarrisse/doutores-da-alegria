@@ -1,5 +1,4 @@
-import { Context } from "@/utils/context";
-import React, { useContext } from "react";
+import React from "react";
 import ReactMarkdown from "react-markdown";
 
 import { ETipoConteudo } from "../../types.d.ts";
@@ -19,8 +18,6 @@ import * as styles from "./styles.module.scss";
 
 
 const Content = ({ content }) => {
-  const { setVideoId } = useContext(Context);
-
   return (
     <>
       <div className={styles.text}>
