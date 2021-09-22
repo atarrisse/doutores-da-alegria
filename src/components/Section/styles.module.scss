@@ -36,7 +36,7 @@
     font-size: 10rem;
     line-height: 1em;
 
-    &[data-hide-desktop="true"] {
+    [data-hide-desktop="true"] & {
       display: none;
       visibility: hidden;
     }

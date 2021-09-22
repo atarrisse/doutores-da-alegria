@@ -509,6 +509,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     id: "32",
     title: "Parcerias e apoios",
     color: EColors.SALMAO,
+    hideTitleOnDesktop: true,
     content: [
       {
         type: ETipoConteudo.APOIO,
@@ -648,6 +649,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
     id: "33",
     title: "Parcerias e apoios",
     color: EColors.SALMAO,
+    hideTitleOnDesktop: true,
     content: [
       {
         type: ETipoConteudo.APOIO,
@@ -745,6 +747,7 @@ const CONTEUDO: Array<IConteudoSecao> = [
   {
     id: "34",
     title: "Parcerias e apoios",
+    hideTitleOnDesktop: true,
     color: EColors.SALMAO,
     content: [
       "### Doadores Pessoa Física",

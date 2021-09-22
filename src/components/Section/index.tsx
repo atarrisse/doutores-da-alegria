@@ -4,10 +4,11 @@ import Content from "../Content";
 import MenuButton from "../MenuButton";
 import Rodape from "../Rodape";
 
+import useWindowSize from "@/utils/useWindowSize";
+
 import * as styles from "./styles.module.scss";
 
 import { IConteudoSecao } from "../../types.d.ts";
-import useWindowSize from "@/utils/useWindowSize";
 
 type Props = IConteudoSecao
 
@@ -30,15 +31,14 @@ const Section: React.FC<Props> = ({
     <section className={styles.section} {...others}>
       <div className={styles.content}>
         {
-          <div className={styles.header}>
+          <div className={styles.header} data-hide-desktop={hideTitleOnDesktop}>
             {
               hasLineBreak ?
                 <h2
                   className={styles.title}
-                  data-hide-desktop={hideTitleOnDesktop}
                   dangerouslySetInnerHTML={{ __html: title }}>
                 </h2>
-                : <h2 className={styles.title} data-hide-desktop={hideTitleOnDesktop}>
+                : <h2 className={styles.title} >
                   {title}
                 </h2>
             }
