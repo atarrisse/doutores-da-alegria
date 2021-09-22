@@ -504,6 +504,13 @@ const CONTEUDO: Array<IConteudoSecao> = [
         ],
       },
     ],
+    extra: {
+      color: "#FFFFFF",
+      content: [
+        "#### Surpresaaaaa!",
+        "[Obrigada por ter chegado até aqui, por ter lido tudinho. Agora pode clicar aqui e curtir a surpresa que preparamos para você!](https://www.youtube.com/watch?v=xDCBnCdcONU)"
+      ],
+    },
   },
   {
     id: "32",
