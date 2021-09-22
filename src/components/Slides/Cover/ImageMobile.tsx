@@ -20,7 +20,9 @@ const ImageMobile: React.FC = () => {
             <div className={styles.content}>
               <Image
                 alt="Foto em estilo de colagem mostrando os rostos de diversos colaboradores do Doutores da Alegria"
+                className={styles.image}
                 filename="cover_desktop.png"
+                objectFit="contain"
               />
             </div>
           </div>
