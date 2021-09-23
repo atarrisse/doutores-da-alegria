@@ -14,7 +14,7 @@
   }
 
   @include mobile {
-    align-items: end;
+    align-items: flex-end;
     display: grid;
     grid-template: max-content / 100%;
     margin-top: 3vh;
@@ -154,15 +154,16 @@
   }
 
   @include mobile {
-    align-self: end;
+    align-self: flex-end;
     max-width: 65%;
 
     &:first-of-type {
+      justify-self: flex-start;
       justify-self: start;
     }
 
     &:last-of-type {
-      justify-self: end;
+      justify-self: flex-end;
     }
 
     *:global(#sobre-br-viver-01) & {
@@ -442,7 +443,7 @@
   }
 
   @include mobile {
-    align-self: end;
+    align-self: flex-end;
     pointer-events: none;
     width: 100%;
   }

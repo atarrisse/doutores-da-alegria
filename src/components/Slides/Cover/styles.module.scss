@@ -19,7 +19,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 5rem 5rem auto 1fr;
-    justify-items: end;
+    justify-items: flex-end;
     margin-top: 2.6rem;
     z-index: 100;
   }
@@ -43,7 +43,7 @@
   }
 
   @include desktop {
-    align-self: end;
+    align-self: flex-end;
     grid-column: 1 / span 4;
     grid-row: 1 / span 4;
   }
@@ -71,7 +71,7 @@
 }
 
 .logo {
-  align-self: end;
+  align-self: flex-end;
   height: 9.6rem;
   margin-left: auto;
   overflow: visible;
@@ -146,7 +146,7 @@
 }
 
 .content {
-  align-items: end;
+  align-items: flex-end;
   display: flex;
   height: var(--height);
   width: calc(1.923 * var(--height));
@@ -154,6 +154,10 @@
   animation-duration: 3s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
+
+  > div {
+    align-self: flex-end;
+  }
 }
 
 @keyframes Snudge {

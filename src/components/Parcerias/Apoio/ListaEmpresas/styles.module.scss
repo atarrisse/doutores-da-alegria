@@ -150,9 +150,10 @@
   // prefeitura rio
   li:nth-child(6) {
     grid-row: 4 / span 1;
-    justify-self: end;
+    justify-self: flex-end;
 
     @include mobile {
+      justify-self: flex-start;
       justify-self: start;
       grid-column: 1 / span 6;
       img {
@@ -171,6 +172,7 @@
     grid-row: 4 / span 1;
 
     @include mobile {
+      justify-self: flex-start;
       justify-self: start;
       grid-column: 1 / span 6;
       margin-left: 35%;
@@ -191,7 +193,7 @@
     grid-row: 4 / span 1;
 
     @include mobile {
-      justify-self: end;
+      justify-self: flex-end;
       grid-column: 1 / span 6;
       img {
         height: 4rem;

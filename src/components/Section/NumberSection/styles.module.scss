@@ -25,7 +25,7 @@
   @include desktop {
     grid-template: auto / repeat(3, 1fr);
     gap: 7rem 0;
-    align-items: end;
+    align-items: flex-end;
     justify-content: center;
 
     &:last-child {
@@ -99,7 +99,7 @@
   }
 
   @include mobile {
-    align-items: end;
+    align-items: flex-end;
     display: flex;
     line-height: 0.9em;
   }

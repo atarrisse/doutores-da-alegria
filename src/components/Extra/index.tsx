@@ -14,23 +14,17 @@ type Props = {
   color: string,
 }
 
-const Extra: React.FC<Props & TExtra> = ({ content, color, ...others }) => {
+const Extra: React.FC<Props & TExtra> = ({ content, color }) => {
   if (!content) <></>;
-
-  if (others.id !== "spoiler-02") return <></>;
 
   const cardRef = useRef<HTMLDivElement>();
   const { top } = useWindowScroll();
-  const { isMobile, ...a } = useWindowSize();
+  const { isMobile } = useWindowSize();
   const [isOpen, setIsOpen] = useState<boolean | null>();
 
   const handleClick = () => {
     setIsOpen(false);
   };
-
-  useEffect(() => {
-    console.log("isOpen", isOpen);
-  }, [isOpen])
 
   // mobile opens on init
   useEffect(() => {
