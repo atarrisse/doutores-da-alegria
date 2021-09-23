@@ -7,10 +7,6 @@
 
   @include mobile {
     overflow: hidden auto;
-
-    &[data-extra="true"] {
-      overflow: hidden;
-    }
   }
 
   @include desktop {
