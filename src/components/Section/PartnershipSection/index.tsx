@@ -1,6 +1,4 @@
-import debounce from "lodash/debounce";
 import React from "react";
-import { useState } from "react";
 
 import Image from "@/components/Image";
 
@@ -21,6 +19,7 @@ const Partners = {
     { alt: "C B N", filename: "cbn.png" },
     { alt: "Cartoon Network", filename: "cartoon-network.png" },
     { alt: "Onet", filename: "onet.png" },
+    { alt: "Trama", filename: "trama.png" },
     { alt: "São Paulo para Crianças", filename: "sao-paulo-para-criancas.jpg" },
   ],
   "Realização": [
@@ -30,36 +29,25 @@ const Partners = {
 
 
 const PartnershipSection = () => {
-  const [isAtBeginning, setIsAtBeginning] = useState(true);
-
-  const handleScroll = (e) => {
-    setIsAtBeginning(e.target.scrollLeft === 0);
-  };
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.gradient} data-begin={isAtBeginning}>
-        <div className={styles.scroll} onScroll={debounce(handleScroll, 10)}>
-          <div className={styles.content}>
-            {
-              Object.entries(Partners).map(([key, value]) => (
-                <div key={key}>
-                  <p className={styles.categoria}>{key}</p>
-                  <ul className={styles.gallery}>
-                    {
-                      value.map(item => (
-                        <li key={JSON.stringify(item)}>
-                          <Image {...item} />
-                        </li>
-                      ))
-                    }
-                  </ul>
-                </div>
-              ))
-            }
+    <>
+      {
+        Object.entries(Partners).map(([key, value]) => (
+          <div key={key}>
+            <p className={styles.categoria}>{key}</p>
+            <ul className={styles.gallery}>
+              {
+                value.map(item => (
+                  <li key={JSON.stringify(item)}>
+                    <Image {...item} />
+                  </li>
+                ))
+              }
+            </ul>
           </div>
-        </div>
-      </div>
-    </div>
+        ))
+      }
+    </>
   );
 };
 
