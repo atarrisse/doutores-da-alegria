@@ -21,9 +21,13 @@ const Extra: React.FC<Props & TExtra> = ({ content, color }) => {
   const { top } = useWindowScroll();
   const { isMobile } = useWindowSize();
   const [isOpen, setIsOpen] = useState<boolean | null>();
+  const [closeExtra, setCloseExtra] = useState<boolean | null>();
 
   const handleClick = () => {
     setIsOpen(false);
+    setTimeout(() => {
+      setCloseExtra(true)
+    }, 1000);
   };
 
   // mobile opens on init
@@ -49,32 +53,33 @@ const Extra: React.FC<Props & TExtra> = ({ content, color }) => {
   }, [top]);
 
   return (
-    <div
-      className={styles.wrapper}
-      data-open={isOpen}
-      data-close={!isOpen}
-      ref={cardRef}
-    >
-      {
-        isOpen &&
-        <dialog
-          className={styles.extra}
-          open={isOpen === true}
-          style={{ color: color }}
+    <>
+      {!closeExtra &&
+        <div
+          className={styles.wrapper}
+          data-open={isOpen}
+          data-close={!isOpen}
+          ref={cardRef}
         >
-          <button
-            className={styles.button}
-            aria-label="Fechar curiosidade"
-            onClick={handleClick}
+          <dialog
+            className={styles.extra}
+            open={isOpen === true}
+            style={{ color: color }}
           >
-            X
-          </button>
-          <div className={styles.conteudo}>
-            <Content content={content} />
-          </div>
-        </dialog>
+            <button
+              className={styles.button}
+              aria-label="Fechar curiosidade"
+              onClick={handleClick}
+            >
+              X
+            </button>
+            <div className={styles.conteudo}>
+              <Content content={content} />
+            </div>
+          </dialog>
+        </div>
       }
-    </div>
+    </>
   );
 };
 
