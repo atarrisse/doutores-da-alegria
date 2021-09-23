@@ -21,17 +21,20 @@ const Extra: React.FC<Props & TExtra> = ({ content, color, ...others }) => {
 
   const cardRef = useRef<HTMLDivElement>();
   const { top } = useWindowScroll();
-  const { isMobile } = useWindowSize();
+  const { isMobile, ...a } = useWindowSize();
   const [isOpen, setIsOpen] = useState<boolean | null>();
 
   const handleClick = () => {
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    console.log("isOpen", isOpen);
+  }, [isOpen])
 
   // mobile opens on init
   useEffect(() => {
-    if (!isMobile) return;
+    if (window.innerWidth > 1024) return;
     const timer = setTimeout(() => {
       setIsOpen(true);
     }, 4000);
@@ -56,8 +59,10 @@ const Extra: React.FC<Props & TExtra> = ({ content, color, ...others }) => {
       className={styles.wrapper}
       data-open={isOpen}
       data-close={!isOpen}
+      ref={cardRef}
     >
-      <div ref={cardRef}>
+      {
+        isOpen &&
         <dialog
           className={styles.extra}
           open={isOpen === true}
@@ -74,7 +79,7 @@ const Extra: React.FC<Props & TExtra> = ({ content, color, ...others }) => {
             <Content content={content} />
           </div>
         </dialog>
-      </div>
+      }
     </div>
   );
 };

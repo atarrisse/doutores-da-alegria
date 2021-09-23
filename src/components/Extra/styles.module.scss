@@ -7,7 +7,16 @@
   
   @include mobile {
     --overlay-size: calc(100vw - 4rem);
+
+    &[data-close="true"]  {
+      animation-name: wrapperOut;
+      animation-duration: 0.1s;
+      animation-delay: 2s;
+      animation-fill-mode: forwards;
+    }
   }
+
+
 }
 
 .extra {
@@ -28,19 +37,19 @@
   position: absolute;
   text-align: center;
   top: 50%;
-  transform: translate(-50%, 150vh) rotate(0deg);
   word-break: break-word;
   z-index: 100;
-
-
+  
+  
   @include mobile {
+    transform: rotate(0deg);
     width: 75%;
 
     [data-open="true"] & {
       animation-name: mobileIn;
     }
 
-    [data-open="true"][data-close="true"] & {
+    [data-close="true"] & {
       animation-name: mobileOut;
     }
 
@@ -59,23 +68,22 @@
   }
 }
 
-.extra {
+
+.conteudo {
+  background-color: var(--theme-color);
+  border-radius: 3rem;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  
+  
   a {
     text-decoration: underline !important;
   }
-  
-  h4 {
-    font-family: var(--font-simples-basic);
-    font-size: 3.2rem;
-    margin: 0 0 1.5rem;
 
-    @include desktop {
-      font-size: 4rem;
-      line-height: 3.8rem;
-      margin: 0 0 2.2rem;
-    }
+  img {
+    max-height: 100%;
   }
-
+  
   p {
     color: inherit;
     font-family: var(--font-vag-rounded);
@@ -86,16 +94,17 @@
       line-height: 2.7rem;
     }
   }
-}
 
-.conteudo {
-  background-color: var(--theme-color);
-  border-radius: 3rem;
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  
-  img {
-    max-height: 100%;
+  h4 {
+    font-family: var(--font-simples-basic);
+    font-size: 3.2rem;
+    margin: 0 0 1.5rem;
+
+    @include desktop {
+      font-size: 4rem;
+      line-height: 3.8rem;
+      margin: 0 0 2.2rem;
+    }
   }
 }
 
@@ -201,3 +210,11 @@
   }
 }
 
+@keyframes wrapperOut {
+  0% {
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
