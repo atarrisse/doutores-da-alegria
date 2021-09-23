@@ -67,7 +67,7 @@ const graphMobile = () => (
         dataKey="name"
         position="insideLeft"
         offset={48}
-        content={<LabelYear external={external} />}
+        content={<LabelYear />}
       />
       {data.map((entry, index) => (
         <Cell
