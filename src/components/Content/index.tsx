@@ -30,7 +30,7 @@ const Content = ({ content }) => {
                   a: ({ node, ...props }) => {
                     return (
                       <a target="_blank" rel="noopener noreferrer" {...props} />
-                    )
+                    );
                   },
                 }}
               >

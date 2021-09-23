@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
 const Context = React.createContext({
   isMenuOpen: false,
@@ -16,8 +16,8 @@ const ContextProvider = ({ children }) => {
   const [videoId, setVideoId] = useState(null);
 
   useEffect(() => {
-    setIsPlayerOpen(videoId !== null)
-  }, [videoId])
+    setIsPlayerOpen(videoId !== null);
+  }, [videoId]);
 
   const value = {
     isMenuOpen,
@@ -28,8 +28,8 @@ const ContextProvider = ({ children }) => {
     setVideoId
   };
 
-  return <Context.Provider value={value}>{children}</Context.Provider>
+  return <Context.Provider value={value}>{children}</Context.Provider>;
 
-}
+};
 
-export { Context, ContextProvider }
+export { Context, ContextProvider };

@@ -29,7 +29,7 @@ const Player: React.FC<Props & TPlayer> = () => {
     return {
       height: h.toString(),
       width: w.toString(),
-    }
+    };
   }, [win]);
 
   const opts = {
@@ -39,21 +39,21 @@ const Player: React.FC<Props & TPlayer> = () => {
   const youtubeListener = (e) => {
     e.preventDefault();
     const link = e.target.closest("a") || e.target;
-    setVideoId(link.href.split("v=")[1].split("&")[0])
-  }
+    setVideoId(link.href.split("v=")[1].split("&")[0]);
+  };
 
   const handleReady = () => {
     setIsLoading(false);
-  }
+  };
 
   const handleClose = () => {
     setVideoId(null);
-  }
+  };
 
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
     setIsInit(true);
-  }, [])
+  }, []);
 
   useEffect(() => {
     document
@@ -62,12 +62,12 @@ const Player: React.FC<Props & TPlayer> = () => {
         if (link.href.includes("youtube")) {
           link.addEventListener("click", youtubeListener);
         }
-      })
-  }, [isInit])
+      });
+  }, [isInit]);
 
   useEffect(() => {
-    if (videoId === null) setIsLoading(true)
-  }, [videoId])
+    if (videoId === null) setIsLoading(true);
+  }, [videoId]);
 
   return (
     <div
@@ -104,7 +104,7 @@ const Player: React.FC<Props & TPlayer> = () => {
 
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Player
+export default Player;

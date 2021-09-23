@@ -1,36 +1,36 @@
-import React, { useContext } from "react";
 import kebabCase from "lodash/kebabCase";
+import React, { useContext } from "react";
 
 import Conteudo from "@/conteudo/conteudo";
 import Estatisticas from "@/conteudo/estatisticas";
 import Expediente from "@/conteudo/expediente";
 import ImpactoSocial from "@/conteudo/impactoSocial";
 import Parcerias from "@/conteudo/parcerias";
-
-import * as styles from "./styles.module.scss";
 import { Context } from "@/utils/context";
 import useWindowDimensions from "@/utils/useWindowDimension";
+
+import * as styles from "./styles.module.scss";
 
 const Menu = ({ slider }) => {
   const win = useWindowDimensions();
   const { isMenuOpen, setIsMenuOpen } = useContext(Context);
 
-  const slides = [...Conteudo, ...Estatisticas, ...ImpactoSocial, ...Parcerias, ...Expediente].reduce((acc, curr) => {
+  const slides = [...Conteudo, ...ImpactoSocial, ...Estatisticas, ...Parcerias, ...Expediente].reduce((acc, curr) => {
     if (curr.title !== acc[acc.length - 1]?.title)
       acc.push(curr);
-    return acc
-  }, [])
+    return acc;
+  }, []);
 
   const handleClick = () => {
     setIsMenuOpen(false);
-  }
+  };
   const handleLinkClick = (e, index) => {
     if (win?.isMobile) {
       e.preventDefault();
       slider.current.slickGoTo(index);
-      setIsMenuOpen(false)
+      setIsMenuOpen(false);
     }
-  }
+  };
 
   return (
     <nav className={styles.nav} data-open={isMenuOpen}>
@@ -57,7 +57,7 @@ const Menu = ({ slider }) => {
                 {item.title.replace("<br/>", " ")}
               </a>
             </li>
-          )
+          );
         })}
         <li
           className={styles.item}
@@ -89,7 +89,7 @@ const Menu = ({ slider }) => {
         </li>
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;

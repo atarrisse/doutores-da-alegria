@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
+
 import { Context } from "@/utils/context";
+
 import * as styles from "./styles.module.scss";
 
 type TMenuButton = React.HTMLAttributes<HTMLDivElement>;
@@ -12,8 +14,8 @@ const MenuButton: React.FC<Props & TMenuButton> = ({ className }) => {
   const { isMenuOpen, setIsMenuOpen } = useContext(Context);
 
   const handleClick = () => {
-    setIsMenuOpen && setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen && setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <div
@@ -27,7 +29,7 @@ const MenuButton: React.FC<Props & TMenuButton> = ({ className }) => {
       <div className={styles.bar3}></div>
       <div className={styles.bar4}></div>
     </div>
-  )
-}
+  );
+};
 
-export default MenuButton
+export default MenuButton;

@@ -1,7 +1,8 @@
-import useOnScreen from "@/utils/useOnScreen";
-import useWindowSize from "@/utils/useWindowSize";
 import React, { useEffect, useRef, useState } from "react";
 import CountUp from 'react-countup';
+
+import useOnScreen from "@/utils/useOnScreen";
+import useWindowSize from "@/utils/useWindowSize";
 
 import * as styles from "./styles.module.scss";
 
@@ -17,13 +18,13 @@ const NumberSection: React.FC<IProps> = ({ label, numbers, presencial }) => {
   const slideRef = useRef();
   const [init, setInit] = useState(false);
   const isOnScreen = useOnScreen(slideRef);
-  const { isMobile } = useWindowSize()
+  const { isMobile } = useWindowSize();
 
   useEffect(() => {
     if (init) return;
     if (!init && isOnScreen)
       setInit(isOnScreen);
-  }, [isOnScreen])
+  }, [isOnScreen]);
 
 
   return (

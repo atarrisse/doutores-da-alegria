@@ -1,13 +1,14 @@
 import React from "react";
 
+import ImageDesktop from "./ImageDesktop";
+import ImageMobile from "./ImageMobile";
+
 import Image from "@/components/Image";
-import Slide from "@/components/Slides/Slide";
 import MenuButton from "@/components/MenuButton";
+import Slide from "@/components/Slides/Slide";
 
 import useWindowSize from "@/utils/useWindowSize";
 
-import ImageMobile from "./ImageMobile";
-import ImageDesktop from "./ImageDesktop";
 
 import * as styles from "./styles.module.scss";
 

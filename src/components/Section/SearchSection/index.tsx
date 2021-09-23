@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import React, { useRef } from "react";
+import React from "react";
 import { useEffect, useState } from "react";
 import AnimateHeight from "react-animate-height";
 
@@ -43,7 +43,7 @@ const SearchSection = () => {
     setHeight(showAll ? "auto" : HEIGHT);
     if (!showAll) slide?.scrollIntoView({
       behavior: "smooth",
-    })
+    });
   }, [showAll]);
 
   useEffect(() => {

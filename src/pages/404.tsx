@@ -1,5 +1,7 @@
-import Image from "@/components/Image";
 import React from "react";
+
+import Image from "@/components/Image";
+
 import * as styles from "./styles.module.scss";
 
 type TFourOuFour = React.HTMLAttributes<HTMLDivElement>;
@@ -18,7 +20,7 @@ const FourOuFour: React.FC<Props & TFourOuFour> = () => {
         <Image filename="404.png" alt="palhaço com uma mão acima dos olhos, como quem busca por algo perdido." />
       </a>
     </div>
-  )
-}
+  );
+};
 
-export default FourOuFour
+export default FourOuFour;

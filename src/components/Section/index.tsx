@@ -1,5 +1,6 @@
 import React from "react";
 
+import { IConteudoSecao } from "../../types.d.ts";
 import Content from "../Content";
 import MenuButton from "../MenuButton";
 import Rodape from "../Rodape";
@@ -8,7 +9,6 @@ import useWindowSize from "@/utils/useWindowSize";
 
 import * as styles from "./styles.module.scss";
 
-import { IConteudoSecao } from "../../types.d.ts";
 
 type Props = IConteudoSecao
 

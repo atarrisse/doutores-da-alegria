@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import * as styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss";
 
 const QuoteSection = ({ autor, children }) => {
   return (
@@ -14,7 +14,7 @@ const QuoteSection = ({ autor, children }) => {
         </cite>
       </figcaption>
     </figure>
-  )
-}
+  );
+};
 
-export default QuoteSection
+export default QuoteSection;

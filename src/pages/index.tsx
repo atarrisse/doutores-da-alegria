@@ -3,6 +3,8 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 
 import Image from "@/components/Image";
+import Menu from "@/components/Menu";
+import Player from "@/components/Player";
 import Section from "@/components/Section";
 import Cover from "@/components/Slides/Cover";
 import Slide from "@/components/Slides/Slide";
@@ -12,9 +14,6 @@ import Estatisticas from "@/conteudo/estatisticas";
 import Expediente from "@/conteudo/expediente";
 import ImpactoSocial from "@/conteudo/impactoSocial";
 import Parcerias from "@/conteudo/parcerias";
-import Menu from "@/components/Menu";
-import Player from "@/components/Player";
-
 import { ContextProvider } from "@/utils/context";
 
 import * as styles from "./styles.module.scss";

@@ -107,8 +107,8 @@ const legenda = (data) => {
       <h3 className={styles.labelTitle}>{key}</h3>
       <Legenda data={value} />
     </React.Fragment>);
-  })
-}
+  });
+};
 
 const graficoMobile = (allValues) => {
   return (<ResponsiveContainer>
@@ -129,8 +129,8 @@ const graficoMobile = (allValues) => {
         }
       </Pie>
     </PieChart>
-  </ResponsiveContainer>)
-}
+  </ResponsiveContainer>);
+};
 const graficoDesktop = (allValues) => {
   return (<ResponsiveContainer>
     <PieChart>
@@ -151,8 +151,8 @@ const graficoDesktop = (allValues) => {
         }
       </Pie>
     </PieChart>
-  </ResponsiveContainer>)
-}
+  </ResponsiveContainer>);
+};
 const AplicacaoRecursos = () => {
   const ref = useRef();
   const isVisible = useOnScreen(ref);

@@ -1,32 +1,32 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
 const getWindowDimensions = (w) => {
-  if (!w) return {}
-  const { innerWidth: width, innerHeight: height } = w
-  const isMobile = width < 1024
+  if (!w) return {};
+  const { innerWidth: width, innerHeight: height } = w;
+  const isMobile = width < 1024;
 
   return {
     isMobile,
     width,
     height,
-  }
-}
+  };
+};
 
 const useWindowDimensions = () => {
-  const [windowDimensions, setWindowDimensions] = useState<any>()
+  const [windowDimensions, setWindowDimensions] = useState<any>();
 
   const handleResize = () => {
     if (window !== undefined)
-      setWindowDimensions(getWindowDimensions(window))
-  }
+      setWindowDimensions(getWindowDimensions(window));
+  };
 
   useEffect(() => {
-    setWindowDimensions(getWindowDimensions(window))
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+    setWindowDimensions(getWindowDimensions(window));
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-  return windowDimensions
-}
+  return windowDimensions;
+};
 
-export default useWindowDimensions
+export default useWindowDimensions;
