@@ -14,7 +14,7 @@ type Props = {
   color: string,
 }
 
-const Extra: React.FC<Props & TExtra> = ({ content, color }) => {
+const Extra: React.FC<Props & TExtra> = ({ content, color, id }) => {
   if (!content) <></>;
 
   const cardRef = useRef<HTMLDivElement>();
@@ -25,9 +25,10 @@ const Extra: React.FC<Props & TExtra> = ({ content, color }) => {
 
   const handleClick = () => {
     setIsOpen(false);
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setCloseExtra(true)
     }, 1000);
+    return () => clearTimeout(timer);
   };
 
   // mobile opens on init
@@ -43,7 +44,7 @@ const Extra: React.FC<Props & TExtra> = ({ content, color }) => {
   // desktop opens when visible
   useEffect(() => {
     const rect = cardRef?.current?.getBoundingClientRect();
-    if (isMobile || isOpen) return;
+    if (isMobile || isOpen || !rect) return;
 
     const windowBottom = top + window.innerHeight;
     const delta = top + rect.top - windowBottom;
