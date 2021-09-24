@@ -1,91 +1,32 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-import { useStaticQuery, graphql } from "gatsby";
-import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
 
-function Seo({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            defaultTitle: title
-            defaultDescription: description
-            siteUrl: url
-            defaultImage: image
-            twitterUsername
-          }
-        }
-      }
-    `
-  );
-
-  const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
-
+const Seo = () => {
   return (
     <Helmet
+      title="Balanço 2020 | Doutores da Alegria"
       htmlAttributes={{
-        lang,
+        lang: "pt-br",
       }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+    >
+      <meta name="description" content="Veja a prestação de contas digital de 2020" />
+      <meta name="image" content="/ogimage.png" />
+
+      <meta name="og:title" content="Eu vi isso no balanço dos Doutores da Alegria" />
+      <meta name="og:description" content="Veja a prestação de contas digital de 2020" />
+      <meta name="og:image" content="/ogimage.png" />
+      <meta name="og:url" content="https://balanco.doutoresdaalegria.org.br/" />
+      <meta name="og:type" content="website" />
+
+      <meta name="twitter:title" content="Eu vi isso no balanço dos Doutores da Alegria" />
+      <meta name="twitter:description" content="Veja a prestação de contas digital de 2020" />
+      <meta name="twitter:image" content="/ogimage.png" />
+      <meta name="twitter:creator" content="@doutores" />
+      <meta name="twitter:card" content="summary_large_image" />
+    </Helmet>
   );
-}
-
-Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-};
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 };
 
 export default Seo;
+
+

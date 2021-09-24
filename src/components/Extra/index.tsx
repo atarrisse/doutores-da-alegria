@@ -26,7 +26,7 @@ const Extra: React.FC<Props & TExtra> = ({ content, color, id }) => {
   const handleClick = () => {
     setIsOpen(false);
     const timer = setTimeout(() => {
-      setCloseExtra(true)
+      setCloseExtra(true);
     }, 1000);
     return () => clearTimeout(timer);
   };

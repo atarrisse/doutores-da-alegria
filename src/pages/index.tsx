@@ -6,6 +6,7 @@ import Image from "@/components/Image";
 import Menu from "@/components/Menu";
 import Player from "@/components/Player";
 import Section from "@/components/Section";
+import Seo from "@/components/SEO";
 import Cover from "@/components/Slides/Cover";
 import Slide from "@/components/Slides/Slide";
 
@@ -63,6 +64,7 @@ const Index: React.FC = () => {
 
   return (
     <ContextProvider>
+      <Seo />
       <Menu slider={sliderRef} />
       <Player />
       <main>
