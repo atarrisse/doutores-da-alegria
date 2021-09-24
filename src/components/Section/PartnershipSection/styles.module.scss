@@ -1,22 +1,72 @@
 @import "../../../styles/globals/resources.scss";
 
-
-
 .categoria {
   color: var(--theme-color);
   font-size: 1.6rem;
   font-weight: 700;
   margin: 0 0 2rem;
+
+  @include desktop {
+    font-size: 4.3rem;
+    text-align: center;
+  }
 }
 
 .gallery {
   align-items: center;
-  display: grid;
   gap: 4rem;
-  grid-template: 1fr / repeat(3, 1fr);
-  height: 100%;
   list-style: none;
   margin: 0 4rem 2rem 0;
   padding: 0;
+  
+  @include desktop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  @include mobile {
+    display: grid;
+    grid-template: 1fr / repeat(3, 1fr);
+    height: 100%;
+  }
+}
 
+.partnerships {
+  @include mobile {
+    > div:first-child {
+      li {
+        width: 10rem;
+      }
+    }
+  }
+  @include desktop {
+    display: grid;
+    grid-template: auto / 1fr 1fr;
+    > div:first-child {
+      li {
+        width: 24.5rem;
+      }  
+    }
+  }
+}
+
+.partnership {
+  @include desktop {
+    &:nth-child(1),
+    &:nth-child(2) {
+      grid-column-end: span 1;
+      grid-row: 1 / span 1;
+    }
+    &:nth-child(3),
+    &:nth-child(4) {
+      grid-column: 1 / span 2;
+    }
+  }
+}
+
+.item {
+  @include desktop {
+    width: 15rem;
+  }
 }

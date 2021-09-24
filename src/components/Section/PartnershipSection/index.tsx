@@ -30,15 +30,15 @@ const Partners = {
 
 const PartnershipSection = () => {
   return (
-    <>
+    <div className={styles.partnerships}>
       {
         Object.entries(Partners).map(([key, value]) => (
-          <div key={key}>
+          <div className={styles.partnership} key={key}>
             <p className={styles.categoria}>{key}</p>
             <ul className={styles.gallery}>
               {
                 value.map(item => (
-                  <li key={JSON.stringify(item)}>
+                  <li className={styles.item} key={JSON.stringify(item)}>
                     <Image {...item} />
                   </li>
                 ))
@@ -47,7 +47,7 @@ const PartnershipSection = () => {
           </div>
         ))
       }
-    </>
+    </div>
   );
 };
 
