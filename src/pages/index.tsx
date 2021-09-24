@@ -18,8 +18,6 @@ import { ContextProvider } from "@/utils/context";
 
 import * as styles from "./styles.module.scss";
 
-
-
 const createSlides = data => {
   const { slides, className } = data;
   return slides.map((item, i) => {

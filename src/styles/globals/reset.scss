@@ -58,6 +58,9 @@ body {
 main {
   font-size: 1.7rem;
 
+  @include mobile {
+    height: 100vh;
+  }
   @include desktop {
     font-size: 3rem;
     line-height: 157%;
