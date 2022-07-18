@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "balanco-geral",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Balanço Geral 2021",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Ana Tarrisse <atarrisse@gmail.com>",
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop -H 0.0.0.0",
